@@ -1,0 +1,299 @@
+{
+  "main": {
+    "id": "0f0336295105bade",
+    "type": "split",
+    "children": [
+      {
+        "id": "50a2e8a2fc65bd2d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e1ae06ad145e25ba",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "dzrh/02-pdf附件/101 自适应时空图网络周频 alpha 模型 ——因子选股系列之一〇一.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "101 自适应时空图网络周频 alpha 模型 ——因子选股系列之一〇一"
+            }
+          },
+          {
+            "id": "fd110b32041c53b7",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "dzrh/02-pdf附件/91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一"
+            }
+          },
+          {
+            "id": "587fa1fd3e546f84",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "dzrh/02-pdf附件/96 基于残差网络的端到端因子挖掘模型 ——因子选股系列之九十六.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "96 基于残差网络的端到端因子挖掘模型 ——因子选股系列之九十六"
+            }
+          },
+          {
+            "id": "7662c3668b23ddb8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dzrh/01-研报笔记/ASTGNN 自适应时空图网络周频 Alpha 模型.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ASTGNN 自适应时空图网络周频 Alpha 模型"
+            }
+          },
+          {
+            "id": "30aa6e8cbb389499",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dzrh/01-研报笔记/tips.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "tips"
+            }
+          },
+          {
+            "id": "3404f24aece9eea8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "dzrh/01-研报笔记/ASTGNN 自适应时空图网络周频 Alpha 模型.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ASTGNN 自适应时空图网络周频 Alpha 模型"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "439a911113d54d27",
+    "type": "split",
+    "children": [
+      {
+        "id": "57ee1c77125f1d36",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e5c9eb5836dee73c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "c25e00c448ae1500",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "82814e630d9a06f1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          },
+          {
+            "id": "ef1bf12750f5bdaf",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "file:D:/电脑管家迁移文件/xwechat_files/wxid_ykpg5rfx21e712_44c9/msg/file/2026-11/20231225-东方证券-因子选股系列之九十八：基于抗噪的AI量价模型改进方案.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "20231225-东方证券-因子选股系列之九十八：基于抗噪的AI量价模型改进方案"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9086fb184ab3d0f7",
+    "type": "split",
+    "children": [
+      {
+        "id": "713180ffcd9daa11",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "871e04f81143de76",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "dzrh/02-pdf附件/20230824_dfzq_resnet_e2e.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "6c5e73ecf6e42a3f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "dzrh/01-研报笔记/知识点记录.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "fe75543411057b56",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "82fd7d5e0ebc1e0c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "7f88dda4441f455e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "dzrh/01-研报笔记/知识点记录.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "workspaces:管理工作区布局": false
+    }
+  },
+  "active": "7662c3668b23ddb8",
+  "lastOpenFiles": [
+    "dzrh/01-研报笔记/要做什么.md",
+    "dzrh/01-研报笔记/tips.md",
+    "dzrh/01-研报笔记/ASTGNN 自适应时空图网络周频 Alpha 模型.md",
+    "dzrh/01-研报笔记/随读笔记.md",
+    "dzrh/02-pdf附件/91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
+    "dzrh/01-研报笔记/知识点记录.md",
+    "dzrh/02-pdf附件/101 自适应时空图网络周频 alpha 模型 ——因子选股系列之一〇一.pdf",
+    "dzrh/02-pdf附件/96 基于残差网络的端到端因子挖掘模型 ——因子选股系列之九十六.pdf",
+    "dzrh/02-pdf附件/104 融合基本面信息的 ASTGNN 因子挖掘模型 ——因子选股系列之一〇四.pdf",
+    "dzrh/02-pdf附件/98 基于抗噪的 AI 量价模型改进方案 ——因子选股系列之九十八.pdf",
+    "dzrh/images/Pasted image 20261102134849.png",
+    "dzrh/images/Pasted image 20261104093339.png",
+    "dzrh/images/自适应时空图网络结构.png",
+    "dzrh/images/Pasted image 20261102134601.png",
+    "dzrh/images/6c87f30266f679652136cbe8eee6c5ac.png",
+    "使用手册.md",
+    "==对抗训练==.md",
+    "dzrh/images/GRU.png",
+    "dzrh/02-pdf附件/20231225-东方证券-因子选股系列之九十八：基于抗噪的AI量价模型改进方案.pdf",
+    "file:D:/电脑管家迁移文件/xwechat_files/wxid_ykpg5rfx21e712_44c9/msg/file/2026-11/20231225-东方证券-因子选股系列之九十八：基于抗噪的AI量价模型改进方案.pdf",
+    "dzrh/01-研报笔记/images",
+    "dzrh/images",
+    "dzrh/Templates/研报阅读模板.md",
+    "dzrh/00-研报数据库/量化研报总览.base",
+    "欢迎.md",
+    "dzrh/03-模型画布/量化模型研究.canvas",
+    "阅读模板.md"
+  ]
+}

@@ -1,0 +1,23 @@
+formulas:
+  未命名: ""
+views:
+  - type: table
+    name: 视图
+    filters:
+      and:
+        - status == ["阅读中"]
+    order:
+      - type
+      - institution
+      - category
+      - status
+      - file.fullname
+      - tags
+      - created
+      - formula.未命名
+      - file.ctime
+    sort:
+      - property: status
+        direction: ASC
+  - type: table
+    name: 视图 2
