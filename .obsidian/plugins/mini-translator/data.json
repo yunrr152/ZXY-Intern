@@ -49,483 +49,804 @@
   "fullHtml": false,
   "history": [
     {
-      "ts": 1793954766060,
+      "ts": 1794214147176,
       "via": "火山",
       "pairs": [
         {
-          "en": "需要提醒的是，我们在《神经网络日频 alpha 模型初步实践》中提出的正交转换方法存在逻辑漏洞，",
-          "zh": "需要提醒的是，我们在\"神经网络日频alpha模型初步实践\"中提出的正交转换方法存在逻辑漏洞，",
+          "en": "将每个交易日截面个股的振幅（即（最高价-最低价）/前收盘价）和个股的换手率作为输入，利用机器学习方法将每个交易日截面所有股票相应的数据作为输入进行半监督学习，根据机器学习模型的输出来判断该交易日个股是否属于异常",
+          "zh": "将每个交易日截面个股的振幅（即（最高价-最低价）/前收盘价）和个股的换手率作为输入，利用机器学习方法将每个交易日截面所有股票相应的数据作为输入进行半监督学习，根据机器学习模型的输出来判断该交易日个股是否属于异常",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "zh-Hans"
         }
       ],
-      "sig": "需要提醒的是，我们在《神经网络日频 alpha 模型初步实践》中提出的正交转换方法存在逻辑漏洞，|需要提醒的是，我们在\"神经网络日频alpha模型初步实践\"中提出的正交转换方法存在逻辑漏洞，",
-      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
+      "sig": "将每个交易日截面个股的振幅（即（最高价-最低价）/前收盘价）和个股的换手率作为输入，利用机器学习方法将每个交易日截面所有股票相应的数据作为输入进行半监督学习，根据机器学习模型的输出来判断该交易日个股是否属于异常|将每个交易日截面个股的振幅（即（最高价-最低价）/前收盘价）和个股的换手率作为输入，利用机器学习方法将每个交易日截面所有股票相应的数据作为输入进行半监督学习，根据机器学习模型的输出来判断该交易日个股是否属于异常",
+      "file": "98 基于抗噪的 AI 量价模型改进方案 ——因子选股系列之九十八.pdf",
       "page": null
     },
     {
-      "ts": 1793954710444,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "给予近期表现好的因子更高的重要性",
-          "zh": "给予近期表现好的因子更高的重要性",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "给予近期表现好的因子更高的重要性|给予近期表现好的因子更高的重要性",
-      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1793954603678,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "把因子生成和因子加权集成一个网络中，alpha 因子只是作为隐层",
-          "zh": "把因子生成和因子加权集成一个网络中，α因子只是作为隐层",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "把因子生成和因子加权集成一个网络中，alpha 因子只是作为隐层|把因子生成和因子加权集成一个网络中，α因子只是作为隐层",
-      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1793953190993,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "数据集时序长度数据图片大小特征数week 30 6*5\n\nmsnew 30 5*8 22 day\n\n6 l2\n\n20",
-          "zh": "数据集时序长度数据图片大小特征数周30 6*5 msnew 30 5*8 22天 6 l2 20",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "数据集时序长度数据图片大小特征数week 30 6*5\n\nmsnew 30 5*8 22 day\n\n6 l2\n\n20|数据集时序长度数据图片大小特征数周30 6*5 msnew 30 5*8 22天 6 l2 20",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
-      "page": null
-    },
-    {
-      "ts": 1793953116388,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "30",
-          "zh": "30",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": ""
-        }
-      ],
-      "sig": "30|30",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
-      "page": null
-    },
-    {
-      "ts": 1793952948934,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "特征",
-          "zh": "特征",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "特征|特征",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
-      "page": null
-    },
-    {
-      "ts": 1793952850573,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "用 0 补充缺失值",
-          "zh": "用0补充缺失值",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "用 0 补充缺失值|用0补充缺失值",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
-      "page": null
-    },
-    {
-      "ts": 1793952838785,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "使用均值和标准差对数 据进行标准化",
-          "zh": "使用均值和标准差对数据进行标准化",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "使用均值和标准差对数 据进行标准化|使用均值和标准差对数据进行标准化",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
-      "page": null
-    },
-    {
-      "ts": 1793950923868,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "对于 l2 数据集上训练的第 T 年预测模型，我们取 2013~T-1 年数据为样本内，按时间先后进行 9：1 划分训练集和验证集",
-          "zh": "对于l2数据集上训练的第T年预测模型，我们取2013~T-1年数据为样本内，按时间先后进行9:1划分训练集和验证集",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "对于 l2 数据集上训练的第 T 年预测模型，我们取 2013~T-1 年数据为样本内，按时间先后进行 9：1 划分训练集和验证集|对于l2数据集上训练的第T年预测模型，我们取2013~T-1年数据为样本内，按时间先后进行9:1划分训练集和验证集",
-      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1793947864483,
+      "ts": 1794214063938,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "正交惩罚项，",
-          "zh": "正交惩罚项，",
+          "en": "将数据空间按照一定的准则进行切割，异常点在早期就会与大部分数据点分隔开，通过这种方法判断数据点是否属于异常",
+          "zh": "将数据空间按照一定的准则进行切割，异常点在早期就会与大部分数据点分隔开，通过这种方法判断数据点是否属于异常",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": ""
         }
       ],
-      "sig": "正交惩罚项，|正交惩罚项，",
+      "sig": "将数据空间按照一定的准则进行切割，异常点在早期就会与大部分数据点分隔开，通过这种方法判断数据点是否属于异常|将数据空间按照一定的准则进行切割，异常点在早期就会与大部分数据点分隔开，通过这种方法判断数据点是否属于异常",
       "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
       "page": null
     },
     {
-      "ts": 1793947792183,
+      "ts": 1794214054190,
       "via": "火山",
       "pairs": [
         {
-          "en": "弱因子zi,k 之间相关系数矩阵的 Frobenius 范数",
-          "zh": "弱因子zi， k之间相关系数矩阵的Frobenius范数",
+          "en": "通过寻找与数据点最临近的 k 个样本点计算它们的平均距离，根据这个平均距离是否超过某个设定的阈值来判断是否属于异常",
+          "zh": "通过寻找与数据点最临近的k个样本点计算它们的平均距离，根据这个平均距离是否超过某个设定的阈值来判断是否属于异常",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "zh-Hans"
         }
       ],
-      "sig": "弱因子zi,k 之间相关系数矩阵的 Frobenius 范数|弱因子zi， k之间相关系数矩阵的Frobenius范数",
+      "sig": "通过寻找与数据点最临近的 k 个样本点计算它们的平均距离，根据这个平均距离是否超过某个设定的阈值来判断是否属于异常|通过寻找与数据点最临近的k个样本点计算它们的平均距离，根据这个平均距离是否超过某个设定的阈值来判断是否属于异常",
       "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
       "page": null
     },
     {
-      "ts": 1793945260061,
+      "ts": 1794213964987,
       "via": "火山",
       "pairs": [
         {
-          "en": "（字段预处理方法采用高开低收、vwap 字段按照时序都除以最后一天收盘价，turnover 不做处理）",
-          "zh": "字段预处理方法采用高开低收，vwap字段按照时序都除以最后一天收盘价，不做处理",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "（字段预处理方法采用高开低收、vwap 字段按照时序都除以最后一天收盘价，turnover 不做处理）|字段预处理方法采用高开低收，vwap字段按照时序都除以最后一天收盘价，不做处理",
-      "file": "96 基于残差网络的端到端因子挖掘模型 ——因子选股系列之九十六.pdf",
-      "page": null
-    },
-    {
-      "ts": 1793945251618,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "过去 150 个交易日按照每五个交易日高开低收、vwap、turnover字段作为一张数据图片",
-          "zh": "过去150个交易日按照每五个交易日高开低收，vwap，成交额字段作为一张数据图片",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "过去 150 个交易日按照每五个交易日高开低收、vwap、turnover字段作为一张数据图片|过去150个交易日按照每五个交易日高开低收，vwap，成交额字段作为一张数据图片",
-      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1793945248654,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "过去 150 个交易日按照每五个交易日高开低收、vwap、turnover字段作为一张数据图片（字段预处理方法采用高开低收、vwap 字段按照时序都除以最后一天收盘价，turnover 不做处理），",
-          "zh": "过去150个交易日按照每五个交易日高开低收， vwap，成交量字段作为一张数据图片（字段预处理方法采用高开低收，vwap字段按照时序都除以最后一天收盘价，成交量不做处理），",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "过去 150 个交易日按照每五个交易日高开低收、vwap、turnover字段作为一张数据图片（字段预处理方法采用高开低收、vwap 字段按照时序都除以最后一天收盘价，turnover 不做处理），|过去150个交易日按照每五个交易日高开低收， vwap，成交量字段作为一张数据图片（字段预处理方法采用高开低收，vwap字段按照时序都除以最后一天收盘价，成交量不做处理），",
-      "file": "96 基于残差网络的端到端因子挖掘模型 ——因子选股系列之九十六.pdf",
-      "page": null
-    },
-    {
-      "ts": 1793943506686,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "Drawing 2026-11-06 13.32.50.excalidraw",
-          "zh": "绘图2026-11-0613.32.50. excalidaw",
+          "en": "\\mathcal{L}_{GP}(i)=-\\sum_{j\\in\\mathcal{N}(i)}\\log\\left(\\sigma(o_i o_j^T)\\right)-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}(i)}\\log\\left(-\\sigma(o_i o_j^T)\\right)",
+          "zh": "\\mathcal{L}_{GP}（i）=-\\sum_{j\\in\\mathcal{N}（i）}\\log\\左（\\sigma（o_io_j^T）\\右）-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}（i）}\\log\\左（-\\sigma（o_io_j^T）\\右）",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Drawing 2026-11-06 13.32.50.excalidraw|绘图2026-11-0613.32.50. excalidaw",
-      "file": "96 基于残差网络的端到端因子挖掘模型 ——因子选股系列之九十六.pdf",
+      "sig": "\\mathcal{L}_{GP}(i)=-\\sum_{j\\in\\mathcal{N}(i)}\\log\\left(\\sigma(o_i o_j^T)\\right)-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}(i)}\\log\\left(-\\sigma(o_i o_j^T)\\right)|\\mathcal{L}_{GP}（i）=-\\sum_{j\\in\\mathcal{N}（i）}\\log\\左（\\sigma（o_io_j^T）\\右）-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}（i）}\\log\\左（-\\sigma（o_io_j^T）\\右）",
+      "file": "知识点记录",
       "page": null
     },
     {
-      "ts": 1793933379892,
+      "ts": 1794213517738,
       "via": "火山",
       "pairs": [
         {
-          "en": "特征提取：数据图片通过 一个 ResNet 进行特征提取，接着将提取出来的特征对应的时间序列按照时间先后顺序依次输入 到一系列 RNN Cell 中",
-          "zh": "特征提取：数据图片通过一个ResNet进行特征提取，接着将提取出来的特征对应的时间序列按照时间先后顺序依次输入到一系列RNN Cell中",
+          "en": "首次根据这种对抗训练的想法设计了一个鲁棒性损失函数，并将其引入到基于 RNN 模型股票趋势的预测的任务中去",
+          "zh": "首次根据这种对抗训练的想法设计了一个鲁棒性损失函数，并将其引入到基于RNN模型股票趋势的预测的任务中去",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "zh-Hans"
         }
       ],
-      "sig": "特征提取：数据图片通过 一个 ResNet 进行特征提取，接着将提取出来的特征对应的时间序列按照时间先后顺序依次输入 到一系列 RNN Cell 中|特征提取：数据图片通过一个ResNet进行特征提取，接着将提取出来的特征对应的时间序列按照时间先后顺序依次输入到一系列RNN Cell中",
+      "sig": "首次根据这种对抗训练的想法设计了一个鲁棒性损失函数，并将其引入到基于 RNN 模型股票趋势的预测的任务中去|首次根据这种对抗训练的想法设计了一个鲁棒性损失函数，并将其引入到基于RNN模型股票趋势的预测的任务中去",
+      "file": "98 基于抗噪的 AI 量价模型改进方案 ——因子选股系列之九十八.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794213466414,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Enhancing stock movement prediction with adversarial training. arxiv preprint arxiv:1810.09936.",
+          "zh": "通过对抗性训练增强股票走势预测。arxiv预印本arxiv：1810.09936。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Enhancing stock movement prediction with adversarial training. arxiv preprint arxiv:1810.09936.|通过对抗性训练增强股票走势预测。arxiv预印本arxiv：1810.09936。",
+      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794212781500,
+      "via": "腾讯",
+      "pairs": [
+        {
+          "en": "Bai L, Yao L, Li C, et al. Adaptive graph convolutional recurrent network for traffic forecasting[J]. Advances in neural information processing systems, 2020, 33: 17804- 17815",
+          "zh": "白丽，姚丽，李春，等.自适应图卷积递归网络用于交通量预测[J].神经信息处理系统进展，2020，33：17804- 17815",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Bai L, Yao L, Li C, et al. Adaptive graph convolutional recurrent network for traffic forecasting[J]. Advances in neural information processing systems, 2020, 33: 17804- 17815|白丽，姚丽，李春，等.自适应图卷积递归网络用于交通量预测[J].神经信息处理系统进展，2020，33：17804- 17815",
+      "file": "101 自适应时空图网络周频 alpha 模型 ——因子选股系列之一〇一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794212700131,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Enhancing stock movement prediction with adversarial training.",
+          "zh": "通过对抗性训练增强股票运动预测。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Enhancing stock movement prediction with adversarial training.|通过对抗性训练增强股票运动预测。",
+      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794212448908,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Feng, F., Chen, H., He, X., Ding, J., Sun, M., & Chua, T. S. (2018). Enhancing stock movement prediction with adversarial training. arxiv preprint arxiv:1810.09936.",
+          "zh": "冯，F，陈，H，何，X.，丁，J.，Sun，M.，&Chua，T. S.（2018）。通过对抗性训练增强股票走势预测。arxiv预印本arxiv：1810.09936。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Feng, F., Chen, H., He, X., Ding, J., Sun, M., & Chua, T. S. (2018). Enhancing stock movement prediction with adversarial training. arxiv preprint arxiv:1810.09936.|冯，F，陈，H，何，X.，丁，J.，Sun，M.，&Chua，T. S.（2018）。通过对抗性训练增强股票走势预测。arxiv预印本arxiv：1810.09936。",
+      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794212408482,
+      "via": "腾讯",
+      "pairs": [
+        {
+          "en": "Bai L, Yao L, Li C, et al. Adaptive graph convolutional recurrent network for traffic forecasting[J]. Advances in neural information processing systems, 2020, 33: 17804- 17815",
+          "zh": "白丽，姚丽，李春，等.自适应图卷积递归网络用于交通量预测[J].神经信息处理系统进展，2020，33：17804- 17815",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Bai L, Yao L, Li C, et al. Adaptive graph convolutional recurrent network for traffic forecasting[J]. Advances in neural information processing systems, 2020, 33: 17804- 17815|白丽，姚丽，李春，等.自适应图卷积递归网络用于交通量预测[J].神经信息处理系统进展，2020，33：17804- 17815",
+      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794212363662,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "将图结构直接嵌入 GRU 结构中",
+          "zh": "将图结构直接嵌入GRU结构中",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "将图结构直接嵌入 GRU 结构中|将图结构直接嵌入GRU结构中",
+      "file": "101 自适应时空图网络周频 alpha 模型 ——因子选股系列之一〇一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794212285342,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Feng, F., Chen, H., He, X., Ding, J., Sun, M., & Chua, T. S. (2018). Enhancing stock movement prediction with adversarial training. arxiv preprint arxiv:1810.09936.",
+          "zh": "冯，F，陈，H，何，X.，丁，J.，Sun，M.，&Chua，T. S.（2018）。通过对抗性训练增强股票走势预测。arxiv预印本arxiv：1810.09936。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Feng, F., Chen, H., He, X., Ding, J., Sun, M., & Chua, T. S. (2018). Enhancing stock movement prediction with adversarial training. arxiv preprint arxiv:1810.09936.|冯，F，陈，H，何，X.，丁，J.，Sun，M.，&Chua，T. S.（2018）。通过对抗性训练增强股票走势预测。arxiv预印本arxiv：1810.09936。",
+      "file": "98 基于抗噪的 AI 量价模型改进方案 ——因子选股系列之九十八.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794211523680,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "并将其引入到基于 RNN 模型股票趋势的预测的任务中去。结合该种想法我们设计了以下根据对抗样本计算的正则项损失函数来训练 RNN 模型：Loss = 1 N ∑(f𝜽(𝒙𝒊) - ŷi)2 N i+ 𝜆1 NK2 |(zi,k)i,k T (zi,k)i,k|F + 𝜆2 N ∑(f𝜽(𝒙𝒊𝒂𝒅𝒗) - ŷi)2 N i这里 𝜆1 和 𝜆2 表示正则项的两个超参数，N 表示 batch 的大小，K 表示生成弱因子的个数，损失函数第二项表示弱因子 zi,k 之间内积矩阵的 Frobenius 范数，𝒙𝒊𝒂𝒅𝒗 表示（3）或（4）迭代 M 步最终生成的样本。用通俗的话来说在训练 RNN 的时候，我们不光希望 RNN 对原始数据预测的结果尽可能接近真实标签，我们也希望 RNN 对对抗样本预测的结果尽可能接近真实标签，而这两个目标分别对应损失函数第一和第三项",
+          "zh": "并将其引入到基于RNN模型股票趋势的预测的任务中去.结合该种想法我们设计了以下根据对抗样本计算的正则项损失函数来训练RNN模型： Loss=1 Nل（f𝜽(𝒙𝒊) - y😍i）2 N i+1 NK2|（zi，k）i，k T（zi，k）i，k|F+2 Nل（f𝜽(𝒙𝒊𝒂𝒅𝒗) - y😍i）2 N i这里1和2表示正则项的两个超参数，N表示批量的大小，K表示成弱子的个数，K2表示成弱子的个数，K2表示成弱子的个数，K2表示弱子的个数，K2表示成弱子的个数，K3表示成弱子的个数，K2表示弱子的个数，k之间内积矩阵的Frobenius范数，𝒙𝒊𝒂𝒅𝒗 表示（3）或（4）迭代M步最终生成的样本.用通俗的话来说在训练RNN的时候，我们不光希望RNN对原始数据预测的结果尽可能接近真实标签，我们也希望RNN",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "并将其引入到基于 RNN 模型股票趋势的预测的任务中去。结合该种想法我们设计了以下根据对抗样本计算的正则项损失函数来训练 RNN 模型：Loss = 1 N ∑(f𝜽(𝒙𝒊) - ŷi)2 N i+ 𝜆1 NK2 |(zi,k)i,k T (zi,k)i,k|F + 𝜆2 N ∑(f𝜽(𝒙𝒊𝒂𝒅𝒗) - ŷi)2 N i这里 𝜆1 和 𝜆2 表示正则项的两个超参数，N 表示 batch 的大小，K 表示生成弱因子的个数，损失函数第二项表示弱因子 zi,k 之间内积矩阵的 Frobenius 范数，𝒙𝒊𝒂𝒅𝒗 表示（3）或（4）迭代 M 步最终生成的样本。用通俗的话来说在训练 RNN 的时候，我们不光希望 RNN 对原始数据预测的结果尽可能接近真实标签，我们也希望 RNN 对对抗样本预测的结果尽可能接近真实标签，而这两个目标分别对应损失函数第一和第三项|并将其引入到基于RNN模型股票趋势的预测的任务中去.结合该种想法我们设计了以下根据对抗样本计算的正则项损失函数来训练RNN模型： Loss=1 Nل（f𝜽(𝒙𝒊) - y😍i）2 N i+1 NK2|（zi，k）i，k T（zi，k）i，k|F+2 Nل（f𝜽(𝒙𝒊𝒂𝒅𝒗) - y😍i）2 N i这里1和2表示正则项的两个超参数，N表示批量的大小，K表示成弱子的个数，K2表示成弱子的个数，K2表示成弱子的个数，K2表示弱子的个数，K2表示成弱子的个数，K3表示成弱子的个数，K2表示弱子的个数，k之间内积矩阵的Frobenius范数，𝒙𝒊𝒂𝒅𝒗 表示（3）或（4）迭代M步最终生成的样本.用通俗的话来说在训练RNN的时候，我们不光希望RNN对原始数据预测的结果尽可能接近真实标签，我们也希望RNN",
+      "file": "98 基于抗噪的 AI 量价模型改进方案 ——因子选股系列之九十八.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794210266718,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "\\mathcal{L}_{GP}(i",
+          "zh": "\\数学cal{L}_{GP}（i",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "\\mathcal{L}_{GP}(i|\\数学cal{L}_{GP}（i",
+      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794210024239,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "ℒ𝒢𝒫(i)",
+          "zh": "（i）",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "ℒ𝒢𝒫(i)|（i）",
+      "file": "101 自适应时空图网络周频 alpha 模型 ——因子选股系列之一〇一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794208753290,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "\\mathcal{L}_{GP}(i)=-\\sum_{j\\in\\mathcal{N}(i)}\\log\\left(\\sigma(o_i o_j^T)\\right)-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}(i)}\\log\\left(-\\sigma(o_i o_j^T)\\right)",
+          "zh": "\\mathcal{L}_{GP}（i）=-\\sum_{j\\in\\mathcal{N}（i）}\\log\\左（\\sigma（o_io_j^T）\\右）-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}（i）}\\log\\左（-\\sigma（o_io_j^T）\\右）",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "\\mathcal{L}_{GP}(i)=-\\sum_{j\\in\\mathcal{N}(i)}\\log\\left(\\sigma(o_i o_j^T)\\right)-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}(i)}\\log\\left(-\\sigma(o_i o_j^T)\\right)|\\mathcal{L}_{GP}（i）=-\\sum_{j\\in\\mathcal{N}（i）}\\log\\左（\\sigma（o_io_j^T）\\右）-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}（i）}\\log\\左（-\\sigma（o_io_j^T）\\右）",
+      "file": "知识点记录",
+      "page": null
+    },
+    {
+      "ts": 1794208547987,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW",
+          "zh": "Z=\\左（I+\\操作员名称{soft max}\\左（\\操作员名称{Re LU}（MM^T）\\右）\\右）X W",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW|Z=\\左（I+\\操作员名称{soft max}\\左（\\操作员名称{Re LU}（MM^T）\\右）\\右）X W",
+      "file": "知识点记录",
+      "page": null
+    },
+    {
+      "ts": 1794208482981,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "$$Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW$$",
+          "zh": "$$Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW$$",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "$$Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW$$|$$Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW$$",
+      "file": "知识点记录",
+      "page": null
+    },
+    {
+      "ts": 1794208476177,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW",
+          "zh": "Z=\\左（I+\\操作员名称{soft max}\\左（\\操作员名称{Re LU}（MM^T）\\右）\\右）X W",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW|Z=\\左（I+\\操作员名称{soft max}\\左（\\操作员名称{Re LU}（MM^T）\\右）\\右）X W",
+      "file": "知识点记录",
+      "page": null
+    },
+    {
+      "ts": 1794205558799,
+      "via": "腾讯",
+      "pairs": [
+        {
+          "en": "中位数、离差、均值和标准差参数都是使用 2016 年以前数据进行估计",
+          "zh": "中位数、离差、均值和标准差参数都是使用 2016 年以前数据进行估计",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": ""
+        }
+      ],
+      "sig": "中位数、离差、均值和标准差参数都是使用 2016 年以前数据进行估计|中位数、离差、均值和标准差参数都是使用 2016 年以前数据进行估计",
       "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
       "page": null
     },
     {
-      "ts": 1793933276050,
+      "ts": 1794205391407,
       "via": "火山",
       "pairs": [
         {
-          "en": "数据图片通过一个 ResNet 进行特征提取，接着将提取出来的特征对应的时间序列按照时间先后顺序依次输入到一系列 RNN Cell 中",
-          "zh": "数据图片通过一个ResNet进行特征提取，接着将提取出来的特征对应的时间序列按照时间先后顺序依次输入到一系列RNN Cell中",
+          "en": "用均值和标准差对数据进行标准化",
+          "zh": "用均值和标准差对数据进行标准化",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "zh-Hans"
         }
       ],
-      "sig": "数据图片通过一个 ResNet 进行特征提取，接着将提取出来的特征对应的时间序列按照时间先后顺序依次输入到一系列 RNN Cell 中|数据图片通过一个ResNet进行特征提取，接着将提取出来的特征对应的时间序列按照时间先后顺序依次输入到一系列RNN Cell中",
-      "file": "96 基于残差网络的端到端因子挖掘模型 ——因子选股系列之九十六.pdf",
-      "page": null
-    },
-    {
-      "ts": 1793933165401,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "把日内八个“半小时 k 线”对应的高开低收、amt 字段作为一张数 据图片（字段预处理方法采用高开低收价格分别除以前一天收盘价，成交额除以流通市值），把 过去三十个交易日每天的数据图片拼成一个长度为 30 的“图片”时序数据。此时数据图片大小为 5×8。",
-          "zh": "把日内八个\"半小时k线\"对应的高开低收， amt字段作为一张数据图片（字段预处理方法采用高开低收价格分别除以前一天收盘价，成交额除以流通市值），把过去三十个交易日日每天的数据图片拼成一个长度为30的\"图片\"时序数据.此时数据图片大小为5×8.",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "把日内八个“半小时 k 线”对应的高开低收、amt 字段作为一张数 据图片（字段预处理方法采用高开低收价格分别除以前一天收盘价，成交额除以流通市值），把 过去三十个交易日每天的数据图片拼成一个长度为 30 的“图片”时序数据。此时数据图片大小为 5×8。|把日内八个\"半小时k线\"对应的高开低收， amt字段作为一张数据图片（字段预处理方法采用高开低收价格分别除以前一天收盘价，成交额除以流通市值），把过去三十个交易日日每天的数据图片拼成一个长度为30的\"图片\"时序数据.此时数据图片大小为5×8.",
+      "sig": "用均值和标准差对数据进行标准化|用均值和标准差对数据进行标准化",
       "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
       "page": null
     },
     {
-      "ts": 1793932661478,
+      "ts": 1794202424144,
       "via": "火山",
       "pairs": [
         {
-          "en": "把日内八个“半小时 k 线”对应的高开低收、amt 字段作为一张数据图片（字段预处理方法采用高开低收价格分别除以前一天收盘价，成交额除以流通市值），把过去三十个交易日每天的数据图片拼成一个长度为 30 的“图片”时序数据。此时数据图片大小为5×8。",
-          "zh": "把日内八个\"半小时k线\"对应的高开低收， amt字段作为一张数据图片（字段预处理方法采用高开低收价格分别除以前一天收盘价，成交额除以流通市值），把过去三十个交易日每天的数据图片拼成一个长度为30的\"图片\"时序数据.此时数据图片大为5×8.",
+          "en": "Drawing 2026-11-09 13.33.28.excalidraw",
+          "zh": "绘图2026-11-0913.33.28. excalidaw",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
+          "detectedLanguage": "en"
         }
       ],
-      "sig": "把日内八个“半小时 k 线”对应的高开低收、amt 字段作为一张数据图片（字段预处理方法采用高开低收价格分别除以前一天收盘价，成交额除以流通市值），把过去三十个交易日每天的数据图片拼成一个长度为 30 的“图片”时序数据。此时数据图片大小为5×8。|把日内八个\"半小时k线\"对应的高开低收， amt字段作为一张数据图片（字段预处理方法采用高开低收价格分别除以前一天收盘价，成交额除以流通市值），把过去三十个交易日每天的数据图片拼成一个长度为30的\"图片\"时序数据.此时数据图片大为5×8.",
+      "sig": "Drawing 2026-11-09 13.33.28.excalidraw|绘图2026-11-0913.33.28. excalidaw",
       "file": "",
       "page": null
     },
     {
-      "ts": 1793932546083,
+      "ts": 1794202003880,
       "via": "火山",
       "pairs": [
         {
-          "en": "过去 150 个交易日按照每五个交易日高开低收、vwap、turnover字段作为一张数据图片（字段预处理方法采用高开低收、vwap 字段按照时序都除以最后一天收盘价，turnover 不做处理），最终得到时序长度为 30 的“图片”时序数据",
-          "zh": "过去150个交易日按照每五个交易日高开低收， vwap，成交量字段作为一张数据图片（字段预处理方法采用高开低收，vwap字段按照时序都除以最后一天收盘价，成交量不做处理），最终得到时序长度为30的\"图片\"时序数据",
+          "en": "考虑IC和组合收益的不一致性）",
+          "zh": "考虑IC和组合收益的不一致性）",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "zh-Hans"
         }
       ],
-      "sig": "过去 150 个交易日按照每五个交易日高开低收、vwap、turnover字段作为一张数据图片（字段预处理方法采用高开低收、vwap 字段按照时序都除以最后一天收盘价，turnover 不做处理），最终得到时序长度为 30 的“图片”时序数据|过去150个交易日按照每五个交易日高开低收， vwap，成交量字段作为一张数据图片（字段预处理方法采用高开低收，vwap字段按照时序都除以最后一天收盘价，成交量不做处理），最终得到时序长度为30的\"图片\"时序数据",
-      "file": "96 基于残差网络的端到端因子挖掘模型 ——因子选股系列之九十六.pdf",
+      "sig": "考虑IC和组合收益的不一致性）|考虑IC和组合收益的不一致性）",
+      "file": "",
       "page": null
     },
     {
-      "ts": 1793932541752,
+      "ts": 1794201990514,
       "via": "火山",
       "pairs": [
         {
-          "en": "过去 150 个交易日按照每五个交易日高开低收、vwap、turnover字段作为一张数据图片（字段预处理方法采用高开低收、vwap 字段按照时序都除以最后一天收盘价，turnover 不做处理），最终得到时序",
-          "zh": "过去150个交易日按照每五个交易日高开低收， vwap，成交量字段作为一张数据图片（字段预处理方法采用高开低收，vwap字段按照时序都除以最后一天收盘价，成交量不做处理），最终得到时序",
+          "en": "（考虑IC和组合收益的不一致性）",
+          "zh": "考虑IC和组合收益的不一致性",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "zh-Hans"
         }
       ],
-      "sig": "过去 150 个交易日按照每五个交易日高开低收、vwap、turnover字段作为一张数据图片（字段预处理方法采用高开低收、vwap 字段按照时序都除以最后一天收盘价，turnover 不做处理），最终得到时序|过去150个交易日按照每五个交易日高开低收， vwap，成交量字段作为一张数据图片（字段预处理方法采用高开低收，vwap字段按照时序都除以最后一天收盘价，成交量不做处理），最终得到时序",
-      "file": "96 基于残差网络的端到端因子挖掘模型 ——因子选股系列之九十六.pdf",
+      "sig": "（考虑IC和组合收益的不一致性）|考虑IC和组合收益的不一致性",
+      "file": "",
       "page": null
     },
     {
-      "ts": 1793932478597,
+      "ts": 1794201635254,
       "via": "火山",
       "pairs": [
         {
-          "en": "Level-2(l2)数据集：将原始Level-2数据（证券交易所提供的一类更详细的行情数据）通过人工合成成日频因子的方式形成的。2. 周度(week)数据集：把将五个交易日日 K 线形成矩阵数据，然后通过 ResNets 提取出周频的特征向量而形成的20230824_dfzq_resnet_e2e, 页面 6 3. 日度(day)数据集：日度k线数据集4. 分钟线（ms)数据集：把将每日半小时 K 线形成矩阵数据，然后通过 ResNets 提取出日频的特征向量而形成的20230824_dfzq_resnet_e2e, 页面 6",
-          "zh": "二级（l2）数据集：将原始二级数据（证券商提供的一类更详细的行情数据）通过人工合成成日频因子的方式形成的。2.周度（周）数据集：把将五个交易日日K线形成矩阵数据，然后通过ResNets提取出周频的特征向量而形成的20230824_dfzq_resnet_e2e，页面6 3.日度（日）数据集：日度k线数据集4.分钟线（ms）数据集：把每日半小时K线形成矩阵数据，然后通过ResNets提取出日频的特征向量而形成的20230824_dfzq_resnet_e2e，页面6",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "Level-2(l2)数据集：将原始Level-2数据（证券交易所提供的一类更详细的行情数据）通过人工合成成日频因子的方式形成的。2. 周度(week)数据集：把将五个交易日日 K 线形成矩阵数据，然后通过 ResNets 提取出周频的特征向量而形成的20230824_dfzq_resnet_e2e, 页面 6 3. 日度(day)数据集：日度k线数据集4. 分钟线（ms)数据集：把将每日半小时 K 线形成矩阵数据，然后通过 ResNets 提取出日频的特征向量而形成的20230824_dfzq_resnet_e2e, 页面 6|二级（l2）数据集：将原始二级数据（证券商提供的一类更详细的行情数据）通过人工合成成日频因子的方式形成的。2.周度（周）数据集：把将五个交易日日K线形成矩阵数据，然后通过ResNets提取出周频的特征向量而形成的20230824_dfzq_resnet_e2e，页面6 3.日度（日）数据集：日度k线数据集4.分钟线（ms）数据集：把每日半小时K线形成矩阵数据，然后通过ResNets提取出日频的特征向量而形成的20230824_dfzq_resnet_e2e，页面6",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
-      "page": null
-    },
-    {
-      "ts": 1793932477308,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "Level-2(l2)数据集：将原始Level-2数据（证券交易所提供的一类更详细的行情数据）通过人工合成成日频因子的方式形成的。2. 周度(week)数据集：把将五个交易日日 K 线形成矩阵数据，然后通过 ResNets 提取出周频的特征向量而形成的[[96 基于残差网络的端到端因子挖掘模型 ——因子选股系列之九十六.pdf#page=6&selection=84,3,148,1|20230824_dfzq_resnet_e2e, 页面 6]]3. 日度(day)数据集：日度k线数据集4. 分钟线（ms)数据集：把将每日半小时 K 线形成矩阵数据，然后通过 ResNets 提取出日频的特征向量而形成的[[96 基于残差网络的端到端因子挖掘模型 ——因子选股系列之九十六.pdf#page=6&selection=155,3,184,1|20230824_dfzq_resnet_e2e, 页面 6]]",
-          "zh": "二级（l2）数据集：将原始二级（Level-2）数据（证券业提供的一类详细的行情数据）通过人工合成成日频因子的方式形成的。2.周度（ms）数据集：把将五个交易日日K线形成矩阵数据，然后通过ResNets提取出周频的特征向量而形成的[[96基于残差网络的端到端因子挖掘模型--因子股选股系列之九十六. pdf#page=6&选择=84,3,148,1|20230824_dfzq_resnet_e2e，页面6]]3.日度（day）数据集：日度k线数据集4.分钟线（ms）数据集：把将每日半小时K线形成矩阵数据，然后通过ResNets提取出日频的特征向量而形成的[[96基于残差网络的端到端因子挖掘模型--因子选股系列之九十六.pdf#page=6&选择=155,3,184,1|20230824_dfzq_resnet_e2e，6页面]",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "Level-2(l2)数据集：将原始Level-2数据（证券交易所提供的一类更详细的行情数据）通过人工合成成日频因子的方式形成的。2. 周度(week)数据集：把将五个交易日日 K 线形成矩阵数据，然后通过 ResNets 提取出周频的特征向量而形成的[[96 基于残差网络的端到端因子挖掘模型 ——因子选股系列之九十六.pdf#page=6&selection=84,3,148,1|20230824_dfzq_resnet_e2e, 页面 6]]3. 日度(day)数据集：日度k线数据集4. 分钟线（ms)数据集：把将每日半小时 K 线形成矩阵数据，然后通过 ResNets 提取出日频的特征向量而形成的[[96 基于残差网络的端到端因子挖掘模型 ——因子选股系列之九十六.pdf#page=6&selection=155,3,184,1|20230824_dfzq_resnet_e2e, 页面 6]]|二级（l2）数据集：将原始二级（Level-2）数据（证券业提供的一类详细的行情数据）通过人工合成成日频因子的方式形成的。2.周度（ms）数据集：把将五个交易日日K线形成矩阵数据，然后通过ResNets提取出周频的特征向量而形成的[[96基于残差网络的端到端因子挖掘模型--因子股选股系列之九十六. pdf#page=6&选择=84,3,148,1|20230824_dfzq_resnet_e2e，页面6]]3.日度（day）数据集：日度k线数据集4.分钟线（ms）数据集：把将每日半小时K线形成矩阵数据，然后通过ResNets提取出日频的特征向量而形成的[[96基于残差网络的端到端因子挖掘模型--因子选股系列之九十六.pdf#page=6&选择=155,3,184,1|20230824_dfzq_resnet_e2e，6页面]",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
-      "page": null
-    },
-    {
-      "ts": 1793932425800,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "Level-2(l2)数据集：将原始Level-2数据（证券交易所提供的一类更详细的行情数据）通过人工合成成日频因子的方式形成的。2. 周度(week)数据集：把将五个交易日日 K 线形成矩阵数据，然后通过 ResNets 提取出周频的特征向量而形成的20230824_dfzq_resnet_e2e, 页面 6 3. 日度(day)数据集：日度k线数据集4. 分钟线（ms)数据集：把将每日半小时 K 线形成矩阵数据，然后通过 ResNets 提取出日频的特征向量而形成的20230824_dfzq_resnet_e2e, 页面 6",
-          "zh": "二级（l2）数据集：将原始二级数据（证券商提供的一类更详细的行情数据）通过人工合成成日频因子的方式形成的。2.周度（周）数据集：把将五个交易日日K线形成矩阵数据，然后通过ResNets提取出周频的特征向量而形成的20230824_dfzq_resnet_e2e，页面6 3.日度（日）数据集：日度k线数据集4.分钟线（ms）数据集：把每日半小时K线形成矩阵数据，然后通过ResNets提取出日频的特征向量而形成的20230824_dfzq_resnet_e2e，页面6",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "Level-2(l2)数据集：将原始Level-2数据（证券交易所提供的一类更详细的行情数据）通过人工合成成日频因子的方式形成的。2. 周度(week)数据集：把将五个交易日日 K 线形成矩阵数据，然后通过 ResNets 提取出周频的特征向量而形成的20230824_dfzq_resnet_e2e, 页面 6 3. 日度(day)数据集：日度k线数据集4. 分钟线（ms)数据集：把将每日半小时 K 线形成矩阵数据，然后通过 ResNets 提取出日频的特征向量而形成的20230824_dfzq_resnet_e2e, 页面 6|二级（l2）数据集：将原始二级数据（证券商提供的一类更详细的行情数据）通过人工合成成日频因子的方式形成的。2.周度（周）数据集：把将五个交易日日K线形成矩阵数据，然后通过ResNets提取出周频的特征向量而形成的20230824_dfzq_resnet_e2e，页面6 3.日度（日）数据集：日度k线数据集4.分钟线（ms）数据集：把每日半小时K线形成矩阵数据，然后通过ResNets提取出日频的特征向量而形成的20230824_dfzq_resnet_e2e，页面6",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
-      "page": null
-    },
-    {
-      "ts": 1793931931806,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "日度(day)数据集",
-          "zh": "日度数据集",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "日度(day)数据集|日度数据集",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
-      "page": null
-    },
-    {
-      "ts": 1793927653986,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "To this end, we propose two adaptive modules for enhancing Graph Convolutional Network (GCN) with new capabilities: 1) a Node Adaptive Parameter Learning (NAPL) module to capture node-speciﬁc patterns; 2) a Data Adaptive Graph Generation (DAGG) module to infer the inter-dependencies among different trafﬁc series automatically.",
-          "zh": "为此，我们提出了两个自适应模块来增强图卷积网络（GCN）的新功能： 1）节点自适应参数学习（NAPL）模块来捕获节点特定模式；2）数据自适应图生成（DAGG）模块自动推断不同交通序列之间的相互依赖关系。",
+          "en": "(R_f",
+          "zh": "（R_f",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "To this end, we propose two adaptive modules for enhancing Graph Convolutional Network (GCN) with new capabilities: 1) a Node Adaptive Parameter Learning (NAPL) module to capture node-speciﬁc patterns; 2) a Data Adaptive Graph Generation (DAGG) module to infer the inter-dependencies among different trafﬁc series automatically.|为此，我们提出了两个自适应模块来增强图卷积网络（GCN）的新功能： 1）节点自适应参数学习（NAPL）模块来捕获节点特定模式；2）数据自适应图生成（DAGG）模块自动推断不同交通序列之间的相互依赖关系。",
-      "file": "NeurIPS-2020-adaptive-graph-convolutional-recurrent-network-for-traffic-forecasting-Paper.pdf",
+      "sig": "(R_f|（R_f",
+      "file": "知识点记录",
       "page": null
     },
     {
-      "ts": 1793927619218,
+      "ts": 1794201627678,
       "via": "火山",
       "pairs": [
         {
-          "en": "Recent works focus on designing complicated graph neural network architectures to capture shared patterns with the help of pre-deﬁned graphs. In this paper, we argue that learning node-speciﬁc patterns is essential for trafﬁc forecasting while the pre-deﬁned graph is avoidable.",
-          "zh": "最近的工作集中在设计复杂的图神经网络架构以借助预定义图捕获共享模式。在本文中，我们认为学习节点特定模式对于交通预测至关重要，而预定义图是可以避免的。",
+          "en": "$R_p$",
+          "zh": "$R_p$",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Recent works focus on designing complicated graph neural network architectures to capture shared patterns with the help of pre-deﬁned graphs. In this paper, we argue that learning node-speciﬁc patterns is essential for trafﬁc forecasting while the pre-deﬁned graph is avoidable.|最近的工作集中在设计复杂的图神经网络架构以借助预定义图捕获共享模式。在本文中，我们认为学习节点特定模式对于交通预测至关重要，而预定义图是可以避免的。",
-      "file": "NeurIPS-2020-adaptive-graph-convolutional-recurrent-network-for-traffic-forecasting-Paper.pdf",
+      "sig": "$R_p$|$R_p$",
+      "file": "知识点记录",
       "page": null
     },
     {
-      "ts": 1793927417620,
+      "ts": 1794201611129,
       "via": "火山",
       "pairs": [
         {
-          "en": "Modeling complex spatial and temporal correlations in the correlated time series data is indispensable for understanding the trafﬁc dynamics and predicting the future status of an evolving trafﬁc system.",
-          "zh": "对相关时间序列数据中复杂的空间和时间相关性进行建模对于理解交通动态和预测不断发展的交通系统的未来状态是必不可少的。",
+          "en": "R_p",
+          "zh": "R_p",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Modeling complex spatial and temporal correlations in the correlated time series data is indispensable for understanding the trafﬁc dynamics and predicting the future status of an evolving trafﬁc system.|对相关时间序列数据中复杂的空间和时间相关性进行建模对于理解交通动态和预测不断发展的交通系统的未来状态是必不可少的。",
-      "file": "NeurIPS-2020-adaptive-graph-convolutional-recurrent-network-for-traffic-forecasting-Paper.pdf",
+      "sig": "R_p|R_p",
+      "file": "知识点记录",
       "page": null
     },
     {
-      "ts": 1793927379029,
+      "ts": 1794201542048,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "$$Sharpe=\\frac{E(R_p)-R_f}{\\sigma_p}$$",
+          "zh": "$$Sharpe=\\frac{E(R_p)-R_f}{\\sigma_p}$$",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "$$Sharpe=\\frac{E(R_p)-R_f}{\\sigma_p}$$|$$Sharpe=\\frac{E(R_p)-R_f}{\\sigma_p}$$",
+      "file": "知识点记录",
+      "page": null
+    },
+    {
+      "ts": 1794201327430,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "因子在基准成分股内的多头对冲组合夏普率",
+          "zh": "因子在基准成分股内的多头对冲组合夏普率",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "因子在基准成分股内的多头对冲组合夏普率|因子在基准成分股内的多头对冲组合夏普率",
+      "file": "74 神经网络日频 alpha 模型初步实践 ——因子选股系列之七十四.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794193998721,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "估值因子的风险化和量价因子的拥挤",
+          "zh": "估值因子的风险化和量价因子的拥挤",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "估值因子的风险化和量价因子的拥挤|估值因子的风险化和量价因子的拥挤",
+      "file": "74 神经网络日频 alpha 模型初步实践 ——因子选股系列之七十四.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794192634484,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "将RNN系列三个模型学到的结果拼接交给加权模型打分",
+          "zh": "将RN系列三个模型学到的结果拼接交给加权模型打分",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "将RNN系列三个模型学到的结果拼接交给加权模型打分|将RN系列三个模型学到的结果拼接交给加权模型打分",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794192561037,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "odeling complex spatial and temporal correlations in the correlated time series data is indispensable for understanding the trafﬁc dynamics and predicting the future status of an evolving trafﬁc system.",
-          "zh": "对相关时间序列数据中复杂的空间和时间相关性进行建模，对于理解交通动态和预测不断发展的交通系统的未来状态是必不可少的。",
+          "en": "如果单模型表现相差不大的情况下多模型平均可以提升总体表现，但是改善幅度存在上限，该上限与模型间的相关性有关",
+          "zh": "如果单模型表现相差不大的情况下多模型平均可以提升总体表现，但是改善幅度存在上限，该上限与模型间的相关性有关",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
+          "detectedLanguage": ""
         }
       ],
-      "sig": "odeling complex spatial and temporal correlations in the correlated time series data is indispensable for understanding the trafﬁc dynamics and predicting the future status of an evolving trafﬁc system.|对相关时间序列数据中复杂的空间和时间相关性进行建模，对于理解交通动态和预测不断发展的交通系统的未来状态是必不可少的。",
-      "file": "NeurIPS-2020-adaptive-graph-convolutional-recurrent-network-for-traffic-forecasting-Paper.pdf",
+      "sig": "如果单模型表现相差不大的情况下多模型平均可以提升总体表现，但是改善幅度存在上限，该上限与模型间的相关性有关|如果单模型表现相差不大的情况下多模型平均可以提升总体表现，但是改善幅度存在上限，该上限与模型间的相关性有关",
+      "file": "83 多模型学习量价时序特征 ——因子选股系列之八十三.pdf",
       "page": null
     },
     {
-      "ts": 1793927360842,
-      "via": "火山",
+      "ts": 1794191973972,
+      "via": "百度",
       "pairs": [
         {
-          "en": "Modeling complex spatial and temporal correlations in the correlated time series data is indispensable for understanding the trafﬁc dynamics and predicting the future status of an evolving trafﬁc system.",
-          "zh": "对相关时间序列数据中复杂的空间和时间相关性进行建模对于理解交通动态和预测不断发展的交通系统的未来状态是必不可少的。",
+          "en": "Transformer",
+          "zh": "n. 变压器； 促使变化的（或人物），改革者\nn. 变压器( transformer的名词复数 )； 促使变化的（或人物），改革者\n[电影]变形金刚\n变压器油",
+          "dict": true,
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Modeling complex spatial and temporal correlations in the correlated time series data is indispensable for understanding the trafﬁc dynamics and predicting the future status of an evolving trafﬁc system.|对相关时间序列数据中复杂的空间和时间相关性进行建模对于理解交通动态和预测不断发展的交通系统的未来状态是必不可少的。",
-      "file": "NeurIPS-2020-adaptive-graph-convolutional-recurrent-network-for-traffic-forecasting-Paper.pdf",
+      "sig": "Transformer|n. 变压器； 促使变化的（或人物），改革者\nn. 变压器( transformer的名词复数 )； 促使变化的（或人物），改革者\n[电影]变形金刚\n变压器油",
+      "file": "83 多模型学习量价时序特征 ——因子选股系列之八十三.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794191952590,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Kazemi（2019）提出的",
+          "zh": "Kaz emi（2019）提出的",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "Kazemi（2019）提出的|Kaz emi（2019）提出的",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794191669332,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "模型RankIC均值和IC_IR综合打分的多头单调性和 top 组合收益maxic_一元接近\n\nlgbols_一元接近显著优于maxic_一元maxic_多元接近\n\nlgbols_多元接近优于maxic_多元",
+          "zh": "模型RankIC均值和IC_IR综合打分的多头单调性和组合收益maxic_一元接近 lgbols_一元接近显著优于maxic_一元maxic_多元接近 lgbols_多元接近优于maxic_多元",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "模型RankIC均值和IC_IR综合打分的多头单调性和 top 组合收益maxic_一元接近\n\nlgbols_一元接近显著优于maxic_一元maxic_多元接近\n\nlgbols_多元接近优于maxic_多元|模型RankIC均值和IC_IR综合打分的多头单调性和组合收益maxic_一元接近 lgbols_一元接近显著优于maxic_一元maxic_多元接近 lgbols_多元接近优于maxic_多元",
+      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
+      "page": null
+    },
+    {
+      "ts": 1794191213530,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "除了 DNN 大体上还是 RNN、CNN和 Transformer 三种",
+          "zh": "除了DNN大体上还是RNN CNN和Transtors三种",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "除了 DNN 大体上还是 RNN、CNN和 Transformer 三种|除了DNN大体上还是RNN CNN和Transtors三种",
+      "file": "83 多模型学习量价时序特征 ——因子选股系列之八十三.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794189974195,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "换手约束下的周度调仓策略应该适度拉长收益率预测周期",
+          "zh": "换手约束下的周度调仓策略应该适度拉长收益率预测周期",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "换手约束下的周度调仓策略应该适度拉长收益率预测周期|换手约束下的周度调仓策略应该适度拉长收益率预测周期",
+      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794189904088,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "共 10 个交易日的收益率作为学习",
+          "zh": "共10个交易日的收益率作为学习",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "共 10 个交易日的收益率作为学习|共10个交易日的收益率作为学习",
+      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794189361021,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "综合打分的多头单调性和 top 组合收益",
+          "zh": "综合打分的多头单调性和最高组合收益",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "综合打分的多头单调性和 top 组合收益|综合打分的多头单调性和最高组合收益",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794189263526,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "T+1 收盘至 T+11 收盘的涨跌幅",
+          "zh": "T+1收盘至T+11收盘的涨跌幅",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "T+1 收盘至 T+11 收盘的涨跌幅|T+1收盘至T+11收盘的涨跌幅",
+      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
+      "page": null
+    },
+    {
+      "ts": 1794188767466,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "原始量价数据集 rawbar 的选股效果上并没有明显比精心设计特征的 mschars 弱（RankIC 略低但 top 组合收益率略高）",
+          "zh": "原始量价数据集rawbar的选股效果上并没有明显比精心设计特征的mschars弱（RankIC略低但最高组合收益率略高）",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "原始量价数据集 rawbar 的选股效果上并没有明显比精心设计特征的 mschars 弱（RankIC 略低但 top 组合收益率略高）|原始量价数据集rawbar的选股效果上并没有明显比精心设计特征的mschars弱（RankIC略低但最高组合收益率略高）",
+      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794188681347,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "T+1 收盘至 T+11 收盘的涨跌幅",
+          "zh": "T+1收盘至T+11收盘的涨跌幅",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "T+1 收盘至 T+11 收盘的涨跌幅|T+1收盘至T+11收盘的涨跌幅",
+      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
+      "page": null
+    },
+    {
+      "ts": 1794188556948,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "只用近期的数据去训练网络",
+          "zh": "只用近期的数据去训练网络",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "只用近期的数据去训练网络|只用近期的数据去训练网络",
+      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794187507040,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "各个数据集一元因子单元的选股效果普遍弱于多元因子单元，也就是说用一个时序模型生成唯一一个 alpha 预测不如生成多个预测",
+          "zh": "各个数据集一元因子单元的选股效果普遍弱于多元因子单元，也就是说用一个时序模型生成唯一一个alpha预测不如生成多个预测",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "各个数据集一元因子单元的选股效果普遍弱于多元因子单元，也就是说用一个时序模型生成唯一一个 alpha 预测不如生成多个预测|各个数据集一元因子单元的选股效果普遍弱于多元因子单元，也就是说用一个时序模型生成唯一一个alpha预测不如生成多个预测",
+      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794186669891,
+      "via": "腾讯",
+      "pairs": [
+        {
+          "en": "5 次独立训练的平均结果",
+          "zh": "5 次独立训练的平均结果",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": ""
+        }
+      ],
+      "sig": "5 次独立训练的平均结果|5 次独立训练的平均结果",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794186655355,
+      "via": "腾讯",
+      "pairs": [
+        {
+          "en": "采用 T+1 收盘至 T+11 收盘的涨跌幅",
+          "zh": "采用 T+1 收盘至 T+11 收盘的涨跌幅",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": ""
+        }
+      ],
+      "sig": "采用 T+1 收盘至 T+11 收盘的涨跌幅|采用 T+1 收盘至 T+11 收盘的涨跌幅",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794186537269,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "《神经网络日频 alpha 模型初步实践》我们取的时序长度为 60 个交易日，经测算将时序长度由 60 降低到 30 后选股表现几乎没有变化，但是模型训练时长和内存占用有较大幅度降低",
+          "zh": "\"神经网络日频alpha模型初步实践\"我们取的时序长度为60个交易日，经测算将时序长度由60降低到30后选股表现几乎没有变化，但是模型训练时长和内存占用有较大幅度降低",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "《神经网络日频 alpha 模型初步实践》我们取的时序长度为 60 个交易日，经测算将时序长度由 60 降低到 30 后选股表现几乎没有变化，但是模型训练时长和内存占用有较大幅度降低|\"神经网络日频alpha模型初步实践\"我们取的时序长度为60个交易日，经测算将时序长度由60降低到30后选股表现几乎没有变化，但是模型训练时长和内存占用有较大幅度降低",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794186455379,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "为了不引入未来信息，上述 3 个数据集预处理过程中的参数估计由 2016 年之前的数据估计。",
+          "zh": "为了不引入未来信息，上述3个数据集预处理过程中的参数估计由2016年之前的数据估计。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "为了不引入未来信息，上述 3 个数据集预处理过程中的参数估计由 2016 年之前的数据估计。|为了不引入未来信息，上述3个数据集预处理过程中的参数估计由2016年之前的数据估计。",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794186239893,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "本文涉及的因子检验和组合测试起止于 20161230 和 20220228，样本空间为中证全指 同期成分股",
+          "zh": "本文涉及的因子检验和组合测试起止于20161230和20220228，样本空间为中证全指同期成分股",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "本文涉及的因子检验和组合测试起止于 20161230 和 20220228，样本空间为中证全指 同期成分股|本文涉及的因子检验和组合测试起止于20161230和20220228，样本空间为中证全指同期成分股",
+      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
+      "page": null
+    },
+    {
+      "ts": 1794186129485,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "数据集 l2chars 和 mschars之所以分为两个数据集是因为高质量的 L2 数据从 2013 年下旬才能够获取，而分钟数据的起始日期较早，两个数据集可获取的时间区间不一样。另外，部分 L2 特征计算涉及到逐笔委托数据，而上交所逐笔委托数据自 2021 年 5 月才开始对外商业提供，所以部分 L2 特征的上交所部分早期没有取值，我们在标准化之后用零填充。",
+          "zh": "另外，部分L2特征计算涉及到逐笔委托数据，而上交所逐笔委托数据自2021年5月才开始对外商业提供，所以部分L2特征值的上交所部分早产有取值，我们在标准化之后用零填充。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "数据集 l2chars 和 mschars之所以分为两个数据集是因为高质量的 L2 数据从 2013 年下旬才能够获取，而分钟数据的起始日期较早，两个数据集可获取的时间区间不一样。另外，部分 L2 特征计算涉及到逐笔委托数据，而上交所逐笔委托数据自 2021 年 5 月才开始对外商业提供，所以部分 L2 特征的上交所部分早期没有取值，我们在标准化之后用零填充。|另外，部分L2特征计算涉及到逐笔委托数据，而上交所逐笔委托数据自2021年5月才开始对外商业提供，所以部分L2特征值的上交所部分早产有取值，我们在标准化之后用零填充。",
+      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
       "page": null
     }
   ],
