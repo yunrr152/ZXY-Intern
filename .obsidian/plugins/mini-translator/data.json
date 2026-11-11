@@ -49,804 +49,803 @@
   "fullHtml": false,
   "history": [
     {
-      "ts": 1794214147176,
+      "ts": 1794386889675,
       "via": "火山",
       "pairs": [
         {
-          "en": "将每个交易日截面个股的振幅（即（最高价-最低价）/前收盘价）和个股的换手率作为输入，利用机器学习方法将每个交易日截面所有股票相应的数据作为输入进行半监督学习，根据机器学习模型的输出来判断该交易日个股是否属于异常",
-          "zh": "将每个交易日截面个股的振幅（即（最高价-最低价）/前收盘价）和个股的换手率作为输入，利用机器学习方法将每个交易日截面所有股票相应的数据作为输入进行半监督学习，根据机器学习模型的输出来判断该交易日个股是否属于异常",
+          "en": "As such, we consider constructing data by ourselves, which is accessible through: https://github.com/hennande/Temporal_Relational_Stock_Ranking. Specifically, we collect the stocks from the NASDAQ and NYSE markets that have transaction records between 01/02/2013 and 12/08/2017, obtaining 3, 274 and 3, 163 stocks respectively. Note that we select these two markets for their representative properties that NASDAQ is more volatile whereas NYSE is more stable [ 33]. Furthermore, we perform a filtering on the stocks by retaining the stocks satisfying the two conditions: 1) have been traded on more than 98% of trading days since 01/02/2013; 2) have never been traded at less than five dollars per share during the collection period. It should be noted that the first condition is based on concerns that intermittent sequences may bring abnormal patterns; the second condition ensures that the selected stocks are not penny stocks7, which are",
+          "zh": "因此，我们考虑自己构建数据，可以通过以下方式访问：https://github.com/hennande/Temporal_Relational_Stock_Ranking。具体来说，我们从纳斯达克和纽约证券交易所市场收集01/02/2013和12/08/2017之间有交易记录的股票，分别获得3,274和3,163只股票。请注意，我们选择这两个市场是因为它们的代表性属性，即纳斯达克更易波动，而纽约证券交易所更稳定[33]。此外，我们通过保留满足以下两个条件的股票来对股票进行过滤： 1）自01/02/2013以来超过98%的交易日都在交易；2）在收集期间从未以每股5美元的价格交易。 应当注意，第一个条件是基于对间歇性序列可能带来异常模式的担忧；第二个条件确保所选股票不是细价股7，它们是",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
+          "detectedLanguage": "en"
         }
       ],
-      "sig": "将每个交易日截面个股的振幅（即（最高价-最低价）/前收盘价）和个股的换手率作为输入，利用机器学习方法将每个交易日截面所有股票相应的数据作为输入进行半监督学习，根据机器学习模型的输出来判断该交易日个股是否属于异常|将每个交易日截面个股的振幅（即（最高价-最低价）/前收盘价）和个股的换手率作为输入，利用机器学习方法将每个交易日截面所有股票相应的数据作为输入进行半监督学习，根据机器学习模型的输出来判断该交易日个股是否属于异常",
-      "file": "98 基于抗噪的 AI 量价模型改进方案 ——因子选股系列之九十八.pdf",
+      "sig": "As such, we consider constructing data by ourselves, which is accessible through: https://github.com/hennande/Temporal_Relational_Stock_Ranking. Specifically, we collect the stocks from the NASDAQ and NYSE markets that have transaction records between 01/02/2013 and 12/08/2017, obtaining 3, 274 and 3, 163 stocks respectively. Note that we select these two markets for their representative properties that NASDAQ is more volatile whereas NYSE is more stable [ 33]. Furthermore, we perform a filtering on the stocks by retaining the stocks satisfying the two conditions: 1) have been traded on more than 98% of trading days since 01/02/2013; 2) have never been traded at less than five dollars per share during the collection period. It should be noted that the first condition is based on concerns that intermittent sequences may bring abnormal patterns; the second condition ensures that the selected stocks are not penny stocks7, which are|因此，我们考虑自己构建数据，可以通过以下方式访问：https://github.com/hennande/Temporal_Relational_Stock_Ranking。具体来说，我们从纳斯达克和纽约证券交易所市场收集01/02/2013和12/08/2017之间有交易记录的股票，分别获得3,274和3,163只股票。请注意，我们选择这两个市场是因为它们的代表性属性，即纳斯达克更易波动，而纽约证券交易所更稳定[33]。此外，我们通过保留满足以下两个条件的股票来对股票进行过滤： 1）自01/02/2013以来超过98%的交易日都在交易；2）在收集期间从未以每股5美元的价格交易。 应当注意，第一个条件是基于对间歇性序列可能带来异常模式的担忧；第二个条件确保所选股票不是细价股7，它们是",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794214063938,
+      "ts": 1794386880108,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Most existing works evaluate stock prediction on dozens of stocks, and there lacks a large stock dataset for an extensive evaluation.",
+          "zh": "现有的研究大多对数十种股票进行股票预测，缺乏用于广泛评估的大型股票数据集。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Most existing works evaluate stock prediction on dozens of stocks, and there lacks a large stock dataset for an extensive evaluation.|现有的研究大多对数十种股票进行股票预测，缺乏用于广泛评估的大型股票数据集。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794386812532,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Most existing works evaluate stock prediction on dozens of stocks, and there lacks a large stock dataset for an extensive evaluation",
+          "zh": "大多数现有的工作评估股票预测数十个股票和缺乏一个大型的股票数据集广泛的评估",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Most existing works evaluate stock prediction on dozens of stocks, and there lacks a large stock dataset for an extensive evaluation|大多数现有的工作评估股票预测数十个股票和缺乏一个大型的股票数据集广泛的评估",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794386725324,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": ". However, GCN cannot capture the temporal evolution properties as designed in our TGC, since the adjacency matrix A has to be fixed in GCN. As such, our proposed operation can be seen as generalizing the GCN by specifically modeling the temporal patterns, thus we term it as the Temporal Graph Convolution.",
+          "zh": ".然而，GCN不能捕获我们TGC中设计的时间演化属性，因为相邻矩阵A必须在GCN中固定。因此，我们提出的操作可以被视为通过对时间模式进行专门建模来概括GCN，因此我们将其称为时间图卷积。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": ". However, GCN cannot capture the temporal evolution properties as designed in our TGC, since the adjacency matrix A has to be fixed in GCN. As such, our proposed operation can be seen as generalizing the GCN by specifically modeling the temporal patterns, thus we term it as the Temporal Graph Convolution.|.然而，GCN不能捕获我们TGC中设计的时间演化属性，因为相邻矩阵A必须在GCN中固定。因此，我们提出的操作可以被视为通过对时间模式进行专门建模来概括GCN，因此我们将其称为时间图卷积。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794386715438,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "To show the relation, let us first construct a graph based on the stock relation encodings At , where vertices represent stocks and edges connect vertices with at least one relation, i.e., we connect vertex i and j if they satisfy the condition sum(aij) > 0. If we represent the graph with an adjacency matrix A and normalize it by column, the Uniform Embedding Propagation (i.e., Equation 10) has exactly the same effect as the state-of-the-art graph convolutional operation (i.e., f (F, X) = AX; details see Section 2.2.1).",
+          "zh": "为了显示这种关系，让我们首先基于股票关系编码At构造一个图，其中顶点表示股票，边连接具有至少一种关系的顶点，即如果它们满足条件sum（aij）>0，我们连接顶点i和j。如果我们用相邻矩阵A表示图并按列归一化它，均匀嵌入传播（即方程10）与最先进的图卷积运算具有完全相同的效果（即f（F，X）=AX；详情见第2.2.1节）。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "To show the relation, let us first construct a graph based on the stock relation encodings At , where vertices represent stocks and edges connect vertices with at least one relation, i.e., we connect vertex i and j if they satisfy the condition sum(aij) > 0. If we represent the graph with an adjacency matrix A and normalize it by column, the Uniform Embedding Propagation (i.e., Equation 10) has exactly the same effect as the state-of-the-art graph convolutional operation (i.e., f (F, X) = AX; details see Section 2.2.1).|为了显示这种关系，让我们首先基于股票关系编码At构造一个图，其中顶点表示股票，边连接具有至少一种关系的顶点，即如果它们满足条件sum（aij）>0，我们连接顶点i和j。如果我们用相邻矩阵A表示图并按列归一化它，均匀嵌入传播（即方程10）与最先进的图卷积运算具有完全相同的效果（即f（F，X）=AX；详情见第2.2.1节）。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794386444294,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "3.2.1 Connection with Graph-based Learning. The embedding propagation is equivalent to the graph convolutional network (GCN). To show the relation, let us first construct a graph based on the stock relation encodings At , where vertices represent stocks and edges connect vertices with at least one relation, i.e., we connect vertex i and j if they satisfy the condition sum(aij) > 0. If we represent the graph with an adjacency matrix A and normalize it by column, the Uniform Embedding Propagation (i.e., Equation 10) has exactly the same effect as the state-of-the-art graph convolutional operation (i.e., f (F, X) = AX; details see Section 2.2.1). However, GCN cannot capture the temporal evolution properties as designed in our TGC, since the adjacency matrix A has to be fixed in GCN. As such, our proposed operation can be seen as generalizing the GCN by specifically modeling the temporal patterns, thus we term it as the Temporal Graph Convolution",
+          "zh": "3.2.1与基于图的学习的连接。嵌入传播等价于图卷积网络（GCN）。为了显示关系，让我们首先基于股票关系编码At构造一个图，其中顶点表示股票，边连接具有至少一种关系的顶点，即如果它们满足条件sum（aij）>0，我们将顶点i和j连接起来。如果我们用相邻矩阵A表示图并按列归一化它，均匀嵌入传播（即等式10）与最先进的图卷积运算具有完全相同的效果（即f（F，X）=AX；详情见第2.2.1节）。 然而，由于相邻矩阵A必须在GCN中固定，GCN无法捕获TGC中设计的时间演化属性。因此，我们提出的操作可以被视为通过对时间模式进行专门建模来概括GCN，因此我们将其称为时间图卷积",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "3.2.1 Connection with Graph-based Learning. The embedding propagation is equivalent to the graph convolutional network (GCN). To show the relation, let us first construct a graph based on the stock relation encodings At , where vertices represent stocks and edges connect vertices with at least one relation, i.e., we connect vertex i and j if they satisfy the condition sum(aij) > 0. If we represent the graph with an adjacency matrix A and normalize it by column, the Uniform Embedding Propagation (i.e., Equation 10) has exactly the same effect as the state-of-the-art graph convolutional operation (i.e., f (F, X) = AX; details see Section 2.2.1). However, GCN cannot capture the temporal evolution properties as designed in our TGC, since the adjacency matrix A has to be fixed in GCN. As such, our proposed operation can be seen as generalizing the GCN by specifically modeling the temporal patterns, thus we term it as the Temporal Graph Convolution|3.2.1与基于图的学习的连接。嵌入传播等价于图卷积网络（GCN）。为了显示关系，让我们首先基于股票关系编码At构造一个图，其中顶点表示股票，边连接具有至少一种关系的顶点，即如果它们满足条件sum（aij）>0，我们将顶点i和j连接起来。如果我们用相邻矩阵A表示图并按列归一化它，均匀嵌入传播（即等式10）与最先进的图卷积运算具有完全相同的效果（即f（F，X）=AX；详情见第2.2.1节）。 然而，由于相邻矩阵A必须在GCN中固定，GCN无法捕获TGC中设计的时间演化属性。因此，我们提出的操作可以被视为通过对时间模式进行专门建模来概括GCN，因此我们将其称为时间图卷积",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794386393902,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "将数据空间按照一定的准则进行切割，异常点在早期就会与大部分数据点分隔开，通过这种方法判断数据点是否属于异常",
-          "zh": "将数据空间按照一定的准则进行切割，异常点在早期就会与大部分数据点分隔开，通过这种方法判断数据点是否属于异常",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": ""
-        }
-      ],
-      "sig": "将数据空间按照一定的准则进行切割，异常点在早期就会与大部分数据点分隔开，通过这种方法判断数据点是否属于异常|将数据空间按照一定的准则进行切割，异常点在早期就会与大部分数据点分隔开，通过这种方法判断数据点是否属于异常",
-      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794214054190,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "通过寻找与数据点最临近的 k 个样本点计算它们的平均距离，根据这个平均距离是否超过某个设定的阈值来判断是否属于异常",
-          "zh": "通过寻找与数据点最临近的k个样本点计算它们的平均距离，根据这个平均距离是否超过某个设定的阈值来判断是否属于异常",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "通过寻找与数据点最临近的 k 个样本点计算它们的平均距离，根据这个平均距离是否超过某个设定的阈值来判断是否属于异常|通过寻找与数据点最临近的k个样本点计算它们的平均距离，根据这个平均距离是否超过某个设定的阈值来判断是否属于异常",
-      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794213964987,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "\\mathcal{L}_{GP}(i)=-\\sum_{j\\in\\mathcal{N}(i)}\\log\\left(\\sigma(o_i o_j^T)\\right)-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}(i)}\\log\\left(-\\sigma(o_i o_j^T)\\right)",
-          "zh": "\\mathcal{L}_{GP}（i）=-\\sum_{j\\in\\mathcal{N}（i）}\\log\\左（\\sigma（o_io_j^T）\\右）-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}（i）}\\log\\左（-\\sigma（o_io_j^T）\\右）",
+          "en": "The embedding propagation is equivalent to the graph convolutional network (GCN). To show the relation, let us first construct a graph based on the stock relation encodings At , where vertices represent stocks and edges connect vertices with at least one relation, i.e., we connect vertex i and j if they satisfy the condition sum(aij) > 0. If we represent the graph with an adjacency matrix A and normalize it by column, the Uniform Embedding Propagation (i.e., Equation 10) has exactly the same effect as the state-of-the-art graph convolutional operation (i.e., f (F, X) = AX; details see Section 2.2.1). However, GCN cannot capture the temporal evolution properties as designed in our TGC, since the adjacency matrix A has to be fixed in GCN. As such, our proposed operation can be seen as generalizing the GCN by specifically modeling the temporal patterns, thus we term it as the Temporal Graph Convolution.",
+          "zh": "嵌入传播等价于图卷积网络（GCN）。为了显示关系，让我们首先基于股票关系编码At构建一个图，其中顶点表示股票，边连接具有至少一个关系的顶点，即，如果顶点i和j满足条件sum（aij）> 0，则连接它们。如果我们用邻接矩阵A表示图并按列对其进行归一化，均匀嵌入传播（即，等式10）具有与现有技术的图卷积运算完全相同的效果（即，f（F，X）= AX;细节参见第2.2.1节）。然而，GCN不能捕获如在我们的TGC中设计的时间演化属性，因为邻接矩阵A必须在GCN中固定。因此，我们所提出的操作可以被看作是通过专门建模时间模式来推广GCN，因此我们将其称为时间图卷积。",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "\\mathcal{L}_{GP}(i)=-\\sum_{j\\in\\mathcal{N}(i)}\\log\\left(\\sigma(o_i o_j^T)\\right)-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}(i)}\\log\\left(-\\sigma(o_i o_j^T)\\right)|\\mathcal{L}_{GP}（i）=-\\sum_{j\\in\\mathcal{N}（i）}\\log\\左（\\sigma（o_io_j^T）\\右）-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}（i）}\\log\\左（-\\sigma（o_io_j^T）\\右）",
-      "file": "知识点记录",
+      "sig": "The embedding propagation is equivalent to the graph convolutional network (GCN). To show the relation, let us first construct a graph based on the stock relation encodings At , where vertices represent stocks and edges connect vertices with at least one relation, i.e., we connect vertex i and j if they satisfy the condition sum(aij) > 0. If we represent the graph with an adjacency matrix A and normalize it by column, the Uniform Embedding Propagation (i.e., Equation 10) has exactly the same effect as the state-of-the-art graph convolutional operation (i.e., f (F, X) = AX; details see Section 2.2.1). However, GCN cannot capture the temporal evolution properties as designed in our TGC, since the adjacency matrix A has to be fixed in GCN. As such, our proposed operation can be seen as generalizing the GCN by specifically modeling the temporal patterns, thus we term it as the Temporal Graph Convolution.|嵌入传播等价于图卷积网络（GCN）。为了显示关系，让我们首先基于股票关系编码At构建一个图，其中顶点表示股票，边连接具有至少一个关系的顶点，即，如果顶点i和j满足条件sum（aij）> 0，则连接它们。如果我们用邻接矩阵A表示图并按列对其进行归一化，均匀嵌入传播（即，等式10）具有与现有技术的图卷积运算完全相同的效果（即，f（F，X）= AX;细节参见第2.2.1节）。然而，GCN不能捕获如在我们的TGC中设计的时间演化属性，因为邻接矩阵A必须在GCN中固定。因此，我们所提出的操作可以被看作是通过专门建模时间模式来推广GCN，因此我们将其称为时间图卷积。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794213517738,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "首次根据这种对抗训练的想法设计了一个鲁棒性损失函数，并将其引入到基于 RNN 模型股票趋势的预测的任务中去",
-          "zh": "首次根据这种对抗训练的想法设计了一个鲁棒性损失函数，并将其引入到基于RNN模型股票趋势的预测的任务中去",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "首次根据这种对抗训练的想法设计了一个鲁棒性损失函数，并将其引入到基于 RNN 模型股票趋势的预测的任务中去|首次根据这种对抗训练的想法设计了一个鲁棒性损失函数，并将其引入到基于RNN模型股票趋势的预测的任务中去",
-      "file": "98 基于抗噪的 AI 量价模型改进方案 ——因子选股系列之九十八.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794213466414,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "Enhancing stock movement prediction with adversarial training. arxiv preprint arxiv:1810.09936.",
-          "zh": "通过对抗性训练增强股票走势预测。arxiv预印本arxiv：1810.09936。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "Enhancing stock movement prediction with adversarial training. arxiv preprint arxiv:1810.09936.|通过对抗性训练增强股票走势预测。arxiv预印本arxiv：1810.09936。",
-      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794212781500,
+      "ts": 1794386390434,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "Bai L, Yao L, Li C, et al. Adaptive graph convolutional recurrent network for traffic forecasting[J]. Advances in neural information processing systems, 2020, 33: 17804- 17815",
-          "zh": "白丽，姚丽，李春，等.自适应图卷积递归网络用于交通量预测[J].神经信息处理系统进展，2020，33：17804- 17815",
+          "en": "Connection with Graph-based Learning.",
+          "zh": "与基于图形的学习的连接。",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Bai L, Yao L, Li C, et al. Adaptive graph convolutional recurrent network for traffic forecasting[J]. Advances in neural information processing systems, 2020, 33: 17804- 17815|白丽，姚丽，李春，等.自适应图卷积递归网络用于交通量预测[J].神经信息处理系统进展，2020，33：17804- 17815",
-      "file": "101 自适应时空图网络周频 alpha 模型 ——因子选股系列之一〇一.pdf",
+      "sig": "Connection with Graph-based Learning.|与基于图形的学习的连接。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794212700131,
+      "ts": 1794386040964,
       "via": "火山",
       "pairs": [
         {
-          "en": "Enhancing stock movement prediction with adversarial training.",
-          "zh": "通过对抗性训练增强股票运动预测。",
+          "en": "where w ∈ R2U +K and b are model parameters to be learned; ϕ is an activation function same as the one in Equation 12. Then we normalize the outputs using a softmax function, which also endows it with more non-linearities. Since this way of interaction is implicitly captured by the parameters, we call it as Implicit Modeling.",
+          "zh": "其中w😍R2U+K和b是要学习的模型参数；是一个与等式12中相同的激活函数。然后我们使用softmax函数对输出进行归一化，这也赋予了它更多的非线性。由于这种交互方式被参数隐式捕获，我们称之为隐式建模。",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Enhancing stock movement prediction with adversarial training.|通过对抗性训练增强股票运动预测。",
-      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
+      "sig": "where w ∈ R2U +K and b are model parameters to be learned; ϕ is an activation function same as the one in Equation 12. Then we normalize the outputs using a softmax function, which also endows it with more non-linearities. Since this way of interaction is implicitly captured by the parameters, we call it as Implicit Modeling.|其中w😍R2U+K和b是要学习的模型参数；是一个与等式12中相同的激活函数。然后我们使用softmax函数对输出进行归一化，这也赋予了它更多的非线性。由于这种交互方式被参数隐式捕获，我们称之为隐式建模。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794212448908,
+      "ts": 1794386029379,
       "via": "火山",
       "pairs": [
         {
-          "en": "Feng, F., Chen, H., He, X., Ding, J., Sun, M., & Chua, T. S. (2018). Enhancing stock movement prediction with adversarial training. arxiv preprint arxiv:1810.09936.",
-          "zh": "冯，F，陈，H，何，X.，丁，J.，Sun，M.，&Chua，T. S.（2018）。通过对抗性训练增强股票走势预测。arxiv预印本arxiv：1810.09936。",
+          "en": "In this design, we feed the sequential embeddings and the relation vector into a fully connected layer to estimate the relation strength:",
+          "zh": "在这个设计中，我们将顺序嵌入和关系向量输入到一个全连接的层中以估计关系强度：",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Feng, F., Chen, H., He, X., Ding, J., Sun, M., & Chua, T. S. (2018). Enhancing stock movement prediction with adversarial training. arxiv preprint arxiv:1810.09936.|冯，F，陈，H，何，X.，丁，J.，Sun，M.，&Chua，T. S.（2018）。通过对抗性训练增强股票走势预测。arxiv预印本arxiv：1810.09936。",
-      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
+      "sig": "In this design, we feed the sequential embeddings and the relation vector into a fully connected layer to estimate the relation strength:|在这个设计中，我们将顺序嵌入和关系向量输入到一个全连接的层中以估计关系强度：",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794212408482,
+      "ts": 1794385983461,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "In this design, we feed the sequential embeddings and the relation vector into a fully connected layer to estimate the relation strength",
+          "zh": "在这个设计中，我们将顺序嵌入和关系向量输入到一个全连接层中以估计关系强度",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "In this design, we feed the sequential embeddings and the relation vector into a fully connected layer to estimate the relation strength|在这个设计中，我们将顺序嵌入和关系向量输入到一个全连接层中以估计关系强度",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385873110,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "We use inner product to estimate the similarity, inspired by its effectiveness in modeling the similarity (interaction) between two entities (embeddings) in Collaborative Filtering [ 15]. The second term is a nonlinear regression model on the relations, where each element in w denotes the weight of a relation in general and b is a bias term. Since both terms of this function are directly interpretable, we call it as Explicit Modeling.",
+          "zh": "我们使用内积来估计相似性，灵感来自它在协同过滤[15]中建模两个实体（嵌入）之间的相似性（交互）的有效性。第二项是关系的非线性回归模型，其中w中的每个元素一般表示关系的权重，b是偏差项。由于该函数的两个项都是可直接解释的，我们称之为显式建模。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "We use inner product to estimate the similarity, inspired by its effectiveness in modeling the similarity (interaction) between two entities (embeddings) in Collaborative Filtering [ 15]. The second term is a nonlinear regression model on the relations, where each element in w denotes the weight of a relation in general and b is a bias term. Since both terms of this function are directly interpretable, we call it as Explicit Modeling.|我们使用内积来估计相似性，灵感来自它在协同过滤[15]中建模两个实体（嵌入）之间的相似性（交互）的有效性。第二项是关系的非线性回归模型，其中w中的每个元素一般表示关系的权重，b是偏差项。由于该函数的两个项都是可直接解释的，我们称之为显式建模。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385857372,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "where w ∈ RK and b are model parameters to be learned; ϕ is an activation function6. The relation strength of aji is determined by two terms – similarity and relation importance. Specifically, the first term measures the similarity between the two stocks at the current time-step. The intuition is that the more similar the two stocks are at the current time, it is more likely that their relations will impact their prices in the near future.",
+          "zh": "其中w😍RK和b是要学习的模型参数；是一个激活函数6。aji的关系强度由两个项决定——相似度和关系重要性。具体来说，第一项衡量两只股票在当前时间步的相似度。直觉是，两只股票在当前时间越相似，它们的关系在不久的将来影响它们的价格的可能性就越大。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "where w ∈ RK and b are model parameters to be learned; ϕ is an activation function6. The relation strength of aji is determined by two terms – similarity and relation importance. Specifically, the first term measures the similarity between the two stocks at the current time-step. The intuition is that the more similar the two stocks are at the current time, it is more likely that their relations will impact their prices in the near future.|其中w😍RK和b是要学习的模型参数；是一个激活函数6。aji的关系强度由两个项决定——相似度和关系重要性。具体来说，第一项衡量两只股票在当前时间步的相似度。直觉是，两只股票在当前时间越相似，它们的关系在不久的将来影响它们的价格的可能性就越大。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385777836,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Next we describe two designs of the time-sensitive relation-strength function, which differ in whether to model the interaction between two stocks in an explicit or implicit manner.",
+          "zh": "接下来，我们描述了时间敏感关系强度函数的两种设计，它们的不同之处在于是否以显式或隐式方式对两只股票之间的相互作用进行建模。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Next we describe two designs of the time-sensitive relation-strength function, which differ in whether to model the interaction between two stocks in an explicit or implicit manner.|接下来，我们描述了时间敏感关系强度函数的两种设计，它们的不同之处在于是否以显式或隐式方式对两只股票之间的相互作用进行建模。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385772050,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "This allows the relationstrength function to estimate the impact of a relation vector based on the stocks of concern, which is very desirable.",
+          "zh": "这允许关系强度函数根据关注的股票来估计关系向量的影响，这是非常可取的。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "This allows the relationstrength function to estimate the impact of a relation vector based on the stocks of concern, which is very desirable.|这允许关系强度函数根据关注的股票来估计关系向量的影响，这是非常可取的。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385714643,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "which takes the sequential embeddings (note that they are time-sensitive) into account to estimate the strength of a relation. Besides encoding the temporal information, another benefit of such a design is that sequential embedding also encodes the stock information. This allows the relationstrength function to estimate the impact of a relation vector based on the stocks of concern, which is very desirable.",
+          "zh": "它考虑了顺序嵌入（注意它们是时间敏感的）来估计关系的强度。除了编码时间信息之外，这种设计的另一个好处是顺序嵌入也编码股票信息。这允许关系强度函数根据关注的股票来估计关系向量的影响，这是非常可取的。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "which takes the sequential embeddings (note that they are time-sensitive) into account to estimate the strength of a relation. Besides encoding the temporal information, another benefit of such a design is that sequential embedding also encodes the stock information. This allows the relationstrength function to estimate the impact of a relation vector based on the stocks of concern, which is very desirable.|它考虑了顺序嵌入（注意它们是时间敏感的）来估计关系的强度。除了编码时间信息之外，这种设计的另一个好处是顺序嵌入也编码股票信息。这允许关系强度函数根据关注的股票来估计关系向量的影响，这是非常可取的。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385689202,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "price in the period of releasing new version of iPhone than usual. To address this limitation, we propose to encode the temporal information into the relation-strength function and define the Time-aware Embedding Propagation process as follows:",
+          "zh": "发布新版本期间的价格比平时iPhone。为了解决这个限制，我们建议将时间信息编码为关系强度函数，并定义时间感知嵌入传播过程如下：",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "price in the period of releasing new version of iPhone than usual. To address this limitation, we propose to encode the temporal information into the relation-strength function and define the Time-aware Embedding Propagation process as follows:|发布新版本期间的价格比平时iPhone。为了解决这个限制，我们建议将时间信息编码为关系强度函数，并定义时间感知嵌入传播过程如下：",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385611220,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "and Lens Technology Co Ltd has a larger impact on the Lens’s stock price in the period of releasing new version of iPhone than usual. To address this limitation, we propose to encode the temporal information into the relation-strength function and define the Time-aware Embedding Propagation process as follows",
+          "zh": "Lens Technology Co Ltd在发布新版本iPhone期间对Lens股价的影响比平时更大。为了解决这一限制，我们建议将时间信息编码为关系强度函数，并定义时间感知嵌入传播过程如下",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "and Lens Technology Co Ltd has a larger impact on the Lens’s stock price in the period of releasing new version of iPhone than usual. To address this limitation, we propose to encode the temporal information into the relation-strength function and define the Time-aware Embedding Propagation process as follows|Lens Technology Co Ltd在发布新版本iPhone期间对Lens股价的影响比平时更大。为了解决这一限制，我们建议将时间信息编码为关系强度函数，并定义时间感知嵌入传播过程如下",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385605392,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "or instance, in the previous example of Figure 2(b), the supplier _customer relation between Apple Inc.",
+          "zh": "或者实例，在图2（b）的先前实例中，供应商_customer苹果公司之间的关系。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "or instance, in the previous example of Figure 2(b), the supplier _customer relation between Apple Inc.|或者实例，在图2（b）的先前实例中，供应商_customer苹果公司之间的关系。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385598352,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "As stock market is highly dynamic such that the status of a stock and the strength of a relation are continuously evolving, assuming a relation vector to have a static weight limits the modeling fidelity.",
+          "zh": "由于股票市场是高度动态的，股票的状态和关系的强度是不断变化的，假设关系向量具有静态权重限制了建模的保真度。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "As stock market is highly dynamic such that the status of a stock and the strength of a relation are continuously evolving, assuming a relation vector to have a static weight limits the modeling fidelity.|由于股票市场是高度动态的，股票的状态和关系的强度是不断变化的，假设关系向量具有静态权重限制了建模的保真度。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385558036,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "A limitation of the above weighted propagation process is that the relation-strength function returns a fixed weight for a given relation vector aji regardless the evolution across different time-steps. As stock market is highly dynamic such that the status of a stock and the strength of a relation are continuously evolving, assuming a relation vector to have a static weight limits the modeling fidelity. F",
+          "zh": "上述加权传播过程的一个局限性是关系强度函数对给定的关系向量aji返回一个固定的权重，而不管不同时间步长的演变。由于股票市场是高度动态的，股票的状态和关系的强度是不断变化的，假设关系向量具有静态权重限制了建模的保真度。F",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "A limitation of the above weighted propagation process is that the relation-strength function returns a fixed weight for a given relation vector aji regardless the evolution across different time-steps. As stock market is highly dynamic such that the status of a stock and the strength of a relation are continuously evolving, assuming a relation vector to have a static weight limits the modeling fidelity. F|上述加权传播过程的一个局限性是关系强度函数对给定的关系向量aji返回一个固定的权重，而不管不同时间步长的演变。由于股票市场是高度动态的，股票的状态和关系的强度是不断变化的，假设关系向量具有静态权重限制了建模的保真度。F",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385537075,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "whether to model the interaction between two stocks in an explicit or implicit manner.",
+          "zh": "是否以显式或隐式方式对两只股票之间的相互作用进行建模。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "whether to model the interaction between two stocks in an explicit or implicit manner.|是否以显式或隐式方式对两只股票之间的相互作用进行建模。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385375605,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.",
+          "zh": "我们可以看到，通过将不同的关系向量馈送到不同股票对的可学习关系强度函数中，我们允许嵌入传播过程同时考虑关系图的拓扑和关系的语义学。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.|我们可以看到，通过将不同的关系向量馈送到不同股票对的可学习关系强度函数中，我们允许嵌入传播过程同时考虑关系图的拓扑和关系的语义学。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385360561,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "As an example, suppose we have two relations named supplier _customer and same_industry, and three stocks j, i, and k. Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1].",
+          "zh": "例如，假设我们有两个名为供应商_customer和same_industry的关系，以及三个股票j、i和k。给定库存j是库存i的供应商，而库存k与库存i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "As an example, suppose we have two relations named supplier _customer and same_industry, and three stocks j, i, and k. Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1].|例如，假设我们有两个名为供应商_customer和same_industry的关系，以及三个股票j、i和k。给定库存j是库存i的供应商，而库存k与库存i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385269146,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "where д(aji) is a mapping function that aims to learn the impact strength of the relations in aji, and we term it as the relation-strength function. As an example, suppose we have two relations named supplier _customer and same_industry, and three stocks j, i, and k. Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1]. We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.",
+          "zh": "其中（aji）是一个映射函数，旨在学习aji中关系的影响强度，我们将其称为关系强度函数。例如，假设我们有两个名为供应商_customer和same_industry的关系，以及三个股票j、i和k。给定股票j是股票i的供应商，而股票k与股票i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。 我们可以看到，通过将不同的关系向量馈送到不同股票对的可学习关系强度函数中，我们允许嵌入传播过程同时考虑关系图的拓扑和关系的语义学。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "where д(aji) is a mapping function that aims to learn the impact strength of the relations in aji, and we term it as the relation-strength function. As an example, suppose we have two relations named supplier _customer and same_industry, and three stocks j, i, and k. Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1]. We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.|其中（aji）是一个映射函数，旨在学习aji中关系的影响强度，我们将其称为关系强度函数。例如，假设我们有两个名为供应商_customer和same_industry的关系，以及三个股票j、i和k。给定股票j是股票i的供应商，而股票k与股票i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。 我们可以看到，通过将不同的关系向量馈送到不同股票对的可学习关系强度函数中，我们允许嵌入传播过程同时考虑关系图的拓扑和关系的语义学。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385249268,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "1. 股票j和股票i是否存在关系 2.股票j有多少个关联股票",
+          "zh": "1.股票j和股票i是否存在关系2.股票j",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "1. 股票j和股票i是否存在关系 2.股票j有多少个关联股票|1.股票j和股票i是否存在关系2.股票j",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794385078453,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "onsider that different relations between two stocks may have varying impacts on their prices, we apply a non-uniform coefficient when propagating the embeddings:",
+          "zh": "考虑到两种股票之间的不同关系可能对其价格产生不同的影响，我们在传播嵌入时应用非均匀系数：",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "onsider that different relations between two stocks may have varying impacts on their prices, we apply a non-uniform coefficient when propagating the embeddings:|考虑到两种股票之间的不同关系可能对其价格产生不同的影响，我们在传播嵌入时应用非均匀系数：",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794385049677,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Weighted Embedding Propagation",
+          "zh": "加权嵌入传播",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Weighted Embedding Propagation|加权嵌入传播",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794385032883,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1]. We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.",
+          "zh": "假设库存j是库存i的供应商，而库存k与库存i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。我们可以看到，通过将不同的关系向量馈送到不同库存对的可学习关系强度函数中，我们允许嵌入传播过程考虑关系图的拓扑和关系的语义学。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1]. We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.|假设库存j是库存i的供应商，而库存k与库存i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。我们可以看到，通过将不同的关系向量馈送到不同库存对的可学习关系强度函数中，我们允许嵌入传播过程考虑关系图的拓扑和关系的语义学。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794384716977,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "where д(aji) is a mapping function that aims to learn the impact strength of the relations in aji, and we term it as the relation-strength function. As an example, suppose we have two relations named supplier _customer and same_industry, and three stocks j, i, and k. Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1]. We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.",
+          "zh": "其中（aji）是一个映射函数，旨在学习aji中关系的影响强度，我们将其称为关系强度函数。例如，假设我们有两个名为供应商_customer和same_industry的关系，以及三个股票j、i和k。给定股票j是股票i的供应商，而股票k与股票i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。 我们可以看到，通过将不同的关系向量馈送到不同股票对的可学习关系强度函数中，我们允许嵌入传播过程同时考虑关系图的拓扑和关系的语义学。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "where д(aji) is a mapping function that aims to learn the impact strength of the relations in aji, and we term it as the relation-strength function. As an example, suppose we have two relations named supplier _customer and same_industry, and three stocks j, i, and k. Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1]. We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.|其中（aji）是一个映射函数，旨在学习aji中关系的影响强度，我们将其称为关系强度函数。例如，假设我们有两个名为供应商_customer和same_industry的关系，以及三个股票j、i和k。给定股票j是股票i的供应商，而股票k与股票i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。 我们可以看到，通过将不同的关系向量馈送到不同股票对的可学习关系强度函数中，我们允许嵌入传播过程同时考虑关系图的拓扑和关系的语义学。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794384508410,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "where sum(aji) is the sum of all elements in the relation vector aji (recall that aji is a multi-hot binary vector where each element denotes whether the corresponding type of relation exists between j and i). The condition sum(aji) > 0 ensures that only stocks have at least one relation will be considered. dj is the number of stocks satisfying the condition sum(aji) > 0. After such a propagation in the embedding space, the relational embedding et i encodes the impacts coming from other stocks that have relations with stock i at time t.",
+          "zh": "其中sum（aji）是关系向量aji中所有元素的和（回想一下aji是一个多热二进制向量，其中每个元素表示j和i之间是否存在相应类型的关系）。条件sum（aji）>0确保只有股票具有至少一种关系将被考虑。dj是满足条件sum（aji）>0的股票数量。在嵌入空间中这样的传播之后，关系嵌入et i对来自在时间t与股票i有关系的其他股票的影响进行编码。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "where sum(aji) is the sum of all elements in the relation vector aji (recall that aji is a multi-hot binary vector where each element denotes whether the corresponding type of relation exists between j and i). The condition sum(aji) > 0 ensures that only stocks have at least one relation will be considered. dj is the number of stocks satisfying the condition sum(aji) > 0. After such a propagation in the embedding space, the relational embedding et i encodes the impacts coming from other stocks that have relations with stock i at time t.|其中sum（aji）是关系向量aji中所有元素的和（回想一下aji是一个多热二进制向量，其中每个元素表示j和i之间是否存在相应类型的关系）。条件sum（aji）>0确保只有股票具有至少一种关系将被考虑。dj是满足条件sum（aji）>0的股票数量。在嵌入空间中这样的传播之后，关系嵌入et i对来自在时间t与股票i有关系的其他股票的影响进行编码。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794384458542,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "The condition sum(aji) > 0 ensures that only stocks have at least one relation will be considered. dj is the number of stocks satisfying the condition sum(aji) > 0. After such a propagation in the embedding space, the relational embedding et i encodes the impacts coming from other stocks that have relations with stock i at time t.",
+          "zh": "条件sum（aji）>0确保只有股票具有至少一个关系将被考虑。dj是满足条件sum（aji）>0的股票数量。在嵌入空间中进行这样的传播后，关系嵌入et i在时间t对来自与股票i有关系的其他股票的影响进行编码。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "The condition sum(aji) > 0 ensures that only stocks have at least one relation will be considered. dj is the number of stocks satisfying the condition sum(aji) > 0. After such a propagation in the embedding space, the relational embedding et i encodes the impacts coming from other stocks that have relations with stock i at time t.|条件sum（aji）>0确保只有股票具有至少一个关系将被考虑。dj是满足条件sum（aji）>0的股票数量。在嵌入空间中进行这样的传播后，关系嵌入et i在时间t对来自与股票i有关系的其他股票的影响进行编码。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794384417828,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "where sum(aji) is the sum of all elements in the relation vector aji (recall that aji is a multi-hot binary vector where each element denotes whether the corresponding type of relation exists between j and i).",
+          "zh": "其中sum（aji）是关系向量aji中所有元素的和（回想一下aji是一个多热二进制向量，其中每个元素表示j和i之间是否存在相应类型的关系）。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "where sum(aji) is the sum of all elements in the relation vector aji (recall that aji is a multi-hot binary vector where each element denotes whether the corresponding type of relation exists between j and i).|其中sum（aji）是关系向量aji中所有元素的和（回想一下aji是一个多热二进制向量，其中每个元素表示j和i之间是否存在相应类型的关系）。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794383789405,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "where sum(aji) is the sum of all elements in the relation vector aji (recall that aji is a multi-hot binary vector where each element denotes whether the corresponding type of relation exists between j and i). The condition sum(aji) > 0 ensures that only stocks have at least one relation will be considered. dj is the number of stocks satisfying the condition sum(aji) > 0. After such a propagation in the embedding space, the relational embedding et i encodes the impacts coming from other stocks that have relations with stock i at time t.",
+          "zh": "其中sum（aji）是关系向量aji中所有元素的和（回想一下aji是一个多热二进制向量，其中每个元素表示j和i之间是否存在相应类型的关系）。条件sum（aji）>0确保只有股票具有至少一种关系将被考虑。dj是满足条件sum（aji）>0的股票数量。在嵌入空间中这样的传播之后，关系嵌入et i对来自在时间t与股票i有关系的其他股票的影响进行编码。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "where sum(aji) is the sum of all elements in the relation vector aji (recall that aji is a multi-hot binary vector where each element denotes whether the corresponding type of relation exists between j and i). The condition sum(aji) > 0 ensures that only stocks have at least one relation will be considered. dj is the number of stocks satisfying the condition sum(aji) > 0. After such a propagation in the embedding space, the relational embedding et i encodes the impacts coming from other stocks that have relations with stock i at time t.|其中sum（aji）是关系向量aji中所有元素的和（回想一下aji是一个多热二进制向量，其中每个元素表示j和i之间是否存在相应类型的关系）。条件sum（aji）>0确保只有股票具有至少一种关系将被考虑。dj是满足条件sum（aji）>0的股票数量。在嵌入空间中这样的传播之后，关系嵌入et i对来自在时间t与股票i有关系的其他股票的影响进行编码。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794383475404,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "Bai L, Yao L, Li C, et al. Adaptive graph convolutional recurrent network for traffic forecasting[J]. Advances in neural information processing systems, 2020, 33: 17804- 17815",
-          "zh": "白丽，姚丽，李春，等.自适应图卷积递归网络用于交通量预测[J].神经信息处理系统进展，2020，33：17804- 17815",
+          "en": "Our first inspiration comes from the link analysis research, where in a graph, the impact of a vertex on another one can be captured by propagating information on the graph. A well-known example is the PageRank [ 31] method that propagates the importance score of a vertex to its connected vertices.",
+          "zh": "我们的第一个灵感来自于链接分析研究，在图中，一个顶点对另一个顶点的影响可以通过在图上传播信息来捕获。一个著名的例子是PageRank [ 31]方法，该方法将顶点的重要性得分传播到其连接的顶点。",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Bai L, Yao L, Li C, et al. Adaptive graph convolutional recurrent network for traffic forecasting[J]. Advances in neural information processing systems, 2020, 33: 17804- 17815|白丽，姚丽，李春，等.自适应图卷积递归网络用于交通量预测[J].神经信息处理系统进展，2020，33：17804- 17815",
-      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
+      "sig": "Our first inspiration comes from the link analysis research, where in a graph, the impact of a vertex on another one can be captured by propagating information on the graph. A well-known example is the PageRank [ 31] method that propagates the importance score of a vertex to its connected vertices.|我们的第一个灵感来自于链接分析研究，在图中，一个顶点对另一个顶点的影响可以通过在图上传播信息来捕获。一个著名的例子是PageRank [ 31]方法，该方法将顶点的重要性得分传播到其连接的顶点。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794212363662,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "将图结构直接嵌入 GRU 结构中",
-          "zh": "将图结构直接嵌入GRU结构中",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "将图结构直接嵌入 GRU 结构中|将图结构直接嵌入GRU结构中",
-      "file": "101 自适应时空图网络周频 alpha 模型 ——因子选股系列之一〇一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794212285342,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "Feng, F., Chen, H., He, X., Ding, J., Sun, M., & Chua, T. S. (2018). Enhancing stock movement prediction with adversarial training. arxiv preprint arxiv:1810.09936.",
-          "zh": "冯，F，陈，H，何，X.，丁，J.，Sun，M.，&Chua，T. S.（2018）。通过对抗性训练增强股票走势预测。arxiv预印本arxiv：1810.09936。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "Feng, F., Chen, H., He, X., Ding, J., Sun, M., & Chua, T. S. (2018). Enhancing stock movement prediction with adversarial training. arxiv preprint arxiv:1810.09936.|冯，F，陈，H，何，X.，丁，J.，Sun，M.，&Chua，T. S.（2018）。通过对抗性训练增强股票走势预测。arxiv预印本arxiv：1810.09936。",
-      "file": "98 基于抗噪的 AI 量价模型改进方案 ——因子选股系列之九十八.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794211523680,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "并将其引入到基于 RNN 模型股票趋势的预测的任务中去。结合该种想法我们设计了以下根据对抗样本计算的正则项损失函数来训练 RNN 模型：Loss = 1 N ∑(f𝜽(𝒙𝒊) - ŷi)2 N i+ 𝜆1 NK2 |(zi,k)i,k T (zi,k)i,k|F + 𝜆2 N ∑(f𝜽(𝒙𝒊𝒂𝒅𝒗) - ŷi)2 N i这里 𝜆1 和 𝜆2 表示正则项的两个超参数，N 表示 batch 的大小，K 表示生成弱因子的个数，损失函数第二项表示弱因子 zi,k 之间内积矩阵的 Frobenius 范数，𝒙𝒊𝒂𝒅𝒗 表示（3）或（4）迭代 M 步最终生成的样本。用通俗的话来说在训练 RNN 的时候，我们不光希望 RNN 对原始数据预测的结果尽可能接近真实标签，我们也希望 RNN 对对抗样本预测的结果尽可能接近真实标签，而这两个目标分别对应损失函数第一和第三项",
-          "zh": "并将其引入到基于RNN模型股票趋势的预测的任务中去.结合该种想法我们设计了以下根据对抗样本计算的正则项损失函数来训练RNN模型： Loss=1 Nل（f𝜽(𝒙𝒊) - y😍i）2 N i+1 NK2|（zi，k）i，k T（zi，k）i，k|F+2 Nل（f𝜽(𝒙𝒊𝒂𝒅𝒗) - y😍i）2 N i这里1和2表示正则项的两个超参数，N表示批量的大小，K表示成弱子的个数，K2表示成弱子的个数，K2表示成弱子的个数，K2表示弱子的个数，K2表示成弱子的个数，K3表示成弱子的个数，K2表示弱子的个数，k之间内积矩阵的Frobenius范数，𝒙𝒊𝒂𝒅𝒗 表示（3）或（4）迭代M步最终生成的样本.用通俗的话来说在训练RNN的时候，我们不光希望RNN对原始数据预测的结果尽可能接近真实标签，我们也希望RNN",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "并将其引入到基于 RNN 模型股票趋势的预测的任务中去。结合该种想法我们设计了以下根据对抗样本计算的正则项损失函数来训练 RNN 模型：Loss = 1 N ∑(f𝜽(𝒙𝒊) - ŷi)2 N i+ 𝜆1 NK2 |(zi,k)i,k T (zi,k)i,k|F + 𝜆2 N ∑(f𝜽(𝒙𝒊𝒂𝒅𝒗) - ŷi)2 N i这里 𝜆1 和 𝜆2 表示正则项的两个超参数，N 表示 batch 的大小，K 表示生成弱因子的个数，损失函数第二项表示弱因子 zi,k 之间内积矩阵的 Frobenius 范数，𝒙𝒊𝒂𝒅𝒗 表示（3）或（4）迭代 M 步最终生成的样本。用通俗的话来说在训练 RNN 的时候，我们不光希望 RNN 对原始数据预测的结果尽可能接近真实标签，我们也希望 RNN 对对抗样本预测的结果尽可能接近真实标签，而这两个目标分别对应损失函数第一和第三项|并将其引入到基于RNN模型股票趋势的预测的任务中去.结合该种想法我们设计了以下根据对抗样本计算的正则项损失函数来训练RNN模型： Loss=1 Nل（f𝜽(𝒙𝒊) - y😍i）2 N i+1 NK2|（zi，k）i，k T（zi，k）i，k|F+2 Nل（f𝜽(𝒙𝒊𝒂𝒅𝒗) - y😍i）2 N i这里1和2表示正则项的两个超参数，N表示批量的大小，K表示成弱子的个数，K2表示成弱子的个数，K2表示成弱子的个数，K2表示弱子的个数，K2表示成弱子的个数，K3表示成弱子的个数，K2表示弱子的个数，k之间内积矩阵的Frobenius范数，𝒙𝒊𝒂𝒅𝒗 表示（3）或（4）迭代M步最终生成的样本.用通俗的话来说在训练RNN的时候，我们不光希望RNN对原始数据预测的结果尽可能接近真实标签，我们也希望RNN",
-      "file": "98 基于抗噪的 AI 量价模型改进方案 ——因子选股系列之九十八.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794210266718,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "\\mathcal{L}_{GP}(i",
-          "zh": "\\数学cal{L}_{GP}（i",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "\\mathcal{L}_{GP}(i|\\数学cal{L}_{GP}（i",
-      "file": "91 基于循环神经网络的多频率因子挖掘 ——因子选股系列之九十一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794210024239,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "ℒ𝒢𝒫(i)",
-          "zh": "（i）",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "ℒ𝒢𝒫(i)|（i）",
-      "file": "101 自适应时空图网络周频 alpha 模型 ——因子选股系列之一〇一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794208753290,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "\\mathcal{L}_{GP}(i)=-\\sum_{j\\in\\mathcal{N}(i)}\\log\\left(\\sigma(o_i o_j^T)\\right)-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}(i)}\\log\\left(-\\sigma(o_i o_j^T)\\right)",
-          "zh": "\\mathcal{L}_{GP}（i）=-\\sum_{j\\in\\mathcal{N}（i）}\\log\\左（\\sigma（o_io_j^T）\\右）-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}（i）}\\log\\左（-\\sigma（o_io_j^T）\\右）",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "\\mathcal{L}_{GP}(i)=-\\sum_{j\\in\\mathcal{N}(i)}\\log\\left(\\sigma(o_i o_j^T)\\right)-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}(i)}\\log\\left(-\\sigma(o_i o_j^T)\\right)|\\mathcal{L}_{GP}（i）=-\\sum_{j\\in\\mathcal{N}（i）}\\log\\左（\\sigma（o_io_j^T）\\右）-\\sum_{j\\in\\mathcal{S}-\\mathcal{N}（i）}\\log\\左（-\\sigma（o_io_j^T）\\右）",
-      "file": "知识点记录",
-      "page": null
-    },
-    {
-      "ts": 1794208547987,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW",
-          "zh": "Z=\\左（I+\\操作员名称{soft max}\\左（\\操作员名称{Re LU}（MM^T）\\右）\\右）X W",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW|Z=\\左（I+\\操作员名称{soft max}\\左（\\操作员名称{Re LU}（MM^T）\\右）\\右）X W",
-      "file": "知识点记录",
-      "page": null
-    },
-    {
-      "ts": 1794208482981,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "$$Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW$$",
-          "zh": "$$Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW$$",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "$$Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW$$|$$Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW$$",
-      "file": "知识点记录",
-      "page": null
-    },
-    {
-      "ts": 1794208476177,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW",
-          "zh": "Z=\\左（I+\\操作员名称{soft max}\\左（\\操作员名称{Re LU}（MM^T）\\右）\\右）X W",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "Z=\\left(I+\\operatorname{softmax}\\left(\\operatorname{ReLU}(MM^T)\\right)\\right)XW|Z=\\左（I+\\操作员名称{soft max}\\左（\\操作员名称{Re LU}（MM^T）\\右）\\右）X W",
-      "file": "知识点记录",
-      "page": null
-    },
-    {
-      "ts": 1794205558799,
+      "ts": 1794383360967,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "中位数、离差、均值和标准差参数都是使用 2016 年以前数据进行估计",
-          "zh": "中位数、离差、均值和标准差参数都是使用 2016 年以前数据进行估计",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": ""
-        }
-      ],
-      "sig": "中位数、离差、均值和标准差参数都是使用 2016 年以前数据进行估计|中位数、离差、均值和标准差参数都是使用 2016 年以前数据进行估计",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
-      "page": null
-    },
-    {
-      "ts": 1794205391407,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "用均值和标准差对数据进行标准化",
-          "zh": "用均值和标准差对数据进行标准化",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "用均值和标准差对数据进行标准化|用均值和标准差对数据进行标准化",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
-      "page": null
-    },
-    {
-      "ts": 1794202424144,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "Drawing 2026-11-09 13.33.28.excalidraw",
-          "zh": "绘图2026-11-0913.33.28. excalidaw",
+          "en": "Uniform Embedding Propagation",
+          "zh": "均匀嵌入传播",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Drawing 2026-11-09 13.33.28.excalidraw|绘图2026-11-0913.33.28. excalidaw",
-      "file": "",
+      "sig": "Uniform Embedding Propagation|均匀嵌入传播",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794202003880,
+      "ts": 1794383344721,
       "via": "火山",
       "pairs": [
         {
-          "en": "考虑IC和组合收益的不一致性）",
-          "zh": "考虑IC和组合收益的不一致性）",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "考虑IC和组合收益的不一致性）|考虑IC和组合收益的不一致性）",
-      "file": "",
-      "page": null
-    },
-    {
-      "ts": 1794201990514,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "（考虑IC和组合收益的不一致性）",
-          "zh": "考虑IC和组合收益的不一致性",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "（考虑IC和组合收益的不一致性）|考虑IC和组合收益的不一致性",
-      "file": "",
-      "page": null
-    },
-    {
-      "ts": 1794201635254,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "(R_f",
-          "zh": "（R_f",
+          "en": "propagation process as in link analysis:",
+          "zh": "链接分析中的传播过程：",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "(R_f|（R_f",
-      "file": "知识点记录",
+      "sig": "propagation process as in link analysis:|链接分析中的传播过程：",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794201627678,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "$R_p$",
-          "zh": "$R_p$",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "$R_p$|$R_p$",
-      "file": "知识点记录",
-      "page": null
-    },
-    {
-      "ts": 1794201611129,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "R_p",
-          "zh": "R_p",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "R_p|R_p",
-      "file": "知识点记录",
-      "page": null
-    },
-    {
-      "ts": 1794201542048,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "$$Sharpe=\\frac{E(R_p)-R_f}{\\sigma_p}$$",
-          "zh": "$$Sharpe=\\frac{E(R_p)-R_f}{\\sigma_p}$$",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "$$Sharpe=\\frac{E(R_p)-R_f}{\\sigma_p}$$|$$Sharpe=\\frac{E(R_p)-R_f}{\\sigma_p}$$",
-      "file": "知识点记录",
-      "page": null
-    },
-    {
-      "ts": 1794201327430,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "因子在基准成分股内的多头对冲组合夏普率",
-          "zh": "因子在基准成分股内的多头对冲组合夏普率",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "因子在基准成分股内的多头对冲组合夏普率|因子在基准成分股内的多头对冲组合夏普率",
-      "file": "74 神经网络日频 alpha 模型初步实践 ——因子选股系列之七十四.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794193998721,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "估值因子的风险化和量价因子的拥挤",
-          "zh": "估值因子的风险化和量价因子的拥挤",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "估值因子的风险化和量价因子的拥挤|估值因子的风险化和量价因子的拥挤",
-      "file": "74 神经网络日频 alpha 模型初步实践 ——因子选股系列之七十四.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794192634484,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "将RNN系列三个模型学到的结果拼接交给加权模型打分",
-          "zh": "将RN系列三个模型学到的结果拼接交给加权模型打分",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "将RNN系列三个模型学到的结果拼接交给加权模型打分|将RN系列三个模型学到的结果拼接交给加权模型打分",
-      "file": "",
-      "page": null
-    },
-    {
-      "ts": 1794192561037,
+      "ts": 1794383323711,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "如果单模型表现相差不大的情况下多模型平均可以提升总体表现，但是改善幅度存在上限，该上限与模型间的相关性有关",
-          "zh": "如果单模型表现相差不大的情况下多模型平均可以提升总体表现，但是改善幅度存在上限，该上限与模型间的相关性有关",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": ""
-        }
-      ],
-      "sig": "如果单模型表现相差不大的情况下多模型平均可以提升总体表现，但是改善幅度存在上限，该上限与模型间的相关性有关|如果单模型表现相差不大的情况下多模型平均可以提升总体表现，但是改善幅度存在上限，该上限与模型间的相关性有关",
-      "file": "83 多模型学习量价时序特征 ——因子选股系列之八十三.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794191973972,
-      "via": "百度",
-      "pairs": [
-        {
-          "en": "Transformer",
-          "zh": "n. 变压器； 促使变化的（或人物），改革者\nn. 变压器( transformer的名词复数 )； 促使变化的（或人物），改革者\n[电影]变形金刚\n变压器油",
-          "dict": true,
+          "en": "Uniform Embedding Propagation. Our first inspiration comes from the link analysis research, where in a graph, the impact of a vertex on another one can be captured by propagating information on the graph. A well-known example is the PageRank [ 31] method that propagates the importance score of a vertex to its connected vertices. Since a stock relation encodes certain similarity information between two connected stocks, we consider relating their embeddings through the simila",
+          "zh": "均匀嵌入传播。我们的第一个灵感来自于链接分析研究，在图中，一个顶点对另一个顶点的影响可以通过在图上传播信息来捕获。一个著名的例子是PageRank [ 31]方法，该方法将顶点的重要性得分传播到其连接的顶点。由于股票关系编码了两个连接股票之间的某些相似性信息，我们考虑通过相似性将它们的嵌入联系起来，",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Transformer|n. 变压器； 促使变化的（或人物），改革者\nn. 变压器( transformer的名词复数 )； 促使变化的（或人物），改革者\n[电影]变形金刚\n变压器油",
-      "file": "83 多模型学习量价时序特征 ——因子选股系列之八十三.pdf",
+      "sig": "Uniform Embedding Propagation. Our first inspiration comes from the link analysis research, where in a graph, the impact of a vertex on another one can be captured by propagating information on the graph. A well-known example is the PageRank [ 31] method that propagates the importance score of a vertex to its connected vertices. Since a stock relation encodes certain similarity information between two connected stocks, we consider relating their embeddings through the simila|均匀嵌入传播。我们的第一个灵感来自于链接分析研究，在图中，一个顶点对另一个顶点的影响可以通过在图上传播信息来捕获。一个著名的例子是PageRank [ 31]方法，该方法将顶点的重要性得分传播到其连接的顶点。由于股票关系编码了两个连接股票之间的某些相似性信息，我们考虑通过相似性将它们的嵌入联系起来，",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794191952590,
+      "ts": 1794383287567,
       "via": "火山",
       "pairs": [
         {
-          "en": "Kazemi（2019）提出的",
-          "zh": "Kaz emi（2019）提出的",
+          "en": "Uniform Embedding Propagation.",
+          "zh": "均匀嵌入传播。",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
+          "detectedLanguage": "en"
         }
       ],
-      "sig": "Kazemi（2019）提出的|Kaz emi（2019）提出的",
-      "file": "",
+      "sig": "Uniform Embedding Propagation.|均匀嵌入传播。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794191669332,
+      "ts": 1794383276669,
       "via": "火山",
       "pairs": [
         {
-          "en": "模型RankIC均值和IC_IR综合打分的多头单调性和 top 组合收益maxic_一元接近\n\nlgbols_一元接近显著优于maxic_一元maxic_多元接近\n\nlgbols_多元接近优于maxic_多元",
-          "zh": "模型RankIC均值和IC_IR综合打分的多头单调性和组合收益maxic_一元接近 lgbols_一元接近显著优于maxic_一元maxic_多元接近 lgbols_多元接近优于maxic_多元",
+          "en": "we detail how we design the component to shed some lights on its rationale. Lastly, we discuss its connection with existing graph-based learning methods.",
+          "zh": "我们详细介绍了如何设计组件以阐明其基本原理。最后，我们讨论了它与现有的基于图的学习方法的联系。",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
+          "detectedLanguage": "en"
         }
       ],
-      "sig": "模型RankIC均值和IC_IR综合打分的多头单调性和 top 组合收益maxic_一元接近\n\nlgbols_一元接近显著优于maxic_一元maxic_多元接近\n\nlgbols_多元接近优于maxic_多元|模型RankIC均值和IC_IR综合打分的多头单调性和组合收益maxic_一元接近 lgbols_一元接近显著优于maxic_一元maxic_多元接近 lgbols_多元接近优于maxic_多元",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
+      "sig": "we detail how we design the component to shed some lights on its rationale. Lastly, we discuss its connection with existing graph-based learning methods.|我们详细介绍了如何设计组件以阐明其基本原理。最后，我们讨论了它与现有的基于图的学习方法的联系。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794191213530,
+      "ts": 1794383249437,
       "via": "火山",
       "pairs": [
         {
-          "en": "除了 DNN 大体上还是 RNN、CNN和 Transformer 三种",
-          "zh": "除了DNN大体上还是RNN CNN和Transtors三种",
+          "en": "the aim of Temporal Graph Convolution is to learn revised embeddings Et ∈ RN ×U that encode the relation information. Instead of directly presenting the formulation of TGC,",
+          "zh": "时序图卷积的目的是学习编码关系信息的修正嵌入Et😍RN×U。不是直接呈现TGC的公式，",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
+          "detectedLanguage": "en"
         }
       ],
-      "sig": "除了 DNN 大体上还是 RNN、CNN和 Transformer 三种|除了DNN大体上还是RNN CNN和Transtors三种",
-      "file": "83 多模型学习量价时序特征 ——因子选股系列之八十三.pdf",
+      "sig": "the aim of Temporal Graph Convolution is to learn revised embeddings Et ∈ RN ×U that encode the relation information. Instead of directly presenting the formulation of TGC,|时序图卷积的目的是学习编码关系信息的修正嵌入Et😍RN×U。不是直接呈现TGC的公式，",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794189974195,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "换手约束下的周度调仓策略应该适度拉长收益率预测周期",
-          "zh": "换手约束下的周度调仓策略应该适度拉长收益率预测周期",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "换手约束下的周度调仓策略应该适度拉长收益率预测周期|换手约束下的周度调仓策略应该适度拉长收益率预测周期",
-      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794189904088,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "共 10 个交易日的收益率作为学习",
-          "zh": "共10个交易日的收益率作为学习",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "共 10 个交易日的收益率作为学习|共10个交易日的收益率作为学习",
-      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794189361021,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "综合打分的多头单调性和 top 组合收益",
-          "zh": "综合打分的多头单调性和最高组合收益",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "综合打分的多头单调性和 top 组合收益|综合打分的多头单调性和最高组合收益",
-      "file": "",
-      "page": null
-    },
-    {
-      "ts": 1794189263526,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "T+1 收盘至 T+11 收盘的涨跌幅",
-          "zh": "T+1收盘至T+11收盘的涨跌幅",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "T+1 收盘至 T+11 收盘的涨跌幅|T+1收盘至T+11收盘的涨跌幅",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
-      "page": null
-    },
-    {
-      "ts": 1794188767466,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "原始量价数据集 rawbar 的选股效果上并没有明显比精心设计特征的 mschars 弱（RankIC 略低但 top 组合收益率略高）",
-          "zh": "原始量价数据集rawbar的选股效果上并没有明显比精心设计特征的mschars弱（RankIC略低但最高组合收益率略高）",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "原始量价数据集 rawbar 的选股效果上并没有明显比精心设计特征的 mschars 弱（RankIC 略低但 top 组合收益率略高）|原始量价数据集rawbar的选股效果上并没有明显比精心设计特征的mschars弱（RankIC略低但最高组合收益率略高）",
-      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794188681347,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "T+1 收盘至 T+11 收盘的涨跌幅",
-          "zh": "T+1收盘至T+11收盘的涨跌幅",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "T+1 收盘至 T+11 收盘的涨跌幅|T+1收盘至T+11收盘的涨跌幅",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
-      "page": null
-    },
-    {
-      "ts": 1794188556948,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "只用近期的数据去训练网络",
-          "zh": "只用近期的数据去训练网络",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "只用近期的数据去训练网络|只用近期的数据去训练网络",
-      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794187507040,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "各个数据集一元因子单元的选股效果普遍弱于多元因子单元，也就是说用一个时序模型生成唯一一个 alpha 预测不如生成多个预测",
-          "zh": "各个数据集一元因子单元的选股效果普遍弱于多元因子单元，也就是说用一个时序模型生成唯一一个alpha预测不如生成多个预测",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
-        }
-      ],
-      "sig": "各个数据集一元因子单元的选股效果普遍弱于多元因子单元，也就是说用一个时序模型生成唯一一个 alpha 预测不如生成多个预测|各个数据集一元因子单元的选股效果普遍弱于多元因子单元，也就是说用一个时序模型生成唯一一个alpha预测不如生成多个预测",
-      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794186669891,
+      "ts": 1794383106904,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "5 次独立训练的平均结果",
-          "zh": "5 次独立训练的平均结果",
+          "en": "\\operatorname{Softmax}(x_i)=\\frac{e^{x_i}}{\\sum_{j=1}^{n}e^{x_j}}",
+          "zh": "软件最大值（x_i）",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
-          "detectedLanguage": ""
+          "detectedLanguage": "en"
         }
       ],
-      "sig": "5 次独立训练的平均结果|5 次独立训练的平均结果",
-      "file": "",
+      "sig": "\\operatorname{Softmax}(x_i)=\\frac{e^{x_i}}{\\sum_{j=1}^{n}e^{x_j}}|软件最大值（x_i）",
+      "file": "知识点记录",
       "page": null
     },
     {
-      "ts": 1794186655355,
+      "ts": 1794382984275,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "采用 T+1 收盘至 T+11 收盘的涨跌幅",
-          "zh": "采用 T+1 收盘至 T+11 收盘的涨跌幅",
+          "en": "multi-hot binary relation encodings",
+          "zh": "多热二元关系编码",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
-          "detectedLanguage": ""
+          "detectedLanguage": "en"
         }
       ],
-      "sig": "采用 T+1 收盘至 T+11 收盘的涨跌幅|采用 T+1 收盘至 T+11 收盘的涨跌幅",
-      "file": "",
+      "sig": "multi-hot binary relation encodings|多热二元关系编码",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794186537269,
+      "ts": 1794382813697,
       "via": "火山",
       "pairs": [
         {
-          "en": "《神经网络日频 alpha 模型初步实践》我们取的时序长度为 60 个交易日，经测算将时序长度由 60 降低到 30 后选股表现几乎没有变化，但是模型训练时长和内存占用有较大幅度降低",
-          "zh": "\"神经网络日频alpha模型初步实践\"我们取的时序长度为60个交易日，经测算将时序长度由60降低到30后选股表现几乎没有变化，但是模型训练时长和内存占用有较大幅度降低",
+          "en": "Given N stocks with their sequential embeddings Et ∈ RN ×U (i.e., the output of sequential embedding layer) and their multi-hot binary relation encodings A ∈ RN ×N ×K , the aim of Temporal Graph Convolution is to learn revised embeddings Et ∈ RN ×U that encode the relation information. Instead of directly presenting the formulation of TGC, we detail how we design the component to shed some lights on its rationale. Lastly, we discuss its connection with existing graph-based learning methods",
+          "zh": "给定N只股票，它们的顺序嵌入Et😍RN×U（即顺序嵌入层的输出）和它们的多热二进制关系编码A😍RN×N×K，时序图卷积的目的是学习编码关系信息的修正嵌入Et😍RN×U。我们没有直接介绍TGC的公式，而是详细介绍了我们如何设计组件以阐明其基本原理。最后，我们讨论了它与现有的基于图的学习方法的联系",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
+          "detectedLanguage": "en"
         }
       ],
-      "sig": "《神经网络日频 alpha 模型初步实践》我们取的时序长度为 60 个交易日，经测算将时序长度由 60 降低到 30 后选股表现几乎没有变化，但是模型训练时长和内存占用有较大幅度降低|\"神经网络日频alpha模型初步实践\"我们取的时序长度为60个交易日，经测算将时序长度由60降低到30后选股表现几乎没有变化，但是模型训练时长和内存占用有较大幅度降低",
-      "file": "",
+      "sig": "Given N stocks with their sequential embeddings Et ∈ RN ×U (i.e., the output of sequential embedding layer) and their multi-hot binary relation encodings A ∈ RN ×N ×K , the aim of Temporal Graph Convolution is to learn revised embeddings Et ∈ RN ×U that encode the relation information. Instead of directly presenting the formulation of TGC, we detail how we design the component to shed some lights on its rationale. Lastly, we discuss its connection with existing graph-based learning methods|给定N只股票，它们的顺序嵌入Et😍RN×U（即顺序嵌入层的输出）和它们的多热二进制关系编码A😍RN×N×K，时序图卷积的目的是学习编码关系信息的修正嵌入Et😍RN×U。我们没有直接介绍TGC的公式，而是详细介绍了我们如何设计组件以阐明其基本原理。最后，我们讨论了它与现有的基于图的学习方法的联系",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794186455379,
+      "ts": 1794381929564,
       "via": "火山",
       "pairs": [
         {
-          "en": "为了不引入未来信息，上述 3 个数据集预处理过程中的参数估计由 2016 年之前的数据估计。",
-          "zh": "为了不引入未来信息，上述3个数据集预处理过程中的参数估计由2016年之前的数据估计。",
+          "en": "o as to facilitate investors making better investment decisions. On one hand, correct relative order of stocks could help to select the investment targets (i.e., the top ranked stocks). On the other hand, the accurate prediction of return ratio would facilitate deciding the timing of investment since the top ranked stocks are valuable targets only when the return ratios would largely increase.",
+          "zh": "o以方便投资者作出更好的投资决策。一方面，正确的股票相对顺序有助于选择投资目标（即排名靠前的股票）。另一方面，对回报率的准确预测将有助于决定投资时机，因为只有当回报率大幅提高时，排名靠前的股票才是有价值的目标。",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
+          "detectedLanguage": "en"
         }
       ],
-      "sig": "为了不引入未来信息，上述 3 个数据集预处理过程中的参数估计由 2016 年之前的数据估计。|为了不引入未来信息，上述3个数据集预处理过程中的参数估计由2016年之前的数据估计。",
-      "file": "",
+      "sig": "o as to facilitate investors making better investment decisions. On one hand, correct relative order of stocks could help to select the investment targets (i.e., the top ranked stocks). On the other hand, the accurate prediction of return ratio would facilitate deciding the timing of investment since the top ranked stocks are valuable targets only when the return ratios would largely increase.|o以方便投资者作出更好的投资决策。一方面，正确的股票相对顺序有助于选择投资目标（即排名靠前的股票）。另一方面，对回报率的准确预测将有助于决定投资时机，因为只有当回报率大幅提高时，排名靠前的股票才是有价值的目标。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794186239893,
+      "ts": 1794381921629,
       "via": "火山",
       "pairs": [
         {
-          "en": "本文涉及的因子检验和组合测试起止于 20161230 和 20220228，样本空间为中证全指 同期成分股",
-          "zh": "本文涉及的因子检验和组合测试起止于20161230和20220228，样本空间为中证全指同期成分股",
+          "en": "1) the return ratios of stocks in terms of absolute values, and 2) the relative orders of return ratios among stocks,",
+          "zh": "1）股票在绝对值方面的回报率，2）股票之间回报率的相对顺序，",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
+          "detectedLanguage": "en"
         }
       ],
-      "sig": "本文涉及的因子检验和组合测试起止于 20161230 和 20220228，样本空间为中证全指 同期成分股|本文涉及的因子检验和组合测试起止于20161230和20220228，样本空间为中证全指同期成分股",
-      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
+      "sig": "1) the return ratios of stocks in terms of absolute values, and 2) the relative orders of return ratios among stocks,|1）股票在绝对值方面的回报率，2）股票之间回报率的相对顺序，",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     },
     {
-      "ts": 1794186129485,
+      "ts": 1794381831568,
+      "via": "腾讯",
+      "pairs": [
+        {
+          "en": "The second term is pair-wise max-margin loss [45], which encourages the predicted ranking scores of a stock pair to have the same relative order as the ground-truth. The similar max-margin loss has been used in several applications such as recommendation [38 ] and knowledge based completion [ 34] and demonstrated good performance in ranking tasks. Minimizing our proposed combined loss will force the prediction ranking scores to be close to both 1) the return ratios of stocks in terms of absolute values, and 2) the relative orders of return ratios among stocks, so as to facilitate investors making better investment decisions. On one hand, correct relative order of stocks could help to select the investment targets (i.e., the top ranked stocks). On the other hand, the accurate prediction of return ratio would facilitate deciding the timing of investment since the top ranked stocks are valuable targets only when the return ratios would largely increase.",
+          "zh": "第二项是成对最大边际损失[45]，这鼓励股票对的预测排名得分具有与地面事实相同的相对顺序。类似的最大利润损失已用于几个应用中，例如推荐[38 ]和基于知识的完成[ 34]并在排名任务中表现出良好的性能。最小化我们提出的组合损失将迫使预测排名得分接近1）股票收益率的绝对值; 2）股票收益率的相对排序，以帮助投资者做出更好的投资决策。一方面，正确的股票相对排序有助于选择投资目标另一方面，对回报率的准确预测将有助于决定投资时机，因为只有当回报率大幅增加时，排名靠前的股票才是有价值的目标。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "The second term is pair-wise max-margin loss [45], which encourages the predicted ranking scores of a stock pair to have the same relative order as the ground-truth. The similar max-margin loss has been used in several applications such as recommendation [38 ] and knowledge based completion [ 34] and demonstrated good performance in ranking tasks. Minimizing our proposed combined loss will force the prediction ranking scores to be close to both 1) the return ratios of stocks in terms of absolute values, and 2) the relative orders of return ratios among stocks, so as to facilitate investors making better investment decisions. On one hand, correct relative order of stocks could help to select the investment targets (i.e., the top ranked stocks). On the other hand, the accurate prediction of return ratio would facilitate deciding the timing of investment since the top ranked stocks are valuable targets only when the return ratios would largely increase.|第二项是成对最大边际损失[45]，这鼓励股票对的预测排名得分具有与地面事实相同的相对顺序。类似的最大利润损失已用于几个应用中，例如推荐[38 ]和基于知识的完成[ 34]并在排名任务中表现出良好的性能。最小化我们提出的组合损失将迫使预测排名得分接近1）股票收益率的绝对值; 2）股票收益率的相对排序，以帮助投资者做出更好的投资决策。一方面，正确的股票相对排序有助于选择投资目标另一方面，对回报率的准确预测将有助于决定投资时机，因为只有当回报率大幅增加时，排名靠前的股票才是有价值的目标。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794381818959,
       "via": "火山",
       "pairs": [
         {
-          "en": "数据集 l2chars 和 mschars之所以分为两个数据集是因为高质量的 L2 数据从 2013 年下旬才能够获取，而分钟数据的起始日期较早，两个数据集可获取的时间区间不一样。另外，部分 L2 特征计算涉及到逐笔委托数据，而上交所逐笔委托数据自 2021 年 5 月才开始对外商业提供，所以部分 L2 特征的上交所部分早期没有取值，我们在标准化之后用零填充。",
-          "zh": "另外，部分L2特征计算涉及到逐笔委托数据，而上交所逐笔委托数据自2021年5月才开始对外商业提供，所以部分L2特征值的上交所部分早产有取值，我们在标准化之后用零填充。",
+          "en": "The first regression term punishes the difference between the scores of ground-truth and prediction.",
+          "zh": "第一个回归项惩罚地面真实值和预测值之间的差异。",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
-          "detectedLanguage": "zh-Hans"
+          "detectedLanguage": "en"
         }
       ],
-      "sig": "数据集 l2chars 和 mschars之所以分为两个数据集是因为高质量的 L2 数据从 2013 年下旬才能够获取，而分钟数据的起始日期较早，两个数据集可获取的时间区间不一样。另外，部分 L2 特征计算涉及到逐笔委托数据，而上交所逐笔委托数据自 2021 年 5 月才开始对外商业提供，所以部分 L2 特征的上交所部分早期没有取值，我们在标准化之后用零填充。|另外，部分L2特征计算涉及到逐笔委托数据，而上交所逐笔委托数据自2021年5月才开始对外商业提供，所以部分L2特征值的上交所部分早产有取值，我们在标准化之后用零填充。",
-      "file": "81 周频量价指增模型 ——因子选股系列之八十一.pdf",
+      "sig": "The first regression term punishes the difference between the scores of ground-truth and prediction.|第一个回归项惩罚地面真实值和预测值之间的差异。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794381806778,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "where rt+1 = [r t +1 1 , · · · r t +1 N ] and ˆrt+1 = [ˆr t +1 1 , · · · , ˆr t +1 N ] ∈ RN are ground-truth and predicted ranking scores, respectively, and α is a hyperparameter to balance the two loss terms. Since we focus on identifying the most profitable stock to trade, we use the 1-day return ratio of a stock as the ground-truth rather than the normalized price used in previous work [42]. We will provide more details on computing the ground-truth in Section 4.1 in our data collection.",
+          "zh": "其中rt+1=[r t+1 1 , · · · r t+1 N]和^rt+1=[^r t+1 1 , · · · , ˆr t+1 N]😍RN分别是事实和预测排名分数，α是平衡两个损失项的超参数。由于我们专注于识别最有利可图的股票进行交易，我们使用股票的1天回报率作为事实，而不是以前工作中使用的归一化价格[42]。我们将在数据采集的第4.1节中提供更多关于计算事实的细节。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "where rt+1 = [r t +1 1 , · · · r t +1 N ] and ˆrt+1 = [ˆr t +1 1 , · · · , ˆr t +1 N ] ∈ RN are ground-truth and predicted ranking scores, respectively, and α is a hyperparameter to balance the two loss terms. Since we focus on identifying the most profitable stock to trade, we use the 1-day return ratio of a stock as the ground-truth rather than the normalized price used in previous work [42]. We will provide more details on computing the ground-truth in Section 4.1 in our data collection.|其中rt+1=[r t+1 1 , · · · r t+1 N]和^rt+1=[^r t+1 1 , · · · , ˆr t+1 N]😍RN分别是事实和预测排名分数，α是平衡两个损失项的超参数。由于我们专注于识别最有利可图的股票进行交易，我们使用股票的1天回报率作为事实，而不是以前工作中使用的归一化价格[42]。我们将在数据采集的第4.1节中提供更多关于计算事实的细节。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794381791028,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "To optimize the model, we propose an objective function that combines both pointwise regression loss and pairwise ranking-aware loss",
+          "zh": "为了优化模型，我们提出了一个结合点回归损失和成对排序感知损失的目标函数",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "To optimize the model, we propose an objective function that combines both pointwise regression loss and pairwise ranking-aware loss|为了优化模型，我们提出了一个结合点回归损失和成对排序感知损失的目标函数",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
       "page": null
     }
   ],
