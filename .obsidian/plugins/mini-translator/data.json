@@ -49,803 +49,804 @@
   "fullHtml": false,
   "history": [
     {
-      "ts": 1794386889675,
+      "ts": 1794473596005,
       "via": "火山",
       "pairs": [
         {
-          "en": "As such, we consider constructing data by ourselves, which is accessible through: https://github.com/hennande/Temporal_Relational_Stock_Ranking. Specifically, we collect the stocks from the NASDAQ and NYSE markets that have transaction records between 01/02/2013 and 12/08/2017, obtaining 3, 274 and 3, 163 stocks respectively. Note that we select these two markets for their representative properties that NASDAQ is more volatile whereas NYSE is more stable [ 33]. Furthermore, we perform a filtering on the stocks by retaining the stocks satisfying the two conditions: 1) have been traded on more than 98% of trading days since 01/02/2013; 2) have never been traded at less than five dollars per share during the collection period. It should be noted that the first condition is based on concerns that intermittent sequences may bring abnormal patterns; the second condition ensures that the selected stocks are not penny stocks7, which are",
-          "zh": "因此，我们考虑自己构建数据，可以通过以下方式访问：https://github.com/hennande/Temporal_Relational_Stock_Ranking。具体来说，我们从纳斯达克和纽约证券交易所市场收集01/02/2013和12/08/2017之间有交易记录的股票，分别获得3,274和3,163只股票。请注意，我们选择这两个市场是因为它们的代表性属性，即纳斯达克更易波动，而纽约证券交易所更稳定[33]。此外，我们通过保留满足以下两个条件的股票来对股票进行过滤： 1）自01/02/2013以来超过98%的交易日都在交易；2）在收集期间从未以每股5美元的价格交易。 应当注意，第一个条件是基于对间歇性序列可能带来异常模式的担忧；第二个条件确保所选股票不是细价股7，它们是",
+          "en": "\\mathcal L_{\\mathrm{multi}} = \\mathcal L_{\\mathrm{pred}} + \\lambda_{\\mathrm{orth}}\\mathcal L_{\\mathrm{orth}}",
+          "zh": "\\mathcalL_{\\matrm{multi}}=\\mathcalL_{\\matrm{pred}}+\\lambda_{\\matrm{orth}}\\mathcalL_{\\matrm{orth}}",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "As such, we consider constructing data by ourselves, which is accessible through: https://github.com/hennande/Temporal_Relational_Stock_Ranking. Specifically, we collect the stocks from the NASDAQ and NYSE markets that have transaction records between 01/02/2013 and 12/08/2017, obtaining 3, 274 and 3, 163 stocks respectively. Note that we select these two markets for their representative properties that NASDAQ is more volatile whereas NYSE is more stable [ 33]. Furthermore, we perform a filtering on the stocks by retaining the stocks satisfying the two conditions: 1) have been traded on more than 98% of trading days since 01/02/2013; 2) have never been traded at less than five dollars per share during the collection period. It should be noted that the first condition is based on concerns that intermittent sequences may bring abnormal patterns; the second condition ensures that the selected stocks are not penny stocks7, which are|因此，我们考虑自己构建数据，可以通过以下方式访问：https://github.com/hennande/Temporal_Relational_Stock_Ranking。具体来说，我们从纳斯达克和纽约证券交易所市场收集01/02/2013和12/08/2017之间有交易记录的股票，分别获得3,274和3,163只股票。请注意，我们选择这两个市场是因为它们的代表性属性，即纳斯达克更易波动，而纽约证券交易所更稳定[33]。此外，我们通过保留满足以下两个条件的股票来对股票进行过滤： 1）自01/02/2013以来超过98%的交易日都在交易；2）在收集期间从未以每股5美元的价格交易。 应当注意，第一个条件是基于对间歇性序列可能带来异常模式的担忧；第二个条件确保所选股票不是细价股7，它们是",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": "\\mathcal L_{\\mathrm{multi}} = \\mathcal L_{\\mathrm{pred}} + \\lambda_{\\mathrm{orth}}\\mathcal L_{\\mathrm{orth}}|\\mathcalL_{\\matrm{multi}}=\\mathcalL_{\\matrm{pred}}+\\lambda_{\\matrm{orth}}\\mathcalL_{\\matrm{orth}}",
+      "file": "",
       "page": null
     },
     {
-      "ts": 1794386880108,
+      "ts": 1794469731748,
       "via": "火山",
       "pairs": [
         {
-          "en": "Most existing works evaluate stock prediction on dozens of stocks, and there lacks a large stock dataset for an extensive evaluation.",
-          "zh": "现有的研究大多对数十种股票进行股票预测，缺乏用于广泛评估的大型股票数据集。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "Most existing works evaluate stock prediction on dozens of stocks, and there lacks a large stock dataset for an extensive evaluation.|现有的研究大多对数十种股票进行股票预测，缺乏用于广泛评估的大型股票数据集。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794386812532,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "Most existing works evaluate stock prediction on dozens of stocks, and there lacks a large stock dataset for an extensive evaluation",
-          "zh": "大多数现有的工作评估股票预测数十个股票和缺乏一个大型的股票数据集广泛的评估",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "Most existing works evaluate stock prediction on dozens of stocks, and there lacks a large stock dataset for an extensive evaluation|大多数现有的工作评估股票预测数十个股票和缺乏一个大型的股票数据集广泛的评估",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794386725324,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": ". However, GCN cannot capture the temporal evolution properties as designed in our TGC, since the adjacency matrix A has to be fixed in GCN. As such, our proposed operation can be seen as generalizing the GCN by specifically modeling the temporal patterns, thus we term it as the Temporal Graph Convolution.",
-          "zh": ".然而，GCN不能捕获我们TGC中设计的时间演化属性，因为相邻矩阵A必须在GCN中固定。因此，我们提出的操作可以被视为通过对时间模式进行专门建模来概括GCN，因此我们将其称为时间图卷积。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": ". However, GCN cannot capture the temporal evolution properties as designed in our TGC, since the adjacency matrix A has to be fixed in GCN. As such, our proposed operation can be seen as generalizing the GCN by specifically modeling the temporal patterns, thus we term it as the Temporal Graph Convolution.|.然而，GCN不能捕获我们TGC中设计的时间演化属性，因为相邻矩阵A必须在GCN中固定。因此，我们提出的操作可以被视为通过对时间模式进行专门建模来概括GCN，因此我们将其称为时间图卷积。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794386715438,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "To show the relation, let us first construct a graph based on the stock relation encodings At , where vertices represent stocks and edges connect vertices with at least one relation, i.e., we connect vertex i and j if they satisfy the condition sum(aij) > 0. If we represent the graph with an adjacency matrix A and normalize it by column, the Uniform Embedding Propagation (i.e., Equation 10) has exactly the same effect as the state-of-the-art graph convolutional operation (i.e., f (F, X) = AX; details see Section 2.2.1).",
-          "zh": "为了显示这种关系，让我们首先基于股票关系编码At构造一个图，其中顶点表示股票，边连接具有至少一种关系的顶点，即如果它们满足条件sum（aij）>0，我们连接顶点i和j。如果我们用相邻矩阵A表示图并按列归一化它，均匀嵌入传播（即方程10）与最先进的图卷积运算具有完全相同的效果（即f（F，X）=AX；详情见第2.2.1节）。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "To show the relation, let us first construct a graph based on the stock relation encodings At , where vertices represent stocks and edges connect vertices with at least one relation, i.e., we connect vertex i and j if they satisfy the condition sum(aij) > 0. If we represent the graph with an adjacency matrix A and normalize it by column, the Uniform Embedding Propagation (i.e., Equation 10) has exactly the same effect as the state-of-the-art graph convolutional operation (i.e., f (F, X) = AX; details see Section 2.2.1).|为了显示这种关系，让我们首先基于股票关系编码At构造一个图，其中顶点表示股票，边连接具有至少一种关系的顶点，即如果它们满足条件sum（aij）>0，我们连接顶点i和j。如果我们用相邻矩阵A表示图并按列归一化它，均匀嵌入传播（即方程10）与最先进的图卷积运算具有完全相同的效果（即f（F，X）=AX；详情见第2.2.1节）。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794386444294,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "3.2.1 Connection with Graph-based Learning. The embedding propagation is equivalent to the graph convolutional network (GCN). To show the relation, let us first construct a graph based on the stock relation encodings At , where vertices represent stocks and edges connect vertices with at least one relation, i.e., we connect vertex i and j if they satisfy the condition sum(aij) > 0. If we represent the graph with an adjacency matrix A and normalize it by column, the Uniform Embedding Propagation (i.e., Equation 10) has exactly the same effect as the state-of-the-art graph convolutional operation (i.e., f (F, X) = AX; details see Section 2.2.1). However, GCN cannot capture the temporal evolution properties as designed in our TGC, since the adjacency matrix A has to be fixed in GCN. As such, our proposed operation can be seen as generalizing the GCN by specifically modeling the temporal patterns, thus we term it as the Temporal Graph Convolution",
-          "zh": "3.2.1与基于图的学习的连接。嵌入传播等价于图卷积网络（GCN）。为了显示关系，让我们首先基于股票关系编码At构造一个图，其中顶点表示股票，边连接具有至少一种关系的顶点，即如果它们满足条件sum（aij）>0，我们将顶点i和j连接起来。如果我们用相邻矩阵A表示图并按列归一化它，均匀嵌入传播（即等式10）与最先进的图卷积运算具有完全相同的效果（即f（F，X）=AX；详情见第2.2.1节）。 然而，由于相邻矩阵A必须在GCN中固定，GCN无法捕获TGC中设计的时间演化属性。因此，我们提出的操作可以被视为通过对时间模式进行专门建模来概括GCN，因此我们将其称为时间图卷积",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "3.2.1 Connection with Graph-based Learning. The embedding propagation is equivalent to the graph convolutional network (GCN). To show the relation, let us first construct a graph based on the stock relation encodings At , where vertices represent stocks and edges connect vertices with at least one relation, i.e., we connect vertex i and j if they satisfy the condition sum(aij) > 0. If we represent the graph with an adjacency matrix A and normalize it by column, the Uniform Embedding Propagation (i.e., Equation 10) has exactly the same effect as the state-of-the-art graph convolutional operation (i.e., f (F, X) = AX; details see Section 2.2.1). However, GCN cannot capture the temporal evolution properties as designed in our TGC, since the adjacency matrix A has to be fixed in GCN. As such, our proposed operation can be seen as generalizing the GCN by specifically modeling the temporal patterns, thus we term it as the Temporal Graph Convolution|3.2.1与基于图的学习的连接。嵌入传播等价于图卷积网络（GCN）。为了显示关系，让我们首先基于股票关系编码At构造一个图，其中顶点表示股票，边连接具有至少一种关系的顶点，即如果它们满足条件sum（aij）>0，我们将顶点i和j连接起来。如果我们用相邻矩阵A表示图并按列归一化它，均匀嵌入传播（即等式10）与最先进的图卷积运算具有完全相同的效果（即f（F，X）=AX；详情见第2.2.1节）。 然而，由于相邻矩阵A必须在GCN中固定，GCN无法捕获TGC中设计的时间演化属性。因此，我们提出的操作可以被视为通过对时间模式进行专门建模来概括GCN，因此我们将其称为时间图卷积",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794386393902,
-      "via": "腾讯",
-      "pairs": [
-        {
-          "en": "The embedding propagation is equivalent to the graph convolutional network (GCN). To show the relation, let us first construct a graph based on the stock relation encodings At , where vertices represent stocks and edges connect vertices with at least one relation, i.e., we connect vertex i and j if they satisfy the condition sum(aij) > 0. If we represent the graph with an adjacency matrix A and normalize it by column, the Uniform Embedding Propagation (i.e., Equation 10) has exactly the same effect as the state-of-the-art graph convolutional operation (i.e., f (F, X) = AX; details see Section 2.2.1). However, GCN cannot capture the temporal evolution properties as designed in our TGC, since the adjacency matrix A has to be fixed in GCN. As such, our proposed operation can be seen as generalizing the GCN by specifically modeling the temporal patterns, thus we term it as the Temporal Graph Convolution.",
-          "zh": "嵌入传播等价于图卷积网络（GCN）。为了显示关系，让我们首先基于股票关系编码At构建一个图，其中顶点表示股票，边连接具有至少一个关系的顶点，即，如果顶点i和j满足条件sum（aij）> 0，则连接它们。如果我们用邻接矩阵A表示图并按列对其进行归一化，均匀嵌入传播（即，等式10）具有与现有技术的图卷积运算完全相同的效果（即，f（F，X）= AX;细节参见第2.2.1节）。然而，GCN不能捕获如在我们的TGC中设计的时间演化属性，因为邻接矩阵A必须在GCN中固定。因此，我们所提出的操作可以被看作是通过专门建模时间模式来推广GCN，因此我们将其称为时间图卷积。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "The embedding propagation is equivalent to the graph convolutional network (GCN). To show the relation, let us first construct a graph based on the stock relation encodings At , where vertices represent stocks and edges connect vertices with at least one relation, i.e., we connect vertex i and j if they satisfy the condition sum(aij) > 0. If we represent the graph with an adjacency matrix A and normalize it by column, the Uniform Embedding Propagation (i.e., Equation 10) has exactly the same effect as the state-of-the-art graph convolutional operation (i.e., f (F, X) = AX; details see Section 2.2.1). However, GCN cannot capture the temporal evolution properties as designed in our TGC, since the adjacency matrix A has to be fixed in GCN. As such, our proposed operation can be seen as generalizing the GCN by specifically modeling the temporal patterns, thus we term it as the Temporal Graph Convolution.|嵌入传播等价于图卷积网络（GCN）。为了显示关系，让我们首先基于股票关系编码At构建一个图，其中顶点表示股票，边连接具有至少一个关系的顶点，即，如果顶点i和j满足条件sum（aij）> 0，则连接它们。如果我们用邻接矩阵A表示图并按列对其进行归一化，均匀嵌入传播（即，等式10）具有与现有技术的图卷积运算完全相同的效果（即，f（F，X）= AX;细节参见第2.2.1节）。然而，GCN不能捕获如在我们的TGC中设计的时间演化属性，因为邻接矩阵A必须在GCN中固定。因此，我们所提出的操作可以被看作是通过专门建模时间模式来推广GCN，因此我们将其称为时间图卷积。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794386390434,
-      "via": "腾讯",
-      "pairs": [
-        {
-          "en": "Connection with Graph-based Learning.",
-          "zh": "与基于图形的学习的连接。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "Connection with Graph-based Learning.|与基于图形的学习的连接。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794386040964,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "where w ∈ R2U +K and b are model parameters to be learned; ϕ is an activation function same as the one in Equation 12. Then we normalize the outputs using a softmax function, which also endows it with more non-linearities. Since this way of interaction is implicitly captured by the parameters, we call it as Implicit Modeling.",
-          "zh": "其中w😍R2U+K和b是要学习的模型参数；是一个与等式12中相同的激活函数。然后我们使用softmax函数对输出进行归一化，这也赋予了它更多的非线性。由于这种交互方式被参数隐式捕获，我们称之为隐式建模。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "where w ∈ R2U +K and b are model parameters to be learned; ϕ is an activation function same as the one in Equation 12. Then we normalize the outputs using a softmax function, which also endows it with more non-linearities. Since this way of interaction is implicitly captured by the parameters, we call it as Implicit Modeling.|其中w😍R2U+K和b是要学习的模型参数；是一个与等式12中相同的激活函数。然后我们使用softmax函数对输出进行归一化，这也赋予了它更多的非线性。由于这种交互方式被参数隐式捕获，我们称之为隐式建模。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794386029379,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "In this design, we feed the sequential embeddings and the relation vector into a fully connected layer to estimate the relation strength:",
-          "zh": "在这个设计中，我们将顺序嵌入和关系向量输入到一个全连接的层中以估计关系强度：",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "In this design, we feed the sequential embeddings and the relation vector into a fully connected layer to estimate the relation strength:|在这个设计中，我们将顺序嵌入和关系向量输入到一个全连接的层中以估计关系强度：",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385983461,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "In this design, we feed the sequential embeddings and the relation vector into a fully connected layer to estimate the relation strength",
-          "zh": "在这个设计中，我们将顺序嵌入和关系向量输入到一个全连接层中以估计关系强度",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "In this design, we feed the sequential embeddings and the relation vector into a fully connected layer to estimate the relation strength|在这个设计中，我们将顺序嵌入和关系向量输入到一个全连接层中以估计关系强度",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385873110,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "We use inner product to estimate the similarity, inspired by its effectiveness in modeling the similarity (interaction) between two entities (embeddings) in Collaborative Filtering [ 15]. The second term is a nonlinear regression model on the relations, where each element in w denotes the weight of a relation in general and b is a bias term. Since both terms of this function are directly interpretable, we call it as Explicit Modeling.",
-          "zh": "我们使用内积来估计相似性，灵感来自它在协同过滤[15]中建模两个实体（嵌入）之间的相似性（交互）的有效性。第二项是关系的非线性回归模型，其中w中的每个元素一般表示关系的权重，b是偏差项。由于该函数的两个项都是可直接解释的，我们称之为显式建模。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "We use inner product to estimate the similarity, inspired by its effectiveness in modeling the similarity (interaction) between two entities (embeddings) in Collaborative Filtering [ 15]. The second term is a nonlinear regression model on the relations, where each element in w denotes the weight of a relation in general and b is a bias term. Since both terms of this function are directly interpretable, we call it as Explicit Modeling.|我们使用内积来估计相似性，灵感来自它在协同过滤[15]中建模两个实体（嵌入）之间的相似性（交互）的有效性。第二项是关系的非线性回归模型，其中w中的每个元素一般表示关系的权重，b是偏差项。由于该函数的两个项都是可直接解释的，我们称之为显式建模。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385857372,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "where w ∈ RK and b are model parameters to be learned; ϕ is an activation function6. The relation strength of aji is determined by two terms – similarity and relation importance. Specifically, the first term measures the similarity between the two stocks at the current time-step. The intuition is that the more similar the two stocks are at the current time, it is more likely that their relations will impact their prices in the near future.",
-          "zh": "其中w😍RK和b是要学习的模型参数；是一个激活函数6。aji的关系强度由两个项决定——相似度和关系重要性。具体来说，第一项衡量两只股票在当前时间步的相似度。直觉是，两只股票在当前时间越相似，它们的关系在不久的将来影响它们的价格的可能性就越大。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "where w ∈ RK and b are model parameters to be learned; ϕ is an activation function6. The relation strength of aji is determined by two terms – similarity and relation importance. Specifically, the first term measures the similarity between the two stocks at the current time-step. The intuition is that the more similar the two stocks are at the current time, it is more likely that their relations will impact their prices in the near future.|其中w😍RK和b是要学习的模型参数；是一个激活函数6。aji的关系强度由两个项决定——相似度和关系重要性。具体来说，第一项衡量两只股票在当前时间步的相似度。直觉是，两只股票在当前时间越相似，它们的关系在不久的将来影响它们的价格的可能性就越大。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385777836,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "Next we describe two designs of the time-sensitive relation-strength function, which differ in whether to model the interaction between two stocks in an explicit or implicit manner.",
-          "zh": "接下来，我们描述了时间敏感关系强度函数的两种设计，它们的不同之处在于是否以显式或隐式方式对两只股票之间的相互作用进行建模。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "Next we describe two designs of the time-sensitive relation-strength function, which differ in whether to model the interaction between two stocks in an explicit or implicit manner.|接下来，我们描述了时间敏感关系强度函数的两种设计，它们的不同之处在于是否以显式或隐式方式对两只股票之间的相互作用进行建模。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385772050,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "This allows the relationstrength function to estimate the impact of a relation vector based on the stocks of concern, which is very desirable.",
-          "zh": "这允许关系强度函数根据关注的股票来估计关系向量的影响，这是非常可取的。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "This allows the relationstrength function to estimate the impact of a relation vector based on the stocks of concern, which is very desirable.|这允许关系强度函数根据关注的股票来估计关系向量的影响，这是非常可取的。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385714643,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "which takes the sequential embeddings (note that they are time-sensitive) into account to estimate the strength of a relation. Besides encoding the temporal information, another benefit of such a design is that sequential embedding also encodes the stock information. This allows the relationstrength function to estimate the impact of a relation vector based on the stocks of concern, which is very desirable.",
-          "zh": "它考虑了顺序嵌入（注意它们是时间敏感的）来估计关系的强度。除了编码时间信息之外，这种设计的另一个好处是顺序嵌入也编码股票信息。这允许关系强度函数根据关注的股票来估计关系向量的影响，这是非常可取的。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "which takes the sequential embeddings (note that they are time-sensitive) into account to estimate the strength of a relation. Besides encoding the temporal information, another benefit of such a design is that sequential embedding also encodes the stock information. This allows the relationstrength function to estimate the impact of a relation vector based on the stocks of concern, which is very desirable.|它考虑了顺序嵌入（注意它们是时间敏感的）来估计关系的强度。除了编码时间信息之外，这种设计的另一个好处是顺序嵌入也编码股票信息。这允许关系强度函数根据关注的股票来估计关系向量的影响，这是非常可取的。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385689202,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "price in the period of releasing new version of iPhone than usual. To address this limitation, we propose to encode the temporal information into the relation-strength function and define the Time-aware Embedding Propagation process as follows:",
-          "zh": "发布新版本期间的价格比平时iPhone。为了解决这个限制，我们建议将时间信息编码为关系强度函数，并定义时间感知嵌入传播过程如下：",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "price in the period of releasing new version of iPhone than usual. To address this limitation, we propose to encode the temporal information into the relation-strength function and define the Time-aware Embedding Propagation process as follows:|发布新版本期间的价格比平时iPhone。为了解决这个限制，我们建议将时间信息编码为关系强度函数，并定义时间感知嵌入传播过程如下：",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385611220,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "and Lens Technology Co Ltd has a larger impact on the Lens’s stock price in the period of releasing new version of iPhone than usual. To address this limitation, we propose to encode the temporal information into the relation-strength function and define the Time-aware Embedding Propagation process as follows",
-          "zh": "Lens Technology Co Ltd在发布新版本iPhone期间对Lens股价的影响比平时更大。为了解决这一限制，我们建议将时间信息编码为关系强度函数，并定义时间感知嵌入传播过程如下",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "and Lens Technology Co Ltd has a larger impact on the Lens’s stock price in the period of releasing new version of iPhone than usual. To address this limitation, we propose to encode the temporal information into the relation-strength function and define the Time-aware Embedding Propagation process as follows|Lens Technology Co Ltd在发布新版本iPhone期间对Lens股价的影响比平时更大。为了解决这一限制，我们建议将时间信息编码为关系强度函数，并定义时间感知嵌入传播过程如下",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385605392,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "or instance, in the previous example of Figure 2(b), the supplier _customer relation between Apple Inc.",
-          "zh": "或者实例，在图2（b）的先前实例中，供应商_customer苹果公司之间的关系。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "or instance, in the previous example of Figure 2(b), the supplier _customer relation between Apple Inc.|或者实例，在图2（b）的先前实例中，供应商_customer苹果公司之间的关系。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385598352,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "As stock market is highly dynamic such that the status of a stock and the strength of a relation are continuously evolving, assuming a relation vector to have a static weight limits the modeling fidelity.",
-          "zh": "由于股票市场是高度动态的，股票的状态和关系的强度是不断变化的，假设关系向量具有静态权重限制了建模的保真度。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "As stock market is highly dynamic such that the status of a stock and the strength of a relation are continuously evolving, assuming a relation vector to have a static weight limits the modeling fidelity.|由于股票市场是高度动态的，股票的状态和关系的强度是不断变化的，假设关系向量具有静态权重限制了建模的保真度。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385558036,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "A limitation of the above weighted propagation process is that the relation-strength function returns a fixed weight for a given relation vector aji regardless the evolution across different time-steps. As stock market is highly dynamic such that the status of a stock and the strength of a relation are continuously evolving, assuming a relation vector to have a static weight limits the modeling fidelity. F",
-          "zh": "上述加权传播过程的一个局限性是关系强度函数对给定的关系向量aji返回一个固定的权重，而不管不同时间步长的演变。由于股票市场是高度动态的，股票的状态和关系的强度是不断变化的，假设关系向量具有静态权重限制了建模的保真度。F",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "A limitation of the above weighted propagation process is that the relation-strength function returns a fixed weight for a given relation vector aji regardless the evolution across different time-steps. As stock market is highly dynamic such that the status of a stock and the strength of a relation are continuously evolving, assuming a relation vector to have a static weight limits the modeling fidelity. F|上述加权传播过程的一个局限性是关系强度函数对给定的关系向量aji返回一个固定的权重，而不管不同时间步长的演变。由于股票市场是高度动态的，股票的状态和关系的强度是不断变化的，假设关系向量具有静态权重限制了建模的保真度。F",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385537075,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "whether to model the interaction between two stocks in an explicit or implicit manner.",
-          "zh": "是否以显式或隐式方式对两只股票之间的相互作用进行建模。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "whether to model the interaction between two stocks in an explicit or implicit manner.|是否以显式或隐式方式对两只股票之间的相互作用进行建模。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385375605,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.",
-          "zh": "我们可以看到，通过将不同的关系向量馈送到不同股票对的可学习关系强度函数中，我们允许嵌入传播过程同时考虑关系图的拓扑和关系的语义学。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.|我们可以看到，通过将不同的关系向量馈送到不同股票对的可学习关系强度函数中，我们允许嵌入传播过程同时考虑关系图的拓扑和关系的语义学。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385360561,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "As an example, suppose we have two relations named supplier _customer and same_industry, and three stocks j, i, and k. Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1].",
-          "zh": "例如，假设我们有两个名为供应商_customer和same_industry的关系，以及三个股票j、i和k。给定库存j是库存i的供应商，而库存k与库存i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "As an example, suppose we have two relations named supplier _customer and same_industry, and three stocks j, i, and k. Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1].|例如，假设我们有两个名为供应商_customer和same_industry的关系，以及三个股票j、i和k。给定库存j是库存i的供应商，而库存k与库存i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385269146,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "where д(aji) is a mapping function that aims to learn the impact strength of the relations in aji, and we term it as the relation-strength function. As an example, suppose we have two relations named supplier _customer and same_industry, and three stocks j, i, and k. Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1]. We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.",
-          "zh": "其中（aji）是一个映射函数，旨在学习aji中关系的影响强度，我们将其称为关系强度函数。例如，假设我们有两个名为供应商_customer和same_industry的关系，以及三个股票j、i和k。给定股票j是股票i的供应商，而股票k与股票i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。 我们可以看到，通过将不同的关系向量馈送到不同股票对的可学习关系强度函数中，我们允许嵌入传播过程同时考虑关系图的拓扑和关系的语义学。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "where д(aji) is a mapping function that aims to learn the impact strength of the relations in aji, and we term it as the relation-strength function. As an example, suppose we have two relations named supplier _customer and same_industry, and three stocks j, i, and k. Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1]. We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.|其中（aji）是一个映射函数，旨在学习aji中关系的影响强度，我们将其称为关系强度函数。例如，假设我们有两个名为供应商_customer和same_industry的关系，以及三个股票j、i和k。给定股票j是股票i的供应商，而股票k与股票i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。 我们可以看到，通过将不同的关系向量馈送到不同股票对的可学习关系强度函数中，我们允许嵌入传播过程同时考虑关系图的拓扑和关系的语义学。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385249268,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "1. 股票j和股票i是否存在关系 2.股票j有多少个关联股票",
-          "zh": "1.股票j和股票i是否存在关系2.股票j",
+          "en": "股票个数",
+          "zh": "股票个数",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "zh-Hans"
         }
       ],
-      "sig": "1. 股票j和股票i是否存在关系 2.股票j有多少个关联股票|1.股票j和股票i是否存在关系2.股票j",
+      "sig": "股票个数|股票个数",
       "file": "",
       "page": null
     },
     {
-      "ts": 1794385078453,
-      "via": "火山",
+      "ts": 1794469717416,
+      "via": "百度",
       "pairs": [
         {
-          "en": "onsider that different relations between two stocks may have varying impacts on their prices, we apply a non-uniform coefficient when propagating the embeddings:",
-          "zh": "考虑到两种股票之间的不同关系可能对其价格产生不同的影响，我们在传播嵌入时应用非均匀系数：",
+          "en": "N",
+          "zh": "n. 英语字母表的第14个字母； [电影]我与拿破仑\nn. 英语字母表的第14个字母\nabbr. haploid generation 单倍体后代（代号）； navigation 航海；\nabbr. sodium 钠",
+          "dict": true,
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "onsider that different relations between two stocks may have varying impacts on their prices, we apply a non-uniform coefficient when propagating the embeddings:|考虑到两种股票之间的不同关系可能对其价格产生不同的影响，我们在传播嵌入时应用非均匀系数：",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794385049677,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "Weighted Embedding Propagation",
-          "zh": "加权嵌入传播",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "Weighted Embedding Propagation|加权嵌入传播",
+      "sig": "N|n. 英语字母表的第14个字母； [电影]我与拿破仑\nn. 英语字母表的第14个字母\nabbr. haploid generation 单倍体后代（代号）； navigation 航海；\nabbr. sodium 钠",
       "file": "",
       "page": null
     },
     {
-      "ts": 1794385032883,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1]. We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.",
-          "zh": "假设库存j是库存i的供应商，而库存k与库存i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。我们可以看到，通过将不同的关系向量馈送到不同库存对的可学习关系强度函数中，我们允许嵌入传播过程考虑关系图的拓扑和关系的语义学。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1]. We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.|假设库存j是库存i的供应商，而库存k与库存i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。我们可以看到，通过将不同的关系向量馈送到不同库存对的可学习关系强度函数中，我们允许嵌入传播过程考虑关系图的拓扑和关系的语义学。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794384716977,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "where д(aji) is a mapping function that aims to learn the impact strength of the relations in aji, and we term it as the relation-strength function. As an example, suppose we have two relations named supplier _customer and same_industry, and three stocks j, i, and k. Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1]. We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.",
-          "zh": "其中（aji）是一个映射函数，旨在学习aji中关系的影响强度，我们将其称为关系强度函数。例如，假设我们有两个名为供应商_customer和same_industry的关系，以及三个股票j、i和k。给定股票j是股票i的供应商，而股票k与股票i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。 我们可以看到，通过将不同的关系向量馈送到不同股票对的可学习关系强度函数中，我们允许嵌入传播过程同时考虑关系图的拓扑和关系的语义学。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "where д(aji) is a mapping function that aims to learn the impact strength of the relations in aji, and we term it as the relation-strength function. As an example, suppose we have two relations named supplier _customer and same_industry, and three stocks j, i, and k. Given that stock j is a supplier of stock i while stock k is in the same industry as stock i, we can encode their relations as two different vectors: aji = [1, 0] and aki = [0, 1]. We can see that by feeding different relation vectors into a learnable relation-strength function for different stock pairs, we allow the embedding propagation process to account for both the topology of relation graph and the semantics of relations.|其中（aji）是一个映射函数，旨在学习aji中关系的影响强度，我们将其称为关系强度函数。例如，假设我们有两个名为供应商_customer和same_industry的关系，以及三个股票j、i和k。给定股票j是股票i的供应商，而股票k与股票i处于同一行业，我们可以将它们的关系编码为两个不同的向量：aji=[1,0]和aki=[0,1]。 我们可以看到，通过将不同的关系向量馈送到不同股票对的可学习关系强度函数中，我们允许嵌入传播过程同时考虑关系图的拓扑和关系的语义学。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794384508410,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "where sum(aji) is the sum of all elements in the relation vector aji (recall that aji is a multi-hot binary vector where each element denotes whether the corresponding type of relation exists between j and i). The condition sum(aji) > 0 ensures that only stocks have at least one relation will be considered. dj is the number of stocks satisfying the condition sum(aji) > 0. After such a propagation in the embedding space, the relational embedding et i encodes the impacts coming from other stocks that have relations with stock i at time t.",
-          "zh": "其中sum（aji）是关系向量aji中所有元素的和（回想一下aji是一个多热二进制向量，其中每个元素表示j和i之间是否存在相应类型的关系）。条件sum（aji）>0确保只有股票具有至少一种关系将被考虑。dj是满足条件sum（aji）>0的股票数量。在嵌入空间中这样的传播之后，关系嵌入et i对来自在时间t与股票i有关系的其他股票的影响进行编码。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "where sum(aji) is the sum of all elements in the relation vector aji (recall that aji is a multi-hot binary vector where each element denotes whether the corresponding type of relation exists between j and i). The condition sum(aji) > 0 ensures that only stocks have at least one relation will be considered. dj is the number of stocks satisfying the condition sum(aji) > 0. After such a propagation in the embedding space, the relational embedding et i encodes the impacts coming from other stocks that have relations with stock i at time t.|其中sum（aji）是关系向量aji中所有元素的和（回想一下aji是一个多热二进制向量，其中每个元素表示j和i之间是否存在相应类型的关系）。条件sum（aji）>0确保只有股票具有至少一种关系将被考虑。dj是满足条件sum（aji）>0的股票数量。在嵌入空间中这样的传播之后，关系嵌入et i对来自在时间t与股票i有关系的其他股票的影响进行编码。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794384458542,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "The condition sum(aji) > 0 ensures that only stocks have at least one relation will be considered. dj is the number of stocks satisfying the condition sum(aji) > 0. After such a propagation in the embedding space, the relational embedding et i encodes the impacts coming from other stocks that have relations with stock i at time t.",
-          "zh": "条件sum（aji）>0确保只有股票具有至少一个关系将被考虑。dj是满足条件sum（aji）>0的股票数量。在嵌入空间中进行这样的传播后，关系嵌入et i在时间t对来自与股票i有关系的其他股票的影响进行编码。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "The condition sum(aji) > 0 ensures that only stocks have at least one relation will be considered. dj is the number of stocks satisfying the condition sum(aji) > 0. After such a propagation in the embedding space, the relational embedding et i encodes the impacts coming from other stocks that have relations with stock i at time t.|条件sum（aji）>0确保只有股票具有至少一个关系将被考虑。dj是满足条件sum（aji）>0的股票数量。在嵌入空间中进行这样的传播后，关系嵌入et i在时间t对来自与股票i有关系的其他股票的影响进行编码。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794384417828,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "where sum(aji) is the sum of all elements in the relation vector aji (recall that aji is a multi-hot binary vector where each element denotes whether the corresponding type of relation exists between j and i).",
-          "zh": "其中sum（aji）是关系向量aji中所有元素的和（回想一下aji是一个多热二进制向量，其中每个元素表示j和i之间是否存在相应类型的关系）。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "where sum(aji) is the sum of all elements in the relation vector aji (recall that aji is a multi-hot binary vector where each element denotes whether the corresponding type of relation exists between j and i).|其中sum（aji）是关系向量aji中所有元素的和（回想一下aji是一个多热二进制向量，其中每个元素表示j和i之间是否存在相应类型的关系）。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794383789405,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "where sum(aji) is the sum of all elements in the relation vector aji (recall that aji is a multi-hot binary vector where each element denotes whether the corresponding type of relation exists between j and i). The condition sum(aji) > 0 ensures that only stocks have at least one relation will be considered. dj is the number of stocks satisfying the condition sum(aji) > 0. After such a propagation in the embedding space, the relational embedding et i encodes the impacts coming from other stocks that have relations with stock i at time t.",
-          "zh": "其中sum（aji）是关系向量aji中所有元素的和（回想一下aji是一个多热二进制向量，其中每个元素表示j和i之间是否存在相应类型的关系）。条件sum（aji）>0确保只有股票具有至少一种关系将被考虑。dj是满足条件sum（aji）>0的股票数量。在嵌入空间中这样的传播之后，关系嵌入et i对来自在时间t与股票i有关系的其他股票的影响进行编码。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "where sum(aji) is the sum of all elements in the relation vector aji (recall that aji is a multi-hot binary vector where each element denotes whether the corresponding type of relation exists between j and i). The condition sum(aji) > 0 ensures that only stocks have at least one relation will be considered. dj is the number of stocks satisfying the condition sum(aji) > 0. After such a propagation in the embedding space, the relational embedding et i encodes the impacts coming from other stocks that have relations with stock i at time t.|其中sum（aji）是关系向量aji中所有元素的和（回想一下aji是一个多热二进制向量，其中每个元素表示j和i之间是否存在相应类型的关系）。条件sum（aji）>0确保只有股票具有至少一种关系将被考虑。dj是满足条件sum（aji）>0的股票数量。在嵌入空间中这样的传播之后，关系嵌入et i对来自在时间t与股票i有关系的其他股票的影响进行编码。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794383475404,
+      "ts": 1794468427598,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "Our first inspiration comes from the link analysis research, where in a graph, the impact of a vertex on another one can be captured by propagating information on the graph. A well-known example is the PageRank [ 31] method that propagates the importance score of a vertex to its connected vertices.",
-          "zh": "我们的第一个灵感来自于链接分析研究，在图中，一个顶点对另一个顶点的影响可以通过在图上传播信息来捕获。一个著名的例子是PageRank [ 31]方法，该方法将顶点的重要性得分传播到其连接的顶点。",
+          "en": "未命名",
+          "zh": "未命名",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": ""
+        }
+      ],
+      "sig": "未命名|未命名",
+      "file": "未命名",
+      "page": null
+    },
+    {
+      "ts": 1794465509428,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "D_{\\mathrm{out}",
+          "zh": "D_{\\数学rm{out}",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Our first inspiration comes from the link analysis research, where in a graph, the impact of a vertex on another one can be captured by propagating information on the graph. A well-known example is the PageRank [ 31] method that propagates the importance score of a vertex to its connected vertices.|我们的第一个灵感来自于链接分析研究，在图中，一个顶点对另一个顶点的影响可以通过在图上传播信息来捕获。一个著名的例子是PageRank [ 31]方法，该方法将顶点的重要性得分传播到其连接的顶点。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": "D_{\\mathrm{out}|D_{\\数学rm{out}",
+      "file": "",
       "page": null
     },
     {
-      "ts": 1794383360967,
+      "ts": 1794465274892,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "Uniform Embedding Propagation",
-          "zh": "均匀嵌入传播",
+          "en": "F_{i,t,k}\\in\\mathbb R^{d_f}",
+          "zh": "F_{i，t，k}\\in\\mathbb R^{d_f}",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Uniform Embedding Propagation|均匀嵌入传播",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": "F_{i,t,k}\\in\\mathbb R^{d_f}|F_{i，t，k}\\in\\mathbb R^{d_f}",
+      "file": "",
       "page": null
     },
     {
-      "ts": 1794383344721,
+      "ts": 1794464751342,
       "via": "火山",
       "pairs": [
         {
-          "en": "propagation process as in link analysis:",
-          "zh": "链接分析中的传播过程：",
+          "en": "X_{i,t,k}\\in\\mathbb R^{6\\times5}",
+          "zh": "X_{i， t，k}\\in\\mathbb R^{6\\times5}",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "propagation process as in link analysis:|链接分析中的传播过程：",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": "X_{i,t,k}\\in\\mathbb R^{6\\times5}|X_{i， t，k}\\in\\mathbb R^{6\\times5}",
+      "file": "",
       "page": null
     },
     {
-      "ts": 1794383323711,
+      "ts": 1794464193793,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Y=\\mathcal F(X)+\\operatorname{Downsample}(X)",
+          "zh": "Y=\\mathcal F（X）+\\操作员名{下采样}（X）",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "es"
+        }
+      ],
+      "sig": "Y=\\mathcal F(X)+\\operatorname{Downsample}(X)|Y=\\mathcal F（X）+\\操作员名{下采样}（X）",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794462726699,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "1109模型整理 1",
+          "zh": "1109模型整理1",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "1109模型整理 1|1109模型整理1",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794461216215,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "In general, this work enables more accurate trafﬁc forecasting, which facilities the higher-lever trafﬁc scheduling such as taxi dispatch and route planing. In this way, our work can help save time for travelers, improve efﬁciency and income for transport operators, and save energy consumption. In a broad sense, adaptability is desirable in correlated time series analysis for broad social and business applications in the era of big data. The proposed adaptive modules enable elevated robustness of data analysis and relevant applications based on dynamic, interdependent, time-series data. This research generally supports better modeling and analysis of multiple channels of data based on graph structures with complex explicit and implicit correlations. It has implications and potentially accelerates the research progress in address many world-scale economic and societal issues that rely on complex times series data, such as predictions of inﬂuenza outbreak, economic growth, and climate change. A potential negative impact of this work is the fairness problem in the ride-sharing platforms. In the case that cabs supply cannot guarantee demand, platforms may emphasize the predicted high-demand areas too much, which would increase the waiting time of travelers in the low-demand areas",
+          "zh": "总的来说，这项工作能够实现更准确的交通预测，从而为出租车调度和路线规划等更高层次的交通调度提供便利。通过这种方式，我们的工作可以帮助为旅行者节省时间，提高运输运营商的效率和收入，并节省能源消耗。从广义上讲，适应性在大数据时代广泛的社会和商业应用的相关时间序列分析中是可取的。所提出的自适应模块能够提高基于动态、相互依赖、时间序列数据的数据分析和相关应用的稳健性。这项研究通常支持基于具有复杂显式和隐式相关性的图结构对多通道数据进行更好的建模和分析。 它对解决许多依赖于复杂时间序列数据的世界范围的经济和社会问题具有影响和潜在的加速研究进展，例如对流感爆发、经济增长和气候变化的预测。这项工作的潜在负面影响是拼车平台的公平性问题。在出租车供应不能保证需求的情况下，平台可能会过分强调预测的高需求地区，这将增加低需求地区旅行者的等待时间",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "In general, this work enables more accurate trafﬁc forecasting, which facilities the higher-lever trafﬁc scheduling such as taxi dispatch and route planing. In this way, our work can help save time for travelers, improve efﬁciency and income for transport operators, and save energy consumption. In a broad sense, adaptability is desirable in correlated time series analysis for broad social and business applications in the era of big data. The proposed adaptive modules enable elevated robustness of data analysis and relevant applications based on dynamic, interdependent, time-series data. This research generally supports better modeling and analysis of multiple channels of data based on graph structures with complex explicit and implicit correlations. It has implications and potentially accelerates the research progress in address many world-scale economic and societal issues that rely on complex times series data, such as predictions of inﬂuenza outbreak, economic growth, and climate change. A potential negative impact of this work is the fairness problem in the ride-sharing platforms. In the case that cabs supply cannot guarantee demand, platforms may emphasize the predicted high-demand areas too much, which would increase the waiting time of travelers in the low-demand areas|总的来说，这项工作能够实现更准确的交通预测，从而为出租车调度和路线规划等更高层次的交通调度提供便利。通过这种方式，我们的工作可以帮助为旅行者节省时间，提高运输运营商的效率和收入，并节省能源消耗。从广义上讲，适应性在大数据时代广泛的社会和商业应用的相关时间序列分析中是可取的。所提出的自适应模块能够提高基于动态、相互依赖、时间序列数据的数据分析和相关应用的稳健性。这项研究通常支持基于具有复杂显式和隐式相关性的图结构对多通道数据进行更好的建模和分析。 它对解决许多依赖于复杂时间序列数据的世界范围的经济和社会问题具有影响和潜在的加速研究进展，例如对流感爆发、经济增长和气候变化的预测。这项工作的潜在负面影响是拼车平台的公平性问题。在出租车供应不能保证需求的情况下，平台可能会过分强调预测的高需求地区，这将增加低需求地区旅行者的等待时间",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794461205346,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "n this paper, we propose to enhance the traditional graph convolutional network with node adaptive parameter learning and data-adaptive graph generation modules for learning node-speciﬁc patterns and discovering spatial correlations from data, separately. Based on the two modules, we further propose the Adaptive Graph Convolutional Recurrent Network, which can capture node-speciﬁc spatial and temporal correlations in time-series data automatically without a pre-deﬁned graph. Extensive experiments on multi-step trafﬁc forecasting tasks demonstrate the effectiveness of both AGCRN and the proposed adaptive modules. This work sheds light on applying GCN-based models in correlated time series forecasting by inferring the inter-dependency from data and reveals that learning node-speciﬁc patterns is essential for understanding correlated time series data",
+          "zh": "在本文中，我们建议分别使用节点自适应参数学习和数据自适应图生成模块来增强传统的图卷积网络，以学习节点特定模式并从数据中发现空间相关性。基于这两个模块，我们进一步提出了自适应图卷积递归网络，它可以自动捕获时间序列数据中节点特定的空间和时间相关性，而无需预先定义的图。多步交通预测任务的大量实验证明了AGCRN和所提出的自适应模块的有效性。这项工作通过推断数据的相互依赖关系，揭示了在相关时间序列预测中应用基于GCN的模型，并揭示了学习节点特定模式对于理解相关时间序列数据至关重要",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "n this paper, we propose to enhance the traditional graph convolutional network with node adaptive parameter learning and data-adaptive graph generation modules for learning node-speciﬁc patterns and discovering spatial correlations from data, separately. Based on the two modules, we further propose the Adaptive Graph Convolutional Recurrent Network, which can capture node-speciﬁc spatial and temporal correlations in time-series data automatically without a pre-deﬁned graph. Extensive experiments on multi-step trafﬁc forecasting tasks demonstrate the effectiveness of both AGCRN and the proposed adaptive modules. This work sheds light on applying GCN-based models in correlated time series forecasting by inferring the inter-dependency from data and reveals that learning node-speciﬁc patterns is essential for understanding correlated time series data|在本文中，我们建议分别使用节点自适应参数学习和数据自适应图生成模块来增强传统的图卷积网络，以学习节点特定模式并从数据中发现空间相关性。基于这两个模块，我们进一步提出了自适应图卷积递归网络，它可以自动捕获时间序列数据中节点特定的空间和时间相关性，而无需预先定义的图。多步交通预测任务的大量实验证明了AGCRN和所提出的自适应模块的有效性。这项工作通过推断数据的相互依赖关系，揭示了在相关时间序列预测中应用基于GCN的模型，并揭示了学习节点特定模式对于理解相关时间序列数据至关重要",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794461185183,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "discover the inter-dependency among different correlated series from data, which bridges the gap between graph-based prediction models and general correlated time series forecasting problems that cannot pre-deﬁne the graph easily. Our future work will focus on examining the scale-ability of our work from two perspectives: 1) data perspective - validating the performance of AGCRN on more time series prediction tasks; 2) model perspective - adapting NAPL and DAGG to more GCN-based trafﬁc forecasting models",
+          "zh": "从数据中发现不同相关序列之间的相互依赖关系，这弥合了基于图的预测模型和不能轻易预先定义图的一般相关时间序列预测问题之间的差距。我们未来的工作将侧重于从两个角度检查我们工作的可扩展性： 1）数据视角——验证AGCRN在更多时间序列预测任务上的性能；2）模型视角——将NAPL和DAGG适应更多基于GCN的交通预测模型",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "discover the inter-dependency among different correlated series from data, which bridges the gap between graph-based prediction models and general correlated time series forecasting problems that cannot pre-deﬁne the graph easily. Our future work will focus on examining the scale-ability of our work from two perspectives: 1) data perspective - validating the performance of AGCRN on more time series prediction tasks; 2) model perspective - adapting NAPL and DAGG to more GCN-based trafﬁc forecasting models|从数据中发现不同相关序列之间的相互依赖关系，这弥合了基于图的预测模型和不能轻易预先定义图的一般相关时间序列预测问题之间的差距。我们未来的工作将侧重于从两个角度检查我们工作的可扩展性： 1）数据视角——验证AGCRN在更多时间序列预测任务上的性能；2）模型视角——将NAPL和DAGG适应更多基于GCN的交通预测模型",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794461175574,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "While our work is motivated by the trafﬁc forecasting task, the proposed two adaptive modules and our AGCRN model may also be adapted to a wide variety of multivariate/correlated time series predictive tasks separately or jointly. It is possible to automatically",
+          "zh": "虽然我们的工作是由交通预测任务驱动的，但提出的两个自适应模块和我们的AGCRN模型也可以单独或联合适应各种多元/相关时间序列预测任务。可以自动",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "While our work is motivated by the trafﬁc forecasting task, the proposed two adaptive modules and our AGCRN model may also be adapted to a wide variety of multivariate/correlated time series predictive tasks separately or jointly. It is possible to automatically|虽然我们的工作是由交通预测任务驱动的，但提出的两个自适应模块和我们的AGCRN模型也可以单独或联合适应各种多元/相关时间序列预测任务。可以自动",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794461164350,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Multivariate/correlated time series prediction is a fundamental task for many applications, such as epidemic transmission forecasting [42], meteorology (e.g., air quality, rainfall) prediction [43 ], stock forecasting [ 44], and sale prediction [ 45]. W",
+          "zh": "多元/相关时间序列预测是许多应用的基本任务，例如流行病传播预测[42]、气象学（例如空气质量、降雨量）预测[43]、库存预测[44]和销售预测[45]。W",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Multivariate/correlated time series prediction is a fundamental task for many applications, such as epidemic transmission forecasting [42], meteorology (e.g., air quality, rainfall) prediction [43 ], stock forecasting [ 44], and sale prediction [ 45]. W|多元/相关时间序列预测是许多应用的基本任务，例如流行病传播预测[42]、气象学（例如空气质量、降雨量）预测[43]、库存预测[44]和销售预测[45]。W",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794461120073,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Computation Cost To evaluate the computation cost, we compare the parameter numbers and training time of AGCRN with DCRNN, STGCN, and ASTGCN on the PeMSD4 dataset in Table 3. When he node embedding dimension is set to 10, AGCRN has ﬁve times more parameters than the DCRNN model as a sacriﬁce for learning node-speciﬁc patterns. In terms of the training time, AGCRN runs slightly faster than DCRNN as we generate all predictions directly instead of the iterative manner in DCRNN. STGCN is the fastest thanks to the temporal convolution structure. However, it will require more parameters and training time to add spatial and temporal attention mechanisms to STGCN for learning more accurate spatial-temporal patterns (e.g., ASTGCN). Considering the signiﬁcant performance improvement (as shown in Table 1), the computation cost of AGCRN is moderate",
+          "zh": "计算成本为了评估计算成本，我们在表3中的PeMSD4数据集上比较了AGCRN与DCRNN、STGCN和ASTGCN的参数数量和训练时间。当节点嵌入维度设置为10时，AGCRN的参数比DCRNN模型多5倍，作为学习特定节点模式的牺牲。就训练时间而言，AGCRN的运行速度略快于DCRNN，因为我们直接生成所有预测，而不是在DCRNN中以迭代方式生成。由于时间卷积结构，STGCN是最快的。然而，将空间和时间注意力机制添加到STGCN以学习更准确的时空模式（例如ASTGCN）需要更多的参数和训练时间。 考虑到显着的性能改进（如表1所示），AGCRN的计算成本适中",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Computation Cost To evaluate the computation cost, we compare the parameter numbers and training time of AGCRN with DCRNN, STGCN, and ASTGCN on the PeMSD4 dataset in Table 3. When he node embedding dimension is set to 10, AGCRN has ﬁve times more parameters than the DCRNN model as a sacriﬁce for learning node-speciﬁc patterns. In terms of the training time, AGCRN runs slightly faster than DCRNN as we generate all predictions directly instead of the iterative manner in DCRNN. STGCN is the fastest thanks to the temporal convolution structure. However, it will require more parameters and training time to add spatial and temporal attention mechanisms to STGCN for learning more accurate spatial-temporal patterns (e.g., ASTGCN). Considering the signiﬁcant performance improvement (as shown in Table 1), the computation cost of AGCRN is moderate|计算成本为了评估计算成本，我们在表3中的PeMSD4数据集上比较了AGCRN与DCRNN、STGCN和ASTGCN的参数数量和训练时间。当节点嵌入维度设置为10时，AGCRN的参数比DCRNN模型多5倍，作为学习特定节点模式的牺牲。就训练时间而言，AGCRN的运行速度略快于DCRNN，因为我们直接生成所有预测，而不是在DCRNN中以迭代方式生成。由于时间卷积结构，STGCN是最快的。然而，将空间和时间注意力机制添加到STGCN以学习更准确的时空模式（例如ASTGCN）需要更多的参数和训练时间。 考虑到显着的性能改进（如表1所示），AGCRN的计算成本适中",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794461109334,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Both an excessively small and large node embedding dimension will lead to weaker performance. On the one hand, node embedding with a larger dimension can contain more information and thus help our DAGG module to deduce more accurate spatial correlations. On the other hand, a larger node embedding dimension will signiﬁcantly increase the parameter numbers in the NAPL module, making the model harder to optimize and causing over-ﬁtting. Overall, it would be a good practice for AGCRN to ﬁnd a suitable node embedding dimension and balance the model’s performance and complexity",
+          "zh": "过小和过大的节点嵌入维度都会导致性能下降。一方面，较大维度的节点嵌入可以包含更多信息，从而帮助我们的DAGG模块推断更准确的空间相关性。另一方面，较大的节点嵌入维度将显着增加NAPL模块中的参数数量，使模型更难优化并导致过度拟合。总的来说，AGCRN找到合适的节点嵌入维度并平衡模型的性能和复杂性将是一个很好的做法",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Both an excessively small and large node embedding dimension will lead to weaker performance. On the one hand, node embedding with a larger dimension can contain more information and thus help our DAGG module to deduce more accurate spatial correlations. On the other hand, a larger node embedding dimension will signiﬁcantly increase the parameter numbers in the NAPL module, making the model harder to optimize and causing over-ﬁtting. Overall, it would be a good practice for AGCRN to ﬁnd a suitable node embedding dimension and balance the model’s performance and complexity|过小和过大的节点嵌入维度都会导致性能下降。一方面，较大维度的节点嵌入可以包含更多信息，从而帮助我们的DAGG模块推断更准确的空间相关性。另一方面，较大的节点嵌入维度将显着增加NAPL模块中的参数数量，使模型更难优化并导致过度拟合。总的来说，AGCRN找到合适的节点嵌入维度并平衡模型的性能和复杂性将是一个很好的做法",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794461075570,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "AGCRN achieves the best performance when the embedding dimension is set to 10.",
+          "zh": "当嵌入维度设置为10时，AGCRN实现了最佳性能。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "AGCRN achieves the best performance when the embedding dimension is set to 10.|当嵌入维度设置为10时，AGCRN实现了最佳性能。",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460970188,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Embedding Dimension One key parameter in AGCRN is the dimensions of the node embedding, which not only inﬂuences the quality of the learned graph but also decides the parameter diversity in NAPL-GCN layers. Fig. 4 shows the effects of different embedding dimensions to AGCRN on the PeMSD4 dataset. AGCRN obtains relatively good performance for all the tested embedding dimensions, which shows the robustness of our methods. Besides, AGCRN achieves the best performance when the embedding dimension is set to 10. Both an excessively small and large node embedding dimension will lead to weaker performance. On the one hand, node embedding with a larger dimension can contain more information and thus help our DAGG module to deduce more accurate spatial correlations. On the other hand, a larger node embedding dimension will signiﬁcantly increase the parameter numbers in the NAPL module, making the model harder to optimize and causing over-ﬁtting. Overall, it would be a good practice for AGCRN to ﬁnd a suitable node embedding dimension and balance the model’s performance and complexity.",
+          "zh": "嵌入维度AGCRN中的一个关键参数是节点嵌入的维度，它不仅影响学习图的质量，还决定了NAPL-GCN层中的参数多样性。图4显示了对AGCRN的不同嵌入维度对PeMSD4数据集的影响。AGCRN对所有测试的嵌入维度都获得了相对较好的性能，这表明了我们方法的鲁棒性。此外，当嵌入维度设置为10时，AGCRN实现了最佳性能。过小和过大的节点嵌入维度都会导致性能较弱。一方面，维度较大的节点嵌入可以包含更多的信息，从而帮助我们的DAGG模块推断出更准确的空间相关性。 另一方面，较大的节点嵌入维度将显著增加NAPL模块中的参数数量，使模型更难优化并导致过度拟合。总的来说，AGCRN找到合适的节点嵌入维度并平衡模型的性能和复杂性将是一个很好的实践。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Embedding Dimension One key parameter in AGCRN is the dimensions of the node embedding, which not only inﬂuences the quality of the learned graph but also decides the parameter diversity in NAPL-GCN layers. Fig. 4 shows the effects of different embedding dimensions to AGCRN on the PeMSD4 dataset. AGCRN obtains relatively good performance for all the tested embedding dimensions, which shows the robustness of our methods. Besides, AGCRN achieves the best performance when the embedding dimension is set to 10. Both an excessively small and large node embedding dimension will lead to weaker performance. On the one hand, node embedding with a larger dimension can contain more information and thus help our DAGG module to deduce more accurate spatial correlations. On the other hand, a larger node embedding dimension will signiﬁcantly increase the parameter numbers in the NAPL module, making the model harder to optimize and causing over-ﬁtting. Overall, it would be a good practice for AGCRN to ﬁnd a suitable node embedding dimension and balance the model’s performance and complexity.|嵌入维度AGCRN中的一个关键参数是节点嵌入的维度，它不仅影响学习图的质量，还决定了NAPL-GCN层中的参数多样性。图4显示了对AGCRN的不同嵌入维度对PeMSD4数据集的影响。AGCRN对所有测试的嵌入维度都获得了相对较好的性能，这表明了我们方法的鲁棒性。此外，当嵌入维度设置为10时，AGCRN实现了最佳性能。过小和过大的节点嵌入维度都会导致性能较弱。一方面，维度较大的节点嵌入可以包含更多的信息，从而帮助我们的DAGG模块推断出更准确的空间相关性。 另一方面，较大的节点嵌入维度将显著增加NAPL模块中的参数数量，使模型更难优化并导致过度拟合。总的来说，AGCRN找到合适的节点嵌入维度并平衡模型的性能和复杂性将是一个很好的实践。",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460763472,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "The results reveal that the generated graph Laplacian matrix D- 1 2 AD- 1 2 shares similar property as the pre-deﬁned graph in Chebyshev polynomial expansion.",
+          "zh": "结果表明，生成的图拉普拉斯矩阵D-1 2 AD-1 2与切比雪夫多项式展开中的预定义图具有相似的性质。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "The results reveal that the generated graph Laplacian matrix D- 1 2 AD- 1 2 shares similar property as the pre-deﬁned graph in Chebyshev polynomial expansion.|结果表明，生成的图拉普拉斯矩阵D-1 2 AD-1 2与切比雪夫多项式展开中的预定义图具有相似的性质。",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460748581,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": ". Besides, DAGG-2 achieves similar performance with DAGG-1, which is consistent with the existing works [ 33 , 4 , 2] using pre-deﬁned graphs. The results reveal that the generated graph Laplacian matrix D- 1 2 AD- 1 2 shares similar property as the pre-deﬁned graph in Chebyshev polynomial expansion.",
+          "zh": ".此外，DAGG-2实现了与DAGG-1相似的性能，这与使用预定义图的现有工作[33,4,2]一致。结果表明，生成的图拉普拉斯矩阵D-1 2 AD-1 2与Chebyshev多项式展开中的预定义图具有相似的性质。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": ". Besides, DAGG-2 achieves similar performance with DAGG-1, which is consistent with the existing works [ 33 , 4 , 2] using pre-deﬁned graphs. The results reveal that the generated graph Laplacian matrix D- 1 2 AD- 1 2 shares similar property as the pre-deﬁned graph in Chebyshev polynomial expansion.|.此外，DAGG-2实现了与DAGG-1相似的性能，这与使用预定义图的现有工作[33,4,2]一致。结果表明，生成的图拉普拉斯矩阵D-1 2 AD-1 2与Chebyshev多项式展开中的预定义图具有相似的性质。",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460699266,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "To further investigate DAGG, we compare it with two variants: 1) DAGG-r, which removes the identity matrix in Eq. 6; 2) DAGG-2 which mimics the second-order Chebyshev polynomial expansion in GCN [ 4, 33] with our learned D- 1 2 AD- 1 2 . The backbone network is AGCRN-I, which does not share the embedding matrix among NAPL-GCN and DAGG to avoid the constraints from the NAPL module. As shown in Table 2 (where DAGG-1 follows Eq. 6), removing the identity matrix from DAGG signiﬁcantly harms the prediction performance, which presents the",
+          "zh": "为了进一步研究DAGG，我们将其与两个变体进行比较： 1）DAGG-r，它删除了方程6中的单位矩阵；2）DAGG-2，它模仿GCN[4,33]中的二阶切比雪夫多项式展开，并使用我们学习的D-1 2 AD-1 2。骨干网络是AGCRN-I，它不共享NAPL-GCN和DAGG之间的嵌入矩阵，以避免来自NAPL模块的约束。如表2所示（其中DAGG-1遵循方程6），从DAGG中删除单位矩阵会显着损害预测性能",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "To further investigate DAGG, we compare it with two variants: 1) DAGG-r, which removes the identity matrix in Eq. 6; 2) DAGG-2 which mimics the second-order Chebyshev polynomial expansion in GCN [ 4, 33] with our learned D- 1 2 AD- 1 2 . The backbone network is AGCRN-I, which does not share the embedding matrix among NAPL-GCN and DAGG to avoid the constraints from the NAPL module. As shown in Table 2 (where DAGG-1 follows Eq. 6), removing the identity matrix from DAGG signiﬁcantly harms the prediction performance, which presents the|为了进一步研究DAGG，我们将其与两个变体进行比较： 1）DAGG-r，它删除了方程6中的单位矩阵；2）DAGG-2，它模仿GCN[4,33]中的二阶切比雪夫多项式展开，并使用我们学习的D-1 2 AD-1 2。骨干网络是AGCRN-I，它不共享NAPL-GCN和DAGG之间的嵌入矩阵，以避免来自NAPL模块的约束。如表2所示（其中DAGG-1遵循方程6），从DAGG中删除单位矩阵会显着损害预测性能",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460621823,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "importance of highlighting the self-information manually in prediction. Besides, DAGG-2 achieves similar performance with DAGG-1, which is consistent with the existing works [ 33 , 4 , 2] using pre-deﬁned graphs. The results reveal that the generated graph Laplacian matrix D- 1 2 AD- 1 2 shares similar property as the pre-deﬁned graph in Chebyshev polynomial expansion.",
+          "zh": "在预测中人工突出自我信息的重要性。此外，DAGG-2实现了与DAGG-1相似的性能，这与使用预定义图的现有工作[33,4,2]是一致的。结果表明，生成的图拉普拉斯矩阵D-1 2 AD-1 2与切比雪夫多项式展开中的预定义图具有相似的性质。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "importance of highlighting the self-information manually in prediction. Besides, DAGG-2 achieves similar performance with DAGG-1, which is consistent with the existing works [ 33 , 4 , 2] using pre-deﬁned graphs. The results reveal that the generated graph Laplacian matrix D- 1 2 AD- 1 2 shares similar property as the pre-deﬁned graph in Chebyshev polynomial expansion.|在预测中人工突出自我信息的重要性。此外，DAGG-2实现了与DAGG-1相似的性能，这与使用预定义图的现有工作[33,4,2]是一致的。结果表明，生成的图拉普拉斯矩阵D-1 2 AD-1 2与切比雪夫多项式展开中的预定义图具有相似的性质。",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460612073,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "As shown in Table 2 (where DAGG-1 follows Eq. 6), removing the identity matrix from DAGG signiﬁcantly harms the prediction performance, which presents the",
+          "zh": "如表2所示（其中DAGG-1遵循公式6），从DAGG中删除单位矩阵会显着损害预测性能",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "As shown in Table 2 (where DAGG-1 follows Eq. 6), removing the identity matrix from DAGG signiﬁcantly harms the prediction performance, which presents the|如表2所示（其中DAGG-1遵循公式6），从DAGG中删除单位矩阵会显着损害预测性能",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460600069,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "DAGG-2 which mimics the second-order Chebyshev polynomial expansion in GCN [ 4, 33] with our learned D- 1 2 AD- 1 2 . The backbone network is AGCRN-I, which does not share the embedding matrix among NAPL-GCN and DAGG to avoid the constraints from the NAPL module. As shown in Table 2 (where DAGG-1 follows Eq. 6), re",
+          "zh": "DAGG-2用我们学习的D-1 2 AD-1 2模仿GCN[4,33]中的二阶切比雪夫多项式展开。骨干网络是AGCRN-I，它不共享NAPL-GCN和DAGG之间的嵌入矩阵，以避免来自NAPL模块的约束。如表2所示（其中DAGG-1遵循公式6），重新",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "DAGG-2 which mimics the second-order Chebyshev polynomial expansion in GCN [ 4, 33] with our learned D- 1 2 AD- 1 2 . The backbone network is AGCRN-I, which does not share the embedding matrix among NAPL-GCN and DAGG to avoid the constraints from the NAPL module. As shown in Table 2 (where DAGG-1 follows Eq. 6), re|DAGG-2用我们学习的D-1 2 AD-1 2模仿GCN[4,33]中的二阶切比雪夫多项式展开。骨干网络是AGCRN-I，它不共享NAPL-GCN和DAGG之间的嵌入矩阵，以避免来自NAPL模块的约束。如表2所示（其中DAGG-1遵循公式6），重新",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460509093,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "As shown in Table 2 (where DAGG-1 follows Eq. 6), removing the identity matrix from DAGG signiﬁcantly harms the prediction performance, which presents the",
+          "zh": "如表2所示（其中DAGG-1遵循公式6），从DAGG中删除单位矩阵会显着损害预测性能",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "As shown in Table 2 (where DAGG-1 follows Eq. 6), removing the identity matrix from DAGG signiﬁcantly harms the prediction performance, which presents the|如表2所示（其中DAGG-1遵循公式6），从DAGG中删除单位矩阵会显着损害预测性能",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460501879,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "he backbone network is AGCRN-I, which does not share the embedding matrix among NAPL-GCN and DAGG to avoid the constraints from the NAPL module. As shown in Table 2 (where DAGG-1 follows Eq. 6), r",
+          "zh": "骨干网是AGCRN-I，它不共享NAPL-GCN和DAGG之间的嵌入矩阵，以避免来自NAPL模块的约束。如表2所示（其中DAGG-1遵循公式6），r",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "he backbone network is AGCRN-I, which does not share the embedding matrix among NAPL-GCN and DAGG to avoid the constraints from the NAPL module. As shown in Table 2 (where DAGG-1 follows Eq. 6), r|骨干网是AGCRN-I，它不共享NAPL-GCN和DAGG之间的嵌入矩阵，以避免来自NAPL模块的约束。如表2所示（其中DAGG-1遵循公式6），r",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460465184,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "which not only inﬂuences the quality of the learned graph but also decides the parameter diversity",
+          "zh": "它不仅影响学习图的质量，而且决定了参数的多样性",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "which not only inﬂuences the quality of the learned graph but also decides the parameter diversity|它不仅影响学习图的质量，而且决定了参数的多样性",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460112861,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Graph Generation To further investigate DAGG, we compare it with two variants: 1) DAGG-r, which removes the identity matrix in Eq. 6; 2) DAGG-2 which mimics the second-order Chebyshev polynomial expansion in GCN [ 4, 33] with our learned D- 1 2 AD- 1 2 . The backbone network is AGCRN-I, which does not share the embedding matrix among NAPL-GCN and DAGG to avoid the constraints from the NAPL module. As shown in Table 2 (where DAGG-1 follows Eq. 6), removing the identity matrix from DAGG signiﬁcantly harms the prediction performance, which presents the",
+          "zh": "图生成为了进一步研究DAGG，我们将其与两个变体进行比较： 1）DAGG-r，它删除了方程6中的单位矩阵；2）DAGG-2，它用我们学习的D-1 2 AD-1 2模仿GCN[4,33]中的二阶切比雪夫多项式展开。骨干网络是AGCRN-I，它不共享NAPL-GCN和DAGG之间的嵌入矩阵，以避免来自NAPL模块的约束。如表2所示（其中DAGG-1遵循方程6），从DAGG中删除单位矩阵会显着损害预测性能",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Graph Generation To further investigate DAGG, we compare it with two variants: 1) DAGG-r, which removes the identity matrix in Eq. 6; 2) DAGG-2 which mimics the second-order Chebyshev polynomial expansion in GCN [ 4, 33] with our learned D- 1 2 AD- 1 2 . The backbone network is AGCRN-I, which does not share the embedding matrix among NAPL-GCN and DAGG to avoid the constraints from the NAPL module. As shown in Table 2 (where DAGG-1 follows Eq. 6), removing the identity matrix from DAGG signiﬁcantly harms the prediction performance, which presents the|图生成为了进一步研究DAGG，我们将其与两个变体进行比较： 1）DAGG-r，它删除了方程6中的单位矩阵；2）DAGG-2，它用我们学习的D-1 2 AD-1 2模仿GCN[4,33]中的二阶切比雪夫多项式展开。骨干网络是AGCRN-I，它不共享NAPL-GCN和DAGG之间的嵌入矩阵，以避免来自NAPL模块的约束。如表2所示（其中DAGG-1遵循方程6），从DAGG中删除单位矩阵会显着损害预测性能",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460096872,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "Overall, our NAPL and DAGG modules can be deployed either separately and jointly, and they consistently boost the prediction performance",
+          "zh": "总体而言，我们的NAPL和DAGG模块可以单独或联合部署，它们持续提高预测性能",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "Overall, our NAPL and DAGG modules can be deployed either separately and jointly, and they consistently boost the prediction performance|总体而言，我们的NAPL和DAGG模块可以单独或联合部署，它们持续提高预测性能",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460059187,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "necessity of capturing node-speciﬁc patterns. Moreover, NAPL mainly enhances the long-term (e.g., 30Min and 60 Min) prediction but slightly harms the short-term (e.g., 5Min and 15 Min) prediction. We conjecture the reason is that long-term prediction lacks enough useful information from historical observations and thus beneﬁts from the speciﬁc node embedding learned by the NAPL module to deduce future patters. At the same time, short-term prediction can obtain enough information from historical observations. 2) DAGG-GCGRU improves GCGRU, and AGCRN-I beats NAPL-GCGRU. Both demonstrate the superiority of DAGG in inferring spatial correlations. The results also indicate that GCN-based methods can potentially be applied to more general correlated time series forecasting tasks with the help of our DAGG module, and pre-deﬁning an adjacent matrix is not necessary; 3) AGCRN achieves the best performance, demonstrating that we can share the node embedding among all the modules and learn a uniﬁed node embedding for each node from the data.",
+          "zh": "捕获节点特定模式的必要性。此外，NAPL主要增强了长期（例如，30分钟和60分钟）预测，但略微损害了短期（例如，5分钟和15分钟）预测。我们推测原因是长期预测缺乏来自历史观察的足够有用的信息，因此受益于NAPL模块学习的特定节点嵌入来推断未来模式。同时，短期预测可以从历史观察中获得足够的信息。2）DAGG-GCGRU改进了GCGRU，AGCRN-I优于NAPL-GCGRU。两者都证明了DAGG在推断空间相关性方面的优越性。 结果还表明，在我们的DAGG模块的帮助下，基于GCN的方法可以潜在地应用于更一般的相关时间序列预测任务，并且不需要预先定义相邻矩阵；3）AGCRN实现了最佳性能，表明我们可以在所有模块之间共享节点嵌入，并从数据中学习每个节点的统一节点嵌入。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "necessity of capturing node-speciﬁc patterns. Moreover, NAPL mainly enhances the long-term (e.g., 30Min and 60 Min) prediction but slightly harms the short-term (e.g., 5Min and 15 Min) prediction. We conjecture the reason is that long-term prediction lacks enough useful information from historical observations and thus beneﬁts from the speciﬁc node embedding learned by the NAPL module to deduce future patters. At the same time, short-term prediction can obtain enough information from historical observations. 2) DAGG-GCGRU improves GCGRU, and AGCRN-I beats NAPL-GCGRU. Both demonstrate the superiority of DAGG in inferring spatial correlations. The results also indicate that GCN-based methods can potentially be applied to more general correlated time series forecasting tasks with the help of our DAGG module, and pre-deﬁning an adjacent matrix is not necessary; 3) AGCRN achieves the best performance, demonstrating that we can share the node embedding among all the modules and learn a uniﬁed node embedding for each node from the data.|捕获节点特定模式的必要性。此外，NAPL主要增强了长期（例如，30分钟和60分钟）预测，但略微损害了短期（例如，5分钟和15分钟）预测。我们推测原因是长期预测缺乏来自历史观察的足够有用的信息，因此受益于NAPL模块学习的特定节点嵌入来推断未来模式。同时，短期预测可以从历史观察中获得足够的信息。2）DAGG-GCGRU改进了GCGRU，AGCRN-I优于NAPL-GCGRU。两者都证明了DAGG在推断空间相关性方面的优越性。 结果还表明，在我们的DAGG模块的帮助下，基于GCN的方法可以潜在地应用于更一般的相关时间序列预测任务，并且不需要预先定义相邻矩阵；3）AGCRN实现了最佳性能，表明我们可以在所有模块之间共享节点嵌入，并从数据中学习每个节点的统一节点嵌入。",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460047508,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": ". We can observe that: 1) NAPL-GCGRU generally outperforms GCGRU and AGCRN-I outperforms DAGG-GCGRU, demonstrating the",
+          "zh": ".我们可以观察到：1）NAPL-GCGRU总体优于GCGRU，AGCRN-I优于DAGG-GCGRU，证明了",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": ". We can observe that: 1) NAPL-GCGRU generally outperforms GCGRU and AGCRN-I outperforms DAGG-GCGRU, demonstrating the|.我们可以观察到：1）NAPL-GCGRU总体优于GCGRU，AGCRN-I优于DAGG-GCGRU，证明了",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460038635,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": ". We construct NAPL-GCGRU by replacing traditional GCN with our NAPL-GCN and DAGG-GCGRU by replacing the pre-deﬁned graph with the DAGG module. AGCCRN-I is the variant of our AGCRN, which does not unify the node embeddings but employs an independent node embedding matrix among different NAPL-GCN layers and DAGG. The experiments on the PeMSD4 dataset are illustrated in Fig. 3",
+          "zh": ".我们通过用我们的NAPL-GCN替换传统的GCN来构建NAPL-GCGRU，并通过用DAGG模块替换预先定义的图来构建DAGG-GCGRU。AGCCRN-I是我们的AGCRN的变体，它不统一节点嵌入，而是在不同的NAPL-GCN层和DAGG之间使用独立的节点嵌入矩阵。在PeMSD4数据集上的实验如图3所示。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": ". We construct NAPL-GCGRU by replacing traditional GCN with our NAPL-GCN and DAGG-GCGRU by replacing the pre-deﬁned graph with the DAGG module. AGCCRN-I is the variant of our AGCRN, which does not unify the node embeddings but employs an independent node embedding matrix among different NAPL-GCN layers and DAGG. The experiments on the PeMSD4 dataset are illustrated in Fig. 3|.我们通过用我们的NAPL-GCN替换传统的GCN来构建NAPL-GCGRU，并通过用DAGG模块替换预先定义的图来构建DAGG-GCGRU。AGCCRN-I是我们的AGCRN的变体，它不统一节点嵌入，而是在不同的NAPL-GCN层和DAGG之间使用独立的节点嵌入矩阵。在PeMSD4数据集上的实验如图3所示。",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794460029956,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "Uniform Embedding Propagation. Our first inspiration comes from the link analysis research, where in a graph, the impact of a vertex on another one can be captured by propagating information on the graph. A well-known example is the PageRank [ 31] method that propagates the importance score of a vertex to its connected vertices. Since a stock relation encodes certain similarity information between two connected stocks, we consider relating their embeddings through the simila",
-          "zh": "均匀嵌入传播。我们的第一个灵感来自于链接分析研究，在图中，一个顶点对另一个顶点的影响可以通过在图上传播信息来捕获。一个著名的例子是PageRank [ 31]方法，该方法将顶点的重要性得分传播到其连接的顶点。由于股票关系编码了两个连接股票之间的某些相似性信息，我们考虑通过相似性将它们的嵌入联系起来，",
+          "en": "To better evaluate the performance of NAPL and DAGG, we conduct a comprehensive ablation study. The baseline for our ablation study is GCGRU, which integrates traditional GCN with GRU to capture spatial and temporal correlation",
+          "zh": "为了更好地评估NAPL和DAGG的性能，我们进行了全面的消融研究。我们消融研究的基线是GCGRU，它将传统的GCN与GRU结合起来，以捕获空间和时间相关性",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Uniform Embedding Propagation. Our first inspiration comes from the link analysis research, where in a graph, the impact of a vertex on another one can be captured by propagating information on the graph. A well-known example is the PageRank [ 31] method that propagates the importance score of a vertex to its connected vertices. Since a stock relation encodes certain similarity information between two connected stocks, we consider relating their embeddings through the simila|均匀嵌入传播。我们的第一个灵感来自于链接分析研究，在图中，一个顶点对另一个顶点的影响可以通过在图上传播信息来捕获。一个著名的例子是PageRank [ 31]方法，该方法将顶点的重要性得分传播到其连接的顶点。由于股票关系编码了两个连接股票之间的某些相似性信息，我们考虑通过相似性将它们的嵌入联系起来，",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": "To better evaluate the performance of NAPL and DAGG, we conduct a comprehensive ablation study. The baseline for our ablation study is GCGRU, which integrates traditional GCN with GRU to capture spatial and temporal correlation|为了更好地评估NAPL和DAGG的性能，我们进行了全面的消融研究。我们消融研究的基线是GCGRU，它将传统的GCN与GRU结合起来，以捕获空间和时间相关性",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     },
     {
-      "ts": 1794383287567,
+      "ts": 1794454071251,
       "via": "火山",
       "pairs": [
         {
-          "en": "Uniform Embedding Propagation.",
-          "zh": "均匀嵌入传播。",
+          "en": "Ablation Study",
+          "zh": "烧蚀研究",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Uniform Embedding Propagation.|均匀嵌入传播。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": "Ablation Study|烧蚀研究",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     },
     {
-      "ts": 1794383276669,
+      "ts": 1794454069143,
       "via": "火山",
       "pairs": [
         {
-          "en": "we detail how we design the component to shed some lights on its rationale. Lastly, we discuss its connection with existing graph-based learning methods.",
-          "zh": "我们详细介绍了如何设计组件以阐明其基本原理。最后，我们讨论了它与现有的基于图的学习方法的联系。",
+          "en": ". We can observe that: 1) NAPL-GCGRU generally outperforms GCGRU and AGCRN-I outperforms DAGG-GCGRU, demonstrating the",
+          "zh": ".我们可以观察到：1）NAPL-GCGRU总体优于GCGRU，AGCRN-I优于DAGG-GCGRU，证明了",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "we detail how we design the component to shed some lights on its rationale. Lastly, we discuss its connection with existing graph-based learning methods.|我们详细介绍了如何设计组件以阐明其基本原理。最后，我们讨论了它与现有的基于图的学习方法的联系。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": ". We can observe that: 1) NAPL-GCGRU generally outperforms GCGRU and AGCRN-I outperforms DAGG-GCGRU, demonstrating the|.我们可以观察到：1）NAPL-GCGRU总体优于GCGRU，AGCRN-I优于DAGG-GCGRU，证明了",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     },
     {
-      "ts": 1794383249437,
+      "ts": 1794454032698,
       "via": "火山",
       "pairs": [
         {
-          "en": "the aim of Temporal Graph Convolution is to learn revised embeddings Et ∈ RN ×U that encode the relation information. Instead of directly presenting the formulation of TGC,",
-          "zh": "时序图卷积的目的是学习编码关系信息的修正嵌入Et😍RN×U。不是直接呈现TGC的公式，",
+          "en": ". We construct NAPL-GCGRU by replacing traditional GCN with our NAPL-GCN and DAGG-GCGRU by replacing the pre-deﬁned graph with the DAGG module. AGCCRN-I is the variant of our AGCRN, which does not unify the node embeddings but employs an independent node embedding matrix among different NAPL-GCN layers and DAGG. The experiments on the PeMSD4 dataset are illustrated in Fig.",
+          "zh": ".我们通过用我们的NAPL-GCN替换传统的GCN来构建NAPL-GCGRU，并通过用DAGG模块替换预先定义的图来构建DAGG-GCGRU。AGCCRN-I是我们的AGCRN的变体，它不统一节点嵌入，而是在不同的NAPL-GCN层和DAGG之间使用独立的节点嵌入矩阵。PeMSD4数据集上的实验如图1所示。",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "the aim of Temporal Graph Convolution is to learn revised embeddings Et ∈ RN ×U that encode the relation information. Instead of directly presenting the formulation of TGC,|时序图卷积的目的是学习编码关系信息的修正嵌入Et😍RN×U。不是直接呈现TGC的公式，",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": ". We construct NAPL-GCGRU by replacing traditional GCN with our NAPL-GCN and DAGG-GCGRU by replacing the pre-deﬁned graph with the DAGG module. AGCCRN-I is the variant of our AGCRN, which does not unify the node embeddings but employs an independent node embedding matrix among different NAPL-GCN layers and DAGG. The experiments on the PeMSD4 dataset are illustrated in Fig.|.我们通过用我们的NAPL-GCN替换传统的GCN来构建NAPL-GCGRU，并通过用DAGG模块替换预先定义的图来构建DAGG-GCGRU。AGCCRN-I是我们的AGCRN的变体，它不统一节点嵌入，而是在不同的NAPL-GCN层和DAGG之间使用独立的节点嵌入矩阵。PeMSD4数据集上的实验如图1所示。",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     },
     {
-      "ts": 1794383106904,
+      "ts": 1794454020886,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "which integrates traditional GCN with GRU to capture spatial and temporal correlation",
+          "zh": "它将传统GCN与GRU集成以捕获空间和时间相关性",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "which integrates traditional GCN with GRU to capture spatial and temporal correlation|它将传统GCN与GRU集成以捕获空间和时间相关性",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794454009039,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "\\operatorname{Softmax}(x_i)=\\frac{e^{x_i}}{\\sum_{j=1}^{n}e^{x_j}}",
-          "zh": "软件最大值（x_i）",
+          "en": "To better evaluate the performance of NAPL and DAGG, we conduct a comprehensive ablation study. The baseline for our ablation study is GCGRU, which integrates traditional GCN with GRU to capture spatial and temporal correlation",
+          "zh": "为了更好地评估NAPL和DAGG的性能，我们进行了全面的消融研究。我们消融研究的基线是GCGRU，它将传统的GCN与GRU结合起来，以捕获空间和时间相关性",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "\\operatorname{Softmax}(x_i)=\\frac{e^{x_i}}{\\sum_{j=1}^{n}e^{x_j}}|软件最大值（x_i）",
-      "file": "知识点记录",
+      "sig": "To better evaluate the performance of NAPL and DAGG, we conduct a comprehensive ablation study. The baseline for our ablation study is GCGRU, which integrates traditional GCN with GRU to capture spatial and temporal correlation|为了更好地评估NAPL和DAGG的性能，我们进行了全面的消融研究。我们消融研究的基线是GCGRU，它将传统的GCN与GRU结合起来，以捕获空间和时间相关性",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     },
     {
-      "ts": 1794382984275,
+      "ts": 1794453998903,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "multi-hot binary relation encodings",
-          "zh": "多热二元关系编码",
+          "en": "Overall, the results demonstrate that AGCRN can accurately capture the spatial and temporal correlations in the correlated trafﬁc series and achieve promising predictions",
+          "zh": "总体而言，结果表明，AGCRN可以准确地捕捉相关交通序列中的空间和时间相关性，并实现有希望的预测",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "multi-hot binary relation encodings|多热二元关系编码",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": "Overall, the results demonstrate that AGCRN can accurately capture the spatial and temporal correlations in the correlated trafﬁc series and achieve promising predictions|总体而言，结果表明，AGCRN可以准确地捕捉相关交通序列中的空间和时间相关性，并实现有希望的预测",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     },
     {
-      "ts": 1794382813697,
+      "ts": 1794453920420,
       "via": "火山",
       "pairs": [
         {
-          "en": "Given N stocks with their sequential embeddings Et ∈ RN ×U (i.e., the output of sequential embedding layer) and their multi-hot binary relation encodings A ∈ RN ×N ×K , the aim of Temporal Graph Convolution is to learn revised embeddings Et ∈ RN ×U that encode the relation information. Instead of directly presenting the formulation of TGC, we detail how we design the component to shed some lights on its rationale. Lastly, we discuss its connection with existing graph-based learning methods",
-          "zh": "给定N只股票，它们的顺序嵌入Et😍RN×U（即顺序嵌入层的输出）和它们的多热二进制关系编码A😍RN×N×K，时序图卷积的目的是学习编码关系信息的修正嵌入Et😍RN×U。我们没有直接介绍TGC的公式，而是详细介绍了我们如何设计组件以阐明其基本原理。最后，我们讨论了它与现有的基于图的学习方法的联系",
+          "en": "g. 2 further shows the prediction performance at each horizon in the PeMSD4 dataset. AGCRN balances short-term and long-term prediction well and achieves the best performance for almost all horizons (except for the ﬁrst step). Besides, the performance of AGCRN deteriorate much slower than other GCN-based models (see appendix for similar results in the PeMSD8 dataset)",
+          "zh": "G.2进一步显示了PeMSD4数据集中每个视界的预测性能。AGCRN很好地平衡了短期和长期预测，并在几乎所有视界中实现了最佳性能（第一步除外）。此外，AGCRN的性能恶化速度比其他基于GCN的模型慢得多（PeMSD8数据集中的类似结果见附录）",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "Given N stocks with their sequential embeddings Et ∈ RN ×U (i.e., the output of sequential embedding layer) and their multi-hot binary relation encodings A ∈ RN ×N ×K , the aim of Temporal Graph Convolution is to learn revised embeddings Et ∈ RN ×U that encode the relation information. Instead of directly presenting the formulation of TGC, we detail how we design the component to shed some lights on its rationale. Lastly, we discuss its connection with existing graph-based learning methods|给定N只股票，它们的顺序嵌入Et😍RN×U（即顺序嵌入层的输出）和它们的多热二进制关系编码A😍RN×N×K，时序图卷积的目的是学习编码关系信息的修正嵌入Et😍RN×U。我们没有直接介绍TGC的公式，而是详细介绍了我们如何设计组件以阐明其基本原理。最后，我们讨论了它与现有的基于图的学习方法的联系",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": "g. 2 further shows the prediction performance at each horizon in the PeMSD4 dataset. AGCRN balances short-term and long-term prediction well and achieves the best performance for almost all horizons (except for the ﬁrst step). Besides, the performance of AGCRN deteriorate much slower than other GCN-based models (see appendix for similar results in the PeMSD8 dataset)|G.2进一步显示了PeMSD4数据集中每个视界的预测性能。AGCRN很好地平衡了短期和长期预测，并在几乎所有视界中实现了最佳性能（第一步除外）。此外，AGCRN的性能恶化速度比其他基于GCN的模型慢得多（PeMSD8数据集中的类似结果见附录）",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     },
     {
-      "ts": 1794381929564,
+      "ts": 1794453866731,
       "via": "火山",
       "pairs": [
         {
-          "en": "o as to facilitate investors making better investment decisions. On one hand, correct relative order of stocks could help to select the investment targets (i.e., the top ranked stocks). On the other hand, the accurate prediction of return ratio would facilitate deciding the timing of investment since the top ranked stocks are valuable targets only when the return ratios would largely increase.",
-          "zh": "o以方便投资者作出更好的投资决策。一方面，正确的股票相对顺序有助于选择投资目标（即排名靠前的股票）。另一方面，对回报率的准确预测将有助于决定投资时机，因为只有当回报率大幅提高时，排名靠前的股票才是有价值的目标。",
+          "en": "able 1 presents the overall prediction performances, which are the averaged MAE, RMSE and MAPE over 12 prediction horizons, of our AGCRN and eight representative comparison methods. We can observe that: 1) GCN-based methods outperform baselines and self-attention-based DSANet, demonstrating the importance of modeling spatial correlations explicitly and the effectiveness of GCN in trafﬁc forecasting; 2) our method further improves GCN-based methods with a signiﬁcant margin. AGCRN brings more than 5% relative improvements to the existing best results in MAE and MAPE for both PeMSD4 and PeMSD8 dataset. Fi",
+          "zh": "ABLE 1展示了我们的AGCRN和八种代表性比较方法在12个预测范围内的平均MAE、RMSE和MAPE的总体预测性能。我们可以观察到： 1）基于GCN的方法优于基线和self-attention-basedDSANet，证明了明确建模空间相关性的重要性和GCN在交通预测中的有效性；2）我们的方法进一步改进了基于GCN的方法，具有显著的余量。对于PeMSD4和PeMSD8数据集，AGCRN对现有的MAE和MAPE最佳结果带来了5%以上的相对改进。Fi",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "o as to facilitate investors making better investment decisions. On one hand, correct relative order of stocks could help to select the investment targets (i.e., the top ranked stocks). On the other hand, the accurate prediction of return ratio would facilitate deciding the timing of investment since the top ranked stocks are valuable targets only when the return ratios would largely increase.|o以方便投资者作出更好的投资决策。一方面，正确的股票相对顺序有助于选择投资目标（即排名靠前的股票）。另一方面，对回报率的准确预测将有助于决定投资时机，因为只有当回报率大幅提高时，排名靠前的股票才是有价值的目标。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": "able 1 presents the overall prediction performances, which are the averaged MAE, RMSE and MAPE over 12 prediction horizons, of our AGCRN and eight representative comparison methods. We can observe that: 1) GCN-based methods outperform baselines and self-attention-based DSANet, demonstrating the importance of modeling spatial correlations explicitly and the effectiveness of GCN in trafﬁc forecasting; 2) our method further improves GCN-based methods with a signiﬁcant margin. AGCRN brings more than 5% relative improvements to the existing best results in MAE and MAPE for both PeMSD4 and PeMSD8 dataset. Fi|ABLE 1展示了我们的AGCRN和八种代表性比较方法在12个预测范围内的平均MAE、RMSE和MAPE的总体预测性能。我们可以观察到： 1）基于GCN的方法优于基线和self-attention-basedDSANet，证明了明确建模空间相关性的重要性和GCN在交通预测中的有效性；2）我们的方法进一步改进了基于GCN的方法，具有显著的余量。对于PeMSD4和PeMSD8数据集，AGCRN对现有的MAE和MAPE最佳结果带来了5%以上的相对改进。Fi",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     },
     {
-      "ts": 1794381921629,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "1) the return ratios of stocks in terms of absolute values, and 2) the relative orders of return ratios among stocks,",
-          "zh": "1）股票在绝对值方面的回报率，2）股票之间回报率的相对顺序，",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "1) the return ratios of stocks in terms of absolute values, and 2) the relative orders of return ratios among stocks,|1）股票在绝对值方面的回报率，2）股票之间回报率的相对顺序，",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794381831568,
+      "ts": 1794453850984,
       "via": "腾讯",
       "pairs": [
         {
-          "en": "The second term is pair-wise max-margin loss [45], which encourages the predicted ranking scores of a stock pair to have the same relative order as the ground-truth. The similar max-margin loss has been used in several applications such as recommendation [38 ] and knowledge based completion [ 34] and demonstrated good performance in ranking tasks. Minimizing our proposed combined loss will force the prediction ranking scores to be close to both 1) the return ratios of stocks in terms of absolute values, and 2) the relative orders of return ratios among stocks, so as to facilitate investors making better investment decisions. On one hand, correct relative order of stocks could help to select the investment targets (i.e., the top ranked stocks). On the other hand, the accurate prediction of return ratio would facilitate deciding the timing of investment since the top ranked stocks are valuable targets only when the return ratios would largely increase.",
-          "zh": "第二项是成对最大边际损失[45]，这鼓励股票对的预测排名得分具有与地面事实相同的相对顺序。类似的最大利润损失已用于几个应用中，例如推荐[38 ]和基于知识的完成[ 34]并在排名任务中表现出良好的性能。最小化我们提出的组合损失将迫使预测排名得分接近1）股票收益率的绝对值; 2）股票收益率的相对排序，以帮助投资者做出更好的投资决策。一方面，正确的股票相对排序有助于选择投资目标另一方面，对回报率的准确预测将有助于决定投资时机，因为只有当回报率大幅增加时，排名靠前的股票才是有价值的目标。",
+          "en": "To better evaluate the performance of NAPL and DAGG, we conduct a comprehensive ablation study. The baseline for our ablation study is GCGRU, which integrates traditional GCN with GRU to capture spatial and temporal correlation",
+          "zh": "为了更好地评估NAPL和DAGG的性能，我们进行了全面的消融研究。我们消融研究的基线是GCGRU，它将传统的GCN与GRU结合起来，以捕获空间和时间相关性",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "The second term is pair-wise max-margin loss [45], which encourages the predicted ranking scores of a stock pair to have the same relative order as the ground-truth. The similar max-margin loss has been used in several applications such as recommendation [38 ] and knowledge based completion [ 34] and demonstrated good performance in ranking tasks. Minimizing our proposed combined loss will force the prediction ranking scores to be close to both 1) the return ratios of stocks in terms of absolute values, and 2) the relative orders of return ratios among stocks, so as to facilitate investors making better investment decisions. On one hand, correct relative order of stocks could help to select the investment targets (i.e., the top ranked stocks). On the other hand, the accurate prediction of return ratio would facilitate deciding the timing of investment since the top ranked stocks are valuable targets only when the return ratios would largely increase.|第二项是成对最大边际损失[45]，这鼓励股票对的预测排名得分具有与地面事实相同的相对顺序。类似的最大利润损失已用于几个应用中，例如推荐[38 ]和基于知识的完成[ 34]并在排名任务中表现出良好的性能。最小化我们提出的组合损失将迫使预测排名得分接近1）股票收益率的绝对值; 2）股票收益率的相对排序，以帮助投资者做出更好的投资决策。一方面，正确的股票相对排序有助于选择投资目标另一方面，对回报率的准确预测将有助于决定投资时机，因为只有当回报率大幅增加时，排名靠前的股票才是有价值的目标。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": "To better evaluate the performance of NAPL and DAGG, we conduct a comprehensive ablation study. The baseline for our ablation study is GCGRU, which integrates traditional GCN with GRU to capture spatial and temporal correlation|为了更好地评估NAPL和DAGG的性能，我们进行了全面的消融研究。我们消融研究的基线是GCGRU，它将传统的GCN与GRU结合起来，以捕获空间和时间相关性",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     },
     {
-      "ts": 1794381818959,
-      "via": "火山",
+      "ts": 1794453758985,
+      "via": "腾讯",
       "pairs": [
         {
-          "en": "The first regression term punishes the difference between the scores of ground-truth and prediction.",
-          "zh": "第一个回归项惩罚地面真实值和预测值之间的差异。",
+          "en": "We deploy three widely used metrics - Mean Absolute Error (MAE), Root Mean Square Error (RMSE), and Mean Absolute Percentage Error (MAPE) to measure the performance of predictive models.",
+          "zh": "我们部署了三种广泛使用的指标-平均绝对误差（MAE）、均方根误差（RMSE）和平均绝对百分比误差（MAPE）来衡量预测模型的性能.",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "The first regression term punishes the difference between the scores of ground-truth and prediction.|第一个回归项惩罚地面真实值和预测值之间的差异。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": "We deploy three widely used metrics - Mean Absolute Error (MAE), Root Mean Square Error (RMSE), and Mean Absolute Percentage Error (MAPE) to measure the performance of predictive models.|我们部署了三种广泛使用的指标-平均绝对误差（MAE）、均方根误差（RMSE）和平均绝对百分比误差（MAPE）来衡量预测模型的性能.",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     },
     {
-      "ts": 1794381806778,
+      "ts": 1794453744128,
       "via": "火山",
       "pairs": [
         {
-          "en": "where rt+1 = [r t +1 1 , · · · r t +1 N ] and ˆrt+1 = [ˆr t +1 1 , · · · , ˆr t +1 N ] ∈ RN are ground-truth and predicted ranking scores, respectively, and α is a hyperparameter to balance the two loss terms. Since we focus on identifying the most profitable stock to trade, we use the 1-day return ratio of a stock as the ground-truth rather than the normalized price used in previous work [42]. We will provide more details on computing the ground-truth in Section 4.1 in our data collection.",
-          "zh": "其中rt+1=[r t+1 1 , · · · r t+1 N]和^rt+1=[^r t+1 1 , · · · , ˆr t+1 N]😍RN分别是事实和预测排名分数，α是平衡两个损失项的超参数。由于我们专注于识别最有利可图的股票进行交易，我们使用股票的1天回报率作为事实，而不是以前工作中使用的归一化价格[42]。我们将在数据采集的第4.1节中提供更多关于计算事实的细节。",
+          "en": "All the deep-learning-based models, including our AGCRN, are implemented in Python with Pytorch 1.3.1 and executed on a server with one NVIDIA Titan X GPU card. We optimize all the models by Adam optimizer for a maximum of 100 epochs and use an early stop strategy with the patience of 15. The best parameters for all deep learning models are chosen through a carefully parameter-tuning process on the validation set",
+          "zh": "所有基于深度学习的模型，包括我们的AGCRN，都使用Pytorch1.3.1在Python中实现，并在带有一张NVIDIA Titan X GPU卡的服务器上执行。我们通过亚当优化器优化所有模型，最多100个时期，并以15的耐心使用提前停止策略。所有深度学习模型的最佳参数都是通过验证集上仔细的参数调整过程来选择的",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "where rt+1 = [r t +1 1 , · · · r t +1 N ] and ˆrt+1 = [ˆr t +1 1 , · · · , ˆr t +1 N ] ∈ RN are ground-truth and predicted ranking scores, respectively, and α is a hyperparameter to balance the two loss terms. Since we focus on identifying the most profitable stock to trade, we use the 1-day return ratio of a stock as the ground-truth rather than the normalized price used in previous work [42]. We will provide more details on computing the ground-truth in Section 4.1 in our data collection.|其中rt+1=[r t+1 1 , · · · r t+1 N]和^rt+1=[^r t+1 1 , · · · , ˆr t+1 N]😍RN分别是事实和预测排名分数，α是平衡两个损失项的超参数。由于我们专注于识别最有利可图的股票进行交易，我们使用股票的1天回报率作为事实，而不是以前工作中使用的归一化价格[42]。我们将在数据采集的第4.1节中提供更多关于计算事实的细节。",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": "All the deep-learning-based models, including our AGCRN, are implemented in Python with Pytorch 1.3.1 and executed on a server with one NVIDIA Titan X GPU card. We optimize all the models by Adam optimizer for a maximum of 100 epochs and use an early stop strategy with the patience of 15. The best parameters for all deep learning models are chosen through a carefully parameter-tuning process on the validation set|所有基于深度学习的模型，包括我们的AGCRN，都使用Pytorch1.3.1在Python中实现，并在带有一张NVIDIA Titan X GPU卡的服务器上执行。我们通过亚当优化器优化所有模型，最多100个时期，并以15的耐心使用提前停止策略。所有深度学习模型的最佳参数都是通过验证集上仔细的参数调整过程来选择的",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     },
     {
-      "ts": 1794381791028,
-      "via": "火山",
+      "ts": 1794453719554,
+      "via": "腾讯",
       "pairs": [
         {
-          "en": "To optimize the model, we propose an objective function that combines both pointwise regression loss and pairwise ranking-aware loss",
-          "zh": "为了优化模型，我们提出了一个结合点回归损失和成对排序感知损失的目标函数",
+          "en": "To evaluate the overall performance of our work, we compare AGCRN with widely used baselines and state-of-the-art models, including 1) Historical Average (HA): which models the trafﬁc as a seasonal process and uses the average of previous seasons (e.g., the same time slot of previous days) as the prediction; 2) Vector Auto-Regression (VAR) [ 39]: a time series model that captures spatial correlations among all trafﬁc series; 3) GRU-ED: an GRU-based baseline and utilize the encoderdecoder framework [40 ] for multi-step time series prediction; 4) DSANet [41 ]: a correlated time series prediction model using CNN networks for capturing temporal correlations with one time-series and self-attention mechanism for spatial correlations; 5) DCRNN [2]: diffusion convolution recurrent neural network, which formulates the graph convolution with the diffusion process and combines GCN with recurrent models in an encoder-decoder manner for multi-step prediction; 6) STGCN [ 4]: a spatio-temporal graph convolutional network that deploys GCN and temporal convolution to capture spatial and temporal correlations, respectively; 7) ASTGCN [6]: attention-based spatio-temporal graph convolutional network, which further integrates spatial and temporal attention mechanisms to STGCN for capturing dynamic spatial and temporal patterns. We take its recent components to ensure the fairness of comparison; 8) STSGCN [ 11]: Spatial-Temporal Synchronous Graph Convolutional Network that captures spatial-temporal correlations by stacking multiple localized GCN layers with adjacent matrix over the time axis.",
+          "zh": "为了评估我们工作的整体表现，我们将AGCRN与广泛使用的基线和最先进的模型进行比较，包括1）历史平均值（HA）：将交通量建模为季节性过程并使用前几个季节的平均值（例如，与前几天相同的时间段）作为预测; 2）向量自回归（VAR）[ 39]：一个时间序列模型，捕获所有交通序列之间的空间相关性; 3）GRU-ED：基于GRU的基线，并利用编码器解码器框架[40 ]进行多步时间序列预测; 4）DSANet [41 ]：使用CNN网络的相关时间序列预测模型，用于捕获与一个时间序列的时间相关性和用于空间相关性的自注意机制; 5）DCRNN [2]：扩散卷积递归神经网络，它用扩散过程来公式化图卷积，并以编码器-解码器的方式将GCN与递归模型相结合，用于多步预测; 6）STGCN [ 4]：时空图卷积网络，部署GCN和时间卷积分别捕获空间和时间相关性; 7）ASTGCN [6]：基于注意力的时空图卷积网络，进一步将时空注意力机制集成到STGCN中，以捕捉动态时空模式，并采用其最近的分量来保证比较的公平性; 8）STSGCN [ 11]：时空同步图卷积网络，通过在时间轴上堆叠具有相邻矩阵的多个局部GCN层来捕获时空相关性。",
           "sourceLanguage": "auto",
           "targetLanguage": "zh-Hans",
           "detectedLanguage": "en"
         }
       ],
-      "sig": "To optimize the model, we propose an objective function that combines both pointwise regression loss and pairwise ranking-aware loss|为了优化模型，我们提出了一个结合点回归损失和成对排序感知损失的目标函数",
-      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "sig": "To evaluate the overall performance of our work, we compare AGCRN with widely used baselines and state-of-the-art models, including 1) Historical Average (HA): which models the trafﬁc as a seasonal process and uses the average of previous seasons (e.g., the same time slot of previous days) as the prediction; 2) Vector Auto-Regression (VAR) [ 39]: a time series model that captures spatial correlations among all trafﬁc series; 3) GRU-ED: an GRU-based baseline and utilize the encoderdecoder framework [40 ] for multi-step time series prediction; 4) DSANet [41 ]: a correlated time series prediction model using CNN networks for capturing temporal correlations with one time-series and self-attention mechanism for spatial correlations; 5) DCRNN [2]: diffusion convolution recurrent neural network, which formulates the graph convolution with the diffusion process and combines GCN with recurrent models in an encoder-decoder manner for multi-step prediction; 6) STGCN [ 4]: a spatio-temporal graph convolutional network that deploys GCN and temporal convolution to capture spatial and temporal correlations, respectively; 7) ASTGCN [6]: attention-based spatio-temporal graph convolutional network, which further integrates spatial and temporal attention mechanisms to STGCN for capturing dynamic spatial and temporal patterns. We take its recent components to ensure the fairness of comparison; 8) STSGCN [ 11]: Spatial-Temporal Synchronous Graph Convolutional Network that captures spatial-temporal correlations by stacking multiple localized GCN layers with adjacent matrix over the time axis.|为了评估我们工作的整体表现，我们将AGCRN与广泛使用的基线和最先进的模型进行比较，包括1）历史平均值（HA）：将交通量建模为季节性过程并使用前几个季节的平均值（例如，与前几天相同的时间段）作为预测; 2）向量自回归（VAR）[ 39]：一个时间序列模型，捕获所有交通序列之间的空间相关性; 3）GRU-ED：基于GRU的基线，并利用编码器解码器框架[40 ]进行多步时间序列预测; 4）DSANet [41 ]：使用CNN网络的相关时间序列预测模型，用于捕获与一个时间序列的时间相关性和用于空间相关性的自注意机制; 5）DCRNN [2]：扩散卷积递归神经网络，它用扩散过程来公式化图卷积，并以编码器-解码器的方式将GCN与递归模型相结合，用于多步预测; 6）STGCN [ 4]：时空图卷积网络，部署GCN和时间卷积分别捕获空间和时间相关性; 7）ASTGCN [6]：基于注意力的时空图卷积网络，进一步将时空注意力机制集成到STGCN中，以捕捉动态时空模式，并采用其最近的分量来保证比较的公平性; 8）STSGCN [ 11]：时空同步图卷积网络，通过在时间轴上堆叠具有相邻矩阵的多个局部GCN层来捕获时空相关性。",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794453696662,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "To evaluate the performance of our work, we conduct experiments on two public real-world trafﬁc datasets: PeMSD4 and PeMSD8 [6, 11 ]. PeMS means Caltrans Performance Measure System (PeMS) [38], which measures the highway trafﬁc of California in real-time every 30 seconds.",
+          "zh": "为了评估我们工作的性能，我们在两个公共的真实世界交通数据集上进行了实验：PeMSD4和PeMSD8[6,11]。PeMS是指Caltrans性能测量系统（PeMS）[38]，它每30秒实时测量一次加利福尼亚的高速公路交通。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "To evaluate the performance of our work, we conduct experiments on two public real-world trafﬁc datasets: PeMSD4 and PeMSD8 [6, 11 ]. PeMS means Caltrans Performance Measure System (PeMS) [38], which measures the highway trafﬁc of California in real-time every 30 seconds.|为了评估我们工作的性能，我们在两个公共的真实世界交通数据集上进行了实验：PeMSD4和PeMSD8[6,11]。PeMS是指Caltrans性能测量系统（PeMS）[38]，它每30秒实时测量一次加利福尼亚的高速公路交通。",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794452893028,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "where Wθ represents all the learnable parameters in the network, X:,i is the ground truth, and X′ :,i is the prediction of all nodes at time step i. The problem can be solved via back-propagation and Adam optimizer.",
+          "zh": "其中Wθ表示网络中所有可学习参数，X：，i是地面实况，X'：，i是所有节点在时间步长i的预测。这个问题可以通过反向传播和亚当优化器来解决。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "where Wθ represents all the learnable parameters in the network, X:,i is the ground truth, and X′ :,i is the prediction of all nodes at time step i. The problem can be solved via back-propagation and Adam optimizer.|其中Wθ表示网络中所有可学习参数，X：，i是地面实况，X'：，i是所有节点在时间步长i的预测。这个问题可以通过反向传播和亚当优化器来解决。",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794452881065,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "We choose L1 loss as our training objective and optimize the loss for multi-step prediction together. Thus, the loss function of AGCRN for multi-step trafﬁc prediction can be formulated as",
+          "zh": "我们选择L1损失作为我们的训练目标，并一起优化多步预测的损失。因此，AGCRN用于多步交通预测的损失函数可以表述为",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "We choose L1 loss as our training objective and optimize the loss for multi-step prediction together. Thus, the loss function of AGCRN for multi-step trafﬁc prediction can be formulated as|我们选择L1损失作为我们的训练目标，并一起优化多步预测的损失。因此，AGCRN用于多步交通预测的损失函数可以表述为",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794452863131,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "To achieve multi-step trafﬁc prediction, we stack several AGCRN layers as an encoder to capture the node-speciﬁc spatial-temporal patterns and represents the input (i.e., historical data) as H ∈ RN ×do . Then, we can directly obtain the trafﬁc prediction for the next τ steps of all nodes by applying a linear transformation to project the representation from RN ×do to RN ×τ . Here, we do not generate the output in the sequential manner as it would increase the time consumption signiﬁcantly",
+          "zh": "为了实现多步交通预测，我们堆叠几个AGCRN层作为编码器来捕获特定节点的时空模式，并将输入（即历史数据）表示为H😍RN×do。然后，我们可以通过应用线性变换将表示从RN×do投影到RN×τ，直接获得所有节点下一步的交通预测。在这里，我们不以顺序方式生成输出，因为这会显着增加时间消耗",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "To achieve multi-step trafﬁc prediction, we stack several AGCRN layers as an encoder to capture the node-speciﬁc spatial-temporal patterns and represents the input (i.e., historical data) as H ∈ RN ×do . Then, we can directly obtain the trafﬁc prediction for the next τ steps of all nodes by applying a linear transformation to project the representation from RN ×do to RN ×τ . Here, we do not generate the output in the sequential manner as it would increase the time consumption signiﬁcantly|为了实现多步交通预测，我们堆叠几个AGCRN层作为编码器来捕获特定节点的时空模式，并将输入（即历史数据）表示为H😍RN×do。然后，我们可以通过应用线性变换将表示从RN×do投影到RN×τ，直接获得所有节点下一步的交通预测。在这里，我们不以顺序方式生成输出，因为这会显着增加时间消耗",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794452856876,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": ".5 Multi-step trafﬁc prediction",
+          "zh": ".5多步交通预测",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": ".5 Multi-step trafﬁc prediction|.5多步交通预测",
+      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     }
   ],
