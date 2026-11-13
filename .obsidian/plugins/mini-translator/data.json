@@ -49,6 +49,102 @@
   "fullHtml": false,
   "history": [
     {
+      "ts": 1794552060217,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "度",
+          "zh": "度",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "度|度",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794552048331,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "位",
+          "zh": "位",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "位|位",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794547693069,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "ℒ𝒢𝒫(i) = - ∑ log(𝜎(𝒐𝒊 j∈𝒩(i) 𝒐j T)) - ∑ log(-𝜎(𝒐i𝒐j T))",
+          "zh": ") = - ∑ log)) - ∑ log",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "ℒ𝒢𝒫(i) = - ∑ log(𝜎(𝒐𝒊 j∈𝒩(i) 𝒐j T)) - ∑ log(-𝜎(𝒐i𝒐j T))|) = - ∑ log)) - ∑ log",
+      "file": "101 自适应时空图网络周频 alpha 模型 ——因子选股系列之一〇一.pdf",
+      "page": null
+    },
+    {
+      "ts": 1794547677401,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "梳",
+          "zh": "梳",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "梳|梳",
+      "file": "要做什么",
+      "page": null
+    },
+    {
+      "ts": 1794533105076,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "1112模型梳理（以week为例） 1",
+          "zh": "1112模型梳理（以周为例）1",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "1112模型梳理（以week为例） 1|1112模型梳理（以周为例）1",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794532876033,
+      "via": "腾讯",
+      "pairs": [
+        {
+          "en": "RankIC或者MSE",
+          "zh": "主办单位RankIC MSE",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "pt"
+        }
+      ],
+      "sig": "RankIC或者MSE|主办单位RankIC MSE",
+      "file": "",
+      "page": null
+    },
+    {
       "ts": 1794473596005,
       "via": "火山",
       "pairs": [
@@ -750,102 +846,6 @@
         }
       ],
       "sig": "All the deep-learning-based models, including our AGCRN, are implemented in Python with Pytorch 1.3.1 and executed on a server with one NVIDIA Titan X GPU card. We optimize all the models by Adam optimizer for a maximum of 100 epochs and use an early stop strategy with the patience of 15. The best parameters for all deep learning models are chosen through a carefully parameter-tuning process on the validation set|所有基于深度学习的模型，包括我们的AGCRN，都使用Pytorch1.3.1在Python中实现，并在带有一张NVIDIA Titan X GPU卡的服务器上执行。我们通过亚当优化器优化所有模型，最多100个时期，并以15的耐心使用提前停止策略。所有深度学习模型的最佳参数都是通过验证集上仔细的参数调整过程来选择的",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794453719554,
-      "via": "腾讯",
-      "pairs": [
-        {
-          "en": "To evaluate the overall performance of our work, we compare AGCRN with widely used baselines and state-of-the-art models, including 1) Historical Average (HA): which models the trafﬁc as a seasonal process and uses the average of previous seasons (e.g., the same time slot of previous days) as the prediction; 2) Vector Auto-Regression (VAR) [ 39]: a time series model that captures spatial correlations among all trafﬁc series; 3) GRU-ED: an GRU-based baseline and utilize the encoderdecoder framework [40 ] for multi-step time series prediction; 4) DSANet [41 ]: a correlated time series prediction model using CNN networks for capturing temporal correlations with one time-series and self-attention mechanism for spatial correlations; 5) DCRNN [2]: diffusion convolution recurrent neural network, which formulates the graph convolution with the diffusion process and combines GCN with recurrent models in an encoder-decoder manner for multi-step prediction; 6) STGCN [ 4]: a spatio-temporal graph convolutional network that deploys GCN and temporal convolution to capture spatial and temporal correlations, respectively; 7) ASTGCN [6]: attention-based spatio-temporal graph convolutional network, which further integrates spatial and temporal attention mechanisms to STGCN for capturing dynamic spatial and temporal patterns. We take its recent components to ensure the fairness of comparison; 8) STSGCN [ 11]: Spatial-Temporal Synchronous Graph Convolutional Network that captures spatial-temporal correlations by stacking multiple localized GCN layers with adjacent matrix over the time axis.",
-          "zh": "为了评估我们工作的整体表现，我们将AGCRN与广泛使用的基线和最先进的模型进行比较，包括1）历史平均值（HA）：将交通量建模为季节性过程并使用前几个季节的平均值（例如，与前几天相同的时间段）作为预测; 2）向量自回归（VAR）[ 39]：一个时间序列模型，捕获所有交通序列之间的空间相关性; 3）GRU-ED：基于GRU的基线，并利用编码器解码器框架[40 ]进行多步时间序列预测; 4）DSANet [41 ]：使用CNN网络的相关时间序列预测模型，用于捕获与一个时间序列的时间相关性和用于空间相关性的自注意机制; 5）DCRNN [2]：扩散卷积递归神经网络，它用扩散过程来公式化图卷积，并以编码器-解码器的方式将GCN与递归模型相结合，用于多步预测; 6）STGCN [ 4]：时空图卷积网络，部署GCN和时间卷积分别捕获空间和时间相关性; 7）ASTGCN [6]：基于注意力的时空图卷积网络，进一步将时空注意力机制集成到STGCN中，以捕捉动态时空模式，并采用其最近的分量来保证比较的公平性; 8）STSGCN [ 11]：时空同步图卷积网络，通过在时间轴上堆叠具有相邻矩阵的多个局部GCN层来捕获时空相关性。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "To evaluate the overall performance of our work, we compare AGCRN with widely used baselines and state-of-the-art models, including 1) Historical Average (HA): which models the trafﬁc as a seasonal process and uses the average of previous seasons (e.g., the same time slot of previous days) as the prediction; 2) Vector Auto-Regression (VAR) [ 39]: a time series model that captures spatial correlations among all trafﬁc series; 3) GRU-ED: an GRU-based baseline and utilize the encoderdecoder framework [40 ] for multi-step time series prediction; 4) DSANet [41 ]: a correlated time series prediction model using CNN networks for capturing temporal correlations with one time-series and self-attention mechanism for spatial correlations; 5) DCRNN [2]: diffusion convolution recurrent neural network, which formulates the graph convolution with the diffusion process and combines GCN with recurrent models in an encoder-decoder manner for multi-step prediction; 6) STGCN [ 4]: a spatio-temporal graph convolutional network that deploys GCN and temporal convolution to capture spatial and temporal correlations, respectively; 7) ASTGCN [6]: attention-based spatio-temporal graph convolutional network, which further integrates spatial and temporal attention mechanisms to STGCN for capturing dynamic spatial and temporal patterns. We take its recent components to ensure the fairness of comparison; 8) STSGCN [ 11]: Spatial-Temporal Synchronous Graph Convolutional Network that captures spatial-temporal correlations by stacking multiple localized GCN layers with adjacent matrix over the time axis.|为了评估我们工作的整体表现，我们将AGCRN与广泛使用的基线和最先进的模型进行比较，包括1）历史平均值（HA）：将交通量建模为季节性过程并使用前几个季节的平均值（例如，与前几天相同的时间段）作为预测; 2）向量自回归（VAR）[ 39]：一个时间序列模型，捕获所有交通序列之间的空间相关性; 3）GRU-ED：基于GRU的基线，并利用编码器解码器框架[40 ]进行多步时间序列预测; 4）DSANet [41 ]：使用CNN网络的相关时间序列预测模型，用于捕获与一个时间序列的时间相关性和用于空间相关性的自注意机制; 5）DCRNN [2]：扩散卷积递归神经网络，它用扩散过程来公式化图卷积，并以编码器-解码器的方式将GCN与递归模型相结合，用于多步预测; 6）STGCN [ 4]：时空图卷积网络，部署GCN和时间卷积分别捕获空间和时间相关性; 7）ASTGCN [6]：基于注意力的时空图卷积网络，进一步将时空注意力机制集成到STGCN中，以捕捉动态时空模式，并采用其最近的分量来保证比较的公平性; 8）STSGCN [ 11]：时空同步图卷积网络，通过在时间轴上堆叠具有相邻矩阵的多个局部GCN层来捕获时空相关性。",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794453696662,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "To evaluate the performance of our work, we conduct experiments on two public real-world trafﬁc datasets: PeMSD4 and PeMSD8 [6, 11 ]. PeMS means Caltrans Performance Measure System (PeMS) [38], which measures the highway trafﬁc of California in real-time every 30 seconds.",
-          "zh": "为了评估我们工作的性能，我们在两个公共的真实世界交通数据集上进行了实验：PeMSD4和PeMSD8[6,11]。PeMS是指Caltrans性能测量系统（PeMS）[38]，它每30秒实时测量一次加利福尼亚的高速公路交通。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "To evaluate the performance of our work, we conduct experiments on two public real-world trafﬁc datasets: PeMSD4 and PeMSD8 [6, 11 ]. PeMS means Caltrans Performance Measure System (PeMS) [38], which measures the highway trafﬁc of California in real-time every 30 seconds.|为了评估我们工作的性能，我们在两个公共的真实世界交通数据集上进行了实验：PeMSD4和PeMSD8[6,11]。PeMS是指Caltrans性能测量系统（PeMS）[38]，它每30秒实时测量一次加利福尼亚的高速公路交通。",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794452893028,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "where Wθ represents all the learnable parameters in the network, X:,i is the ground truth, and X′ :,i is the prediction of all nodes at time step i. The problem can be solved via back-propagation and Adam optimizer.",
-          "zh": "其中Wθ表示网络中所有可学习参数，X：，i是地面实况，X'：，i是所有节点在时间步长i的预测。这个问题可以通过反向传播和亚当优化器来解决。",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "where Wθ represents all the learnable parameters in the network, X:,i is the ground truth, and X′ :,i is the prediction of all nodes at time step i. The problem can be solved via back-propagation and Adam optimizer.|其中Wθ表示网络中所有可学习参数，X：，i是地面实况，X'：，i是所有节点在时间步长i的预测。这个问题可以通过反向传播和亚当优化器来解决。",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794452881065,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "We choose L1 loss as our training objective and optimize the loss for multi-step prediction together. Thus, the loss function of AGCRN for multi-step trafﬁc prediction can be formulated as",
-          "zh": "我们选择L1损失作为我们的训练目标，并一起优化多步预测的损失。因此，AGCRN用于多步交通预测的损失函数可以表述为",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "We choose L1 loss as our training objective and optimize the loss for multi-step prediction together. Thus, the loss function of AGCRN for multi-step trafﬁc prediction can be formulated as|我们选择L1损失作为我们的训练目标，并一起优化多步预测的损失。因此，AGCRN用于多步交通预测的损失函数可以表述为",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794452863131,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "To achieve multi-step trafﬁc prediction, we stack several AGCRN layers as an encoder to capture the node-speciﬁc spatial-temporal patterns and represents the input (i.e., historical data) as H ∈ RN ×do . Then, we can directly obtain the trafﬁc prediction for the next τ steps of all nodes by applying a linear transformation to project the representation from RN ×do to RN ×τ . Here, we do not generate the output in the sequential manner as it would increase the time consumption signiﬁcantly",
-          "zh": "为了实现多步交通预测，我们堆叠几个AGCRN层作为编码器来捕获特定节点的时空模式，并将输入（即历史数据）表示为H😍RN×do。然后，我们可以通过应用线性变换将表示从RN×do投影到RN×τ，直接获得所有节点下一步的交通预测。在这里，我们不以顺序方式生成输出，因为这会显着增加时间消耗",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "To achieve multi-step trafﬁc prediction, we stack several AGCRN layers as an encoder to capture the node-speciﬁc spatial-temporal patterns and represents the input (i.e., historical data) as H ∈ RN ×do . Then, we can directly obtain the trafﬁc prediction for the next τ steps of all nodes by applying a linear transformation to project the representation from RN ×do to RN ×τ . Here, we do not generate the output in the sequential manner as it would increase the time consumption signiﬁcantly|为了实现多步交通预测，我们堆叠几个AGCRN层作为编码器来捕获特定节点的时空模式，并将输入（即历史数据）表示为H😍RN×do。然后，我们可以通过应用线性变换将表示从RN×do投影到RN×τ，直接获得所有节点下一步的交通预测。在这里，我们不以顺序方式生成输出，因为这会显着增加时间消耗",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794452856876,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": ".5 Multi-step trafﬁc prediction",
-          "zh": ".5多步交通预测",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": ".5 Multi-step trafﬁc prediction|.5多步交通预测",
       "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     }
