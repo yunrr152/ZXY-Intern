@@ -2,6 +2,7 @@ import torch
 from torch import nn
 
 
+# 从股票节点嵌入学习邻接矩阵，再聚合截面特征。
 class TGC(nn.Module):
     def __init__(self, num_stocks, hidden_dim, graph_embed_dim, output_dim):
         super().__init__()
@@ -17,6 +18,6 @@ class TGC(nn.Module):
         if M.size(0) != G.size(0):
             raise ValueError("Stock embeddings must match the number of rows in G.")
 
-        adjacency = torch.softmax(torch.relu(M @ M.T), dim=1)
-        identity = torch.eye(M.size(0), dtype=adjacency.dtype, device=adjacency.device)
-        return self.W((identity + adjacency) @ G)
+        # 参考 AGCRN 的逐行归一化邻接，自环通过残差直接加入。
+        adjacency = torch.softmax(torch.relu(M @ M.T), dim=-1)
+        return self.W(G + adjacency @ G)

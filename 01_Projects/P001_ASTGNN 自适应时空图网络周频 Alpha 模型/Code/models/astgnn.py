@@ -7,16 +7,21 @@ from modules.predictor import FactorPredictor
 from modules.tgc import TGC
 
 
+# 组装可选 ResNet、GRU、图卷积和预测层。
 class ASTGNN(nn.Module):
     def __init__(self, num_stocks, config=None):
         super().__init__()
         self.config = config or ModelConfig()
-        self.feature_extractor = FeatureExtractor(
-            input_channels=self.config.num_features,
-            feature_dim=self.config.feature_dim,
-        )
+        self.feature_extractor = None
+        gru_input_dim = self.config.num_features
+        if self.config.use_resnet:
+            self.feature_extractor = FeatureExtractor(
+                input_channels=self.config.num_features,
+                feature_dim=self.config.feature_dim,
+            )
+            gru_input_dim = self.config.feature_dim
         self.gru = MultiSeedGRU(
-            input_dim=self.config.feature_dim,
+            input_dim=gru_input_dim,
             hidden_dim=self.config.gru_hidden_dim,
             seeds=self.config.gru_seeds,
         )
@@ -31,8 +36,14 @@ class ASTGNN(nn.Module):
             num_factors=self.config.num_factors,
         )
 
+    # 按配置选择输入路径，并返回中间结果和预测 C。
     def forward(self, x, stock_ids=None):
-        X = self.feature_extractor(x)
+        if self.feature_extractor is None:
+            if x.ndim != 3 or x.size(-1) != self.config.num_features:
+                raise ValueError("Direct GRU input must have shape [stocks, steps, features].")
+            X = x
+        else:
+            X = self.feature_extractor(x)
         G = self.gru(X)
         T = self.tgc(G, stock_ids)
         Z, C = self.predictor(T)

@@ -49,6 +49,118 @@
   "fullHtml": false,
   "history": [
     {
+      "ts": 1794815011934,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "训练集和验证集按照时间序列，前10年为训练集，后1年为验证集，每年滚动训练一个新的模型",
+          "zh": "训练集和验证集按照时间序列，前10年为训练集，后1年为验证集，每年滚动训练一个新的模型",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "训练集和验证集按照时间序列，前10年为训练集，后1年为验证集，每年滚动训练一个新的模型|训练集和验证集按照时间序列，前10年为训练集，后1年为验证集，每年滚动训练一个新的模型",
+      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
+      "page": null
+    },
+    {
+      "ts": 1794814991061,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "高开低收、vwap、成交量 共6个特征",
+          "zh": "高开低收vwap成交量共6个特征",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "高开低收、vwap、成交量 共6个特征|高开低收vwap成交量共6个特征",
+      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
+      "page": null
+    },
+    {
+      "ts": 1794814059295,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "高开低收、vwap、turnover 字段",
+          "zh": "高开低收，vwap，周转字段",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "高开低收、vwap、turnover 字段|高开低收，vwap，周转字段",
+      "file": "ASTGNN 自适应时空图网络周频 Alpha 模型",
+      "page": null
+    },
+    {
+      "ts": 1794813705181,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "2",
+          "zh": "2",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": ""
+        }
+      ],
+      "sig": "2|2",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794813685399,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "（以week为例+对抗训练）",
+          "zh": "（以周为例+对抗训练）",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "（以week为例+对抗训练）|（以周为例+对抗训练）",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794813677261,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "1112模型梳理（以week为例+对抗训练） 1",
+          "zh": "1112模型梳理（以周为例+对抗训练）1",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "1112模型梳理（以week为例+对抗训练） 1|1112模型梳理（以周为例+对抗训练）1",
+      "file": "",
+      "page": null
+    },
+    {
+      "ts": 1794812988354,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "抗",
+          "zh": "抗",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "zh-Hans"
+        }
+      ],
+      "sig": "抗|抗",
+      "file": "98 基于抗噪的 AI 量价模型改进方案 ——因子选股系列之九十八.pdf",
+      "page": null
+    },
+    {
       "ts": 1794552060217,
       "via": "火山",
       "pairs": [
@@ -734,118 +846,6 @@
         }
       ],
       "sig": "which integrates traditional GCN with GRU to capture spatial and temporal correlation|它将传统GCN与GRU集成以捕获空间和时间相关性",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794454009039,
-      "via": "腾讯",
-      "pairs": [
-        {
-          "en": "To better evaluate the performance of NAPL and DAGG, we conduct a comprehensive ablation study. The baseline for our ablation study is GCGRU, which integrates traditional GCN with GRU to capture spatial and temporal correlation",
-          "zh": "为了更好地评估NAPL和DAGG的性能，我们进行了全面的消融研究。我们消融研究的基线是GCGRU，它将传统的GCN与GRU结合起来，以捕获空间和时间相关性",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "To better evaluate the performance of NAPL and DAGG, we conduct a comprehensive ablation study. The baseline for our ablation study is GCGRU, which integrates traditional GCN with GRU to capture spatial and temporal correlation|为了更好地评估NAPL和DAGG的性能，我们进行了全面的消融研究。我们消融研究的基线是GCGRU，它将传统的GCN与GRU结合起来，以捕获空间和时间相关性",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794453998903,
-      "via": "腾讯",
-      "pairs": [
-        {
-          "en": "Overall, the results demonstrate that AGCRN can accurately capture the spatial and temporal correlations in the correlated trafﬁc series and achieve promising predictions",
-          "zh": "总体而言，结果表明，AGCRN可以准确地捕捉相关交通序列中的空间和时间相关性，并实现有希望的预测",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "Overall, the results demonstrate that AGCRN can accurately capture the spatial and temporal correlations in the correlated trafﬁc series and achieve promising predictions|总体而言，结果表明，AGCRN可以准确地捕捉相关交通序列中的空间和时间相关性，并实现有希望的预测",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794453920420,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "g. 2 further shows the prediction performance at each horizon in the PeMSD4 dataset. AGCRN balances short-term and long-term prediction well and achieves the best performance for almost all horizons (except for the ﬁrst step). Besides, the performance of AGCRN deteriorate much slower than other GCN-based models (see appendix for similar results in the PeMSD8 dataset)",
-          "zh": "G.2进一步显示了PeMSD4数据集中每个视界的预测性能。AGCRN很好地平衡了短期和长期预测，并在几乎所有视界中实现了最佳性能（第一步除外）。此外，AGCRN的性能恶化速度比其他基于GCN的模型慢得多（PeMSD8数据集中的类似结果见附录）",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "g. 2 further shows the prediction performance at each horizon in the PeMSD4 dataset. AGCRN balances short-term and long-term prediction well and achieves the best performance for almost all horizons (except for the ﬁrst step). Besides, the performance of AGCRN deteriorate much slower than other GCN-based models (see appendix for similar results in the PeMSD8 dataset)|G.2进一步显示了PeMSD4数据集中每个视界的预测性能。AGCRN很好地平衡了短期和长期预测，并在几乎所有视界中实现了最佳性能（第一步除外）。此外，AGCRN的性能恶化速度比其他基于GCN的模型慢得多（PeMSD8数据集中的类似结果见附录）",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794453866731,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "able 1 presents the overall prediction performances, which are the averaged MAE, RMSE and MAPE over 12 prediction horizons, of our AGCRN and eight representative comparison methods. We can observe that: 1) GCN-based methods outperform baselines and self-attention-based DSANet, demonstrating the importance of modeling spatial correlations explicitly and the effectiveness of GCN in trafﬁc forecasting; 2) our method further improves GCN-based methods with a signiﬁcant margin. AGCRN brings more than 5% relative improvements to the existing best results in MAE and MAPE for both PeMSD4 and PeMSD8 dataset. Fi",
-          "zh": "ABLE 1展示了我们的AGCRN和八种代表性比较方法在12个预测范围内的平均MAE、RMSE和MAPE的总体预测性能。我们可以观察到： 1）基于GCN的方法优于基线和self-attention-basedDSANet，证明了明确建模空间相关性的重要性和GCN在交通预测中的有效性；2）我们的方法进一步改进了基于GCN的方法，具有显著的余量。对于PeMSD4和PeMSD8数据集，AGCRN对现有的MAE和MAPE最佳结果带来了5%以上的相对改进。Fi",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "able 1 presents the overall prediction performances, which are the averaged MAE, RMSE and MAPE over 12 prediction horizons, of our AGCRN and eight representative comparison methods. We can observe that: 1) GCN-based methods outperform baselines and self-attention-based DSANet, demonstrating the importance of modeling spatial correlations explicitly and the effectiveness of GCN in trafﬁc forecasting; 2) our method further improves GCN-based methods with a signiﬁcant margin. AGCRN brings more than 5% relative improvements to the existing best results in MAE and MAPE for both PeMSD4 and PeMSD8 dataset. Fi|ABLE 1展示了我们的AGCRN和八种代表性比较方法在12个预测范围内的平均MAE、RMSE和MAPE的总体预测性能。我们可以观察到： 1）基于GCN的方法优于基线和self-attention-basedDSANet，证明了明确建模空间相关性的重要性和GCN在交通预测中的有效性；2）我们的方法进一步改进了基于GCN的方法，具有显著的余量。对于PeMSD4和PeMSD8数据集，AGCRN对现有的MAE和MAPE最佳结果带来了5%以上的相对改进。Fi",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794453850984,
-      "via": "腾讯",
-      "pairs": [
-        {
-          "en": "To better evaluate the performance of NAPL and DAGG, we conduct a comprehensive ablation study. The baseline for our ablation study is GCGRU, which integrates traditional GCN with GRU to capture spatial and temporal correlation",
-          "zh": "为了更好地评估NAPL和DAGG的性能，我们进行了全面的消融研究。我们消融研究的基线是GCGRU，它将传统的GCN与GRU结合起来，以捕获空间和时间相关性",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "To better evaluate the performance of NAPL and DAGG, we conduct a comprehensive ablation study. The baseline for our ablation study is GCGRU, which integrates traditional GCN with GRU to capture spatial and temporal correlation|为了更好地评估NAPL和DAGG的性能，我们进行了全面的消融研究。我们消融研究的基线是GCGRU，它将传统的GCN与GRU结合起来，以捕获空间和时间相关性",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794453758985,
-      "via": "腾讯",
-      "pairs": [
-        {
-          "en": "We deploy three widely used metrics - Mean Absolute Error (MAE), Root Mean Square Error (RMSE), and Mean Absolute Percentage Error (MAPE) to measure the performance of predictive models.",
-          "zh": "我们部署了三种广泛使用的指标-平均绝对误差（MAE）、均方根误差（RMSE）和平均绝对百分比误差（MAPE）来衡量预测模型的性能.",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "We deploy three widely used metrics - Mean Absolute Error (MAE), Root Mean Square Error (RMSE), and Mean Absolute Percentage Error (MAPE) to measure the performance of predictive models.|我们部署了三种广泛使用的指标-平均绝对误差（MAE）、均方根误差（RMSE）和平均绝对百分比误差（MAPE）来衡量预测模型的性能.",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794453744128,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "All the deep-learning-based models, including our AGCRN, are implemented in Python with Pytorch 1.3.1 and executed on a server with one NVIDIA Titan X GPU card. We optimize all the models by Adam optimizer for a maximum of 100 epochs and use an early stop strategy with the patience of 15. The best parameters for all deep learning models are chosen through a carefully parameter-tuning process on the validation set",
-          "zh": "所有基于深度学习的模型，包括我们的AGCRN，都使用Pytorch1.3.1在Python中实现，并在带有一张NVIDIA Titan X GPU卡的服务器上执行。我们通过亚当优化器优化所有模型，最多100个时期，并以15的耐心使用提前停止策略。所有深度学习模型的最佳参数都是通过验证集上仔细的参数调整过程来选择的",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "All the deep-learning-based models, including our AGCRN, are implemented in Python with Pytorch 1.3.1 and executed on a server with one NVIDIA Titan X GPU card. We optimize all the models by Adam optimizer for a maximum of 100 epochs and use an early stop strategy with the patience of 15. The best parameters for all deep learning models are chosen through a carefully parameter-tuning process on the validation set|所有基于深度学习的模型，包括我们的AGCRN，都使用Pytorch1.3.1在Python中实现，并在带有一张NVIDIA Titan X GPU卡的服务器上执行。我们通过亚当优化器优化所有模型，最多100个时期，并以15的耐心使用提前停止策略。所有深度学习模型的最佳参数都是通过验证集上仔细的参数调整过程来选择的",
       "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     }

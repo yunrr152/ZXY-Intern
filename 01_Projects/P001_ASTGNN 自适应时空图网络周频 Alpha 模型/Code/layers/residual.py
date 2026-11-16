@@ -1,6 +1,7 @@
 from torch import nn
 
 
+# 两层一维卷积与残差连接。
 class ResidualBlock(nn.Module):
     def __init__(self, channels):
         super().__init__()
@@ -13,6 +14,7 @@ class ResidualBlock(nn.Module):
         return self.relu(self.conv2(out) + x)
 
 
+# 为需要 ResNet 的输入逐时间片提取特征。
 class FeatureExtractor(nn.Module):
     def __init__(self, input_channels=6, feature_dim=64):
         super().__init__()

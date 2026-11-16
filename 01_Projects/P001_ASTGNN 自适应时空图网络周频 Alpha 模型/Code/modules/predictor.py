@@ -1,6 +1,7 @@
 from torch import nn
 
 
+# 生成弱因子 Z，等权分数用于神经网络的可微训练。
 class FactorPredictor(nn.Module):
     def __init__(self, input_dim=64, num_factors=64):
         super().__init__()

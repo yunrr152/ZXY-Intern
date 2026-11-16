@@ -1,0 +1,102 @@
+ASTGNN 代码说明
+===============
+
+运行入口和配置
+--------------
+train.py
+  读取 day CSV，按前 10 个自然年训练、下一年验证的方式逐年滚动。
+  每轮重新建模，用干净样本 MSE、弱因子正交惩罚和对抗样本 MSE 训练。
+  排除标签终点跨入验证年的训练样本。
+  神经网络训练后冻结参数，用训练期近期样本的弱因子拟合 LightGBM。
+  将各年逐日、逐股的 LightGBM 预测合并为一份 CSV。
+
+config.py
+  保存窗口长度、特征维度、GRU 隐藏维度、随机种子和训练超参数。
+  use_resnet 控制是否启用 ResNet。day 入口显式关闭它。
+
+数据
+----
+data/day.py
+  按日期和股票读取长表 CSV，构造 [N,30,6] 窗口。
+  最后一维依次为 high、open、low、close、vwap、volume。
+  训练标签为 T+11 收盘价 / T+1 收盘价 - 1，按 CSV 中的交易日序列定位。
+
+data/preprocessing.py
+  每轮只使用训练期面板估计各特征的统计量。
+  按中位数 ± 7 倍中位数绝对离差截断，再用均值和标准差做标准化，最后将缺失值填 0。
+  验证数据复用同一轮训练期参数。
+
+模型
+----
+models/astgnn.py
+  连接可选 ResNet、GRU、TGC 和预测层，返回 X、G、T、Z、C。
+  day 数据预处理后直接输入 GRU。启用 ResNet 时接收四维输入。
+
+layers/residual.py
+  用一维卷积、残差连接和池化提取每个时间片的特征。
+  适用于配置启用了 ResNet 的数据路径。
+
+modules/gru.py
+  使用 PyTorch 内置 GRU。默认三路独立初始化，对各路末步隐藏状态等权平均，得到 G。
+
+modules/tgc.py
+  按股票 ID 选择节点嵌入，构造自适应邻接矩阵并聚合特征，得到 T。
+
+modules/predictor.py
+  生成并归一化弱因子矩阵 Z。等权分数经 BatchNorm 后用于神经网络训练损失。
+
+包入口和预留文件
+----------------
+data/__init__.py、layers/__init__.py、models/__init__.py、modules/__init__.py
+  对应数据、网络层、模型和模型组件的包入口。
+
+ops/ifgsm.py
+  在预处理后的输入上迭代施加有界扰动。对抗分支使用当前截面 BatchNorm 统计量。
+
+training/loss.py
+  计算有效标签上的 MSE，以及完整截面上 Z 转置乘 Z 的 Frobenius 范数惩罚。
+
+training/lgbols.py
+  使用 LightGBM 的 GBDT 平方误差回归器对 Z 进行非线性合成。
+
+ops/__init__.py、training/__init__.py、utils/__init__.py
+  分别为算子、训练模块和通用工具的包入口。当前滚动训练逻辑在 train.py。
+
+backends.py
+  预留后端模块。
+
+运行方式
+--------
+从 Code 目录使用已安装 requirements.txt 中依赖的 Python 环境运行：
+
+  python -B train.py --data "D:\data\day.csv" --output "D:\data\day_scores.csv" --epochs 20
+
+输入列：date,stock_id,high,open,low,close,vwap,volume
+日期格式：YYYY-MM-DD。每个日期和股票代码组合对应一行。
+输出列：date,stock_id,validation_year,C
+
+修改记录1（1116）
+----------------
+后续每次修改新增一条记录，序号递增，括号内填写当天日期（MMDD）。
+
+1. GRU：手写 GRUCell 改为三路独立的单层单向 nn.GRU，batch_first=True。
+   保留每路独立种子和末步等权平均。内置实现在线性变换后应用重置门，
+   权重结构和旧手写 GRU 不兼容，需重新训练。
+   参考：https://docs.pytorch.org/docs/stable/generated/torch.nn.GRU.html
+
+2. 自适应图：参考 AGCRN 对嵌入相似度逐行归一化的写法。
+   把 (I+A)@G 改写为 G+A@G，省去显式单位矩阵，仍使用同一个共享线性变换。
+   按日截面股票 ID 取节点嵌入，保留原图公式和训练方式。
+   参考：https://github.com/LeiBAI/AGCRN/blob/master/model/AGCN.py
+
+3. lgbols：每个年度模型分两阶段训练。
+   第一阶段用十年历史训练 ASTGNN。两个 MSE 使用内部等权分数并保留 IFGSM，
+   正交项继续作用于干净弱因子。树模型只用于第二阶段。
+   第二阶段以 eval 模式提取最近一个自然年（默认）的 64 维弱因子，
+   用有效的同口径收益率拟合 GBDT。标签终点必须早于验证年。
+   这些因子来自同一轮已训练网络的样本内预测，未做折外 stacking。
+   验证年的最终 CSV 列 C 是 GBDT 的原始回归输出，内部等权分数仍用于反向传播。
+   默认 100 轮 boosting、学习率 0.05、31 叶、CPU 单线程。
+   可用 --lgbols-lookback-years 和 --lgbols-num-boost-round 调整窗口与轮数。
+   窗口和超参数是项目初值。第 81 期报告未列出可直接复用的完整树模型参数。
+   参考：https://lightgbm.readthedocs.io/en/stable/pythonapi/lightgbm.train.html
