@@ -3,7 +3,7 @@ ASTGNN 代码说明
 
 运行入口和配置
 --------------
-train.py
+training/train.py
   读取 day CSV，按前 10 个自然年训练、下一年验证的方式逐年滚动。
   每轮重新建模，用干净样本 MSE、弱因子正交惩罚和对抗样本 MSE 训练。
   排除标签终点跨入验证年的训练样本。
@@ -12,20 +12,33 @@ train.py
 
 config.py
   保存窗口长度、特征维度、GRU 隐藏维度、随机种子和训练超参数。
+  集中保存数据预处理、标签、网络结构、训练、对抗扰动和 LightGBM 的可调参数。
   use_resnet 控制是否启用 ResNet。day 入口显式关闭它。
 
 数据
 ----
 data/day.py
-  按日期和股票读取长表 CSV，构造 [N,30,6] 窗口。
+  按日期和股票读取长表 CSV，构造 [N,30,6] 窗口。使用 self.daily 存储每日股票特征，使用 self.stock_rows 记录每天出现的股票编号。
   最后一维依次为 high、open、low、close、vwap、volume。
-  训练标签为 T+11 收盘价 / T+1 收盘价 - 1，按 CSV 中的交易日序列定位。
+  
+  历史窗口构建：window(end, length)，以 end 日有观测记录的股票为股票池，向前提取 length 个交易日的数据。
+  历史数据不完整，保留该股票，将缺失位置设为 NaN。数据集开头不足 length 天：左侧使用 NaN 填充。
+  
+  训练标签为 T+11 收盘价 / T+1 收盘价 - 1，按 CSV 中的交易日序列定位。任一日期缺少价格或价格无效：标签设为 NaN。
+
+未知股票节点 ID
+--------------
+  每个预测年度仅用训练期出现过的股票建立 TGC 节点嵌入。预测年新上市、且训练期
+  从未出现过的股票，会统一映射到同一个“未知股票”节点 ID。该节点嵌入在建模后
+  被置为全 0，因此这些股票共享同一份图结构先验；但其 GRU 特征、TGC 聚合结果和
+  最终预测仍会随各自的输入数据变化。
 
 data/preprocessing.py
   每轮只使用训练期面板估计各特征的统计量。
   按中位数 ± 7 倍中位数绝对离差截断，再用均值和标准差做标准化，最后将缺失值填 0。
   验证数据复用同一轮训练期参数。
-
+  注意：fit的数据集时间范围，不要造成数据泄露
+  
 模型
 ----
 models/astgnn.py
@@ -59,8 +72,12 @@ training/loss.py
 training/lgbols.py
   使用 LightGBM 的 GBDT 平方误差回归器对 Z 进行非线性合成。
 
+training/test.py
+  固定一个指定预测年度训练并输出该年度的 C，不遍历其他验证年度。
+  复用 training/train.py 的单年度训练和 LightGBM 预测逻辑。
+
 ops/__init__.py、training/__init__.py、utils/__init__.py
-  分别为算子、训练模块和通用工具的包入口。当前滚动训练逻辑在 train.py。
+  分别为算子、训练模块和通用工具的包入口。
 
 backends.py
   预留后端模块。
@@ -69,7 +86,11 @@ backends.py
 --------
 从 Code 目录使用已安装 requirements.txt 中依赖的 Python 环境运行：
 
-  python -B train.py --data "D:\data\day.csv" --output "D:\data\day_scores.csv" --epochs 20
+  python -B -m training.train --data "D:\data\day.csv" --output "D:\data\day_scores.csv" --epochs 20
+
+固定预测年度测试：
+
+  python -B -m training.test --data "D:\data\day.csv" --prediction-year 2024 --output "D:\data\day_2024_scores.csv"
 
 输入列：date,stock_id,high,open,low,close,vwap,volume
 日期格式：YYYY-MM-DD。每个日期和股票代码组合对应一行。
@@ -100,3 +121,30 @@ backends.py
    可用 --lgbols-lookback-years 和 --lgbols-num-boost-round 调整窗口与轮数。
    窗口和超参数是项目初值。第 81 期报告未列出可直接复用的完整树模型参数。
    参考：https://lightgbm.readthedocs.io/en/stable/pythonapi/lightgbm.train.html
+
+修改记录2（1118）
+----------------
+1. 配置集中化：新增并接入去极值离差倍数、标签起止交易日偏移、
+   年度训练窗口、全局随机种子、运行设备、单截面最小股票数、AdamW 参数、
+   ResNet 卷积核和填充、图嵌入初始化标准差、BatchNorm 参数、
+   LightGBM 的目标函数、提升类型、学习率、叶子数、线程数和日志等级。
+
+2. 移除模块内部的可调默认值：MultiSeedGRU、FeatureExtractor、
+   ResidualBlock、FactorPredictor、TGC 和 FeaturePreprocessor
+   现在由 ASTGNN 或训练入口显式传入配置值。
+
+3. 训练入口：所有命令行默认值改由 ModelConfig 提供。
+   --seed 会覆盖 config.random_seed，--device 会覆盖 config.device，
+   用于单次运行临时调整，未传入时完全使用 config.py。
+
+4. 当前训练入口为 training/train.py，训练命令为
+   python -B -m training.train。
+
+修改记录3（1118）
+----------------
+1. 节点索引：补充说明训练期从未出现、但预测年新上市的股票会共用一个未知
+   股票节点 ID。该节点嵌入初始化后被置为 0；其图聚合结构相同，但 GRU 特征
+   和最终预测仍由每只股票自身输入决定。
+
+2. 新增 training/test.py：通过 --prediction-year 指定一个固定预测年度。
+   该脚本仅训练并输出该年度的 C，不执行逐年度滚动循环；不修改现有训练代码。

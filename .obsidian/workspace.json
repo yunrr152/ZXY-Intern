@@ -186,15 +186,18 @@
                 "id": "d86ac8d8f0e18a45",
                 "type": "leaf",
                 "state": {
-                  "type": "excalidraw",
+                  "type": "markdown",
                   "state": {
-                    "file": "Excalidraw/1116模型梳理（以day为例）.md"
+                    "file": "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/00-研报数据库/数据readme.md",
+                    "mode": "source",
+                    "source": false
                   },
-                  "icon": "excalidraw-icon",
-                  "title": "1116模型梳理（以day为例）"
+                  "icon": "lucide-file",
+                  "title": "数据readme"
                 }
               }
-            ]
+            ],
+            "currentTab": 2
           }
         ],
         "direction": "horizontal"
@@ -369,24 +372,26 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "c7d45e421ba0265f",
+  "active": "3ac38e20a00b1b4f",
   "lastOpenFiles": [
-    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/environment.yml",
-    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/training/lgbols.py",
-    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/01-研报笔记/ASTGNN 自适应时空图网络周频 Alpha 模型.md",
-    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/ops/ifgsm.py",
-    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/training/loss.py",
-    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/代码说明.txt",
-    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/train.py",
-    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/data/day.py",
-    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/02-pdf附件/74 神经网络日频 alpha 模型初步实践 ——因子选股系列之七十四.pdf",
-    "Excalidraw/1109模型整理.md",
+    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/data/data/README.md",
+    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/00-研报数据库/数据readme.md",
+    "Excalidraw/1118模型梳理（以day为例，代码版）.md",
+    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/data/data/LX_STK_BASIC_DAILY/605255.XSHG/vwapN.dat",
+    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/data/data/LX_STK_BASIC_DAILY/605255.XSHG/vwapA.dat",
+    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/data/data/LX_STK_BASIC_DAILY/605255.XSHG/volumeN.dat",
+    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/data/data/LX_STK_BASIC_DAILY/605255.XSHG/volumeA.dat",
+    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/data/data/LX_STK_BASIC_DAILY/605255.XSHG/valid.dat",
+    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/data/data/LX_STK_BASIC_DAILY/605255.XSHG/turnoverValue.dat",
+    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/data/data/LX_STK_BASIC_DAILY/605255.XSHG/turn.dat",
+    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/data/data/LX_STK_BASIC_DAILY/605255.XSHG/st.dat",
+    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/data/data/LX_STK_BASIC_DAILY/605255.XSHG/ret1d.dat",
+    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/data/data/LX_STK_BASIC_DAILY/605255.XSHG/tradeStatus.dat",
     "Excalidraw/1116模型梳理（以day为例）.md",
-    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/data/preprocessing.py",
+    "Excalidraw/1109模型整理.md",
+    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/01-研报笔记/ASTGNN 自适应时空图网络周频 Alpha 模型.md",
     "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/images/Pasted image 20261116152827.png",
     "Excalidraw/1106思路整理.md",
-    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/02-pdf附件/自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
-    "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/02-pdf附件/自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
     "01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/01-研报笔记/要做什么.md",
     "Excalidraw/1112模型梳理（以week为例+对抗训练）.md",
     "Excalidraw/1112模型梳理（以week为例）.md",

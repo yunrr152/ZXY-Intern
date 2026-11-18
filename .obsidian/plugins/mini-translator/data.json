@@ -49,6 +49,22 @@
   "fullHtml": false,
   "history": [
     {
+      "ts": 1794991041687,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "README 1",
+          "zh": "自述1",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "README 1|自述1",
+      "file": "",
+      "page": null
+    },
+    {
       "ts": 1794815011934,
       "via": "火山",
       "pairs": [
@@ -830,22 +846,6 @@
         }
       ],
       "sig": ". We construct NAPL-GCGRU by replacing traditional GCN with our NAPL-GCN and DAGG-GCGRU by replacing the pre-deﬁned graph with the DAGG module. AGCCRN-I is the variant of our AGCRN, which does not unify the node embeddings but employs an independent node embedding matrix among different NAPL-GCN layers and DAGG. The experiments on the PeMSD4 dataset are illustrated in Fig.|.我们通过用我们的NAPL-GCN替换传统的GCN来构建NAPL-GCGRU，并通过用DAGG模块替换预先定义的图来构建DAGG-GCGRU。AGCCRN-I是我们的AGCRN的变体，它不统一节点嵌入，而是在不同的NAPL-GCN层和DAGG之间使用独立的节点嵌入矩阵。PeMSD4数据集上的实验如图1所示。",
-      "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
-      "page": null
-    },
-    {
-      "ts": 1794454020886,
-      "via": "火山",
-      "pairs": [
-        {
-          "en": "which integrates traditional GCN with GRU to capture spatial and temporal correlation",
-          "zh": "它将传统GCN与GRU集成以捕获空间和时间相关性",
-          "sourceLanguage": "auto",
-          "targetLanguage": "zh-Hans",
-          "detectedLanguage": "en"
-        }
-      ],
-      "sig": "which integrates traditional GCN with GRU to capture spatial and temporal correlation|它将传统GCN与GRU集成以捕获空间和时间相关性",
       "file": "自适应图结构2_Adaptive graph convolutional recurrent network for traffic forecasting.pdf",
       "page": null
     }

@@ -3,10 +3,10 @@ from torch import nn
 
 # 两层一维卷积与残差连接。
 class ResidualBlock(nn.Module):
-    def __init__(self, channels):
+    def __init__(self, channels, kernel_size, padding):
         super().__init__()
-        self.conv1 = nn.Conv1d(channels, channels, kernel_size=3, padding=1)
-        self.conv2 = nn.Conv1d(channels, channels, kernel_size=3, padding=1)
+        self.conv1 = nn.Conv1d(channels, channels, kernel_size=kernel_size, padding=padding)
+        self.conv2 = nn.Conv1d(channels, channels, kernel_size=kernel_size, padding=padding)
         self.relu = nn.ReLU()
 
     def forward(self, x):
@@ -16,11 +16,13 @@ class ResidualBlock(nn.Module):
 
 # 为需要 ResNet 的输入逐时间片提取特征。
 class FeatureExtractor(nn.Module):
-    def __init__(self, input_channels=6, feature_dim=64):
+    def __init__(self, input_channels, feature_dim, kernel_size, padding):
         super().__init__()
-        self.input_conv = nn.Conv1d(input_channels, feature_dim, kernel_size=3, padding=1)
+        self.input_conv = nn.Conv1d(
+            input_channels, feature_dim, kernel_size=kernel_size, padding=padding
+        )
         self.relu = nn.ReLU()
-        self.residual = ResidualBlock(feature_dim)
+        self.residual = ResidualBlock(feature_dim, kernel_size, padding)
 
     def forward(self, x):
         num_stocks, seq_len, num_days, num_features = x.shape

@@ -4,7 +4,7 @@ from torch import nn
 
 # 独立初始化多路 GRU，并平均各路的最后隐藏状态。
 class MultiSeedGRU(nn.Module):
-    def __init__(self, input_dim, hidden_dim, seeds=(42, 123, 2026)):
+    def __init__(self, input_dim, hidden_dim, seeds):
         super().__init__()
         self.branches = nn.ModuleList()
         with torch.random.fork_rng(devices=[]):
@@ -17,4 +17,4 @@ class MultiSeedGRU(nn.Module):
         for branch in self.branches:
             _, hidden = branch(x)
             final_states.append(hidden[0])
-        return torch.stack(final_states, dim=0).mean(dim=0)
+        return torch.stack(final_states, dim=0).mean(dim=0) #等权平均输出

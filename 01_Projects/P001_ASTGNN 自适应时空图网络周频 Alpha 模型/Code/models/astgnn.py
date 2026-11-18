@@ -18,6 +18,8 @@ class ASTGNN(nn.Module):
             self.feature_extractor = FeatureExtractor(
                 input_channels=self.config.num_features,
                 feature_dim=self.config.feature_dim,
+                kernel_size=self.config.resnet_kernel_size,
+                padding=self.config.resnet_padding,
             )
             gru_input_dim = self.config.feature_dim
         self.gru = MultiSeedGRU(
@@ -30,10 +32,15 @@ class ASTGNN(nn.Module):
             hidden_dim=self.config.gru_hidden_dim,
             graph_embed_dim=self.config.graph_embed_dim,
             output_dim=self.config.tgc_hidden_dim,
+            embedding_init_std=self.config.tgc_embedding_init_std,
         )
         self.predictor = FactorPredictor(
             input_dim=self.config.tgc_hidden_dim,
             num_factors=self.config.num_factors,
+            batch_norm_eps=self.config.batch_norm_eps,
+            batch_norm_momentum=self.config.batch_norm_momentum,
+            batch_norm_affine=self.config.batch_norm_affine,
+            batch_norm_track_running_stats=self.config.batch_norm_track_running_stats,
         )
 
     # 按配置选择输入路径，并返回中间结果和预测 C。
