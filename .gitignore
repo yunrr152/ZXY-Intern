@@ -1,0 +1,32 @@
+
+# 忽略所有层级的数据目录
+[Dd]ata/
+[Dd]ataset/
+[Dd]atasets/
+
+# 忽略常见数据文件
+*.csv
+*.parquet
+*.feather
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.xlsx
+*.xls
+
+# 忽略模型权重
+*.pt
+*.pth
+*.ckpt
+
+# 忽略 Python 缓存
+__pycache__/
+*.pyc
+
+# 忽略环境文件
+.venv/
+venv/
+.env
