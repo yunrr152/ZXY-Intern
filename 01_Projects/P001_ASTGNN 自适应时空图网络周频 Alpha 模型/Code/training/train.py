@@ -3,9 +3,13 @@ from bisect import bisect_left
 import csv
 from dataclasses import replace
 from datetime import date
+import logging
+import os
 from pathlib import Path
+from time import perf_counter
 
 import torch
+from tqdm import tqdm
 
 from config import ModelConfig
 from data.day import DayPanel
@@ -14,6 +18,79 @@ from models.astgnn import ASTGNN
 from ops.ifgsm import ifgsm, suspend_running_statistics
 from training.lgbols import fit_lgbols, require_lightgbm
 from training.loss import orthogonality_loss, prediction_loss
+
+
+def configure_logger(log_path):
+    """Write persistent run messages to a user-visible UTF-8 log file."""
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    logger = logging.getLogger("astgnn")
+    logger.setLevel(logging.INFO)
+    logger.handlers.clear()
+    handler = logging.FileHandler(log_path, encoding="utf-8", mode="a")
+    handler.setFormatter(logging.Formatter("%(asctime)s | %(levelname)s | %(message)s"))
+    logger.addHandler(handler)
+    logger.propagate = False
+    return logger
+
+
+def report(message, logger=None):
+    print(message)
+    if logger is not None:
+        logger.info(message)
+
+
+def stage(index, total, message, logger=None):
+    report(f"[{index}/{total}] {message}", logger)
+
+
+def resolve_device(device_name, logger=None):
+    """Validate the requested compute device before allocating model tensors."""
+    device = torch.device(device_name)
+    if device.type == "cuda":
+        if not torch.cuda.is_available():
+            raise RuntimeError(
+                "CUDA was requested but is unavailable. "
+                f"PyTorch={torch.__version__}, PyTorch CUDA build={torch.version.cuda}."
+            )
+        report(f"Using GPU: {torch.cuda.get_device_name(device)}", logger)
+    else:
+        report(f"Using device: {device}", logger)
+    return device
+
+
+def save_checkpoint(path, year, epoch_completed, model, optimizer, preprocessor, active_ids, logger):
+    """Atomically save the state needed to resume after a completed epoch."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary_path = path.with_suffix(path.suffix + ".tmp")
+    statistics = tuple(value.detach().cpu() for value in preprocessor._statistics)
+    torch.save(
+        {
+            "year": year,
+            "epoch_completed": epoch_completed,
+            "model_state": model.state_dict(),
+            "optimizer_state": optimizer.state_dict(),
+            "preprocessor_statistics": statistics,
+            "active_ids": active_ids.cpu(),
+        },
+        temporary_path,
+    )
+    os.replace(temporary_path, path)
+    report(f"{year}: checkpoint saved after epoch {epoch_completed} to {path}.", logger)
+
+
+def restore_checkpoint(path, year, model, optimizer, preprocessor, active_ids, device, logger):
+    """Restore a same-year checkpoint and verify that its stock-node universe matches."""
+    checkpoint = torch.load(path, map_location=device, weights_only=False)
+    if checkpoint.get("year") != year:
+        raise ValueError(f"Checkpoint {path} belongs to year {checkpoint.get('year')}, not {year}.")
+    if not torch.equal(checkpoint["active_ids"].cpu(), active_ids.cpu()):
+        raise ValueError("Checkpoint stock-node universe differs from the current training data.")
+    model.load_state_dict(checkpoint["model_state"])
+    optimizer.load_state_dict(checkpoint["optimizer_state"])
+    preprocessor._statistics = tuple(checkpoint["preprocessor_statistics"])
+    epoch_completed = int(checkpoint["epoch_completed"])
+    report(f"{year}: resumed checkpoint after epoch {epoch_completed} from {path}.", logger)
+    return epoch_completed
 
 
 # 以同一个模型计算干净样本、正交惩罚和对抗样本损失。
@@ -34,17 +111,29 @@ def training_loss(model, x, stock_ids, target, valid, config):
 
 
 # 单轮滚动训练，并逐日输出该验证年的预测分数。
-def annual_scores(panel, year, config, device):
+def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=None):
+    year_started = perf_counter()
     start = bisect_left(panel.dates, date(year - config.training_years, 1, 1))
     stop = bisect_left(panel.dates, date(year, 1, 1))
     end = bisect_left(panel.dates, date(year + 1, 1, 1))
     if stop == end:
         return
 
+    stage(2, 6, f"{year}: Building training samples and preprocessing statistics...", logger)
+    preprocessing_started = perf_counter()
+    training_pool_features = [panel.pool_features(day) for day in range(start, stop)]
+    training_pool_features = [features for features in training_pool_features if features.numel()]
+    if not training_pool_features:
+        raise ValueError(f"No in-pool observations before validation year {year}.")
     preprocessor = FeaturePreprocessor(config.winsorize_mad_multiplier).fit(
-        torch.cat(panel.daily[start:stop])
+        torch.cat(training_pool_features)
     )
-    active_ids = torch.unique(torch.cat(panel.stock_rows[start:stop]))
+    report(f"{year}: preprocessing statistics fitted in {perf_counter() - preprocessing_started:.1f}s.", logger)
+    active_pool_rows = [panel.pool_rows(day) for day in range(start, stop)]
+    active_pool_rows = [ids for ids in active_pool_rows if ids.numel()]
+    if not active_pool_rows:
+        raise ValueError(f"No in-pool stocks before validation year {year}.")
+    active_ids = torch.unique(torch.cat(active_pool_rows))
     unknown = active_ids.numel()
     id_map = torch.full((len(panel.stocks),), unknown, dtype=torch.long)
     id_map[active_ids] = torch.arange(unknown)
@@ -62,48 +151,90 @@ def annual_scores(panel, year, config, device):
         eps=config.adam_eps,
         amsgrad=config.adam_amsgrad,
     )
+    completed_epochs = 0
+    if resume and checkpoint_path.is_file():
+        completed_epochs = restore_checkpoint(
+            checkpoint_path, year, model, optimizer, preprocessor, active_ids, device, logger
+        )
+        if completed_epochs > config.epochs:
+            raise ValueError(
+                f"Checkpoint completed {completed_epochs} epochs, exceeding configured "
+                f"epochs={config.epochs}."
+            )
     # 标签终点必须早于验证年。
     training_days = range(
         max(start, config.seq_len - 1),
         stop - config.target_end_offset,
     )
-    for epoch in range(config.epochs):
+    stage(3, 6, f"{year}: Training ASTGNN...", logger)
+    for epoch in range(completed_epochs, config.epochs):
+        epoch_started = perf_counter()
         model.train()
         steps = 0
+        skipped = 0
         total_loss = 0.0
-        for day in training_days:
-            ids = panel.stock_rows[day]
-            target = panel.target(
-                day, ids, config.target_start_offset, config.target_end_offset
-            )
-            valid = torch.isfinite(target) 
-            
-            #模型不会在股票数量过少或完全没有有效监督标签的日期进行训练。
-            if ids.numel() < config.min_stocks_per_cross_section or not valid.any():
-                continue
-            _, x = panel.window(day, config.seq_len)
-            x = preprocessor.transform(x).to(device)
-            optimizer.zero_grad(set_to_none=True)
-            loss = training_loss(
-                model, x, id_map[ids].to(device), target.to(device), valid.to(device), config
-            )
-            if not torch.isfinite(loss):
-                raise RuntimeError(f"Non-finite training loss on {panel.dates[day]}")
-            loss.backward()
-            optimizer.step()
-            total_loss += loss.detach().item()
-            steps += 1
+        with tqdm(
+            training_days,
+            desc=f"{year} epoch {epoch + 1}/{config.epochs}",
+            unit="day",
+            leave=False,
+        ) as progress:
+            for day in progress:
+                ids = panel.pool_rows(day)
+                target = panel.target(
+                    day, ids, config.target_start_offset, config.target_end_offset
+                )
+                valid = torch.isfinite(target)
+
+                #模型不会在股票数量过少或完全没有有效监督标签的日期进行训练。
+                if ids.numel() < config.min_stocks_per_cross_section or not valid.any():
+                    skipped += 1
+                    continue
+                _, x = panel.window(day, config.seq_len, ids)
+                x = preprocessor.transform(x).to(device)
+                optimizer.zero_grad(set_to_none=True)
+                loss = training_loss(
+                    model, x, id_map[ids].to(device), target.to(device), valid.to(device), config
+                )
+                if not torch.isfinite(loss):
+                    raise RuntimeError(f"Non-finite training loss on {panel.dates[day]}")
+                loss.backward()
+                optimizer.step()
+                total_loss += loss.detach().item()
+                steps += 1
+                progress.set_postfix(
+                    loss=f"{total_loss / steps:.5g}", usable=steps, skipped=skipped
+                )
         if not steps:
             raise ValueError(f"No usable training cross-sections for validation year {year}.")
-        print(f"{year} epoch {epoch + 1}/{config.epochs}: loss={total_loss / steps:.6g}")
+        report(
+            f"{year} epoch {epoch + 1}/{config.epochs}: loss={total_loss / steps:.6g}, "
+            f"time={perf_counter() - epoch_started:.1f}s",
+            logger,
+        )
+        if (epoch + 1) % config.checkpoint_every_epochs == 0 or epoch + 1 == config.epochs:
+            save_checkpoint(
+                checkpoint_path,
+                year,
+                epoch + 1,
+                model,
+                optimizer,
+                preprocessor,
+                active_ids,
+                logger,
+            )
 
     model.eval()
     # 冻结模型，用验证年前的近期样本训练树，标签沿用阶段一的时间边界。
     tree_start = bisect_left(panel.dates, date(year - config.lgbols_lookback_years, 1, 1))
     tree_factors, tree_targets = [], []
+    factor_started = perf_counter()
+    stage(4, 6, f"{year}: Extracting {config.num_factors} factors...", logger)
     with torch.no_grad():
-        for day in range(max(training_days.start, tree_start), training_days.stop):
-            ids, x = panel.window(day, config.seq_len)
+        factor_days = range(max(training_days.start, tree_start), training_days.stop)
+        for day in tqdm(factor_days, desc=f"{year} extracting factors", unit="day", leave=False):
+            ids = panel.pool_rows(day)
+            _, x = panel.window(day, config.seq_len, ids)
             target = panel.target(
                 day, ids, config.target_start_offset, config.target_end_offset
             )
@@ -116,10 +247,27 @@ def annual_scores(panel, year, config, device):
             tree_targets.append(target[valid])
     if not tree_targets:
         raise ValueError(f"No labeled lgbols samples before validation year {year}.")
-    booster = fit_lgbols(torch.cat(tree_factors), torch.cat(tree_targets), config)
-    for day in range(stop, end):
+    report(f"{year}: factor extraction completed in {perf_counter() - factor_started:.1f}s.", logger)
+    factor_matrix = torch.cat(tree_factors)
+    target_vector = torch.cat(tree_targets)
+    stage(
+        5,
+        6,
+        f"{year}: Fitting LightGBM GBDT on {len(target_vector):,} samples, "
+        f"{factor_matrix.size(1)} factors, {config.lgbols_num_boost_round} rounds...",
+        logger,
+    )
+    lightgbm_started = perf_counter()
+    booster = fit_lgbols(factor_matrix, target_vector, config)
+    report(f"{year}: LightGBM fitted in {perf_counter() - lightgbm_started:.1f}s.", logger)
+    stage(6, 6, f"{year}: Saving prediction scores...", logger)
+    prediction_started = perf_counter()
+    for day in tqdm(range(stop, end), desc=f"{year} predicting", unit="day", leave=False):
         with torch.no_grad():
-            ids, x = panel.window(day, config.seq_len)
+            ids = panel.pool_rows(day)
+            if not ids.numel():
+                continue
+            _, x = panel.window(day, config.seq_len, ids)
             x = preprocessor.transform(x).to(device)
             factors = model(x, id_map[ids].to(device))["Z"].cpu()
             scores = torch.from_numpy(
@@ -129,17 +277,27 @@ def annual_scores(panel, year, config, device):
                 raise RuntimeError(f"Non-finite predictions on {panel.dates[day]}")
         for stock_id, score in zip(ids.tolist(), scores.tolist()):
             yield panel.dates[day].isoformat(), panel.stocks[stock_id], year, score
+    report(
+        f"{year}: validation prediction completed in {perf_counter() - prediction_started:.1f}s; "
+        f"total annual time {perf_counter() - year_started:.1f}s.",
+        logger,
+    )
 
 
 # 读取命令行参数，按验证年份汇总预测结果。
 def main():
+    run_started = perf_counter()
     parser = argparse.ArgumentParser(description="Train ASTGNN on rolling day panels.")
     parser.add_argument("--data", type=Path, required=True, help="UTF-8 CSV: date,stock_id,high,open,low,close,vwap,volume")
+    parser.add_argument("--mask", type=Path, required=True, help="UTF-8 CSV: date,stock_id,in_pool")
     parser.add_argument("--output", type=Path, required=True, help="New output CSV for all validation scores")
     defaults = ModelConfig()
     parser.add_argument("--epochs", type=int, default=defaults.epochs)
     parser.add_argument("--device", default=defaults.device)
     parser.add_argument("--seed", type=int, default=defaults.random_seed)
+    parser.add_argument("--checkpoint-dir", type=Path, default=Path(defaults.checkpoint_dir))
+    parser.add_argument("--resume", action="store_true", help="Resume annual models from checkpoints.")
+    parser.add_argument("--log-file", type=Path, help="Optional UTF-8 run log path.")
     parser.add_argument(
         "--lgbols-lookback-years",
         type=int,
@@ -153,6 +311,8 @@ def main():
     args = parser.parse_args()
     if args.epochs < 1:
         parser.error("--epochs must be positive")
+    if defaults.checkpoint_every_epochs < 1:
+        parser.error("config.checkpoint_every_epochs must be positive")
     if (
         not 1 <= args.lgbols_lookback_years <= defaults.training_years
         or args.lgbols_num_boost_round < 1
@@ -160,7 +320,11 @@ def main():
         parser.error("lgbols lookback must be within the training period and boost rounds positive")
     require_lightgbm()
 
-    panel = DayPanel(args.data)
+    log_path = args.log_file or args.output.with_suffix(".log")
+    logger = configure_logger(log_path)
+    report(f"Run log: {log_path}", logger)
+    stage(1, 6, "Loading day feature panel...", logger)
+    panel = DayPanel(args.data, args.mask, logger)
     first_year = panel.dates[0].year + defaults.training_years
     last_year = panel.dates[-1].year
     if first_year > last_year:
@@ -174,16 +338,27 @@ def main():
         epochs=args.epochs,
         device=args.device,
         random_seed=args.seed,
+        checkpoint_dir=str(args.checkpoint_dir),
         lgbols_lookback_years=args.lgbols_lookback_years,
         lgbols_num_boost_round=args.lgbols_num_boost_round,
     )
-    device = torch.device(config.device)
-    with args.output.open("x", encoding="utf-8", newline="") as output:
+    device = resolve_device(config.device, logger)
+    if args.output.exists():
+        parser.error(f"Refusing to overwrite existing output: {args.output}")
+    temporary_output = args.output.with_suffix(args.output.suffix + ".tmp")
+    with temporary_output.open("w", encoding="utf-8", newline="") as output:
         writer = csv.writer(output)
         writer.writerow(("date", "stock_id", "validation_year", "C"))
-        for year in range(first_year, last_year + 1):
-            writer.writerows(annual_scores(panel, year, config, device))
-    print(f"Validation scores written to {args.output}")
+        for year in tqdm(
+            range(first_year, last_year + 1), desc="Rolling validation years", unit="year"
+        ):
+            checkpoint_path = args.checkpoint_dir / f"astgnn_{year}.pt"
+            writer.writerows(
+                annual_scores(panel, year, config, device, checkpoint_path, args.resume, logger)
+            )
+    os.replace(temporary_output, args.output)
+    report(f"Validation scores written to {args.output}", logger)
+    report(f"Rolling training completed in {perf_counter() - run_started:.1f}s.", logger)
 
 
 if __name__ == "__main__":

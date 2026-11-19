@@ -1,6 +1,14 @@
 ASTGNN 代码说明
 ===============
 
+数据构建脚本
+------------
+data/build_day_dataset.py
+  从 data/data 下的日线库读取所有 tradeStatus == 1 的股票历史行情，使用后复权
+  highA、openA、lowA、closeA、vwapA、volumeA 输出模型所需的六列原始特征。
+  同时从 advanceWholeMarketNew.parquet 生成与行情逐行对齐的 in_pool 掩码。
+  该脚本不做去极值、标准化、缺失填补或标签计算；这些处理应留在训练期完成。
+
 运行入口和配置
 --------------
 training/train.py
@@ -84,16 +92,21 @@ backends.py
 
 运行方式
 --------
-从 Code 目录使用已安装 requirements.txt 中依赖的 Python 环境运行：
+从 Code 目录仅使用 astgnn Conda 环境运行：
 
-  python -B -m training.train --data "D:\data\day.csv" --output "D:\data\day_scores.csv" --epochs 20
+  conda run -n astgnn python -B -m training.train --data "D:\data\day.csv" --mask "D:\data\day_pool_mask.csv" --output "D:\data\day_scores.csv" --epochs 20
 
 固定预测年度测试：
 
-  python -B -m training.test --data "D:\data\day.csv" --prediction-year 2024 --output "D:\data\day_2024_scores.csv"
+  conda run -n astgnn python -B -m training.test --data "D:\data\day.csv" --mask "D:\data\day_pool_mask.csv" --prediction-year 2024 --output "D:\data\day_2024_scores.csv"
+
+第一轮十年训练（2006–2015）并预测 2016 年：
+
+  conda run -n astgnn python -B -m training.test --data "D:\data\day.csv" --mask "D:\data\day_pool_mask.csv" --train-start-year 2006 --prediction-year 2016 --output "D:\data\day_2016_scores.csv"
 
 输入列：date,stock_id,high,open,low,close,vwap,volume
 日期格式：YYYY-MM-DD。每个日期和股票代码组合对应一行。
+掩码列：date,stock_id,in_pool；必须与行情文件的日期和股票代码一一对应。
 输出列：date,stock_id,validation_year,C
 
 修改记录1（1116）
@@ -148,3 +161,37 @@ backends.py
 
 2. 新增 training/test.py：通过 --prediction-year 指定一个固定预测年度。
    该脚本仅训练并输出该年度的 C，不执行逐年度滚动循环；不修改现有训练代码。
+
+修改记录4（1119）
+----------------
+1. 数据构建：在本说明顶部补充 data/build_day_dataset.py 的用途。该脚本生成完整
+   正常交易历史行情及 advanceWholeMarketNew 的每日 in_pool 掩码；六个特征使用
+   highA、openA、lowA、closeA、vwapA、volumeA 的后复权口径。
+
+2. 固定预测年测试：training/test.py 新增可选 --train-start-year。传入时必须与
+   config.training_years 对应，防止训练区间与预测年度不一致。首轮设定为训练
+   2006–2015 年、预测 2016 年。
+
+3. 运行进度：数据构建显示股票读取进度、已写入行数和池内样本数；DayPanel 显示
+   CSV 加载行数。训练和测试显示数据加载、每个 epoch 的逐日训练进度与平均损失、
+   弱因子提取、LightGBM 拟合、验证年逐日预测，以及滚动验证年度进度。
+
+4. 运行计时：数据构建显示股票池读取与总构建耗时；DayPanel 显示 CSV 解析、张量
+   构建与总加载耗时。训练和测试显示预处理、每个 epoch、弱因子提取、LightGBM、
+   验证预测、单年度和整体运行耗时。
+
+5. 股票池掩码接入：DayPanel 现要求同时读取完整行情 CSV 和与其一一对应的
+   day_pool_mask.csv，新增 pool_rows() 与 pool_features() 接口。训练、弱因子提取和
+   验证预测仅处理当日 in_pool == 1 的股票；历史 30 日窗口仍从完整行情读取。
+   预处理统计量和 TGC 可学习节点集合均仅从训练期曾入池的股票构建。
+
+6. 断点恢复与设备校验：每完成 config.checkpoint_every_epochs（默认 1）个 epoch，
+   原子保存模型、优化器、预处理统计量和训练期节点集合到 checkpoint_dir。以 --resume
+   重启时恢复最近完成的 epoch，不重复已保存的训练轮次。新增 CUDA 可用性检查；请求
+   --device cuda 但当前 PyTorch 或驱动不支持时会明确报错，不会静默回退到 CPU。
+   预测 CSV 先写入同目录 .tmp 文件，全部完成后原子替换为正式输出，避免中断留下
+   被误用的半成品结果。
+
+7. 阶段日志：训练和固定预测年测试新增 --log-file；未指定时默认在预测 CSV 同目录
+   生成同名 .log 文件。控制台和日志同步记录 [1/6] 至 [6/6] 的阶段、epoch、断点、
+   耗时和输出位置。LightGBM 阶段明确标记为 GBDT 回归，不使用 OLS。

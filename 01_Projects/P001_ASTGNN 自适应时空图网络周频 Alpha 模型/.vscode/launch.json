@@ -1,0 +1,25 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "构建 Day 数据集",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "data.build_day_dataset",
+            "python": "D:\\andaconda\\andaconda3\\envs\\astgnn\\python.exe",
+            "cwd": "${workspaceFolder}\\Code",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONDONTWRITEBYTECODE": "1"
+            },
+            "args": [
+                "--source-root", "data\\data",
+                "--start-date", "20060104",
+                "--end-date", "20161231",
+                "--features-output", "data\\output\\day_features_2006_2016.csv",
+                "--mask-output", "data\\output\\day_pool_mask_2006_2016.csv"
+            ]
+        }
+    ]
+}

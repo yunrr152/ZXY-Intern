@@ -32,6 +32,8 @@ class ModelConfig:
     training_years: int = 10
     random_seed: int = 42
     device: str = "cpu"
+    checkpoint_dir: str = "checkpoints"
+    checkpoint_every_epochs: int = 1
     min_stocks_per_cross_section: int = 2
     learning_rate: float = 1e-3
     weight_decay: float = 1e-5
