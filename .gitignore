@@ -3,6 +3,7 @@
 [Dd]ata/
 [Dd]ataset/
 [Dd]atasets/
+*数据*
 
 # 忽略常见数据文件
 *.csv
