@@ -1,0 +1,12 @@
+*   [33mc96c657[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge branch 'main' of https://github.com/yunrr152/ZXY-Intern
+[31m|[m[32m\[m  
+[31m|[m * [33m4aab88f[m Add rule to ignore files containing '数据'
+* [32m|[m [33m2e5dfe4[m 20261119 [Windows/GPT] update
+[32m|[m[32m/[m  
+* [33ma28d2ca[m 20261118 [Windows/GPT] update
+* [33ma3df66b[m Add gitignore to exclude data files
+* [33mae227ea[m 20261116 [Windows/GPT] update
+* [33m60b49bf[m 20261113 [Windows/GPT] update
+* [33m3cbeb98[m 20261112 [Windows/GPT] update
+* [33m6d5bee0[m 20261111 [Windows/GPT] update
+* [33m719f513[m 0261109 [Windows/GPT] update

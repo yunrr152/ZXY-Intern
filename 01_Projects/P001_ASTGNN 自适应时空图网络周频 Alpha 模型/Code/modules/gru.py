@@ -1,20 +1,11 @@
-import torch
 from torch import nn
 
 
-# 独立初始化多路 GRU，并平均各路的最后隐藏状态。
-class MultiSeedGRU(nn.Module):
-    def __init__(self, input_dim, hidden_dim, seeds):
+class TemporalGRU(nn.Module):
+    def __init__(self, input_dim, hidden_dim):
         super().__init__()
-        self.branches = nn.ModuleList()
-        with torch.random.fork_rng(devices=[]):
-            for seed in seeds:
-                torch.random.default_generator.manual_seed(seed)
-                self.branches.append(nn.GRU(input_dim, hidden_dim, batch_first=True))
+        self.recurrent = nn.GRU(input_dim, hidden_dim, batch_first=True)
 
     def forward(self, x):
-        final_states = []
-        for branch in self.branches:
-            _, hidden = branch(x)
-            final_states.append(hidden[0])
-        return torch.stack(final_states, dim=0).mean(dim=0) #等权平均输出
+        _, hidden = self.recurrent(x)
+        return hidden[0]

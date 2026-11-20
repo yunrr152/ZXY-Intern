@@ -2,7 +2,7 @@ import argparse
 from bisect import bisect_left
 import csv
 from dataclasses import replace
-from datetime import date
+from datetime import date, datetime
 import logging
 import os
 from pathlib import Path
@@ -58,15 +58,34 @@ def resolve_device(device_name, logger=None):
     return device
 
 
-def save_checkpoint(path, year, epoch_completed, model, optimizer, preprocessor, active_ids, logger):
-    """Atomically save the state needed to resume after a completed epoch."""
+def save_checkpoint(
+    path,
+    year,
+    completed_epochs,
+    in_progress_epoch,
+    next_day_offset,
+    running_loss,
+    steps,
+    skipped,
+    model,
+    optimizer,
+    preprocessor,
+    active_ids,
+    logger,
+):
+    """Atomically save the state needed to resume at an epoch or training-day boundary."""
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary_path = path.with_suffix(path.suffix + ".tmp")
     statistics = tuple(value.detach().cpu() for value in preprocessor._statistics)
     torch.save(
         {
             "year": year,
-            "epoch_completed": epoch_completed,
+            "completed_epochs": completed_epochs,
+            "in_progress_epoch": in_progress_epoch,
+            "next_day_offset": next_day_offset,
+            "running_loss": running_loss,
+            "steps": steps,
+            "skipped": skipped,
             "model_state": model.state_dict(),
             "optimizer_state": optimizer.state_dict(),
             "preprocessor_statistics": statistics,
@@ -75,7 +94,15 @@ def save_checkpoint(path, year, epoch_completed, model, optimizer, preprocessor,
         temporary_path,
     )
     os.replace(temporary_path, path)
-    report(f"{year}: checkpoint saved after epoch {epoch_completed} to {path}.", logger)
+    if in_progress_epoch is None:
+        report(f"{year}: checkpoint saved after epoch {completed_epochs} to {path}.", logger)
+    else:
+        timestamp = datetime.now().astimezone().isoformat(timespec="seconds")
+        report(
+            f"{year}: heartbeat {timestamp}; epoch {in_progress_epoch}, "
+            f"next training-day offset {next_day_offset}, checkpoint saved to {path}.",
+            logger,
+        )
 
 
 def restore_checkpoint(path, year, model, optimizer, preprocessor, active_ids, device, logger):
@@ -88,9 +115,25 @@ def restore_checkpoint(path, year, model, optimizer, preprocessor, active_ids, d
     model.load_state_dict(checkpoint["model_state"])
     optimizer.load_state_dict(checkpoint["optimizer_state"])
     preprocessor._statistics = tuple(checkpoint["preprocessor_statistics"])
-    epoch_completed = int(checkpoint["epoch_completed"])
-    report(f"{year}: resumed checkpoint after epoch {epoch_completed} from {path}.", logger)
-    return epoch_completed
+    # Support checkpoints saved before intra-epoch heartbeat support was added.
+    completed_epochs = int(checkpoint.get("completed_epochs", checkpoint.get("epoch_completed", 0)))
+    state = {
+        "completed_epochs": completed_epochs,
+        "in_progress_epoch": checkpoint.get("in_progress_epoch"),
+        "next_day_offset": int(checkpoint.get("next_day_offset", 0)),
+        "running_loss": float(checkpoint.get("running_loss", 0.0)),
+        "steps": int(checkpoint.get("steps", 0)),
+        "skipped": int(checkpoint.get("skipped", 0)),
+    }
+    if state["in_progress_epoch"] is None:
+        report(f"{year}: resumed checkpoint after epoch {completed_epochs} from {path}.", logger)
+    else:
+        report(
+            f"{year}: resumed epoch {state['in_progress_epoch']} from training-day offset "
+            f"{state['next_day_offset']} using {path}.",
+            logger,
+        )
+    return state
 
 
 # 以同一个模型计算干净样本、正交惩罚和对抗样本损失。
@@ -151,14 +194,21 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
         eps=config.adam_eps,
         amsgrad=config.adam_amsgrad,
     )
-    completed_epochs = 0
+    resume_state = {
+        "completed_epochs": 0,
+        "in_progress_epoch": None,
+        "next_day_offset": 0,
+        "running_loss": 0.0,
+        "steps": 0,
+        "skipped": 0,
+    }
     if resume and checkpoint_path.is_file():
-        completed_epochs = restore_checkpoint(
+        resume_state = restore_checkpoint(
             checkpoint_path, year, model, optimizer, preprocessor, active_ids, device, logger
         )
-        if completed_epochs > config.epochs:
+        if resume_state["completed_epochs"] > config.epochs:
             raise ValueError(
-                f"Checkpoint completed {completed_epochs} epochs, exceeding configured "
+                f"Checkpoint completed {resume_state['completed_epochs']} epochs, exceeding configured "
                 f"epochs={config.epochs}."
             )
     # 标签终点必须早于验证年。
@@ -167,19 +217,24 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
         stop - config.target_end_offset,
     )
     stage(3, 6, f"{year}: Training ASTGNN...", logger)
-    for epoch in range(completed_epochs, config.epochs):
+    for epoch in range(resume_state["completed_epochs"], config.epochs):
         epoch_started = perf_counter()
         model.train()
-        steps = 0
-        skipped = 0
-        total_loss = 0.0
+        resume_epoch = resume_state["in_progress_epoch"] == epoch + 1
+        start_offset = resume_state["next_day_offset"] if resume_epoch else 0
+        steps = resume_state["steps"] if resume_epoch else 0
+        skipped = resume_state["skipped"] if resume_epoch else 0
+        total_loss = resume_state["running_loss"] if resume_epoch else 0.0
+        days_to_run = range(training_days.start + start_offset, training_days.stop)
         with tqdm(
-            training_days,
+            days_to_run,
             desc=f"{year} epoch {epoch + 1}/{config.epochs}",
             unit="day",
             leave=False,
+            total=len(training_days),
+            initial=start_offset,
         ) as progress:
-            for day in progress:
+            for day_offset, day in enumerate(progress, start=start_offset):
                 ids = panel.pool_rows(day)
                 target = panel.target(
                     day, ids, config.target_start_offset, config.target_end_offset
@@ -189,22 +244,43 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
                 #模型不会在股票数量过少或完全没有有效监督标签的日期进行训练。
                 if ids.numel() < config.min_stocks_per_cross_section or not valid.any():
                     skipped += 1
-                    continue
-                _, x = panel.window(day, config.seq_len, ids)
-                x = preprocessor.transform(x).to(device)
-                optimizer.zero_grad(set_to_none=True)
-                loss = training_loss(
-                    model, x, id_map[ids].to(device), target.to(device), valid.to(device), config
-                )
-                if not torch.isfinite(loss):
-                    raise RuntimeError(f"Non-finite training loss on {panel.dates[day]}")
-                loss.backward()
-                optimizer.step()
-                total_loss += loss.detach().item()
-                steps += 1
-                progress.set_postfix(
-                    loss=f"{total_loss / steps:.5g}", usable=steps, skipped=skipped
-                )
+                else:
+                    _, x = panel.window(day, config.seq_len, ids)
+                    x = preprocessor.transform(x).to(device)
+                    optimizer.zero_grad(set_to_none=True)
+                    loss = training_loss(
+                        model, x, id_map[ids].to(device), target.to(device), valid.to(device), config
+                    )
+                    if not torch.isfinite(loss):
+                        raise RuntimeError(f"Non-finite training loss on {panel.dates[day]}")
+                    loss.backward()
+                    optimizer.step()
+                    total_loss += loss.detach().item()
+                    steps += 1
+                if steps:
+                    progress.set_postfix(
+                        loss=f"{total_loss / steps:.5g}", usable=steps, skipped=skipped
+                    )
+                next_day_offset = day_offset + 1
+                if (
+                    next_day_offset % config.checkpoint_every_training_days == 0
+                    and next_day_offset < len(training_days)
+                ):
+                    save_checkpoint(
+                        checkpoint_path,
+                        year,
+                        epoch,
+                        epoch + 1,
+                        next_day_offset,
+                        total_loss,
+                        steps,
+                        skipped,
+                        model,
+                        optimizer,
+                        preprocessor,
+                        active_ids,
+                        logger,
+                    )
         if not steps:
             raise ValueError(f"No usable training cross-sections for validation year {year}.")
         report(
@@ -217,6 +293,11 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
                 checkpoint_path,
                 year,
                 epoch + 1,
+                None,
+                0,
+                0.0,
+                0,
+                0,
                 model,
                 optimizer,
                 preprocessor,
@@ -299,6 +380,16 @@ def main():
     parser.add_argument("--resume", action="store_true", help="Resume annual models from checkpoints.")
     parser.add_argument("--log-file", type=Path, help="Optional UTF-8 run log path.")
     parser.add_argument(
+        "--first-prediction-year",
+        type=int,
+        help="Optional first validation year; defaults to the earliest feasible year.",
+    )
+    parser.add_argument(
+        "--last-prediction-year",
+        type=int,
+        help="Optional last validation year; defaults to the latest data year.",
+    )
+    parser.add_argument(
         "--lgbols-lookback-years",
         type=int,
         default=defaults.lgbols_lookback_years,
@@ -313,6 +404,8 @@ def main():
         parser.error("--epochs must be positive")
     if defaults.checkpoint_every_epochs < 1:
         parser.error("config.checkpoint_every_epochs must be positive")
+    if defaults.checkpoint_every_training_days < 1:
+        parser.error("config.checkpoint_every_training_days must be positive")
     if (
         not 1 <= args.lgbols_lookback_years <= defaults.training_years
         or args.lgbols_num_boost_round < 1
@@ -325,13 +418,23 @@ def main():
     report(f"Run log: {log_path}", logger)
     stage(1, 6, "Loading day feature panel...", logger)
     panel = DayPanel(args.data, args.mask, logger)
-    first_year = panel.dates[0].year + defaults.training_years
-    last_year = panel.dates[-1].year
-    if first_year > last_year:
+    earliest_feasible_year = panel.dates[0].year + defaults.training_years
+    latest_data_year = panel.dates[-1].year
+    if earliest_feasible_year > latest_data_year:
         parser.error(
             f"The dataset needs {defaults.training_years} training calendar years "
             "and a validation year."
         )
+    first_year = args.first_prediction_year or earliest_feasible_year
+    last_year = args.last_prediction_year or latest_data_year
+    if first_year < earliest_feasible_year:
+        parser.error(
+            f"--first-prediction-year must be at least {earliest_feasible_year} for this dataset"
+        )
+    if last_year > latest_data_year:
+        parser.error(f"--last-prediction-year must not exceed {latest_data_year}")
+    if first_year > last_year:
+        parser.error("--first-prediction-year must not be after --last-prediction-year")
     config = replace(
         ModelConfig(),
         use_resnet=False,

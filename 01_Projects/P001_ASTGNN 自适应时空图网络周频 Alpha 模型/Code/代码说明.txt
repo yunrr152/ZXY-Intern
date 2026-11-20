@@ -104,6 +104,10 @@ backends.py
 
   conda run -n astgnn python -B -m training.test --data "D:\data\day.csv" --mask "D:\data\day_pool_mask.csv" --train-start-year 2006 --prediction-year 2016 --output "D:\data\day_2016_scores.csv"
 
+正式滚动训练（训练/预测结果为 2017–2025 年）：
+
+  conda run -n astgnn python -B -m training.train --data "D:\data\day_features_2006_2026.csv" --mask "D:\data\day_pool_mask_2006_2026.csv" --first-prediction-year 2017 --last-prediction-year 2025 --device cuda --checkpoint-dir "D:\data\checkpoints\rolling_2017_2025" --log-file "D:\data\rolling_2017_2025.log" --output "D:\data\rolling_2017_2025_scores.csv"
+
 输入列：date,stock_id,high,open,low,close,vwap,volume
 日期格式：YYYY-MM-DD。每个日期和股票代码组合对应一行。
 掩码列：date,stock_id,in_pool；必须与行情文件的日期和股票代码一一对应。
@@ -195,3 +199,50 @@ backends.py
 7. 阶段日志：训练和固定预测年测试新增 --log-file；未指定时默认在预测 CSV 同目录
    生成同名 .log 文件。控制台和日志同步记录 [1/6] 至 [6/6] 的阶段、epoch、断点、
    耗时和输出位置。LightGBM 阶段明确标记为 GBDT 回归，不使用 OLS。
+
+修改记录5（1120）
+----------------
+1. 心跳断点：新增 config.checkpoint_every_training_days（默认 100）。训练每处理
+   100 个候选交易日写入带时间戳的日志和原子 checkpoint，保存当前 epoch、下一个
+   训练日位置、累计损失、有效/跳过日计数、模型与优化器状态。--resume 可从下一个
+   未完成交易日继续，便于识别系统暂停与单日计算异常。
+
+2. 滚动年份边界：training.train 新增 --first-prediction-year 与
+   --last-prediction-year，可限制正式滚动的预测年份。参数会校验十年训练窗口和
+   数据末年；正式样本使用 2017–2025，避免 2016 年股票池覆盖不足及不完整的
+   2026 年混入年度回测。
+
+修改记录6（2026-11-20）
+----------------------
+1. 训练进度条：training.train 的年度训练循环改为直接迭代 tqdm，修复训练
+   正常进行但进度卡在 0%、速度和预计剩余时间显示为问号的问题。检查点中的
+   训练日偏移不变，续训进度从已保存的位置开始显示。
+
+2. 单路 GRU：modules/gru.py 改为单个 TemporalGRU，直接取最后一步隐藏状态。
+   不再分别初始化三路 GRU，也不再对分支输出求均值。models/astgnn.py
+   已切换到单路结构，旧三分支模型检查点不兼容。
+
+3. 随机种子：config.py 新增 ensemble_seeds=(0, 47, 427)，删除未使用的
+   gru_seeds。每个种子独立完成年度 ASTGNN 和 LightGBM 训练，GRU 不再
+   单独设种子。原单种子训练和固定年度入口仍默认使用 random_seed=42，
+   可通过 --seed 覆盖。
+
+4. 一键集成：新增 python -m training.ensemble，从原始日行情和股票池构建
+   数据集，只构建、加载一次，三组种子共用同一面板。预测年份由命令行指定；
+   以 2018–2025 为例，不会训练 2017 年的预测模型，但可使用 2017 年行情
+   作为历史输入。输出目录必须是新目录，检查点按种子和年份保存，目前集成
+   入口不支持 --resume。
+
+5. 预测产物：predict1.parquet、predict2.parquet、predict3.parquet 分别
+   对应种子 0、47、427。程序按 date、stock_id、validation_year 对齐，
+   检查预测键唯一且一致，再等权平均 LightGBM 分数 C，写出 predict.parquet。
+
+6. README：补充服务器环境、原始数据目录、一键命令、年度滚动流程和输出说明。
+
+修改记录7（2026-11-20）
+----------------------
+1. 集成断点续训：training.ensemble 新增 --resume。用原命令和原输出目录
+   重启时，复用已构建数据，并按种子、年份加载检查点。已完成的种子结果
+   可直接复用；未完成的种子从最近保存位置继续，最后重新汇总 predict.parquet。
+2. 记录运行配置与输入 CSV 大小，并原子写入 Parquet，避免把中断时写了一半
+   的预测当成正式结果。旧版目录没有配置记录，续跑前需确认原参数未变。

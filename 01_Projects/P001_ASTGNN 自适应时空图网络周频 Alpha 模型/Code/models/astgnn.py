@@ -2,7 +2,7 @@ from torch import nn
 
 from config import ModelConfig
 from layers.residual import FeatureExtractor
-from modules.gru import MultiSeedGRU
+from modules.gru import TemporalGRU
 from modules.predictor import FactorPredictor
 from modules.tgc import TGC
 
@@ -22,10 +22,9 @@ class ASTGNN(nn.Module):
                 padding=self.config.resnet_padding,
             )
             gru_input_dim = self.config.feature_dim
-        self.gru = MultiSeedGRU(
+        self.gru = TemporalGRU(
             input_dim=gru_input_dim,
             hidden_dim=self.config.gru_hidden_dim,
-            seeds=self.config.gru_seeds,
         )
         self.tgc = TGC(
             num_stocks=num_stocks,

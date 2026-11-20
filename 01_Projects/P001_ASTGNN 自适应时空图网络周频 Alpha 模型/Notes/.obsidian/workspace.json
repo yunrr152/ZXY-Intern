@@ -13,6 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "00-研报数据库/训练记录/训练记录2（1120）.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "训练记录2（1120）"
+            }
+          },
+          {
+            "id": "af291a9051eb5386",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "00-研报数据库/训练记录/训练记录1（1119）.md",
                 "mode": "source",
                 "source": false
@@ -218,6 +232,8 @@
   },
   "active": "fc0ff947c70c80b5",
   "lastOpenFiles": [
+    "00-研报数据库/训练记录/训练记录1（1119）.md",
+    "00-研报数据库/训练记录/训练记录2（1120）.md",
     "01-研报笔记/tips.md",
     "01-研报笔记/ASTGNN 自适应时空图网络周频 Alpha 模型.md",
     "01-研报笔记/知识点记录.md",
@@ -225,7 +241,6 @@
     "01-研报笔记/深度学习相关知识.md",
     "01-研报笔记/金融相关知识.md",
     "00-研报数据库/数据readme.md",
-    "00-研报数据库/训练记录/训练记录1（1119）.md",
     "00-研报数据库/训练记录",
     "00-研报数据库/README 1.md"
   ]

@@ -57,6 +57,8 @@ def main():
         parser.error("--epochs must be positive")
     if defaults.checkpoint_every_epochs < 1:
         parser.error("config.checkpoint_every_epochs must be positive")
+    if defaults.checkpoint_every_training_days < 1:
+        parser.error("config.checkpoint_every_training_days must be positive")
     if (
         not 1 <= args.lgbols_lookback_years <= defaults.training_years
         or args.lgbols_num_boost_round < 1

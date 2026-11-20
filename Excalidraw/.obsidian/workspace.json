@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "1118模型梳理（以day为例，代码版）.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -190,6 +190,8 @@
   },
   "active": "5934c32026a1518f",
   "lastOpenFiles": [
+    "1116模型梳理（以day为例）.md",
+    "1118模型梳理（以day为例，代码版）.md",
     "1112模型梳理（以week为例）.md"
   ]
 }

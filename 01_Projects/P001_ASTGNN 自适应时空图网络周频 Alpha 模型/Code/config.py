@@ -13,7 +13,6 @@ class ModelConfig:
     resnet_kernel_size: int = 3
     resnet_padding: int = 1
     gru_hidden_dim: int = 64
-    gru_seeds: tuple = (0, 47, 427)
     graph_embed_dim: int = 16
     tgc_hidden_dim: int = 64
     tgc_embedding_init_std: float = 0.01
@@ -31,9 +30,11 @@ class ModelConfig:
     # 年度滚动训练
     training_years: int = 10
     random_seed: int = 42
+    ensemble_seeds: tuple[int, ...] = (0, 47, 427)
     device: str = "cpu"
     checkpoint_dir: str = "checkpoints"
     checkpoint_every_epochs: int = 1
+    checkpoint_every_training_days: int = 100
     min_stocks_per_cross_section: int = 2
     learning_rate: float = 1e-3
     weight_decay: float = 1e-5
