@@ -1,7 +1,9 @@
 import argparse
+from concurrent.futures import ProcessPoolExecutor, as_completed
 import csv
 from dataclasses import asdict, replace
 import json
+from multiprocessing import get_context
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -81,6 +83,41 @@ def write_parquet(frame, path):
     temporary.replace(path)
 
 
+def load_panel(args, config, features, mask, logger):
+    panel = DayPanel(features, mask, logger)
+    if (
+        args.first_prediction_year < panel.dates[0].year + config.training_years
+        or args.last_prediction_year > panel.dates[-1].year
+    ):
+        raise ValueError("Prediction years must be covered by the panel and its training history.")
+    return panel
+
+
+def train_seed(args, config, index, features, mask, panel=None):
+    seed = config.random_seed
+    logger = configure_logger(args.output_dir / f"seed_{seed}.log")
+    device = resolve_device(config.device, logger)
+    if panel is None:
+        panel = load_panel(args, config, features, mask, logger)
+    checkpoint_dir = args.output_dir / "checkpoints" / f"seed_{seed}"
+    parquet_path = args.output_dir / f"predict{index}.parquet"
+    csv_path = args.output_dir / f"predict{index}.csv.tmp"
+    with csv_path.open("w", encoding="utf-8", newline="") as output:
+        writer = csv.writer(output)
+        writer.writerow((*PREDICTION_KEYS, "C"))
+        for year in range(args.first_prediction_year, args.last_prediction_year + 1):
+            writer.writerows(annual_scores(
+                panel, year, config, device, checkpoint_dir / f"astgnn_{year}.pt",
+                resume=args.resume, logger=logger,
+            ))
+    frame = pd.read_csv(csv_path, dtype={"stock_id": "string"}, parse_dates=["date"])
+    if frame.empty:
+        raise ValueError(f"Seed {seed} produced no predictions.")
+    write_parquet(frame, parquet_path)
+    parquet_path.with_suffix(".done").touch()
+    csv_path.unlink()
+
+
 def main():
     defaults = ModelConfig()
     parser = argparse.ArgumentParser(description="Build daily data and train a three-seed ensemble.")
@@ -92,53 +129,61 @@ def main():
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--resume", action="store_true", help="Resume using the original run directory.")
     parser.add_argument("--device", default=defaults.device)
+    parser.add_argument("--workers", type=int, default=len(defaults.ensemble_seeds),
+                        help="Number of seed processes; use 1 for sequential training.")
+    parser.add_argument("--seed-devices", nargs="+",
+                        help="Optional device for each seed, in configured seed order.")
     parser.add_argument("--epochs", type=int, default=defaults.epochs)
     args = parser.parse_args()
     if args.epochs < 1 or args.first_prediction_year > args.last_prediction_year:
         parser.error("Epochs must be positive and the prediction-year range must be ordered.")
+    seeds = defaults.ensemble_seeds
+    if not seeds or len(set(seeds)) != len(seeds):
+        parser.error("ensemble_seeds must contain at least one seed and no duplicates.")
+    if args.workers < 1:
+        parser.error("--workers must be positive.")
+    if args.seed_devices is not None and len(args.seed_devices) != len(seeds):
+        parser.error("--seed-devices requires one device per configured seed.")
 
     import pyarrow
 
     require_lightgbm()
-    device = resolve_device(args.device)
+    devices = args.seed_devices or [args.device] * len(seeds)
+    for device_name in dict.fromkeys(devices):
+        resolve_device(device_name)
     run_config = replace(defaults, use_resnet=False, epochs=args.epochs, device=args.device)
     features, mask, reuse_predictions = prepare_dataset(args, run_config)
-    logger = configure_logger(args.output_dir / "ensemble.log")
-    panel = DayPanel(features, mask, logger)
-    if (
-        args.first_prediction_year < panel.dates[0].year + defaults.training_years
-        or args.last_prediction_year > panel.dates[-1].year
-    ):
-        parser.error("Prediction years must be covered by the panel, with ten prior training years.")
-
-    predictions = []
-    for index, seed in enumerate(defaults.ensemble_seeds, start=1):
-        print(f"Training ensemble member {index}/{len(defaults.ensemble_seeds)} with seed {seed}.")
-        config = replace(run_config, random_seed=seed)
-        checkpoint_dir = args.output_dir / "checkpoints" / f"seed_{seed}"
+    pending = []
+    prediction_paths = []
+    for index, (seed, device_name) in enumerate(zip(seeds, devices), start=1):
         parquet_path = args.output_dir / f"predict{index}.parquet"
-        completion_path = parquet_path.with_suffix(".done")
-        if reuse_predictions and completion_path.is_file() and parquet_path.is_file():
+        prediction_paths.append(parquet_path)
+        if reuse_predictions and parquet_path.with_suffix(".done").is_file() and parquet_path.is_file():
             print(f"Reusing completed predictions for seed {seed}.")
-            predictions.append(pd.read_parquet(parquet_path, engine="pyarrow"))
             continue
-        csv_path = args.output_dir / f"predict{index}.csv.tmp"
-        with csv_path.open("w", encoding="utf-8", newline="") as output:
-            writer = csv.writer(output)
-            writer.writerow((*PREDICTION_KEYS, "C"))
-            for year in range(args.first_prediction_year, args.last_prediction_year + 1):
-                writer.writerows(annual_scores(
-                    panel, year, config, device, checkpoint_dir / f"astgnn_{year}.pt",
-                    resume=args.resume, logger=logger,
-                ))
-        frame = pd.read_csv(csv_path, dtype={"stock_id": "string"}, parse_dates=["date"])
-        if frame.empty:
-            raise ValueError(f"Seed {seed} produced no predictions.")
-        write_parquet(frame, parquet_path)
-        completion_path.touch()
-        csv_path.unlink()
-        predictions.append(frame)
+        config = replace(run_config, random_seed=seed, device=device_name)
+        pending.append((args, config, index, features, mask))
 
+    worker_count = min(args.workers, len(pending))
+    if worker_count == 1:
+        logger = configure_logger(args.output_dir / "ensemble.log")
+        panel = load_panel(args, run_config, features, mask, logger)
+        for job in pending:
+            train_seed(*job, panel=panel)
+    elif worker_count > 1:
+        print(f"Training {len(pending)} seeds with {worker_count} processes: "
+              f"{', '.join(f'{job[1].random_seed} on {job[1].device}' for job in pending)}")
+        with ProcessPoolExecutor(max_workers=worker_count, mp_context=get_context("spawn")) as pool:
+            futures = {pool.submit(train_seed, *job): job[1].random_seed for job in pending}
+            try:
+                for future in as_completed(futures):
+                    future.result()
+                    print(f"Completed predictions for seed {futures[future]}.")
+            finally:
+                for future in futures:
+                    future.cancel()
+
+    predictions = [pd.read_parquet(path, engine="pyarrow") for path in prediction_paths]
     write_parquet(mean_predictions(predictions), args.output_dir / "predict.parquet")
 
 

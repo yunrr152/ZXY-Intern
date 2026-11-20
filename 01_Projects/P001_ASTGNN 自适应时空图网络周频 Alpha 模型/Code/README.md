@@ -38,6 +38,8 @@ python -u -m training.ensemble `
     --first-prediction-year 2017 `
     --last-prediction-year 2025 `
     --device cuda `
+    --workers 3 `
+    --seed-devices cuda:0 cuda:1 cuda:2 `
     --epochs 20 `
     --output-dir "data\output\ensemble_2017_2025" 
     #--resume 断点重跑
@@ -47,12 +49,12 @@ python -u -m training.ensemble `
 
 ## 数据与训练流程
 
-1. 构建一次特征和股票池 CSV，并加载为共享日频面板。
+1. 构建一次特征和股票池 CSV。默认三个种子用独立进程并行，各自加载一份日频面板；指定 `--workers 1` 时顺序训练，并复用内存中的同一份面板。
 2. 每个预测年独立训练。默认取前十个自然年，例如预测 2018 年用 2008–2017 年；预处理统计量只在训练期拟合，标签终点跨入预测年的样本不参加训练。
 3. 每个样本使用截至当天的最近 30 个交易日特征。标签为第 11 个后续交易日收盘价除以第 1 个后续交易日收盘价再减 1。每日股票池确定当日训练和预测截面。
 4. 日频入口关闭 ResNet。模型使用单路 GRU 的末步隐藏状态，再经自适应图卷积提取 64 个因子。训练损失包含预测误差、因子正交惩罚与对抗预测误差。
 5. 冻结 ASTGNN，用训练期末段（默认最近一年）的因子和标签拟合 LightGBM；预测年按交易日生成分数。打分使用当天行情，不是开盘前可用的分数。
-6. 主种子按 `0`、`47`、`427` 顺序运行。GRU 不单独设种子；LightGBM 使用当次主种子。相同种子不保证跨硬件和依赖版本逐位复现。
+6. 主种子为 `0`、`47`、`427`。各进程独立初始化，GRU 不单独设种子，LightGBM 使用当次主种子。相同种子不保证跨硬件和依赖版本逐位复现。
 
 ## 输出与恢复
 
@@ -61,7 +63,9 @@ python -u -m training.ensemble `
 | `predict1.parquet`、`predict2.parquet`、`predict3.parquet` | 对应种子 0、47、427 的分数 |
 | `predict.parquet` | 三次分数按键对齐后等权平均 |
 | `day_features.csv`、`day_pool_mask.csv` | 构建的训练输入 |
-| `ensemble.log`、`checkpoints/seed_*/` | 训练日志及按种子、年份保存的检查点 |
+| `seed_*.log`、`checkpoints/seed_*/` | 按种子隔离的训练日志及按种子、年份保存的检查点 |
+
+多 GPU 服务器可以追加 `--seed-devices cuda:0 cuda:1 cuda:2`，按配置顺序分配设备。不指定时所有进程都使用 `--device`，会争用同一 GPU 和主机内存；单卡或内存紧张时建议追加 `--workers 1`。并行度不改变结果文件与种子的对应关系，也可以在续跑时调整。
 
 预测列为 `date`、`stock_id`、`validation_year`、`C`；`C` 是 LightGBM 分数。集成要求三份预测的键唯一且完全一致，不按文件行序直接平均。
 
