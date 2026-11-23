@@ -8,9 +8,12 @@ from time import perf_counter
 import torch
 
 from config import ModelConfig
-from data.day import DayPanel
+from dataset.day import DayPanel
 from training.lgbols import require_lightgbm
-from training.train import annual_scores, configure_logger, report, resolve_device, stage
+from training.train import (
+    add_industry_prior_arguments, annual_scores, configure_logger, industry_prior_options,
+    report, resolve_device, stage,
+)
 
 
 # 固定一个预测年度训练并输出分数，不遍历其他年度。
@@ -52,7 +55,9 @@ def main():
         type=int,
         default=defaults.lgbols_num_boost_round,
     )
+    add_industry_prior_arguments(parser, defaults)
     args = parser.parse_args()
+    industry_prior_options(parser, args)
     if args.epochs < 1:
         parser.error("--epochs must be positive")
     if defaults.checkpoint_every_epochs < 1:
@@ -120,6 +125,8 @@ def main():
                 args.checkpoint_dir / f"astgnn_{args.prediction_year}.pt",
                 args.resume,
                 logger,
+                industry_prior_dir=args.industry_prior_dir,
+                lambda_gp=args.lambda_gp,
             )
         )
     os.replace(temporary_output, args.output)

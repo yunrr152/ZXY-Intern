@@ -16,7 +16,7 @@ python -c "import torch, pandas, pyarrow, tqdm, lightgbm; print(torch.cuda.is_av
 `--source-root` 下应有：
 
 ```text
-data/data/
+dataset/data/
 ├── LX_STK_BASIC_DAILY/
 └── LX_STK_POOL_BASIC/
     └── advanceWholeMarketNew.parquet
@@ -32,7 +32,7 @@ data/data/
 
 ```bash
 python -u -m training.ensemble `
-    --source-root "data\data" `
+    --source-root "dataset\data" `
     --start-date 20060101 `
     --end-date 20261117 `
     --first-prediction-year 2017 `
@@ -41,7 +41,7 @@ python -u -m training.ensemble `
     --workers 3 `
     --seed-devices cuda:0 cuda:1 cuda:2 `
     --epochs 20 `
-    --output-dir "data\output\ensemble_2017_2025" 
+    --output-dir "dataset\output\ensemble_2017_2025" 
     #--resume 断点重跑
 ```
 
@@ -79,12 +79,12 @@ python -u -m training.ensemble `
 | --- | --- |
 | `config.py` | 主要默认超参数：窗口、标签、模型维度、预处理、优化器、epoch、检查点频率、对抗训练和 LightGBM |
 | `training/ensemble.py` | 读取 `ModelConfig.ensemble_seeds`，一键构建、训练和汇总；路径、日期、预测年度、设备和轮数由 CLI 指定 |
-| `data/build_day_dataset.py` | 原始行情字段映射、股票池来源和独立构建入口 |
-| `data/day.py`、`data/preprocessing.py` | 面板、窗口、标签和训练期预处理 |
+| `dataset/build_day_dataset.py` | 原始行情字段映射、股票池来源和独立构建入口 |
+| `dataset/day.py`、`dataset/preprocessing.py` | 面板、窗口、标签和训练期预处理 |
 | `models/astgnn.py`、`modules/`、`layers/` | 模型组装、单路 GRU、自适应图卷积、因子预测和可选 ResNet |
 | `training/train.py`、`training/test.py` | 已有 CSV 上的单种子滚动训练和指定年度训练 |
 | `training/lgbols.py`、`training/loss.py`、`ops/ifgsm.py` | LightGBM 拟合、损失和对抗扰动 |
 
 集成种子在 `config.py` 的 `ensemble_seeds` 中配置；`random_seed=42` 是单种子入口的默认值，可用 `--seed` 覆盖。GRU 不再配置独立种子。日频入口显式关闭 ResNet，不采用配置中的 `use_resnet=True` 默认值。
 
-其余入口可用 `python -m data.build_day_dataset --help`、`python -m training.train --help` 和 `python -m training.test --help` 查看参数。
+其余入口可用 `python -m dataset.build_day_dataset --help`、`python -m training.train --help` 和 `python -m training.test --help` 查看参数。

@@ -43,7 +43,7 @@ class ASTGNN(nn.Module):
         )
 
     # 按配置选择输入路径，并返回中间结果和预测 C。
-    def forward(self, x, stock_ids=None):
+    def forward(self, x, stock_ids=None, *, industry_prior=None):
         if self.feature_extractor is None:
             if x.ndim != 3 or x.size(-1) != self.config.num_features:
                 raise ValueError("Direct GRU input must have shape [stocks, steps, features].")
@@ -51,6 +51,13 @@ class ASTGNN(nn.Module):
         else:
             X = self.feature_extractor(x)
         G = self.gru(X)
-        T = self.tgc(G, stock_ids)
+        tgc_result = self.tgc(G, stock_ids, industry_prior=industry_prior)
+        if industry_prior is None:
+            T = tgc_result
+        else:
+            T, graph_loss = tgc_result
         Z, C = self.predictor(T)
-        return {"X": X, "G": G, "T": T, "Z": Z, "C": C}
+        result = {"X": X, "G": G, "T": T, "Z": Z, "C": C}
+        if industry_prior is not None:
+            result["L_GP"] = graph_loss
+        return result

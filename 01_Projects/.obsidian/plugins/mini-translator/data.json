@@ -1,0 +1,133 @@
+{
+  "uiLanguage": "auto",
+  "primarySource": "有道",
+  "dictSource": "百度",
+  "translationSourceOrder": [
+    "有道",
+    "火山",
+    "腾讯",
+    "谷歌",
+    "Bing",
+    "CNKI",
+    "DeepL"
+  ],
+  "translationSourceEnabled": [
+    "有道",
+    "火山",
+    "腾讯",
+    "谷歌",
+    "Bing",
+    "CNKI"
+  ],
+  "dictionarySourceOrder": [
+    "百度",
+    "有道词典",
+    "牛津"
+  ],
+  "dictionarySourceEnabled": [
+    "百度",
+    "有道词典",
+    "牛津"
+  ],
+  "sourceLanguage": "auto",
+  "targetLanguage": "zh-Hans",
+  "bingApiKey": "",
+  "bingRegion": "",
+  "bingEndpoint": "https://api.cognitive.microsofttranslator.com",
+  "cnkiToken": "",
+  "cnkiAuthorization": "",
+  "deeplSecret": "",
+  "autoTranslate": false,
+  "autoTranslateDelay": 2,
+  "popupMaxSize": "adaptive",
+  "popupCustomMaxWidth": 760,
+  "popupCustomMaxHeight": 720,
+  "rememberPopupSize": false,
+  "popupLastSize": null,
+  "popupSourceFontSize": 0,
+  "popupTargetFontSize": 0,
+  "popupFontFollowResize": false,
+  "popupLastFontScale": 1,
+  "fullHtml": false,
+  "history": [],
+  "llmProfiles": [],
+  "activeProfile": 0,
+  "orbSkin": "ink-wash",
+  "orbSize": 40,
+  "orbPosition": null,
+  "typography": {
+    "version": 1,
+    "popup": {
+      "source": {
+        "fontFamily": "",
+        "color": "",
+        "background": "",
+        "fontSize": 0,
+        "lineHeight": null,
+        "letterSpacing": null,
+        "wordSpacing": null,
+        "paragraphSpacing": null,
+        "spaceAfter": null,
+        "firstLineIndent": null,
+        "opacity": null,
+        "alignment": "auto",
+        "weight": "auto",
+        "fontStyle": "auto",
+        "decoration": "auto"
+      },
+      "target": {
+        "fontFamily": "",
+        "color": "",
+        "background": "",
+        "fontSize": 0,
+        "lineHeight": null,
+        "letterSpacing": null,
+        "wordSpacing": null,
+        "paragraphSpacing": null,
+        "spaceAfter": null,
+        "firstLineIndent": null,
+        "opacity": null,
+        "alignment": "auto",
+        "weight": "auto",
+        "fontStyle": "auto",
+        "decoration": "auto"
+      }
+    },
+    "sidebar": {
+      "source": {
+        "fontFamily": "",
+        "color": "",
+        "background": "",
+        "fontSize": 0,
+        "lineHeight": null,
+        "letterSpacing": null,
+        "wordSpacing": null,
+        "paragraphSpacing": null,
+        "spaceAfter": null,
+        "firstLineIndent": null,
+        "opacity": null,
+        "alignment": "auto",
+        "weight": "auto",
+        "fontStyle": "auto",
+        "decoration": "auto"
+      },
+      "target": {
+        "fontFamily": "",
+        "color": "",
+        "background": "",
+        "fontSize": 0,
+        "lineHeight": null,
+        "letterSpacing": null,
+        "wordSpacing": null,
+        "paragraphSpacing": null,
+        "spaceAfter": null,
+        "firstLineIndent": null,
+        "opacity": null,
+        "alignment": "auto",
+        "weight": "auto",
+        "fontStyle": "auto",
+        "decoration": "auto"
+      }
+    }
+  }
+}

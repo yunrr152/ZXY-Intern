@@ -47,14 +47,24 @@
             "id": "7662c3668b23ddb8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "dzrh/01-研报笔记/ASTGNN 自适应时空图网络周频 Alpha 模型.md",
-                "mode": "source",
-                "source": false
+                "file": "P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/Excalidraw/1118模型梳理（以day为例，代码版）.md"
               },
-              "icon": "lucide-file",
-              "title": "ASTGNN 自适应时空图网络周频 Alpha 模型"
+              "icon": "excalidraw-icon",
+              "title": "1118模型梳理（以day为例，代码版）"
+            }
+          },
+          {
+            "id": "3a022c3e072c4259",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/02-pdf附件/98 基于抗噪的 AI 量价模型改进方案 ——因子选股系列之九十八.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "98 基于抗噪的 AI 量价模型改进方案 ——因子选股系列之九十八"
             }
           },
           {
@@ -263,11 +273,23 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
-      "workspaces:管理工作区布局": false
+      "workspaces:管理工作区布局": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
   "active": "7662c3668b23ddb8",
   "lastOpenFiles": [
+    "P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/02-pdf附件/98 基于抗噪的 AI 量价模型改进方案 ——因子选股系列之九十八.pdf",
+    "P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/Excalidraw/1118模型梳理（以day为例，代码版）.md",
+    "P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/Excalidraw/Scripts",
+    "P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/Excalidraw/1116模型梳理（以day为例）.md",
+    "P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/Excalidraw/Drawing 2026-11-06 13.25.06.excalidraw.md",
+    "P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/Excalidraw/1112模型梳理（以week为例）.md",
+    "P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/Excalidraw/1106思路整理.md",
+    "P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/Excalidraw/1112模型梳理（以week为例+对抗训练）.md",
+    "P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/Excalidraw/1109模型整理.md",
+    "P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/Excalidraw/1109模型整理.png",
+    "P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Notes/Excalidraw",
     "dzrh/01-研报笔记/要做什么.md",
     "dzrh/01-研报笔记/tips.md",
     "dzrh/01-研报笔记/ASTGNN 自适应时空图网络周频 Alpha 模型.md",
@@ -288,10 +310,7 @@
     "dzrh/images/GRU.png",
     "dzrh/02-pdf附件/20231225-东方证券-因子选股系列之九十八：基于抗噪的AI量价模型改进方案.pdf",
     "file:D:/电脑管家迁移文件/xwechat_files/wxid_ykpg5rfx21e712_44c9/msg/file/2026-11/20231225-东方证券-因子选股系列之九十八：基于抗噪的AI量价模型改进方案.pdf",
-    "dzrh/01-研报笔记/images",
-    "dzrh/images",
     "dzrh/Templates/研报阅读模板.md",
-    "dzrh/00-研报数据库/量化研报总览.base",
     "欢迎.md",
     "dzrh/03-模型画布/量化模型研究.canvas",
     "阅读模板.md"

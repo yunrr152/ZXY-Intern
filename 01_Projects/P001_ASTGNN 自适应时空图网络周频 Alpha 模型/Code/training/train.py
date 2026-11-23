@@ -4,6 +4,7 @@ import csv
 from dataclasses import replace
 from datetime import date, datetime
 import logging
+import math
 import os
 from pathlib import Path
 from time import perf_counter
@@ -12,9 +13,10 @@ import torch
 from tqdm import tqdm
 
 from config import ModelConfig
-from data.day import DayPanel
-from data.preprocessing import FeaturePreprocessor
+from dataset.day import DayPanel
+from dataset.preprocessing import FeaturePreprocessor
 from models.astgnn import ASTGNN
+from modules.industry_relation import SavedIndustryPrior
 from ops.ifgsm import ifgsm, suspend_running_statistics
 from training.lgbols import fit_lgbols, require_lightgbm
 from training.loss import orthogonality_loss, prediction_loss
@@ -34,13 +36,33 @@ def configure_logger(log_path):
 
 
 def report(message, logger=None):
-    print(message)
+    tqdm.write(message)
     if logger is not None:
         logger.info(message)
 
 
 def stage(index, total, message, logger=None):
     report(f"[{index}/{total}] {message}", logger)
+
+
+def add_industry_prior_arguments(parser, defaults):
+    parser.add_argument("--industry-prior-dir", type=Path, default=defaults.industry_prior_dir,
+                        help="Offline industry matrix export.")
+    parser.add_argument("--lambda-gp", type=float, default=defaults.lambda_gp,
+                        help="Industry graph loss weight.")
+
+
+def industry_prior_options(parser, args):
+    if not math.isfinite(args.lambda_gp) or args.lambda_gp < 0:
+        parser.error("--lambda-gp must be finite and nonnegative.")
+    if args.lambda_gp > 0:
+        if args.industry_prior_dir is None:
+            parser.error("--lambda-gp requires --industry-prior-dir.")
+        args.industry_prior_dir = args.industry_prior_dir.resolve()
+        try:
+            SavedIndustryPrior(args.industry_prior_dir)
+        except ValueError as error:
+            parser.error(str(error))
 
 
 def resolve_device(device_name, logger=None):
@@ -72,6 +94,7 @@ def save_checkpoint(
     preprocessor,
     active_ids,
     logger,
+    gp_settings=None,
 ):
     """Atomically save the state needed to resume at an epoch or training-day boundary."""
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -90,6 +113,7 @@ def save_checkpoint(
             "optimizer_state": optimizer.state_dict(),
             "preprocessor_statistics": statistics,
             "active_ids": active_ids.cpu(),
+            "gp_settings": gp_settings,
         },
         temporary_path,
     )
@@ -105,9 +129,12 @@ def save_checkpoint(
         )
 
 
-def restore_checkpoint(path, year, model, optimizer, preprocessor, active_ids, device, logger):
+def restore_checkpoint(path, year, model, optimizer, preprocessor, active_ids, device, logger,
+                       gp_settings=None):
     """Restore a same-year checkpoint and verify that its stock-node universe matches."""
     checkpoint = torch.load(path, map_location=device, weights_only=False)
+    if checkpoint.get("gp_settings") != gp_settings:
+        raise ValueError("Checkpoint industry prior or graph loss weight differs from this run.")
     if checkpoint.get("year") != year:
         raise ValueError(f"Checkpoint {path} belongs to year {checkpoint.get('year')}, not {year}.")
     if not torch.equal(checkpoint["active_ids"].cpu(), active_ids.cpu()):
@@ -137,10 +164,12 @@ def restore_checkpoint(path, year, model, optimizer, preprocessor, active_ids, d
 
 
 # 以同一个模型计算干净样本、正交惩罚和对抗样本损失。
-def training_loss(model, x, stock_ids, target, valid, config):
-    clean = model(x, stock_ids)
+def training_loss(model, x, stock_ids, target, valid, config, *, industry_prior=None, lambda_gp=0.0):
+    clean = model(x, stock_ids, industry_prior=industry_prior)
     loss = prediction_loss(clean["C"], target, valid)
     loss = loss + config.lambda_orth * orthogonality_loss(clean["Z"])
+    if industry_prior is not None:
+        loss = loss + lambda_gp * clean["L_GP"]
     if config.lambda_adv:
         def objective(inputs):
             return prediction_loss(model(inputs, stock_ids)["C"], target, valid)
@@ -154,8 +183,15 @@ def training_loss(model, x, stock_ids, target, valid, config):
 
 
 # 单轮滚动训练，并逐日输出该验证年的预测分数。
-def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=None):
+def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=None, *,
+                  industry_prior_dir=None, lambda_gp=None):
     year_started = perf_counter()
+    if lambda_gp is None:
+        lambda_gp = config.lambda_gp
+    if industry_prior_dir is None:
+        industry_prior_dir = config.industry_prior_dir
+    prior_reader = SavedIndustryPrior(industry_prior_dir) if lambda_gp else None
+    gp_settings = (str(prior_reader.directory.resolve()), lambda_gp) if prior_reader else None
     start = bisect_left(panel.dates, date(year - config.training_years, 1, 1))
     stop = bisect_left(panel.dates, date(year, 1, 1))
     end = bisect_left(panel.dates, date(year + 1, 1, 1))
@@ -204,7 +240,8 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
     }
     if resume and checkpoint_path.is_file():
         resume_state = restore_checkpoint(
-            checkpoint_path, year, model, optimizer, preprocessor, active_ids, device, logger
+            checkpoint_path, year, model, optimizer, preprocessor, active_ids, device, logger,
+            gp_settings,
         )
         if resume_state["completed_epochs"] > config.epochs:
             raise ValueError(
@@ -216,6 +253,21 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
         max(start, config.seq_len - 1),
         stop - config.target_end_offset,
     )
+    if prior_reader is not None and training_days and resume_state["completed_epochs"] < config.epochs:
+        first_day = panel.dates[training_days.start]
+        last_day = panel.dates[training_days.stop - 1]
+        if prior_reader.snapshots is not None and (
+            first_day < prior_reader.start or last_day > prior_reader.end
+        ):
+            raise ValueError(
+                f"{year}: industry prior covers {prior_reader.start} through {prior_reader.end}, "
+                f"but training needs {first_day} through {last_day}."
+            )
+        report(
+            f"{year}: industry prior enabled (lambda_gp={lambda_gp:g}) "
+            f"from {prior_reader.directory} for {first_day} through {last_day}.",
+            logger,
+        )
     stage(3, 6, f"{year}: Training ASTGNN...", logger)
     for epoch in range(resume_state["completed_epochs"], config.epochs):
         epoch_started = perf_counter()
@@ -231,6 +283,9 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
             desc=f"{year} epoch {epoch + 1}/{config.epochs}",
             unit="day",
             leave=False,
+            disable=None,
+            dynamic_ncols=True,
+            mininterval=1.0,
             total=len(training_days),
             initial=start_offset,
         ) as progress:
@@ -248,8 +303,13 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
                     _, x = panel.window(day, config.seq_len, ids)
                     x = preprocessor.transform(x).to(device)
                     optimizer.zero_grad(set_to_none=True)
+                    industry_prior = None
+                    if prior_reader is not None:
+                        stock_codes = [panel.stocks[i] for i in ids.tolist()]
+                        industry_prior = prior_reader.for_day(panel.dates[day], stock_codes)
                     loss = training_loss(
-                        model, x, id_map[ids].to(device), target.to(device), valid.to(device), config
+                        model, x, id_map[ids].to(device), target.to(device), valid.to(device), config,
+                        industry_prior=industry_prior, lambda_gp=lambda_gp,
                     )
                     if not torch.isfinite(loss):
                         raise RuntimeError(f"Non-finite training loss on {panel.dates[day]}")
@@ -259,7 +319,8 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
                     steps += 1
                 if steps:
                     progress.set_postfix(
-                        loss=f"{total_loss / steps:.5g}", usable=steps, skipped=skipped
+                        loss=f"{total_loss / steps:.5g}", usable=steps, skipped=skipped,
+                        refresh=False,
                     )
                 next_day_offset = day_offset + 1
                 if (
@@ -280,6 +341,7 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
                         preprocessor,
                         active_ids,
                         logger,
+                        gp_settings,
                     )
         if not steps:
             raise ValueError(f"No usable training cross-sections for validation year {year}.")
@@ -303,6 +365,7 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
                 preprocessor,
                 active_ids,
                 logger,
+                gp_settings,
             )
 
     model.eval()
@@ -313,7 +376,8 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
     stage(4, 6, f"{year}: Extracting {config.num_factors} factors...", logger)
     with torch.no_grad():
         factor_days = range(max(training_days.start, tree_start), training_days.stop)
-        for day in tqdm(factor_days, desc=f"{year} extracting factors", unit="day", leave=False):
+        for day in tqdm(factor_days, desc=f"{year} extracting factors", unit="day",
+                        leave=False, disable=None, dynamic_ncols=True, mininterval=1.0):
             ids = panel.pool_rows(day)
             _, x = panel.window(day, config.seq_len, ids)
             target = panel.target(
@@ -343,7 +407,8 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
     report(f"{year}: LightGBM fitted in {perf_counter() - lightgbm_started:.1f}s.", logger)
     stage(6, 6, f"{year}: Saving prediction scores...", logger)
     prediction_started = perf_counter()
-    for day in tqdm(range(stop, end), desc=f"{year} predicting", unit="day", leave=False):
+    for day in tqdm(range(stop, end), desc=f"{year} predicting", unit="day",
+                    leave=False, disable=None, dynamic_ncols=True, mininterval=1.0):
         with torch.no_grad():
             ids = panel.pool_rows(day)
             if not ids.numel():
@@ -399,7 +464,9 @@ def main():
         type=int,
         default=defaults.lgbols_num_boost_round,
     )
+    add_industry_prior_arguments(parser, defaults)
     args = parser.parse_args()
+    industry_prior_options(parser, args)
     if args.epochs < 1:
         parser.error("--epochs must be positive")
     if defaults.checkpoint_every_epochs < 1:
@@ -452,12 +519,13 @@ def main():
     with temporary_output.open("w", encoding="utf-8", newline="") as output:
         writer = csv.writer(output)
         writer.writerow(("date", "stock_id", "validation_year", "C"))
-        for year in tqdm(
-            range(first_year, last_year + 1), desc="Rolling validation years", unit="year"
-        ):
+        for year in range(first_year, last_year + 1):
             checkpoint_path = args.checkpoint_dir / f"astgnn_{year}.pt"
             writer.writerows(
-                annual_scores(panel, year, config, device, checkpoint_path, args.resume, logger)
+                annual_scores(
+                    panel, year, config, device, checkpoint_path, args.resume, logger,
+                    industry_prior_dir=args.industry_prior_dir, lambda_gp=args.lambda_gp,
+                )
             )
     os.replace(temporary_output, args.output)
     report(f"Validation scores written to {args.output}", logger)

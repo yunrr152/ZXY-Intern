@@ -38,13 +38,16 @@ class ModelConfig:
     min_stocks_per_cross_section: int = 2
     learning_rate: float = 1e-3
     weight_decay: float = 1e-5
-    adam_beta1: float = 0.9
-    adam_beta2: float = 0.999
+    adam_beta1: float = 0.9 #一阶矩衰减系数
+    adam_beta2: float = 0.999 #二阶矩衰减系数，控制历史梯度平方记忆的参数。
     adam_eps: float = 1e-8
     adam_amsgrad: bool = False
     epochs: int = 20
     lambda_orth: float = 0.01
     lambda_adv: float = 0.01
+    # Optional precomputed monthly industry prior.
+    industry_prior_dir: str = "dataset/output/industry_prior_sw2021_monthly"
+    lambda_gp: float = 0.0
     # IFGSM
     adv_epsilon: float = 0.01
     adv_step_size: float = 0.005

@@ -10,10 +10,13 @@ from tempfile import TemporaryDirectory
 import pandas as pd
 
 from config import ModelConfig
-from data.build_day_dataset import build_dataset
-from data.day import DayPanel
+from dataset.build_day_dataset import build_dataset
+from dataset.day import DayPanel
 from training.lgbols import require_lightgbm
-from training.train import annual_scores, configure_logger, resolve_device
+from training.train import (
+    add_industry_prior_arguments, annual_scores, configure_logger, industry_prior_options,
+    resolve_device,
+)
 
 
 PREDICTION_KEYS = ("date", "stock_id", "validation_year")
@@ -32,14 +35,21 @@ def mean_predictions(predictions):
 def prepare_dataset(args, config):
     directory = args.output_dir
     directory.mkdir(parents=True, exist_ok=args.resume)
+    model_settings = asdict(config)
+    # Save effective graph options separately, including any CLI overrides.
+    model_settings.pop("industry_prior_dir")
+    model_settings.pop("lambda_gp")
     settings = {
         "source_root": str(args.source_root.resolve()),
         "start_date": args.start_date,
         "end_date": args.end_date,
         "first_prediction_year": args.first_prediction_year,
         "last_prediction_year": args.last_prediction_year,
-        "config": asdict(config),
+        "config": model_settings,
     }
+    if args.lambda_gp:
+        settings["industry_prior_dir"] = str(args.industry_prior_dir)
+        settings["lambda_gp"] = args.lambda_gp
     settings = json.loads(json.dumps(settings))
     manifest = directory / "ensemble_run.json"
     features = directory / "day_features.csv"
@@ -55,6 +65,8 @@ def prepare_dataset(args, config):
 
     legacy = (directory / "ensemble.log").is_file()
     if legacy:
+        if args.lambda_gp:
+            raise ValueError("Use a new ensemble output directory when enabling graph loss.")
         if not args.resume or not all(path.is_file() for path in (features, mask)):
             raise ValueError("Legacy ensemble resume requires both original input CSVs.")
         print("Resuming a legacy run: verify that the original arguments and config are unchanged.")
@@ -109,6 +121,7 @@ def train_seed(args, config, index, features, mask, panel=None):
             writer.writerows(annual_scores(
                 panel, year, config, device, checkpoint_dir / f"astgnn_{year}.pt",
                 resume=args.resume, logger=logger,
+                industry_prior_dir=args.industry_prior_dir, lambda_gp=args.lambda_gp,
             ))
     frame = pd.read_csv(csv_path, dtype={"stock_id": "string"}, parse_dates=["date"])
     if frame.empty:
@@ -134,7 +147,9 @@ def main():
     parser.add_argument("--seed-devices", nargs="+",
                         help="Optional device for each seed, in configured seed order.")
     parser.add_argument("--epochs", type=int, default=defaults.epochs)
+    add_industry_prior_arguments(parser, defaults)
     args = parser.parse_args()
+    industry_prior_options(parser, args)
     if args.epochs < 1 or args.first_prediction_year > args.last_prediction_year:
         parser.error("Epochs must be positive and the prediction-year range must be ordered.")
     seeds = defaults.ensemble_seeds

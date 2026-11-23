@@ -1,11 +1,11 @@
 """Build raw day-model inputs and an aligned daily pool mask.
 
 Example (review before running):
-    conda run -n astgnn python -B -m data.build_day_dataset \
-        --source-root data/data \
+    conda run -n astgnn python -B -m dataset.build_day_dataset \
+        --source-root dataset/data \
         --start-date 20070104 --end-date 20261117 \
-        --features-output data/output/day_features.csv \
-        --mask-output data/output/day_pool_mask.csv
+        --features-output dataset/output/day_features.csv \
+        --mask-output dataset/output/day_pool_mask.csv
 
 The feature file contains every stock-day whose tradeStatus equals 1.  The
 mask file has the same (date, stock_id) keys and indicates membership of

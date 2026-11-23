@@ -3,8 +3,8 @@ ASTGNN 代码说明
 
 数据构建脚本
 ------------
-data/build_day_dataset.py
-  从 data/data 下的日线库读取所有 tradeStatus == 1 的股票历史行情，使用后复权
+dataset/build_day_dataset.py
+  从 dataset/data 下的日线库读取所有 tradeStatus == 1 的股票历史行情，使用后复权
   highA、openA、lowA、closeA、vwapA、volumeA 输出模型所需的六列原始特征。
   同时从 advanceWholeMarketNew.parquet 生成与行情逐行对齐的 in_pool 掩码。
   该脚本不做去极值、标准化、缺失填补或标签计算；这些处理应留在训练期完成。
@@ -25,7 +25,7 @@ config.py
 
 数据
 ----
-data/day.py
+dataset/day.py
   按日期和股票读取长表 CSV，构造 [N,30,6] 窗口。使用 self.daily 存储每日股票特征，使用 self.stock_rows 记录每天出现的股票编号。
   最后一维依次为 high、open、low、close、vwap、volume。
   
@@ -41,7 +41,7 @@ data/day.py
   被置为全 0，因此这些股票共享同一份图结构先验；但其 GRU 特征、TGC 聚合结果和
   最终预测仍会随各自的输入数据变化。
 
-data/preprocessing.py
+dataset/preprocessing.py
   每轮只使用训练期面板估计各特征的统计量。
   按中位数 ± 7 倍中位数绝对离差截断，再用均值和标准差做标准化，最后将缺失值填 0。
   验证数据复用同一轮训练期参数。
@@ -168,7 +168,7 @@ backends.py
 
 修改记录4（1119）
 ----------------
-1. 数据构建：在本说明顶部补充 data/build_day_dataset.py 的用途。该脚本生成完整
+1. 数据构建：在本说明顶部补充 dataset/build_day_dataset.py 的用途。该脚本生成完整
    正常交易历史行情及 advanceWholeMarketNew 的每日 in_pool 掩码；六个特征使用
    highA、openA、lowA、closeA、vwapA、volumeA 的后复权口径。
 
@@ -256,3 +256,42 @@ backends.py
    种子顺序指定设备。不指定时各进程共用 --device，可能争用显存和主机内存。
 3. 汇总与续训：--resume 跳过已经完成的种子，分派其余任务并读取对应断点。
    全部任务成功后才汇总 predict.parquet，文件编号仍按配置顺序，与完成顺序无关。
+
+
+修改记录9（2026-11-23）
+----------------------
+1. 行业来源。使用本地 LX_STK_INFO_INDUSTRY 的申万股票行业分类 Parquet。
+   行为日期，列为沪深 A 股代码。modules/industry_relation.py 兼容 date
+   存在于列或索引两种形式。astgnn 环境的 PyArrow 25.0.1 已验证可读。
+
+2. 月度预生成。modules/build_industry_prior.py 默认取所选范围内每月首个
+   交易日的行业分类，按股票池表的全部股票列预生成关系。每个快照输出一个
+   YYYYMMDD.npz，保存股票顺序、位打包的二值邻接矩阵和有效配对掩码。
+   同行业股票双向连边。排除自环和行业缺失的配对。导出目录须为新目录，
+   可用 --start-date 和 --end-date 指定包含边界的 YYYYMMDD 范围。
+   snapshots.json 记录快照日期和覆盖区间，全部写完后生成 _complete。
+
+3. 训练读取。按交易日选择不晚于当天的最近快照，再按原始 stock_id 对齐
+   当天模型输入。月内缓存快照，月中行业变化随下月快照更新。日期超出导出
+   范围时报错。已完成的旧版逐日 .npz 目录仍可读取。
+
+4. 图邻近损失。models/astgnn.py 将可选 industry_prior 传给 modules/tgc.py。
+   TGC 对 ReLU 和 Softmax 前的 M @ M.T 计算有效股票对的平均二元交叉熵，
+   返回 L_GP。training.train、training.test 和 training.ensemble 可用
+   --industry-prior-dir 与 --lambda-gp 启用。权重默认 0。启用后总损失为
+   L_pred + lambda_orth * L_orth + lambda_adv * L_adv + lambda_gp * L_GP。
+   启用时应使用独立训练输出和检查点目录。恢复时保持先验路径和权重一致。
+
+5. 单日对照导出。modules/build_sector_industry.py 模仿原仓库格式，
+   按 --date 输出行业分组 JSON、布尔关系张量 N×N×(K+1) 和轴信息 JSON。
+   张量最后一维的最后一个通道是自环。训练入口读取第 2 项的 .npz 格式。
+
+6. 使用方式。从 Code 目录在已激活的 astgnn PowerShell 中执行：
+   $industry = (Get-ChildItem -Path '.\dataset\data\LX_STK_INFO_INDUSTRY\*股票行业分类.parquet' -File).FullName
+   python -m modules.build_industry_prior --industry "$industry" --pool ".\dataset\data\LX_STK_POOL_BASIC\advanceWholeMarketNew.parquet" --output-dir ".\dataset\output\industry_prior_sw2021_monthly"
+   在原训练命令后追加：
+   --industry-prior-dir dataset/output/industry_prior_sw2021_monthly --lambda-gp 0.01
+   0.01 为示例权重。单日对照导出可执行：
+   python -m modules.build_sector_industry --industry "$industry" --pool ".\dataset\data\LX_STK_POOL_BASIC\advanceWholeMarketNew.parquet" --date 2026-11-17 --output-dir ".\dataset\output\sector_industry_20261117"
+
+7. 验证。已在 astgnn 环境验证真实数据读取和图损失反向传播，并用小样本验证月内复用、跨月切换、股票重排、旧版读取与单日张量格式。

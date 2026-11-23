@@ -31,3 +31,9 @@ __pycache__/
 .venv/
 venv/
 .env
+
+
+# Only expose top-level ASTGNN dataset Python sources.
+!/01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/dataset/
+/01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/dataset/*
+!/01_Projects/P001_ASTGNN 自适应时空图网络周频 Alpha 模型/Code/dataset/*.py

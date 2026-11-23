@@ -9,8 +9,8 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent
 
-SCORES_PATH = ROOT / "data/output/gpu_2017_scores_20ep.csv"
-MASK_PATH = ROOT / "data/output/day_pool_mask_2007_2017.csv"
+SCORES_PATH = ROOT / "dataset/output/gpu_2017_scores_20ep.csv"
+MASK_PATH = ROOT / "dataset/output/day_pool_mask_2007_2017.csv"
 
 PREDICTION_YEAR = 2017
 
