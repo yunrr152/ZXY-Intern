@@ -49,7 +49,77 @@
   "popupFontFollowResize": false,
   "popupLastFontScale": 1,
   "fullHtml": false,
-  "history": [],
+  "history": [
+    {
+      "ts": 1795584202658,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "As shown in Figure 4, company i has a first-order relation with j if there is a statement that has i and j as the subject and object, respectively. Companies i and j have a second-order relation if they have statements sharing the same object, such as Boeing Inc. and United Airlines, Inc. have different statements towards Boeing 747. After an exhausted exploration of a recent dump of Wikidata (01/05/2018), we obtain 5 and 53 types of first-order and second-order relations, respectively10. The detailed description of these relations is elaborated in the Appendix A.2 at the end of this paper. We then summarize the count of relation types and the ratio of stock pairs with at least one Wiki company-based relation in Table 4. As can be seen, there are 42 and 32 types of company relations occurring between stock pairs in NASDAQ and NYSE, respectively.",
+          "zh": "如图4所示，如果有一个分别以i和j为主语和宾语的语句，则公司i与j具有一阶关系。如果公司i和j有共享相同对象的语句，则公司i和j具有二阶关系，例如波音公司和联合航空公司对波音747有不同的语句。在对最近转储的维基数据（01/05/2018）进行了详尽的探索后，我们分别获得了5种和53种一阶和二阶关系10。这些关系的详细描述在本文最后的附录A.2中进行了阐述。 然后，我们在表4中总结了至少一个基于Wiki公司的关系类型的计数和股票对的比率。可以看出，纳斯达克和纽约证券交易所的股票对之间分别发生了42种和32种公司关系。",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "As shown in Figure 4, company i has a first-order relation with j if there is a statement that has i and j as the subject and object, respectively. Companies i and j have a second-order relation if they have statements sharing the same object, such as Boeing Inc. and United Airlines, Inc. have different statements towards Boeing 747. After an exhausted exploration of a recent dump of Wikidata (01/05/2018), we obtain 5 and 53 types of first-order and second-order relations, respectively10. The detailed description of these relations is elaborated in the Appendix A.2 at the end of this paper. We then summarize the count of relation types and the ratio of stock pairs with at least one Wiki company-based relation in Table 4. As can be seen, there are 42 and 32 types of company relations occurring between stock pairs in NASDAQ and NYSE, respectively.|如图4所示，如果有一个分别以i和j为主语和宾语的语句，则公司i与j具有一阶关系。如果公司i和j有共享相同对象的语句，则公司i和j具有二阶关系，例如波音公司和联合航空公司对波音747有不同的语句。在对最近转储的维基数据（01/05/2018）进行了详尽的探索后，我们分别获得了5种和53种一阶和二阶关系10。这些关系的详细描述在本文最后的附录A.2中进行了阐述。 然后，我们在表4中总结了至少一个基于Wiki公司的关系类型的计数和股票对的比率。可以看出，纳斯达克和纽约证券交易所的股票对之间分别发生了42种和32种公司关系。",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": 12,
+      "locator": {
+        "path": "02-pdf附件/自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+        "page": 12,
+        "selection": "95,2,139,90",
+        "mtime": 1794446229592,
+        "size": 1841711
+      }
+    },
+    {
+      "ts": 1795584186171,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "s such, we extract the first-order and second-order company relations from Wikidata [ 37], one of the biggest and most active open domain knowledge bases with more than 42 million items (e.g.,",
+          "zh": "因此，我们从维基数据[37]中提取一阶和二阶公司关系，维基数据[37]是最大和最活跃的开放域知识库之一，拥有超过4200万个项目（例如，",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "s such, we extract the first-order and second-order company relations from Wikidata [ 37], one of the biggest and most active open domain knowledge bases with more than 42 million items (e.g.,|因此，我们从维基数据[37]中提取一阶和二阶公司关系，维基数据[37]是最大和最活跃的开放域知识库之一，拥有超过4200万个项目（例如，",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": 11,
+      "locator": {
+        "path": "02-pdf附件/自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+        "page": 11,
+        "selection": "167,95,173,5",
+        "mtime": 1794446229592,
+        "size": 1841711
+      }
+    },
+    {
+      "ts": 1795584175844,
+      "via": "火山",
+      "pairs": [
+        {
+          "en": "As rich sources of entity relations, knowledge bases contain company entities and company relations, which might reflect the impact across stocks",
+          "zh": "作为实体关系的丰富来源，知识库包含公司实体和公司关系，这可能反映了跨股票的影响",
+          "sourceLanguage": "auto",
+          "targetLanguage": "zh-Hans",
+          "detectedLanguage": "en"
+        }
+      ],
+      "sig": "As rich sources of entity relations, knowledge bases contain company entities and company relations, which might reflect the impact across stocks|作为实体关系的丰富来源，知识库包含公司实体和公司关系，这可能反映了跨股票的影响",
+      "file": "自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+      "page": 11,
+      "locator": {
+        "path": "02-pdf附件/自适应图结构3_Temporal Relational Ranking for Stock Prediction.pdf",
+        "page": 11,
+        "selection": "166,0,167,92",
+        "mtime": 1794446229592,
+        "size": 1841711
+      }
+    }
+  ],
   "llmProfiles": [],
   "activeProfile": 0,
   "orbSkin": "ink-wash",

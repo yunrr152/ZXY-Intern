@@ -8,7 +8,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from modules.industry_relation import IndustryRelations
+from dataset.industry_relation import IndustryRelations
 
 
 def main():

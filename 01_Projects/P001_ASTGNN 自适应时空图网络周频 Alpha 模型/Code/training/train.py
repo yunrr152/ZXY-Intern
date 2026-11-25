@@ -14,9 +14,9 @@ from tqdm import tqdm
 
 from config import ModelConfig
 from dataset.day import DayPanel
+from dataset.industry_relation import SavedIndustryPrior
 from dataset.preprocessing import FeaturePreprocessor
 from models.astgnn import ASTGNN
-from modules.industry_relation import SavedIndustryPrior
 from ops.ifgsm import ifgsm, suspend_running_statistics
 from training.lgbols import fit_lgbols, require_lightgbm
 from training.loss import orthogonality_loss, prediction_loss

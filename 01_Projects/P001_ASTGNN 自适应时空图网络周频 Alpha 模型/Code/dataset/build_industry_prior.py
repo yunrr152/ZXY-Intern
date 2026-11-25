@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import torch
 
-from modules.industry_relation import IndustryRelations
+from dataset.industry_relation import IndustryRelations
 
 
 def main():

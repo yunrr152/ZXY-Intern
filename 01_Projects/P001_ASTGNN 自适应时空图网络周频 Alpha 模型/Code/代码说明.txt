@@ -261,10 +261,10 @@ backends.py
 修改记录9（2026-11-23）
 ----------------------
 1. 行业来源。使用本地 LX_STK_INFO_INDUSTRY 的申万股票行业分类 Parquet。
-   行为日期，列为沪深 A 股代码。modules/industry_relation.py 兼容 date
+   行为日期，列为沪深 A 股代码。dataset/industry_relation.py 兼容 date
    存在于列或索引两种形式。astgnn 环境的 PyArrow 25.0.1 已验证可读。
 
-2. 月度预生成。modules/build_industry_prior.py 默认取所选范围内每月首个
+2. 月度预生成。dataset/build_industry_prior.py 默认取所选范围内每月首个
    交易日的行业分类，按股票池表的全部股票列预生成关系。每个快照输出一个
    YYYYMMDD.npz，保存股票顺序、位打包的二值邻接矩阵和有效配对掩码。
    同行业股票双向连边。排除自环和行业缺失的配对。导出目录须为新目录，
@@ -282,16 +282,16 @@ backends.py
    L_pred + lambda_orth * L_orth + lambda_adv * L_adv + lambda_gp * L_GP。
    启用时应使用独立训练输出和检查点目录。恢复时保持先验路径和权重一致。
 
-5. 单日对照导出。modules/build_sector_industry.py 模仿原仓库格式，
+5. 单日对照导出。dataset/build_sector_industry.py 模仿原仓库格式，
    按 --date 输出行业分组 JSON、布尔关系张量 N×N×(K+1) 和轴信息 JSON。
    张量最后一维的最后一个通道是自环。训练入口读取第 2 项的 .npz 格式。
 
 6. 使用方式。从 Code 目录在已激活的 astgnn PowerShell 中执行：
    $industry = (Get-ChildItem -Path '.\dataset\data\LX_STK_INFO_INDUSTRY\*股票行业分类.parquet' -File).FullName
-   python -m modules.build_industry_prior --industry "$industry" --pool ".\dataset\data\LX_STK_POOL_BASIC\advanceWholeMarketNew.parquet" --output-dir ".\dataset\output\industry_prior_sw2021_monthly"
+   python -m dataset.build_industry_prior --industry "$industry" --pool ".\dataset\data\LX_STK_POOL_BASIC\advanceWholeMarketNew.parquet" --output-dir ".\dataset\output\industry_prior_sw2021_monthly"
    在原训练命令后追加：
    --industry-prior-dir dataset/output/industry_prior_sw2021_monthly --lambda-gp 0.01
    0.01 为示例权重。单日对照导出可执行：
-   python -m modules.build_sector_industry --industry "$industry" --pool ".\dataset\data\LX_STK_POOL_BASIC\advanceWholeMarketNew.parquet" --date 2026-11-17 --output-dir ".\dataset\output\sector_industry_20261117"
+   python -m dataset.build_sector_industry --industry "$industry" --pool ".\dataset\data\LX_STK_POOL_BASIC\advanceWholeMarketNew.parquet" --date 2026-11-17 --output-dir ".\dataset\output\sector_industry_20261117"
 
 7. 验证。已在 astgnn 环境验证真实数据读取和图损失反向传播，并用小样本验证月内复用、跨月切换、股票重排、旧版读取与单日张量格式。
