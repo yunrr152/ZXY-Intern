@@ -10,11 +10,12 @@ class TGC(nn.Module):
         self.M = nn.Parameter(torch.randn(num_stocks, graph_embed_dim) * embedding_init_std) #M矩阵，嵌入向量
         self.W = nn.Linear(hidden_dim, output_dim, bias=False) #W矩阵，决定聚合后的特征如何线性组合。
 
+    #根据M构建邻接矩阵A
     def forward(self, G, stock_ids=None, *, industry_prior=None):
         if stock_ids is None:
             M = self.M
         else:
-            M = self.M.index_select(0, stock_ids)
+            M = self.M.index_select(0, stock_ids)#提取当日入池的股票
 
         if M.size(0) != G.size(0):
             raise ValueError("Stock embeddings must match the number of rows in G.")
@@ -22,10 +23,13 @@ class TGC(nn.Module):
         # 参考 AGCRN 的逐行归一化邻接，自环通过残差直接加入。
         logits = M @ M.T
         adjacency = torch.softmax(torch.relu(logits), dim=-1)
+        #利用邻接矩阵A，即djacency @ G聚合股票之间的信息，得到输出T
         output = self.W(G + adjacency @ G)
+        
         if industry_prior is None:
             return output
-
+        
+        #行业先验矩阵
         edges, valid_pairs = industry_prior
         if edges.shape != logits.shape or valid_pairs.shape != logits.shape:
             raise ValueError("Industry prior must match the current stock cross-section.")

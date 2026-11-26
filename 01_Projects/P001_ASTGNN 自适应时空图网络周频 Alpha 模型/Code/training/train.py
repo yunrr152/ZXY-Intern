@@ -3,6 +3,7 @@ from bisect import bisect_left
 import csv
 from dataclasses import replace
 from datetime import date, datetime
+from itertools import islice
 import logging
 import math
 import os
@@ -21,7 +22,7 @@ from ops.ifgsm import ifgsm, suspend_running_statistics
 from training.lgbols import fit_lgbols, require_lightgbm
 from training.loss import orthogonality_loss, prediction_loss
 
-
+#日志记录
 def configure_logger(log_path):
     """Write persistent run messages to a user-visible UTF-8 log file."""
     log_path.parent.mkdir(parents=True, exist_ok=True)
@@ -44,7 +45,7 @@ def report(message, logger=None):
 def stage(index, total, message, logger=None):
     report(f"[{index}/{total}] {message}", logger)
 
-
+#行业先验矩阵
 def add_industry_prior_arguments(parser, defaults):
     parser.add_argument("--industry-prior-dir", type=Path, default=defaults.industry_prior_dir,
                         help="Offline industry matrix export.")
@@ -64,7 +65,7 @@ def industry_prior_options(parser, args):
         except ValueError as error:
             parser.error(str(error))
 
-
+#设备管理
 def resolve_device(device_name, logger=None):
     """Validate the requested compute device before allocating model tensors."""
     device = torch.device(device_name)
@@ -79,7 +80,7 @@ def resolve_device(device_name, logger=None):
         report(f"Using device: {device}", logger)
     return device
 
-
+#模型保护与恢复
 def save_checkpoint(
     path,
     year,
@@ -128,7 +129,7 @@ def save_checkpoint(
             logger,
         )
 
-
+#恢复函数
 def restore_checkpoint(path, year, model, optimizer, preprocessor, active_ids, device, logger,
                        gp_settings=None):
     """Restore a same-year checkpoint and verify that its stock-node universe matches."""
@@ -166,14 +167,15 @@ def restore_checkpoint(path, year, model, optimizer, preprocessor, active_ids, d
 # 以同一个模型计算干净样本、正交惩罚和对抗样本损失。
 def training_loss(model, x, stock_ids, target, valid, config, *, industry_prior=None, lambda_gp=0.0):
     clean = model(x, stock_ids, industry_prior=industry_prior)
-    loss = prediction_loss(clean["C"], target, valid)
-    loss = loss + config.lambda_orth * orthogonality_loss(clean["Z"])
-    if industry_prior is not None:
+    loss = prediction_loss(clean["C"], target, valid) #预测损失
+    loss = loss + config.lambda_orth * orthogonality_loss(clean["Z"]) #加入正交损失
+    if industry_prior is not None: #行业图损失
         loss = loss + lambda_gp * clean["L_GP"]
-    if config.lambda_adv:
+    if config.lambda_adv: #对抗损失，不考虑正交损失和图损失
         def objective(inputs):
             return prediction_loss(model(inputs, stock_ids)["C"], target, valid)
 
+        #对抗样本的统计参数不会更新统计量
         with suspend_running_statistics(model):
             adversarial = ifgsm(
                 x, objective, config.adv_epsilon, config.adv_step_size, config.adv_steps
@@ -192,6 +194,7 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
         industry_prior_dir = config.industry_prior_dir
     prior_reader = SavedIndustryPrior(industry_prior_dir) if lambda_gp else None
     gp_settings = (str(prior_reader.directory.resolve()), lambda_gp) if prior_reader else None
+    #起始日期
     start = bisect_left(panel.dates, date(year - config.training_years, 1, 1))
     stop = bisect_left(panel.dates, date(year, 1, 1))
     end = bisect_left(panel.dates, date(year + 1, 1, 1))
@@ -204,24 +207,28 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
     training_pool_features = [features for features in training_pool_features if features.numel()]
     if not training_pool_features:
         raise ValueError(f"No in-pool observations before validation year {year}.")
+    
+    #数据预处理
     preprocessor = FeaturePreprocessor(config.winsorize_mad_multiplier).fit(
         torch.cat(training_pool_features)
     )
     report(f"{year}: preprocessing statistics fitted in {perf_counter() - preprocessing_started:.1f}s.", logger)
-    active_pool_rows = [panel.pool_rows(day) for day in range(start, stop)]
+    
+    active_pool_rows = [panel.pool_rows(day) for day in range(start, stop)] #股票索引
     active_pool_rows = [ids for ids in active_pool_rows if ids.numel()]
     if not active_pool_rows:
         raise ValueError(f"No in-pool stocks before validation year {year}.")
     active_ids = torch.unique(torch.cat(active_pool_rows))
-    unknown = active_ids.numel()
+    unknown = active_ids.numel() #unknown是训练中出现的有效节点数
     id_map = torch.full((len(panel.stocks),), unknown, dtype=torch.long)
     id_map[active_ids] = torch.arange(unknown)
 
     #初始化ADTGNN
     torch.manual_seed(config.random_seed)
-    model = ASTGNN(unknown + 1, config).to(device)
+    model = ASTGNN(unknown + 1, config).to(device) #未知股票节点映射到unknown+1
     with torch.no_grad():
         model.tgc.M[unknown].zero_() #未知股票节点的初始嵌入设为全零
+    #AdamW优化器，权重衰减+梯度更新
     optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=config.learning_rate,
@@ -230,7 +237,7 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
         eps=config.adam_eps,
         amsgrad=config.adam_amsgrad,
     )
-    resume_state = {
+    resume_state = { #断点机制
         "completed_epochs": 0,
         "in_progress_epoch": None,
         "next_day_offset": 0,
@@ -251,7 +258,7 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
     # 标签终点必须早于验证年。
     training_days = range(
         max(start, config.seq_len - 1),
-        stop - config.target_end_offset,
+        stop - config.target_end_offset, #标签的终点不会超过验证年份的起点
     )
     if prior_reader is not None and training_days and resume_state["completed_epochs"] < config.epochs:
         first_day = panel.dates[training_days.start]
@@ -269,15 +276,18 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
             logger,
         )
     stage(3, 6, f"{year}: Training ASTGNN...", logger)
+
+    #epoh：每个交易日进行独立参数更新，整个训练区间遍历完之后为一个epoh
     for epoch in range(resume_state["completed_epochs"], config.epochs):
         epoch_started = perf_counter()
         model.train()
+        #恢复当前epoh的训练状态
         resume_epoch = resume_state["in_progress_epoch"] == epoch + 1
         start_offset = resume_state["next_day_offset"] if resume_epoch else 0
         steps = resume_state["steps"] if resume_epoch else 0
         skipped = resume_state["skipped"] if resume_epoch else 0
         total_loss = resume_state["running_loss"] if resume_epoch else 0.0
-        days_to_run = range(training_days.start + start_offset, training_days.stop)
+        days_to_run = range(training_days.start + start_offset, training_days.stop)#得到当前epoh的训练周期
         with tqdm(
             days_to_run,
             desc=f"{year} epoch {epoch + 1}/{config.epochs}",
@@ -289,6 +299,7 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
             total=len(training_days),
             initial=start_offset,
         ) as progress:
+            #按交易日训练
             for day_offset, day in enumerate(progress, start=start_offset):
                 ids = panel.pool_rows(day)
                 target = panel.target(
@@ -299,7 +310,7 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
                 #模型不会在股票数量过少或完全没有有效监督标签的日期进行训练。
                 if ids.numel() < config.min_stocks_per_cross_section or not valid.any():
                     skipped += 1
-                else:
+                else:#构建输入特征
                     _, x = panel.window(day, config.seq_len, ids)
                     x = preprocessor.transform(x).to(device)
                     optimizer.zero_grad(set_to_none=True)
@@ -307,10 +318,12 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
                     if prior_reader is not None:
                         stock_codes = [panel.stocks[i] for i in ids.tolist()]
                         industry_prior = prior_reader.for_day(panel.dates[day], stock_codes)
+                    #损失函数
                     loss = training_loss(
                         model, x, id_map[ids].to(device), target.to(device), valid.to(device), config,
                         industry_prior=industry_prior, lambda_gp=lambda_gp,
                     )
+                    #反向传播和梯度更新
                     if not torch.isfinite(loss):
                         raise RuntimeError(f"Non-finite training loss on {panel.dates[day]}")
                     loss.backward()
@@ -322,6 +335,7 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
                         loss=f"{total_loss / steps:.5g}", usable=steps, skipped=skipped,
                         refresh=False,
                     )
+                #定期保存checkpoint
                 next_day_offset = day_offset + 1
                 if (
                     next_day_offset % config.checkpoint_every_training_days == 0
@@ -376,6 +390,7 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
     stage(4, 6, f"{year}: Extracting {config.num_factors} factors...", logger)
     with torch.no_grad():
         factor_days = range(max(training_days.start, tree_start), training_days.stop)
+        #逐日提取因子
         for day in tqdm(factor_days, desc=f"{year} extracting factors", unit="day",
                         leave=False, disable=None, dynamic_ncols=True, mininterval=1.0):
             ids = panel.pool_rows(day)
@@ -393,8 +408,10 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
     if not tree_targets:
         raise ValueError(f"No labeled lgbols samples before validation year {year}.")
     report(f"{year}: factor extraction completed in {perf_counter() - factor_started:.1f}s.", logger)
-    factor_matrix = torch.cat(tree_factors)
+    factor_matrix = torch.cat(tree_factors) #拼接交易日数据
     target_vector = torch.cat(tree_targets)
+
+    #开始训练LightGBM
     stage(
         5,
         6,
@@ -407,12 +424,14 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
     report(f"{year}: LightGBM fitted in {perf_counter() - lightgbm_started:.1f}s.", logger)
     stage(6, 6, f"{year}: Saving prediction scores...", logger)
     prediction_started = perf_counter()
+    #生成最终预测
     for day in tqdm(range(stop, end), desc=f"{year} predicting", unit="day",
                     leave=False, disable=None, dynamic_ncols=True, mininterval=1.0):
-        with torch.no_grad():
+        with torch.no_grad(): #获取当天股票池
             ids = panel.pool_rows(day)
             if not ids.numel():
                 continue
+            #提取当天股票弱因子Z，输入LightGBM
             _, x = panel.window(day, config.seq_len, ids)
             x = preprocessor.transform(x).to(device)
             factors = model(x, id_map[ids].to(device))["Z"].cpu()
@@ -421,6 +440,7 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
             )
             if not torch.isfinite(scores).all():
                 raise RuntimeError(f"Non-finite predictions on {panel.dates[day]}")
+        #输出预测结果
         for stock_id, score in zip(ids.tolist(), scores.tolist()):
             yield panel.dates[day].isoformat(), panel.stocks[stock_id], year, score
     report(
@@ -431,12 +451,32 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
 
 
 # 读取命令行参数，按验证年份汇总预测结果。
+def write_parquet_scores(path, rows, arrow, parquet):
+    schema = arrow.schema([
+        ("date", arrow.timestamp("ns")),
+        ("stock_id", arrow.string()),
+        ("validation_year", arrow.int64()),
+        ("C", arrow.float64()),
+    ])
+    rows = iter(rows)
+    with parquet.ParquetWriter(path, schema) as writer:
+        while batch := list(islice(rows, 65536)):
+            dates, stock_ids, years, scores = zip(*batch)
+            writer.write_table(arrow.Table.from_arrays(
+                [arrow.array(dates, type=arrow.string()).cast(schema.field("date").type),
+                 arrow.array(stock_ids, type=arrow.string()),
+                 arrow.array(years, type=arrow.int64()),
+                 arrow.array(scores, type=arrow.float64())],
+                schema=schema,
+            ))
+
+
 def main():
     run_started = perf_counter()
     parser = argparse.ArgumentParser(description="Train ASTGNN on rolling day panels.")
     parser.add_argument("--data", type=Path, required=True, help="UTF-8 CSV: date,stock_id,high,open,low,close,vwap,volume")
     parser.add_argument("--mask", type=Path, required=True, help="UTF-8 CSV: date,stock_id,in_pool")
-    parser.add_argument("--output", type=Path, required=True, help="New output CSV for all validation scores")
+    parser.add_argument("--output", type=Path, required=True, help="New .csv or .parquet file for validation scores")
     defaults = ModelConfig()
     parser.add_argument("--epochs", type=int, default=defaults.epochs)
     parser.add_argument("--device", default=defaults.device)
@@ -466,6 +506,17 @@ def main():
     )
     add_industry_prior_arguments(parser, defaults)
     args = parser.parse_args()
+    output_format = args.output.suffix.lower()
+    if output_format not in {".csv", ".parquet"}:
+        parser.error("--output must end in .csv or .parquet")
+    if args.output.exists():
+        parser.error(f"Refusing to overwrite existing output: {args.output}")
+    if output_format == ".parquet":
+        try:
+            import pyarrow as arrow
+            import pyarrow.parquet as parquet
+        except ImportError:
+            parser.error("Parquet output requires pyarrow.")
     industry_prior_options(parser, args)
     if args.epochs < 1:
         parser.error("--epochs must be positive")
@@ -513,20 +564,22 @@ def main():
         lgbols_num_boost_round=args.lgbols_num_boost_round,
     )
     device = resolve_device(config.device, logger)
-    if args.output.exists():
-        parser.error(f"Refusing to overwrite existing output: {args.output}")
     temporary_output = args.output.with_suffix(args.output.suffix + ".tmp")
-    with temporary_output.open("w", encoding="utf-8", newline="") as output:
-        writer = csv.writer(output)
-        writer.writerow(("date", "stock_id", "validation_year", "C"))
+    def scores():
         for year in range(first_year, last_year + 1):
             checkpoint_path = args.checkpoint_dir / f"astgnn_{year}.pt"
-            writer.writerows(
-                annual_scores(
-                    panel, year, config, device, checkpoint_path, args.resume, logger,
-                    industry_prior_dir=args.industry_prior_dir, lambda_gp=args.lambda_gp,
-                )
+            yield from annual_scores(
+                panel, year, config, device, checkpoint_path, args.resume, logger,
+                industry_prior_dir=args.industry_prior_dir, lambda_gp=args.lambda_gp,
             )
+
+    if output_format == ".parquet":
+        write_parquet_scores(temporary_output, scores(), arrow, parquet)
+    else:
+        with temporary_output.open("w", encoding="utf-8", newline="") as output:
+            writer = csv.writer(output)
+            writer.writerow(("date", "stock_id", "validation_year", "C"))
+            writer.writerows(scores())
     os.replace(temporary_output, args.output)
     report(f"Validation scores written to {args.output}", logger)
     report(f"Rolling training completed in {perf_counter() - run_started:.1f}s.", logger)

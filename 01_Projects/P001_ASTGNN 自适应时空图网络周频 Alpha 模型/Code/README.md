@@ -44,6 +44,18 @@ python -u -m training.ensemble `
     --output-dir "dataset\output\ensemble_2017_2025" 
     #--resume 断点重跑
 ```
+python -u -m training.train `
+  --data dataset/output/day_features_2006_2026.csv `
+  --mask dataset/output/day_pool_mask_2006_2026.csv `
+  --first-prediction-year 2017 `
+  --last-prediction-year 2026 `
+  --seed 3407 `
+  --lambda-gp 0 `
+  --device cuda `
+  --epochs 20 `
+  --checkpoint-dir dataset/output/checkpoints_seed3407_no_gp_2017_2026 `
+  --log-file dataset/output/seed3407_no_gp_2017_2026.log `
+  --output dataset/output/predict.parquet 
 
 这个示例生成 2017–2025 年结果。输入日期范围需要覆盖最早预测年的前十年，以及最后一个预测年所需的交易日。
 

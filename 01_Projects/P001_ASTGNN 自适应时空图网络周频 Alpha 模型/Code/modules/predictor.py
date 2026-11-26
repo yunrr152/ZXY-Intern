@@ -13,7 +13,9 @@ class FactorPredictor(nn.Module):
         batch_norm_track_running_stats,
     ):
         super().__init__()
-        self.num_factors = num_factors
+        self.num_factors = num_factors #弱因子个数
+        
+        #映射到弱因子空间
         self.linear = nn.Linear(input_dim, num_factors)
         batch_norm = {
             "eps": batch_norm_eps,
@@ -21,8 +23,8 @@ class FactorPredictor(nn.Module):
             "affine": batch_norm_affine,
             "track_running_stats": batch_norm_track_running_stats,
         }
-        self.bn_factors = nn.BatchNorm1d(num_factors, **batch_norm)
-        self.bn_score = nn.BatchNorm1d(1, **batch_norm)
+        self.bn_factors = nn.BatchNorm1d(num_factors, **batch_norm) #归一化因子
+        self.bn_score = nn.BatchNorm1d(1, **batch_norm) #归一化预测分数
 
     def forward(self, T):
         Z = self.bn_factors(self.linear(T))

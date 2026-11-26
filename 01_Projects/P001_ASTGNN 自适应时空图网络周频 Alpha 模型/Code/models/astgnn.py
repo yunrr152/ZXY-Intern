@@ -12,6 +12,7 @@ class ASTGNN(nn.Module):
     def __init__(self, num_stocks, config=None):
         super().__init__()
         self.config = config or ModelConfig()
+        #初始化可选的Resnet层
         self.feature_extractor = None
         gru_input_dim = self.config.num_features
         if self.config.use_resnet:
@@ -22,17 +23,20 @@ class ASTGNN(nn.Module):
                 padding=self.config.resnet_padding,
             )
             gru_input_dim = self.config.feature_dim
+        #初始化GRU
         self.gru = TemporalGRU(
             input_dim=gru_input_dim,
             hidden_dim=self.config.gru_hidden_dim,
         )
+        #初始化TGC
         self.tgc = TGC(
-            num_stocks=num_stocks,
+            num_stocks=num_stocks, #N个股票节点输入
             hidden_dim=self.config.gru_hidden_dim,
             graph_embed_dim=self.config.graph_embed_dim,
             output_dim=self.config.tgc_hidden_dim,
             embedding_init_std=self.config.tgc_embedding_init_std,
         )
+        #初始化Predicator，因子提取Z+预测分数输出C
         self.predictor = FactorPredictor(
             input_dim=self.config.tgc_hidden_dim,
             num_factors=self.config.num_factors,

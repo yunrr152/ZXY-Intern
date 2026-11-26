@@ -21,7 +21,7 @@ class DayPanel:
         with open(path, encoding="utf-8-sig", newline="") as source:
             reader = csv.DictReader(source)
             required = {"date", "stock_id", *FEATURES}
-            missing = required.difference(reader.fieldnames or [])
+            missing = required.difference(reader.fieldnames or []) #完整性检查
             if missing:
                 raise ValueError(f"Missing CSV columns: {', '.join(sorted(missing))}")
             for row in tqdm(reader, desc="Loading day feature CSV", unit="row"):
@@ -39,10 +39,12 @@ class DayPanel:
                     raise ValueError(f"Empty or duplicate stock_id on CSV line {reader.line_num}")
                 daily[stock] = values
                 feature_rows += 1
+        
         self._report(f"CSV rows parsed in {perf_counter() - csv_started:.1f}s.", logger)
         if not observations:
             raise ValueError("The day CSV contains no observations.")
 
+        #处理pool_mask
         self._report("Loading aligned daily pool mask...", logger)
         mask_started = perf_counter()
         mask_rows = 0
@@ -61,6 +63,8 @@ class DayPanel:
                     raise ValueError(f"Invalid mask observation on CSV line {reader.line_num}") from error
                 if in_pool not in (0, 1):
                     raise ValueError(f"Mask in_pool must be 0 or 1 on CSV line {reader.line_num}")
+                
+                #对齐掩码和行情数据
                 daily = observations.get(day)
                 if daily is None or stock not in daily:
                     raise ValueError(
