@@ -208,7 +208,7 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
     if not training_pool_features:
         raise ValueError(f"No in-pool observations before validation year {year}.")
     
-    #数据预处理
+    #初始化数据预处理器
     preprocessor = FeaturePreprocessor(config.winsorize_mad_multiplier).fit(
         torch.cat(training_pool_features)
     )
@@ -245,6 +245,8 @@ def annual_scores(panel, year, config, device, checkpoint_path, resume, logger=N
         "steps": 0,
         "skipped": 0,
     }
+
+    #只有又开resume并且checkpoint保存目录不变的情况下，换数据会产生信息错位
     if resume and checkpoint_path.is_file():
         resume_state = restore_checkpoint(
             checkpoint_path, year, model, optimizer, preprocessor, active_ids, device, logger,

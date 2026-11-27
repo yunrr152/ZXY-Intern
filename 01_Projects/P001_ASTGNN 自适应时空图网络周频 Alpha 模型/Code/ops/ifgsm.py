@@ -6,7 +6,7 @@ from torch.nn import BatchNorm1d
 
 @contextmanager
 def suspend_running_statistics(model):
-    # 对抗分支使用当前截面统计量，运行统计量只由干净分支更新。
+    # 对抗分支使用当前截面统计量，并且暂停统计量更新。
     layers = [
         layer for layer in model.modules()
         if isinstance(layer, BatchNorm1d) and layer.training and layer.track_running_stats

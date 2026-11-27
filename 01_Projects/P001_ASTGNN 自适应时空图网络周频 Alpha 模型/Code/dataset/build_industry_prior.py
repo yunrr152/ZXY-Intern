@@ -10,7 +10,7 @@ import torch
 
 from dataset.industry_relation import IndustryRelations
 
-
+#调用IndustryRelations构建先验行业关系矩阵，按月生成并且保存
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--industry", type=Path, required=True)
@@ -20,17 +20,21 @@ def main():
     parser.add_argument("--end-date", type=int)
     args = parser.parse_args()
 
+    #初始化行业关系对象
     relations = IndustryRelations(args.industry)
     pool = pd.read_parquet(args.pool, engine="pyarrow")
     if "date" in pool.columns:
         pool = pool.set_index("date", verify_integrity=True)
     pool.index = pd.to_datetime(pool.index.astype(str), format="%Y%m%d")
+    #根据起始日期筛选股票池
     if args.start_date is not None:
         pool = pool.loc[pool.index >= pd.to_datetime(str(args.start_date), format="%Y%m%d")]
     if args.end_date is not None:
         pool = pool.loc[pool.index <= pd.to_datetime(str(args.end_date), format="%Y%m%d")]
     if pool.empty or not pool.index.is_unique or not pool.columns.is_unique:
         parser.error("Selected pool must have dates and unique date and stock keys.")
+    
+    #确定每个月的交易日，使用当月第一个交易日的行业分类作为该月的行业快照
     days = pool.index.sort_values()
     snapshots = days[~days.to_period("M").duplicated()]
     missing_dates = snapshots.difference(relations.classifications.index)
@@ -43,6 +47,7 @@ def main():
     # was unknown on the snapshot date, the saved pair mask excludes them.
     stock_codes = pool.columns.to_numpy(dtype=str)
     for day in snapshots:
+        #返回邻接矩阵和有效关系掩码（只有1和0，无效关系置0）
         adjacency, valid_pairs = relations.for_day(day, stock_codes)
         path = args.output_dir / f"{day:%Y%m%d}.npz"
         np.savez_compressed(
@@ -51,6 +56,7 @@ def main():
             adjacency=np.packbits(adjacency.numpy(), axis=1),
             valid_pairs=np.packbits(valid_pairs.numpy(), axis=1),
         )
+    #记录矩阵对应的时间范围和快照日期
     (args.output_dir / "snapshots.json").write_text(json.dumps({
         "start": days[0].date().isoformat(),
         "end": days[-1].date().isoformat(),

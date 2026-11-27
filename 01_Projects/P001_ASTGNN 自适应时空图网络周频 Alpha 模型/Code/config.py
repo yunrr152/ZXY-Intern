@@ -30,7 +30,7 @@ class ModelConfig:
     # 年度滚动训练
     training_years: int = 10
     random_seed: int = 42
-    ensemble_seeds: tuple[int, ...] = (0, 47, 427)
+    ensemble_seeds: tuple[int, ...] = (0, 47, 3407)
     device: str = "cpu"
     checkpoint_dir: str = "checkpoints"
     checkpoint_every_epochs: int = 1
@@ -52,6 +52,8 @@ class ModelConfig:
     adv_epsilon: float = 0.01
     adv_step_size: float = 0.005
     adv_steps: int = 3
+
+    #决策树参数
     lgbols_lookback_years: int = 1
     lgbols_num_boost_round: int = 100
     lgbols_objective: str = "regression"

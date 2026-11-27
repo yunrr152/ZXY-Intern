@@ -13,6 +13,7 @@ def require_lightgbm():
 # 用冻结网络生成的弱因子拟合 LightGBM 的平方误差回归树。
 def fit_lgbols(factors, targets, config):
     lightgbm = require_lightgbm()
+    #转换数据格式为Numpy数组，训练数据封装Z和Y
     dataset = lightgbm.Dataset(factors.numpy(), label=targets.numpy())
     return lightgbm.train(
         {
